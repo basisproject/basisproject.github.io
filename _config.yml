@@ -17,6 +17,9 @@ url: "/" # the base hostname & protocol for your site
 twitter_username: jekyllrb
 github_username:  jekyll
 
+# Outputting
+permalink: /:categories/:year/:month/:day/:title
+
 # Build settings
 markdown: kramdown
 exclude: ["README.md"]
