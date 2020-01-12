@@ -11,19 +11,19 @@ before_script:
 test:
   stage: test
   script:
-  - bundle exec jekyll build -d test
+    - bundle exec jekyll build -d test
   artifacts:
     paths:
-    - test
+      - test
   except:
-  - master
+    - master
 
 pages:
   stage: deploy
   script:
-  - bundle exec jekyll build -d public
+    - make
   artifacts:
     paths:
-    - public
+      - _site
   only:
-  - master
+    - master
