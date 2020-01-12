@@ -10,7 +10,7 @@ cache:
       - Gemfile
       - Gemfile.lock
   paths:
-    - vendor/
+    - vendor/ruby
 
 before_script:
   - gem install bundler
