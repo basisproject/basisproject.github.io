@@ -26,9 +26,9 @@ test:
 pages:
   stage: deploy
   script:
-    - make
+    - make deploy
   artifacts:
     paths:
-      - _site
+      - public
   only:
     - master
