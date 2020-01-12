@@ -4,14 +4,15 @@ variables:
   JEKYLL_ENV: production
   LC_ALL: C.UTF-8
 
-before_script:
-  - gem install bundler
-  - bundle install --path vendor/bundle/
-
 cache:
+  key: ${CI_COMMIT_REF_SLUG}
   paths:
     - .bundle/
     - vendor/
+
+before_script:
+  - gem install bundler
+  - bundle install --path vendor/bundle/
 
 test:
   stage: test
