@@ -5,14 +5,14 @@ variables:
   LC_ALL: C.UTF-8
 
 cache:
-  key: ${CI_COMMIT_REF_SLUG}
+  key: "bundler:${CI_COMMIT_REF_SLUG}"
   paths:
-    - .bundle/
     - vendor/
 
 before_script:
   - gem install bundler
-  - bundle install --path vendor/bundle/
+  - bundle config set path 'vendor/bundle/'
+  - bundle install
 
 test:
   stage: test
