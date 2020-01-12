@@ -5,7 +5,10 @@ variables:
   LC_ALL: C.UTF-8
 
 cache:
-  key: "bundler:${CI_COMMIT_REF_SLUG}"
+  key:
+    files:
+      - Gemfile
+      - Gemfile.lock
   paths:
     - vendor/
 
