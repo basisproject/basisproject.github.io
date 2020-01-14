@@ -1,3 +1,25 @@
 <header>
+	<div class="inner">
+		<a class="logo" href="{{ '/' | prepend: site.baseurl }}">
+			<img class="logo" src="{{ '/assets/images/red_star.256.png' | prepend: site.baseurl }}" alt="Basis logo">
+			<span>Basis</span>
+		</a>
+		<ul class="nav">
+			<li><a href="{{ "/docs" | prepend: site.baseurl }}">Documentation</a></li>
+			<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
+			<li><a href="https://gitlab.com/basisproject/">Source &raquo;</a></li>
+		</ul>
+	</div>
 </header>
+
+{% if page.leader %}
+	<div class="page-leader" style="background-image: url({{ page.leader.image | prepend: site.paseurl }});">
+		<div class="inner">
+			<h1>{{ page.leader.text }}</h1>
+			{% if page.leader.subtext %}
+				<h2>{{ page.leader.subtext }}</h2>
+			{% endif %}
+		</div>
+	</div>
+{% endif %}
 

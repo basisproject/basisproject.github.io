@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
-	<body>
+	<body class="{{ page.body_class }} {% if page.leader %}has-leader{% endif %}">
 		{% include header.html %}
 		<div class="page-content">
 			<div class="wrapper">

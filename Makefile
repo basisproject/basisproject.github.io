@@ -1,16 +1,14 @@
 .PHONY: all clean
 
-DEST ?= _site
+DEST ?= public
 
 all: build
 
 build:
 	bundle exec jekyll build -d $(DEST)
 
-deploy: override DEST := public
 deploy: all
 
-
 clean:
-	rm -rf _site
+	rm -rf $(DEST)
 
