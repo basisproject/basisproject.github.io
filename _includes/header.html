@@ -13,7 +13,7 @@
 </header>
 
 {% if page.leader %}
-	<div class="page-leader" style="background-image: url({{ page.leader.image | prepend: site.paseurl }});">
+	<div class="page-leader" style="background-image: url({{ page.leader.image | prepend: site.baseurl }});">
 		<div class="inner">
 			<h1>{{ page.leader.text }}</h1>
 			{% if page.leader.subtext %}
