@@ -3,7 +3,7 @@ layout: default
 title: 'Basis: A framework for a socialist economy'
 leader:
   text: "A framework for a socialist economy"
-  subtext: "Basis is a decentralized and transparent set of tools to operate a profitless economy"
+  subtext: "Basis is a decentralized and transparent set of tools to collaboratively operate a profitless economy"
   image: /assets/images/container-ship.jpg
 ---
 
@@ -13,8 +13,8 @@ Basis is an [open-source](https://gitlab.com/basisproject/) set of tools that fa
 
 - A public market where companies and consumers can order products and services from each other
 - Cost tracking that determines the labor and resources (for example fossil fuels) that go into every product and service
-- Asset management for determining the use of publicly-owned assets (apartments, heavy machinery, etc)
-- Banking that helps interface with the outside market system
+- Asset management for determining the use of publicly-owned assets (housing, factories, heavy machinery, etc)
+- Banking that facilitates interfacing with the outside market system
 - Voting tools that promote self-determination of members
 - A system for defining and operating public companies and projects (such as hospitals, pharmaceutical research, space exploration, etc)
 
