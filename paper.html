@@ -1,0 +1,215 @@
+---
+layout: 'default'
+permalink: '/paper'
+---
+<header id="title-block-header">
+<h1 class="title">Basis: a blockchain implementation of a socialist mode of production</h1>
+<p class="subtitle">Or: How I learned to stop worrying and produce without profits</p>
+<p class="author">Andrew M. Lyon</p>
+</header>
+<h1 id="introduction">Introduction</h1>
+<p>Let’s start with a premise: we can make all the things we want and need without bowing to profit as our lord and without ceding control of our productive intruments to private owners (and we can do these things without an authoritarian government).</p>
+<p>Basis is a framework for achieving this goal. It allows companies to publish their products and services to an open network. It allows companies to order those products and services from other companies. It tracks the costs of production as products move through the economy. It allows transparent management of community assets. It allows purchases and elections that respect the privacy of individual users.</p>
+<p>Basis is a rewrite of our system of governance, with a focus on self-determination, limiting corruption, and creating equality of opportunity.</p>
+<h2 id="the-economics-of-socialism">The economics of socialism</h2>
+<p>What is an economy? It’s a network. Each node is a person or organization. Each connection between any number of nodes is a transaction. That is all. It doesn’t require money or capital, it doesn’t necessitate social or private ownership of factories or warehouses. It’s a simple network, and all it requires is the ability for two or more nodes to exchange. A blank slate!</p>
+<p>Given this, let’s start from scratch and discuss some possible ideas:</p>
+<ol type="1">
+<li>The system of exchange used to facilitate transactions</li>
+<li>The system of ownership exercised over the productive instruments</li>
+</ol>
+<h2 id="the-system-of-exchange-used-to-facilitate-transactions">The system of exchange used to facilitate transactions</h2>
+<p>Our real problem here is supply and demand. A market is essentially a distributed algorithm which finds a value that solves for the current supply and demand of a particular commodity. Price is that value. In essence, given supply and demand, find price. This is an oversimplification, but for our purposes this is fine.</p>
+<p>Given the above, what if instead of given supply and demand and solving for price, we start with demand and cost, we solve for supply? The solution is a bit more temporal…supply must be adjusted over time. But then again, if you think of supply not as “the current supply” but instead “the rate at which supply is replenished” (and similarly with demand) then supply <em>can</em> be adjusted almost as instantaneously as price. This can also be done in a distributed way. How?</p>
+<p>By measuring orders. Orders are the precursor to the transaction. They are a marker of economic intent. “I want this.” If you have a system where orders for widgets (and other products) are publicly available, it would be very easy to measure how many orders for widgets there are and how backlogged those orders are in aggregate. If there is a backlog of two weeks, perhaps then it makes sense to open a new widget factory.</p>
+<p>So in this system of transparency, orders become the signals of demand. In fact, demand becomes much easier to measure, and given demand, and a system of fixed (or at least not rapidly fluctuating) pricing, supply can be adjusted to meet demand. Thus, we do not need a market system of arbitrary prices to facilitate a system of primary production.</p>
+<p>Why bother with this, though? Because if you have consensus on setting “price” in terms of <em>costs to society</em> (labor, resources, externalities), then it becomes much easier to measure the actual costs of things. Markets abstract and obfuscate the costs. If a TV costs $100, I don’t know how much of that paid laborers, how much went into machine maintentance, how much into regulatory compliance, how much in profit, marketing, advertising, and so on and so forth. Not only this, but if you can measure all the inputs to production back to the raw materials, you can know which products used more fossil fuels. Which products used chemicals that are known pollutants. Suddenly a TV isn’t $100 anymore, but a few grams of silicone, 32 labor hours, 800 miles in shipping, 1.5 kilos of CO2, etc. How would our purchases change if we knew exactly what went into our products, and what byproducts they had? Whether we like it or not, the things we do affect those around us and it’s time to stop pretending they don’t.</p>
+<p>This method of measuring orders via a transparent network requires no central bureaucracy, meaning you can sidestep dreadful things like a command economy. Production would be measured based not on some obscured market process, but the actual costs to society.</p>
+<h2 id="the-system-of-ownership-exercised-over-the-productive-instruments">The system of ownership exercised over the productive instruments</h2>
+<p>Capitalism is a market system with privatized ownership of the means of production. Socialism necessitates the commonly-owned means of production.</p>
+<p>How is this common ownership exercised? What things are owned, in particular? Is my toothbrush really mine? If I lend my hammer to a friend, and she uses it at work, is my hammer then socialized?</p>
+<p>Let’s talk about two things: effectiveness and intent.</p>
+<p>Effectiveness in this case simply means “is it effective to socialize this?” Would socializing a toothbrush make sense? Would it make sense to track who is using it, schedule its repair and maintenance, arrange for its storage when not in use? By socializing something, there is necessarily some level of process and overhead it goes through…a cost to society. On top of this, if we were to socialize toothbrushes, and I order 100 of them for my toilet-bowl-cleaning-using-only-toothbrushes company, I might realize that there are only <em>soft</em> bristled toothbrushes available. I want <em>firm</em> bristles, or my fellow workers and I will have to scrub <em>twice as hard</em>. Do we socialize every form of toothbrush now? Or does it maybe make sense for our company to simply order the toothbrushes it needs, and for those toothbrushes be owned by our company, and accounted for in the costs of our services?</p>
+<p>Now, contrast that with a factory, warehouse, or office building. Whatever overhead cost there is in administration is a fraction of its value to society. Productive land, factories, warehouses, office buildings, heavy machinery, airports, seaports…these are the things that are <em>effective</em> to socialize.</p>
+<p>Secondly, intent. There are things that <em>can</em> be used in the productive process, and there are things that are <em>made</em> to be used in a productive capacity. Do people buy semi trucks for a hobby? Or are they almost exclusively used in production? What about factories? Now, what about our toothbrush from earlier? It’s not made for a productive use, but rather personal. It <em>can</em> be used in a productive capacity, but it’s not <em>made</em> for that.</p>
+<p>The point being, there is a clear divide between things that are made for the productive process, and things that are more general. Socialization, at least for the purposes of this system, concerns itself with those things that are <em>intended</em> solely for production.</p>
+<p>Along the lines of intent, things do not automatically <em>become</em> socialized just because they were used in a productive capacity. Instead, there must be a clear intent and effort to socialize it in the first place.</p>
+<h2 id="why-socialism-seems-difficult">Why socialism seems difficult</h2>
+<p>The reason why capitalism seems a much better solution than any form of socialism is because capitalism is <em>simple</em>. The pricing mechanism is simple. The ownership mechanism is simple. Anyone can price anything however they want. Anyone can own just about anything they want. Socializing the means of production, as well as using a non-market pricing system, takes more effort. It raises more questions. It changes our relationships to things. However, the simplicity of capitalism is not worth the problems that come with it.</p>
+<p>This paper will define a system that makes implementing and maintaining a socialist mode of production as simple as possible. Its goals are to use incentives, as opposed to coercion or force, to grow naturally and eat capitalism slowly over time, replacing it with a system that pays people the full value of their labor, distributes based on contribution, and accounts for the costs that capitalism externalizes. It will do this without sacrificing autonomy or individual choice, with the ultimate goal of providing for everyone: not just consumers, but workers as well, eliminating the jobs nobody wants to do, and eliminating the need for a market do exist just to do something meaningful.</p>
+<h1 id="chapter-1-defining-the-goals-of-basis">Chapter 1: Defining the goals of Basis</h1>
+<p>Basis is a foundation for automation and democratization of economic-related processes (and the governance thereof) within the framework of a socialist mode of production. The ultimate goal is to replace as much governance as possible with automation and to enable self-governance by members where automation is infeasible.</p>
+<p>Let’s go over some of the key goals of Basis.</p>
+<h2 id="membership">Membership</h2>
+<p>Membership of the system is controlled by policies set by current members. In general, a member of the system is a person who works at a member company, and member companies generally can join (or be created) under the conditions that they:</p>
+<ul>
+<li>Are a worker-owned company or multi-stakeholder company where the workers have significant representation</li>
+<li>Use Basis for their transactional system and labor time tracking</li>
+</ul>
+<p>Usage of the system is open to any non-member company (as a platform to sell their products and services for money/profit) for a monthly fee.</p>
+<h2 id="regions-and-locality">Regions and locality</h2>
+<p>While Basis aims to be a federated network of groups of producers all working together to meet each others’ needs, there still needs to be some level of local control. Nobody wants someone 1000 miles away telling them how to do things.</p>
+<p>Communal assets would fall under regional control. The idea is that someone in New York shouldn’t have any say over what happens to a tractor in Minnesota. Regions are groups of assets and economic parameters that are controlled by the members in that region.</p>
+<h2 id="cost-tracking">Cost tracking</h2>
+<p>Basis tracks disaggregate costs of products and services in terms of labor and resources. What does this mean? It means that a chair no longer costs $30, but rather 1.8 hours of labor, 12 kg wood, 3g steel, and 0.4l diesel fuel.</p>
+<p>Why do things this way? Why not just tally up the costs of everything and give a final number? Because the final number will have erased all of the costs involved in production.</p>
+<p>When we have a disaggregate list of costs for each product, producers, consumers, and governments can know the <em>exact</em> costs of something, as opposed to just <em>the market cost</em>. Fans of capitalism say that pricing allows you to compare the cost of two different things. They’re right in that prices as aggregate values allow easy comparison, but they’re also wrong because <em>prices don’t reflect costs</em>. Prices are arbitrary and meaningless, whereas costs are absolute.</p>
+<p>Basis allows tracking of <em>costs</em> of production, which retains information about the labor, resources, and to some extent the externalities it takes to make something.</p>
+<h2 id="public-market">Public market</h2>
+<p>A company can publish the products and services they provide, and Basis lets other companies (or consumers) order them.</p>
+<p>In a sense, Basis is like Amazon for companies: use it to order the things you need to run your company from other companies, and it will track the costs of production along the way.</p>
+<p>For members ordering from other members, no money is involved in the transaction. This means that that the larger the network of member companies grows, the easier it is to produce.</p>
+<h2 id="credit-system">Credit system</h2>
+<p>Basis allows a number of credit systems to be used. Credits are somewhat different than money because they don’t circulate the primary economy and they are destroyed when spent. For instance, if you have 10 labor credits, and you buy an apple for 3 credits, you now have 7 credits left and the 3 you spent on the apple are destroyed and removed from the economy.</p>
+<p>A few options for credits are used:</p>
+<ul>
+<li>Labor credits. These are essentially printed when labor is completed, with a multiplier set by the company the member works for. Upper limits on multipliers might be set regionally, such that the highest-paid member can only get 10x the lowest-paid member. This is really up to the region, the companies, and the members to decide. Labor credits could then be spent such that if I have 500 credits, I can purchase a product or service that took 500 hours (or less) to produce.</li>
+<li>Resource credits. Instead of getting credits that allow for spending on the labor content of products and services, members might receive resource credits for their labor. This would allow purchasing based on the resource content of products. This model would drive down resource usage of the economy.</li>
+<li>Hybrid credits. Perhaps members are paid in labor credits, but also have a carbon spending credit to lower use of fossil fuels.</li>
+</ul>
+<h2 id="asset-tracker">Asset tracker</h2>
+<p>Let’s say we communally own some houses, some office buildings, a few tractors…great! Who is in stewardship of them? Is there an end date to their use of that asset that we can use to determine if we need to acquire more? Are there specific terms for the use of it?</p>
+<p>Basis allows us to track these assets, who has them, how old they are, the costs of their maintenance, and so on. This data is transparent to members so communal decisions can be made in confidence.</p>
+<h2 id="voting">Voting</h2>
+<p>What good is the communal ownership of assets if you cannot exercise any sort of control over them? Basis allows various types of elections so members of the system can have a say over their shared property.</p>
+<p>This ranges from voting for people for specific permissions and positions in the system to voting for changing economic parameters.</p>
+<p>The idea is to allow self-governance in many forms, and not to force a particular setup on people.</p>
+<h2 id="public-services">Public services</h2>
+<p>At some point, it’s conceivable that this system might grow to large numbers of members. At some point, these members might want to have public services and infrastructure. It makes sense to define the ability to create regional (or extra-regional) projects or services that have member-decided budgets or recurring costs.</p>
+<p>Examples might be hospitals, schools, bridges, pharmaceutical research, space exploration, etc.</p>
+<h1 id="chapter-2-membership">Chapter 2: Membership</h1>
+<p>Membership in Basis is controlled by a few system-wide policies, and after that, by policies set by the members of a particular region. The global policy is fairly simple:membership can only be given to companies that are worker-owned or are multi-stakeholder companies with a significant portion owned by the workers, and member companies must use the Basis system for their selling, purchasing, and labor time tracking.</p>
+<p>Workers of a member company are automatically members.</p>
+<h2 id="member-services">Member services</h2>
+<p>Members have access to the assets owned by the region they are a member of, and this access is provided at-cost to them.</p>
+<p>What does this mean? If a region owns an apartment building, members can use it freely provided they collectively cover the costs of property taxes and maintenance. In other words, the region will not engage in extracting profit from members. This applies to not just housing, but commercial property, large machinery, and anything else the region owns.</p>
+<p>Members are given use of these assets, and while they are in use, are given control. So in our apartment example, if ten members share an apartment building, there is no landlord…those ten members <em>are</em> their own landlord and must set their own building rules, organize repairs, decide what portion of the expenses each of them pay (perhaps by number of bedrooms or square footage), and/or elect one of them to fulfill these duties. It’s important to note that performing maintenance and repairs of these buildings <em>would constitute labor</em> and they would receive their share of credits for performing these tasks (which would be incorporated into the cost of the building rent).</p>
+<h2 id="voting-rights">Voting rights</h2>
+<p>Members have voting rights in the system proportional to their contribution in hours of labor. A person who works 30 hours a week has twice as much voting power as someone who works 15 hours a week.</p>
+<p>A cap may be set on the upper limit of hours needed to have full represenation, meaning that if the cap is set at 40 hours a week, someone who works 50 hours a week has as much voting rights as someone who works 40 hours a week. The purpose of this would be to encourage work-life balance and this cap is decided regionally.</p>
+<h2 id="member-wallets">Member wallets</h2>
+<p>Members will have a “wallet” that stores their credits (more about this in chapter 6) which they can use to spend on goods and services in the Basis economy.</p>
+<p>Both members and non-members can have any number of currency wallets which hold national currencies such as USD.</p>
+<h2 id="non-member-users">Non-member users</h2>
+<p>Companies that are not members are free to use the system. They would be able to buy and sell products and services through the Basis network to both member and non-member companies. They may be charged a monthly fee for use of the service, and/or charged a per-transaction fee.</p>
+<p>Non-member users may be allowed use of regionally-owned assets, however they will be charged at market-rate. For instance, if an apartment building has ten units, five might be filled by members (who would be the property managers) and the other five might be rented out at market rate (the difference in the at-cost rent and the market rate going to the region’s bank).</p>
+<p>This concept of duality not only creates incentives for membership (at-cost use of regional assets) but also allows for growth of the region’s assets: new houses, apartments, office buildings, etc. Members are provided everything at-cost, non-members are provided at profit-extraction rates, with the difference going back to the region.</p>
+<h2 id="loss-of-membership">Loss of membership</h2>
+<p>As membership can given based on global and regional policy, it can also be revoked. For instance, a worker co-op that converts to a privately-owned corporation would lose membership in the system.</p>
+<p>Instead of forfeiting use of all regionally-owned assets, the region would simply engage in profit-extraction. For instance, if the company uses an office building, it is no longer provided at-cost, but rather at market-rate, and same for any housing used by the company members: they would have to start paying rent at market rate.</p>
+<h1 id="chapter-3-regions">Chapter 3: Regions</h1>
+<p>Regions are a core concept of the system. They define a geographical area (such as a city or county) that owns a set of assets which are managed by the members of that region. A region might own apartment buildings, houses, factories, warehouses, office buildings, tractors, and any other large assets related to production or housing.</p>
+<p>The goal of regions is to give the members of a particular area the ability to self-manage their own means of existence.</p>
+<h2 id="asset-ownership">Asset ownership</h2>
+<p>All communal assets are assigned to a particular region, and the members of that region have ultimate control over it. They can sell it on the market and use the funds to buy another asset. They can rent it out on the open market. They can demolish it completely. Asset ownership is regional.</p>
+<h2 id="regional-parameters">Regional parameters</h2>
+<p>Regions don’t just own things. They also have a set of member-decided parameters such as:</p>
+<ul>
+<li>Hourly cap on voting rights (after working a certain amount of hours, no additional voting rights are granted)</li>
+<li>Worker minimum average weekly hours to be given at-cost use of assets</li>
+<li>Worker credit multiplier cap</li>
+<li>Distribution plans for regional profits</li>
+<li>Budgets for regional projects and services (hospitals, schools, etc)</li>
+</ul>
+<h2 id="governance">Governance</h2>
+<p>Regions are self-governing, and therefor are free to choose whatever structure they see fit. For instance, how is it decided to buy a new asset? If there is a regionally-owned bank, what is its investment strategy? Are these decided via direct election or does the region elect a minister handles these decisions?</p>
+<p>Basis gives members the tools to create these structures and make these decisions without imposing any pre-determined bluebprint. Regions are free to self-govern as they see fit.</p>
+<h1 id="chapter-4-cost-tracking">Chapter 4: Cost tracking</h1>
+<p>Cost tracking is a very important concept in a socialist economy, especially absent the exchange of money between producing entities. Basis tracks costs on a per-company level over a certain period of time, and gives companies the freedom to assign their costs to their products proportionally. This is based on the inputs and outputs of the company, and costs are recalculated whenever any action in the company changes costs (a worker clocking out, a new order coming in, etc).</p>
+<h2 id="labor-costs">Labor costs</h2>
+<p>All things take labor to make or use. Apples must be picked. Iron must be mined. Chairs must be crafted.</p>
+<p>Basis tracks labor costs of companies. So if a worker clocks in, fills an order for 5 chairs in 8 hours, then clocks out, Basis knows that 5 chairs were created in 8 hours. This labor cost is then reflected in the costs of the chairs the company provides. However, not just the labor of the chair makers is accounted for, but also the labor cost of the workers who cut the trees for the lumber, and the workers who milled the lumber, and the delivery truck driver, etc.</p>
+<h2 id="resource-costs-and-resource-tags">Resource costs and resource tags</h2>
+<p>By default, Basis only tracks labor costs. However, it has the ability to track resources using the concept of “resource tags” which are attached to a particular product produced by a company. Resource tags tell the costing system to track that product not just as labor, but also as a resource.</p>
+<p>For instance, one might assign a resource tag to the iron that comes out of an iron mine. Then when the chair maker orders iron screws for the chairs she makes, the labor cost of the screws is added to the cost of the chairs, but so is the resource cost of the iron.</p>
+<p>If resource tags are added to various types of fossil fuels and scarce resources, then we can get an accurate picture of not just the labor it takes to make something, but also the resource usage, and to some extent the externalities.</p>
+<h2 id="cost-algorithm">Cost algorithm</h2>
+<p>The general algorithm for costing is as follows:</p>
+<pre><code>(costs of purchases + costs of labor) / outputs</code></pre>
+<p>There must however be some nuance here, because what if one product is heavily inventory-based and thus the cost of inventory should be more directly assigned to that product? This is where companies can use cost tags. Cost tags create “buckets” of different types of costs that can then be assigned to products and services proportionally.</p>
+<p>Let’s follow an example.</p>
+<p>Our company makes chairs. One is a basic chair and one is a more advanced chair. If built in equal quantities, the basic chair uses 20% of the total inventory cost, while the advanced chair uses the other 80%.</p>
+<p>On top of this, we have operational costs, such as the labor of our workers and the cost of the electricity to run our factory.</p>
+<p>So we create two cost tags: “Operational” and “Inventory” which will hold our costs. When workers clock in, the labor costs are assigned to the “Operational” bucket, and when we make purchase orders to buy wood for our chairs, those orders will fall under the “Inventory” bucket. It’s important to note that while we are using one tag for each cost here, multiple tags can be assigned in different proportions. More on this later.</p>
+<p>If we get an order for 10 basic chairs and 5 advanced chairs, we order the lumber we need. The order will take two workers 6 hours to complete, and the lumber costs 25 labor hours.</p>
+<p>So once the chairs are built, we have two cost buckets:</p>
+<ul>
+<li>Operational
+<ul>
+<li>12 labor hours (two workers * 6 hours)</li>
+</ul></li>
+<li>Inventory
+<ul>
+<li>25 labor hours</li>
+</ul></li>
+</ul>
+<p>How do we assign our costs accordingly to our products? Since the basic chair uses 20% of inventory and the advanced chair uses 80%, we assign these cost tags to the products accordingly, and because both chairs are the same cost operationally, we assign an equal value to each for operational costs:</p>
+<ul>
+<li>Basic
+<ul>
+<li>Operational: 1</li>
+<li>Inventory: 2</li>
+</ul></li>
+<li>Advanced
+<ul>
+<li>Operational: 1</li>
+<li>Inventory: 8</li>
+</ul></li>
+</ul>
+<p>Now it’s time to determine our costs:</p>
+<ul>
+<li>Basic:
+<ul>
+<li><code>((OperatingCost * (1 / (1 + 1))) + (InventoryCost * (2 / (2 + 8)))) / 10</code></li>
+<li><code>((12 * (1 / (1 + 1))) + (25 * (2 / (2 + 8)))) / 10</code></li>
+<li><code>1.1 labor hours each</code></li>
+</ul></li>
+<li>Advanced:
+<ul>
+<li><code>((OperatingCost * (1 / (1 + 1))) + (InventoryCost * (8 / (2 + 8)))) / 5</code></li>
+<li><code>((12 * (1 / (1 + 1))) + (25 * (8 / (2 + 8)))) / 5</code></li>
+<li><code>5.2 labor hours each</code></li>
+</ul></li>
+</ul>
+<p>It’s important to note that because the costs are a function of <code>costs over time / outputs over time</code> that costs will fluctuate more in the beginning of a company’s operation and smooth our over time. This can be mitigated to some extent by using amortization pools.</p>
+<h2 id="amortization-pools">Amortization pools</h2>
+<p>A company that makes chairs might need to invest up front in a chair-making machine. If this machine costs 100 labor hours, then the first order the company gets will be astronomically costly, and the first order likely won’t ever come.</p>
+<p>It’s important that companies be able to spread the cost of large purchases or lulls in production over a long period of time. This is where amortization pools come in.</p>
+<p>A company can open an amortization pool, which has a spending limit and a term (end date). Once opened, the pool will add to the company’s costs <em>hourly</em> as such:</p>
+<pre><code>spending limit / hours in term</code></pre>
+<p>Now the company can use cost tags to assign labor costs and orders into the amortization pool, and those costs will not be counted in the company’s direct costs (but rather will be accounted for by the amortization pool’s hourly cost).</p>
+<p>If a company spends more into the amortization pool than the spending limit, the extra costs will automatically be added to their direct costs. If an amortization pool term completes and the company has not reached the spending limit, costs can still be assigned to the pool until the spending limit is reached.</p>
+<p>Because amortization pools allow spreading costs over a long period of time (much like a bank loan), it’s important to note that various regions might have different rules on the circumstances these pools can be opened. For instance, there might be limits on the spending limits, term limits, number of open pools, etc.</p>
+<h1 id="chapter-5-public-market">Chapter 5: Public market</h1>
+<p>The public market is where companies order from other companies, but also where consumers order goods as well. The public market is both a service that lists available products and services, but also facilitates the orders between companies.</p>
+<p>Non-member companies are free to use the public market for buying or selling, but may have to pay a monthly service fee and/or per-transaction fee. Non-member users can use the public market for free.</p>
+<h2 id="offerings-and-pricing">Offerings and pricing</h2>
+<p>Products and services that are made available solely in the Basis economy will only need to list the products and the pricing of them will be automated. However, if a member (or non-member) company wishes to sell their product for non-member companies to purchase on the open market, products will need offerings. In the simplest case, this can just be a flat price. However, multiple offerings can be attached to a product, each with different criteria. Perhaps the price drops 10% on holidays. Maybe a certain buyer gets a 5% discount.</p>
+<p>Offerings are the interface between Basis products and the market system at large.</p>
+<p>For member companies, automated offerings can convert the labor content of a product into a market price (and add a percentage markup for profit).</p>
+<h2 id="interface">Interface</h2>
+<p>The public market’s web and mobile interfaces allow user access and a public API allowing for automatic operations (such as automated purchasing or updating stock contents).</p>
+<h2 id="anonymity">Anonymity</h2>
+<p>While the transactions between member companies are transparent and freely observable by any member of any region, there are a few cases where privacy is offered:</p>
+<ul>
+<li>Consumer purchases. Whether a member or a non-member, purchasing goods from a member company are anonymous. The order is still be viewable by members, but looks like it came from the Basis system directly and is not tied back to the user in any way. Only the user and the company have the full information on the order.</li>
+<li>Non-member company orders. Any time a non-member company is involved in an order, the order details will be available, but the non-member company will be anonymized. This is to protect the privacy of companies who do not wish for their purchasing to be transparent. Like consumer purchases, the order will look like it came from the Basis system directly, and the non-member company’s identity will be anonymized.</li>
+</ul>
+<p>The specifics of the anonymity algorithm are not yet decided. Please see <a href="https://gitlab.com/basisproject/tracker/issues/4" class="uri">https://gitlab.com/basisproject/tracker/issues/4</a>.</p>
+<h2 id="point-of-sale">Point of sale</h2>
+<p>Point of sale integration allows companies in physical locations to create orders directly from scanned items and take payment from customers.</p>
+<h1 id="chapter-6-credit-system">Chapter 6: Credit system</h1>
+<p>Workers, in exchange for their labor, receive credits. After a labor record has been closed for a seven-day period, credits are added to that worker’s Basis account balance.</p>
+<p>Credits can be spent on goods and services provided by companies in the Basis system, and are destroyed on spending. Credits do not expire, and are transferable to other members freely.</p>
+<h2 id="labor-and-resources">Labor and resources</h2>
+<p>Because Basis tracks costs of products and services in terms of labor and resources, it makes sense that the credits people can spend in exchange for those products and services would be denominated in labor and resources.</p>
+<p>Credits will have a negotiable multiplier. For instance, if a doctor has a multiplier of 9 and she works 5 hours, she will get 45 credits.</p>
+<p>The labor content of credits will always be based on hours of work completed. The resource content of resources will likely be a globally-decided (democratically) set of resources that reflect the resource usage plan of the system. For instance, if the world’s iron reserves are estimated to be depleted in 10 years, the members of the system might vote to reduce the iron content of the resource credits, thus slowly weening off iron usage. Or if, hypothetically (and believe me this is a hypothetical!!), some sort of climate disaster caused by unearthing some resource and burning it runs rampant, the members of the system might vote to limit the resources responsible for that hypothetical climate problem.</p>
+<h2 id="currency-exchange">Currency exchange</h2>
+<p>Exchange between credits and national currency will be possible through a member-owned bank. This bank will have a pool of capital specifically used to back the value of the credits. Members can convert their credits into currency (say, USD), however <em>credits will never be issued in exchange for currency</em>. The only way for new credits to be issued is to perform labor in the system!</p>
+<h1 id="chapter-7-asset-tracker">Chapter 7: Asset tracker</h1>
+<p>TODO</p>
+<h1 id="chapter-8-voting">Chapter 8: Voting</h1>
+<p>TODO</p>
+<h1 id="chapter-9-public-services">Chapter 9: Public services</h1>
+<p>TODO</p>
