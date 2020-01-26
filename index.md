@@ -18,7 +18,7 @@ Basis is an [open-source](https://gitlab.com/basisproject/) set of tools that fa
 - Voting tools that promote self-determination of members
 - A system for defining and operating public companies and projects (such as hospitals, pharmaceutical research, space exploration, etc)
 
-The goal of Basis is not to provide a societal blueprint, but rather provide tools that empower people to build their own society. The project uses the concept of "regions" which act as geographical containers, allowing the people within a region to decide how their region should operate.
+The goal of Basis is not to provide a societal blueprint, but rather provide tools that empower people to build their own society around production based on need instead of profit. The project uses the concept of "regions" which act as federated geographical containers, allowing the people of a particular area decide for themselves how their region should operate.
 
 [Read the Basis paper]({{ "/paper" | prepend: site.baseurl }}) for more information.
 
