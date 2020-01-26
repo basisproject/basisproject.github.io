@@ -17,6 +17,7 @@ paper.html: ../paper/converted/basis.html
 	@echo "---" > $@
 	@echo "layout: 'default'" >> $@
 	@echo "permalink: '/paper'" >> $@
+	@echo "title: 'Basis Paper'" >> $@
 	@echo "---" >> $@
 	cat $^ | sed '0,/<body>/d' | grep -v -P '</(body|html)>' >> $@
 
