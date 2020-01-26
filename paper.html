@@ -20,7 +20,7 @@ permalink: '/paper'
 </ol>
 <h2 id="the-system-of-exchange-used-to-facilitate-transactions">The system of exchange used to facilitate transactions</h2>
 <p>Our real problem here is supply and demand. A market is essentially a distributed algorithm which finds a value that solves for the current supply and demand of a particular commodity. Price is that value. In essence, given supply and demand, find price. This is an oversimplification, but for our purposes this is fine.</p>
-<p>Given the above, what if instead of given supply and demand and solving for price, we start with demand and cost, we solve for supply? The solution is a bit more temporal…supply must be adjusted over time. But then again, if you think of supply not as “the current supply” but instead “the rate at which supply is replenished” (and similarly with demand) then supply <em>can</em> be adjusted almost as instantaneously as price. This can also be done in a distributed way. How?</p>
+<p>Given the above, what if instead of given supply and demand and solving for price, we start with demand and cost and we solve for supply? The solution is a bit more temporal…supply must be adjusted over time. But then again, if you think of supply not as “the current supply” but instead “the rate at which supply is replenished” (and similarly with demand) then supply <em>can</em> be adjusted almost as instantaneously as price. This can also be done in a distributed way. How?</p>
 <p>By measuring orders. Orders are the precursor to the transaction. They are a marker of economic intent. “I want this.” If you have a system where orders for widgets (and other products) are publicly available, it would be very easy to measure how many orders for widgets there are and how backlogged those orders are in aggregate. If there is a backlog of two weeks, perhaps then it makes sense to open a new widget factory.</p>
 <p>So in this system of transparency, orders become the signals of demand. In fact, demand becomes much easier to measure, and given demand, and a system of fixed (or at least not rapidly fluctuating) pricing, supply can be adjusted to meet demand. Thus, we do not need a market system of arbitrary prices to facilitate a system of primary production.</p>
 <p>Why bother with this, though? Because if you have consensus on setting “price” in terms of <em>costs to society</em> (labor, resources, externalities), then it becomes much easier to measure the actual costs of things. Markets abstract and obfuscate the costs. If a TV costs $100, I don’t know how much of that paid laborers, how much went into machine maintentance, how much into regulatory compliance, how much in profit, marketing, advertising, and so on and so forth. Not only this, but if you can measure all the inputs to production back to the raw materials, you can know which products used more fossil fuels. Which products used chemicals that are known pollutants. Suddenly a TV isn’t $100 anymore, but a few grams of silicone, 32 labor hours, 800 miles in shipping, 1.5 kilos of CO2, etc. How would our purchases change if we knew exactly what went into our products, and what byproducts they had? Whether we like it or not, the things we do affect those around us and it’s time to stop pretending they don’t.</p>
@@ -59,6 +59,8 @@ permalink: '/paper'
 <p>A company can publish the products and services they provide, and Basis lets other companies (or consumers) order them.</p>
 <p>In a sense, Basis is like Amazon for companies: use it to order the things you need to run your company from other companies, and it will track the costs of production along the way.</p>
 <p>For members ordering from other members, no money is involved in the transaction. This means that that the larger the network of member companies grows, the easier it is to produce.</p>
+<h2 id="banking">Banking</h2>
+<p>Because regions interface with the market system, they need some form of translation between credits earned from labor and the market currency. This is where the regional bank comes in. It acts as a holder for local currency and determines the exchange rate going from internal credits to external currency. The bank also enacts policies and criteria about the cost structure of companies. For instance, the bank determines the conditions under which a company is considered bankrupt (not providing enough value either to members or non-members to justify its existence).</p>
 <h2 id="credit-system">Credit system</h2>
 <p>Basis allows a number of credit systems to be used. Credits are somewhat different than money because they don’t circulate the primary economy and they are destroyed when spent. For instance, if you have 10 labor credits, and you buy an apple for 3 credits, you now have 7 credits left and the 3 you spent on the apple are destroyed and removed from the economy.</p>
 <p>A few options for credits are used:</p>
@@ -74,7 +76,7 @@ permalink: '/paper'
 <p>What good is the communal ownership of assets if you cannot exercise any sort of control over them? Basis allows various types of elections so members of the system can have a say over their shared property.</p>
 <p>This ranges from voting for people for specific permissions and positions in the system to voting for changing economic parameters.</p>
 <p>The idea is to allow self-governance in many forms, and not to force a particular setup on people.</p>
-<h2 id="public-services">Public services</h2>
+<h2 id="public-companiesprojects">Public companies/projects</h2>
 <p>At some point, it’s conceivable that this system might grow to large numbers of members. At some point, these members might want to have public services and infrastructure. It makes sense to define the ability to create regional (or extra-regional) projects or services that have member-decided budgets or recurring costs.</p>
 <p>Examples might be hospitals, schools, bridges, pharmaceutical research, space exploration, etc.</p>
 <h1 id="chapter-2-membership">Chapter 2: Membership</h1>
@@ -84,6 +86,8 @@ permalink: '/paper'
 <p>Members have access to the assets owned by the region they are a member of, and this access is provided at-cost to them.</p>
 <p>What does this mean? If a region owns an apartment building, members can use it freely provided they collectively cover the costs of property taxes and maintenance. In other words, the region will not engage in extracting profit from members. This applies to not just housing, but commercial property, large machinery, and anything else the region owns.</p>
 <p>Members are given use of these assets, and while they are in use, are given control. So in our apartment example, if ten members share an apartment building, there is no landlord…those ten members <em>are</em> their own landlord and must set their own building rules, organize repairs, decide what portion of the expenses each of them pay (perhaps by number of bedrooms or square footage), and/or elect one of them to fulfill these duties. It’s important to note that performing maintenance and repairs of these buildings <em>would constitute labor</em> and they would receive their share of credits for performing these tasks (which would be incorporated into the cost of the building rent).</p>
+<h2 id="key-management">Key management</h2>
+<p>TODO</p>
 <h2 id="voting-rights">Voting rights</h2>
 <p>Members have voting rights in the system proportional to their contribution in hours of labor. A person who works 30 hours a week has twice as much voting power as someone who works 15 hours a week.</p>
 <p>A cap may be set on the upper limit of hours needed to have full represenation, meaning that if the cap is set at 40 hours a week, someone who works 50 hours a week has as much voting rights as someone who works 40 hours a week. The purpose of this would be to encourage work-life balance and this cap is decided regionally.</p>
@@ -105,7 +109,7 @@ permalink: '/paper'
 <h2 id="regional-parameters">Regional parameters</h2>
 <p>Regions don’t just own things. They also have a set of member-decided parameters such as:</p>
 <ul>
-<li>Hourly cap on voting rights (after working a certain amount of hours, no additional voting rights are granted)</li>
+<li>Per-week hourly ceiling on voting rights (after working a certain amount of hours, no additional voting rights are granted)</li>
 <li>Worker minimum average weekly hours to be given at-cost use of assets</li>
 <li>Worker credit multiplier cap</li>
 <li>Distribution plans for regional profits</li>
@@ -198,7 +202,9 @@ permalink: '/paper'
 <p>The specifics of the anonymity algorithm are not yet decided. Please see <a href="https://gitlab.com/basisproject/tracker/issues/4" class="uri">https://gitlab.com/basisproject/tracker/issues/4</a>.</p>
 <h2 id="point-of-sale">Point of sale</h2>
 <p>Point of sale integration allows companies in physical locations to create orders directly from scanned items and take payment from customers.</p>
-<h1 id="chapter-6-credit-system">Chapter 6: Credit system</h1>
+<h1 id="chapter-6-banking">Chapter 6: Banking</h1>
+<p>TODO</p>
+<h1 id="chapter-7-credit-system">Chapter 7: Credit system</h1>
 <p>Workers, in exchange for their labor, receive credits. After a labor record has been closed for a seven-day period, credits are added to that worker’s Basis account balance.</p>
 <p>Credits can be spent on goods and services provided by companies in the Basis system, and are destroyed on spending. Credits do not expire, and are transferable to other members freely.</p>
 <h2 id="labor-and-resources">Labor and resources</h2>
@@ -207,9 +213,9 @@ permalink: '/paper'
 <p>The labor content of credits will always be based on hours of work completed. The resource content of resources will likely be a globally-decided (democratically) set of resources that reflect the resource usage plan of the system. For instance, if the world’s iron reserves are estimated to be depleted in 10 years, the members of the system might vote to reduce the iron content of the resource credits, thus slowly weening off iron usage. Or if, hypothetically (and believe me this is a hypothetical!!), some sort of climate disaster caused by unearthing some resource and burning it runs rampant, the members of the system might vote to limit the resources responsible for that hypothetical climate problem.</p>
 <h2 id="currency-exchange">Currency exchange</h2>
 <p>Exchange between credits and national currency will be possible through a member-owned bank. This bank will have a pool of capital specifically used to back the value of the credits. Members can convert their credits into currency (say, USD), however <em>credits will never be issued in exchange for currency</em>. The only way for new credits to be issued is to perform labor in the system!</p>
-<h1 id="chapter-7-asset-tracker">Chapter 7: Asset tracker</h1>
+<h1 id="chapter-8-asset-tracker">Chapter 8: Asset tracker</h1>
 <p>TODO</p>
-<h1 id="chapter-8-voting">Chapter 8: Voting</h1>
+<h1 id="chapter-9-voting">Chapter 9: Voting</h1>
 <p>TODO</p>
-<h1 id="chapter-9-public-services">Chapter 9: Public services</h1>
+<h1 id="chapter-10-public-services">Chapter 10: Public services</h1>
 <p>TODO</p>
