@@ -8,36 +8,14 @@
 @text-color: #111;
 @header-color: #c22;  // #333;
 @site-width: 1024px;
-@font-text: 'Noto Serif', serif;
-@font-header: 'Noto Serif', serif;
-@font-impact: impact;
+@font-text: 'Titillium Web', sans-serif;
+@font-header: 'Teko', sans-serif;
+@font-impact: 'Teko', sans-serif;
 
 // -----------------------------------------------------------------------------
 // Fonts
 // -----------------------------------------------------------------------------
-@font-face {
-	font-family: 'Bolshevik';
-	font-style: normal;
-	font-weight: 400;
-	font-display: swap;
-	src: url(../assets/fonts/bolshevik.otf) format('opentype');
-}
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Noto Serif'), local('NotoSerif'), url(../assets/fonts/noto-serif.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Noto Serif';
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: local('Noto Serif'), local('NotoSerif'), url(../assets/fonts/noto-serif-ext.woff2) format('woff2');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
+@import './css/fonts.less';
 
 // -----------------------------------------------------------------------------
 // Template
@@ -49,7 +27,8 @@ body > header {
 	.inner {width: @site-width; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px;}
 	.nav {display: flex; list-style: none; margin: 0 0 0 0; padding: 2px 0 0 0;}
 	.nav {
-		li a {display: block; margin: 0 8px; color: #222;}
+		li a {display: block; margin: 0 8px; font-family: 'Teko'; font-size: 22px; color: #222; text-decoration: none;}
+		li a:hover {text-decoration: underline;}
 	}
 	.logo {display: flex; text-decoration: none; color: #000;}
 	.logo {
@@ -60,13 +39,17 @@ body > header {
 
 * {box-sizing: border-box;}
 
+a {color: @header-color;}
+a:visited {color: darken(@header-color, 15%);}
+
 .page-content {max-width: @site-width; margin: 0 auto 64px auto; line-height: 1.4em;}
 .page-content {
 	.wrapper {padding: 0 24px;}
 	h1, h2, h3 {font-family: @font-header; font-weight: 200; color: @header-color; line-height: 1.1em;}
 	h1 {font-size: 40px; margin-bottom: 18px;}
 	h2 {font-size: 30px; margin-bottom: 13px;}
-	h3 {font-size: 22px; margin-bottom: 10px;}
+	h3 {font-size: 24px; margin-bottom: 10px;}
+	h1 small {display: inline-block; margin: 0 0 0 9px; font-size: 18px; vertical-align: middle;}
 
 	ul, ol {margin-left: 32px; margin-bottom: 16px;}
 	ul, ol {
@@ -78,6 +61,8 @@ body > header {
 
 	pre {margin: 0 0 16px 0; overflow-x: auto;}
 	code {padding: 2px 8px; white-space: pre; font-family: Consolas, "Liberation Mono", Courier, monospace; background: #eee5e5;}
+
+	em {font-style: italic;}
 }
 
 
@@ -87,10 +72,34 @@ body > header {
 body.has-leader {
 	header {margin-bottom: 0;}
 }
-.page-leader {background-position: center center; background-repeat: no-repeat; margin-bottom: 64px;}
+.page-leader {margin-bottom: 64px; background-position: center center; background-repeat: no-repeat; background-size: cover;}
 .page-leader {
 	.inner {display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px; text-align: center; color: #fff; background: rgba(0, 0, 0, 0.6);}
-	h1 {max-width: @site-width; font-size: 42px; font-family: @font-impact;}
+	h1 {max-width: @site-width; font-size: 64px; font-family: @font-impact;}
 	h2 {max-width: (@site-width / 1.8); margin-top: 16px; font-size: 22px; line-height: 1.2em;}
+}
+
+// -----------------------------------------------------------------------------
+// Posts
+// -----------------------------------------------------------------------------
+.post {
+	.date {font-weight: bold; font-size: 0.9em;}
+}
+.post-list {list-style: none; margin: 0 !important; padding: 0 !important;}
+.post-list {
+	li {padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.2);}
+	li:last-child {border-bottom: 0;}
+	&.summary {
+		li {padding-top: 6px; margin-bottom: 10px;}
+	}
+	.post-header {
+		&.brief {
+			h3 {margin: 0; padding: 0;}
+			.date {margin: 0; padding: 0; font-weight: normal;}
+		}
+	}
+}
+.post {
+	h1, h1 a {text-decoration: none; color: @header-color;}
 }
 

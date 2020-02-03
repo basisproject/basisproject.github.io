@@ -1,0 +1,36 @@
+{% if include.brief == 1 %}
+	<div class="post-header brief">
+		<h3>
+			<a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
+		</h3>
+		<p class="date">{% if include.post.author %}{{ include.post.author }} - {% endif %}{{ include.post.date | date: "%Y/%m/%d" }}</p>
+	</div>
+{% else %}
+	<div class="post-header">
+		<h1>
+			<a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
+		</h1>
+		<p class="date">{% if include.post.author %}{{ include.post.author }} - {% endif %}{{ include.post.date | date: "%Y/%m/%d" }}</p>
+	</div>
+	<article>
+		{% if include.content %}
+			{{ include.content }}
+		{% else %}
+			{{ include.post.content }}
+		{% endif %}
+	</article>
+
+	{% unless include.skip_comment_link %}
+		<a class="commentlink" href="{{ include.post.url | prepend: site.baseurl }}#comments">Comments</a>
+	{% endunless %}
+
+	{% if include.post.tags.size > 0 %}
+		<ul class="tags">
+			<li><icon>&#xE800;</icon></li>
+			{% for tag in include.post.tags %}
+				<li><a href="/{{site.tag_archive.path}}/{{ tag | slugify }}">{{ tag }}</a></li>
+			{% endfor %}
+		</ul>
+	{% endif %}
+{% endif %}
+

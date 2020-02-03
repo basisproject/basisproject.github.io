@@ -1,0 +1,10 @@
+<div class="post-container">
+	<ul class="post-list summary">
+		{% for post in site.posts %}
+			<li class="post">
+				{% include post-inner.html post=post brief=1 %}
+			</li>
+		{% endfor %}
+	</ul>
+</div>
+

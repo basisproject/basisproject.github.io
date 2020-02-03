@@ -23,12 +23,16 @@ email: orthecreedence@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Documentation and information about the Basis project
 baseurl: "/public" # the subpath of your site, e.g. /blog
-url: "/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+paginate: 10
+paginate_path: "/posts/page/:num"
+permalink: "/posts/:year/:month/:title/"
 
 # Build settings
 #theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-paginate
 
 # Exclude from processing.
 # The following items will not be processed, by default.

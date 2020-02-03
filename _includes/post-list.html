@@ -1,0 +1,31 @@
+<div class="post-container">
+	<ul class="post-list">
+		{% for post in paginator.posts %}
+			<li class="post">
+				{% include post-inner.html post=post skip_comment_link=1 %}
+			</li>
+		{% endfor %}
+	</ul>
+
+	{% unless paginator.total_pages == 1 %}
+		<p class="pagination">
+			{% comment %}
+			<span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
+			{% endcomment %}
+
+			{% if paginator.previous_page %}
+				<a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">Newer</a>
+			{% else %}
+				Newer
+			{% endif %}
+			&nbsp;|&nbsp;
+			{% if paginator.next_page %}
+				<a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">Older</a>
+			{% else %}
+				Older
+			{% endif %}
+		</p>
+	{% endunless %}
+</div>
+
+
