@@ -44,6 +44,16 @@ Apartments would be "in-use" by multiple members of the region and therefor woul
 
 Do they elect one of themselves to be an ongoing maintenance person? Do they take turns managing the property? Split up duties? Hire an outside maintenance company? Let everything decay into squalor? It's up to the people occupying the property to decide how it will be managed.
 
+## Where do companies get the money to pay workers and buy things?
+
+Companies don't use money. They simply order the things they need to fill the orders that they receive, and the system pays workers by printing credits for their labor.
+
+## So you're just printing money?
+
+Yes, printing it when labor is completed, and destroying it when it's spent.
+
+What is really being done is creating a barrier around the productive system such that a form of money is used *outside of it* but not *inside*, with the end goal of centering production around need instead of profit.
+
 ## How will investment work?
 
 Because money isn't used in this system, investment will work much differently. Instead of borrowing money to pay for things that you can hopefully use to make *more* money, you simply order the things you need from various producers in the system. If they see the need behind what you're producing, they will have no doubt have no problem expending some amount of their labor to produce the things you need. Granted, they might want to do so on a smaller scale at first while your company is still new and your relationship with them is still forming.
@@ -90,7 +100,7 @@ This allows members of the system to adjust resource consumption to match the av
 
 Because quantitative easing, bond yield curves, treasury notes, packages of debt derivatives, options contracts, equity, convertible notes, commodity futures, price shocks, speculation, and 401Ks are all really simple?
 
-What is really being done is creating a barrier around the productive system such that a form of money is used *outside of it* but not *inside*, with the end goal of centering production around need instead of profit. I believe in the end the system will be less complicated, and those who participate will trust each other much more than they do with a money/profit system.
+There is nothing inherently simple about currency in its current, modernized form. If anything we're simplifying the relations that money supposedly mediates.
 
 ## How do you get the precise data on labor, purchases, and sales?
 
