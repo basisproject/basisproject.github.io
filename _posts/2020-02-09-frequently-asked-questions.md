@@ -44,6 +44,14 @@ Apartments would be "in-use" by multiple members of the region and therefor woul
 
 Do they elect one of themselves to be an ongoing maintenance person? Do they take turns managing the property? Split up duties? Hire an outside maintenance company? Let everything decay into squalor? It's up to the people occupying the property to decide how it will be managed.
 
+## How will investment work?
+
+Because money isn't used in this system, investment will work much differently. Instead of borrowing money to pay for things that you can hopefully use to make *more* money, you simply order the things you need from various producers in the system. If they see the need behind what you're producing, they will have no doubt have no problem expending some amount of their labor to produce the things you need. Granted, they might want to do so on a smaller scale at first while your company is still new and your relationship with them is still forming.
+
+Startup costs can be spread over longer periods of time using the system's concept of amortization pools, and each region would have its own rules surrounding cost amortization.
+
+Essentially investment becomes distributed amongst the producers and the region itself, rather than capital holders.
+
 ## What about entrepreneurship?
 
 Anybody is free to start a company, and this company can do anything you'd like. That said, it must be a worker-owned co-op, so anyone you hire will also be part owner of the company.
