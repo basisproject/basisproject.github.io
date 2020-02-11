@@ -6,6 +6,14 @@ author: "Andrew Lyon"
 
 During the course of this project's slow and steady creation, I've had many conversations and debates about it. Here are some of the common questions I've received and their responses in the context of Basis and the long term vision of how it might be implemented.
 
+## Who decides who can start a company?
+
+You do. There are no central planners. If your company agrees to use the Basis system and is a worker-owned cooperative, it can join, and by working there, you are a member. As long as the company is meeting a social need, it can operate within the system.
+
+## How do you define meeting a social need?
+
+Because we define orders as a sign of direct demand, for our purposes "meeting a social need" means filling some amount of orders over a certain period of time. How many orders and how much time really depends on the region and the company, but the general metric is: how much direct demand is there for your products and services?
+
 ## Doesn't removing the need for profit make companies less efficient?
 
 This depends entirely on what you're optimizing for. If you're optimizing for the company's personal gain at the expense of the rest of society and the environment, then yes, removing profit makes things less efficient.
