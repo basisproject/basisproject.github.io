@@ -118,7 +118,7 @@ Essentially, companies volunteer this information by using the system. As with e
 
 ## What are the means of production?
 
-For our purposes, productive land such as farms and water sources, airports, seaports, factories, warehouses, office buildings, and large production machinery and equipment.
+For our purposes, productive land such as farms, airports, seaports, factories, warehouses, office buildings, and large production machinery and equipment.
 
 Really, anything built for and/or used primarily for productive purposes.
 
