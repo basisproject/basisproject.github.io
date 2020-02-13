@@ -134,7 +134,7 @@ So while you probably won't walk down to the neighborhood Dental Rental Emporium
 
 ## If I use my personal laptop in a productive capacity, does it become the People's Laptop?
 
-No. Socialization requires an active intent: it is not implicit. Just because something is used in a production capacity does not automatically mean it is now communally owned. Exactly what is socialized and what isn't is a decision made democratically by each region, and doesn't affect your personal belongings.
+No. Socialization requires an active intent: it is not implicit. Just because something is used in a productive capacity does not automatically mean it is now communally owned. Exactly what is socialized and what isn't is a decision made democratically by each region, and doesn't affect your personal belongings.
 
 ## But isn't socialism evil?
 
