@@ -4,11 +4,12 @@ export SHELL := /bin/bash
 
 DEST ?= public
 PAPERFILES = $(shell find ../paper/src)
+DRAFTS ?= --drafts
 
 all: build
 
 build:
-	bundle exec jekyll build -d $(DEST)
+	bundle exec jekyll build $(DRAFTS) -d $(DEST)
 
 ../paper/converted/basis.html: $(PAPERFILES)
 	cd ../paper && make html
@@ -23,6 +24,7 @@ paper.html: ../paper/converted/basis.html
 
 paper: paper.html all
 
+deploy: DRAFTS :=
 deploy: all
 
 clean:
