@@ -1,0 +1,10 @@
+{
+  "name": "basis-www",
+  "version": "0.1.0",
+  "description": "Basis website",
+  "author": "Andrew Lyon",
+  "license": "GPLv3",
+  "devDependencies": {
+    "uikit": "^3.3.2"
+  }
+}

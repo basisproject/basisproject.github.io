@@ -1,11 +1,11 @@
 <div class="post-container">
-	<ul class="post-list summary">
+	<div class="post-list summary">
 		{% assign trimmed_posts = site.posts | slice: 0, 10 %}
 		{% for post in trimmed_posts %}
-			<li class="post">
+			<div class="post">
 				{% include post-inner.html post=post brief=1 skip_comment_link=1 %}
-			</li>
+			</div>
 		{% endfor %}
-	</ul>
+	</div>
 </div>
 

@@ -16,7 +16,7 @@ build:
 
 paper.html: ../paper/converted/basis.html
 	@echo "---" > $@
-	@echo "layout: 'default'" >> $@
+	@echo "layout: 'page'" >> $@
 	@echo "permalink: '/paper'" >> $@
 	@echo "title: 'Basis Paper'" >> $@
 	@echo "---" >> $@

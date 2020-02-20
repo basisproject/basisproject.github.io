@@ -1,19 +1,62 @@
-<header>
-	<div class="inner">
-		<a class="logo" href="{{ '/' | prepend: site.baseurl }}">
-			<img class="logo" src="{{ '/assets/images/red_star.256.png' | prepend: site.baseurl }}" alt="Basis logo">
-			<span>Basis</span>
-		</a>
-		<ul class="nav">
-			<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
-			<li><a href="{{ "/docs" | prepend: site.baseurl }}">Documentation</a></li>
-			<li><a href="{{ "/posts" | prepend: site.baseurl }}">News</a></li>
-			<li><a href="{{ "/roadmap" | prepend: site.baseurl }}">Roadmap &raquo;</a></li>
-			<li><a href="https://gitlab.com/basisproject/">Source &raquo;</a></li>
-		</ul>
-	</div>
-</header>
+{% if page.leader %}
+<div class="main-nav-container uk-background-cover uk-position-relative" style="background-image: url({{ page.leader.image | prepend: site.baseurl }});" uk-parallax="media: @m; easing: 0.2; bgy: -64,0">
+	<div class="overlay">&nbsp;</div>
+{% else %}
+<div class="main-nav-container">
+{% endif %}
+	<div class="uk-container">
+		<nav class="main" uk-navbar>
+			<div class="uk-navbar-left">
+				<a class="uk-navbar-item uk-logo uk-margin-right uk-text-secondary" href="{{ '/' | prepend: site.baseurl }}">
+					<img class="uk-margin-small-right" src="{{ '/assets/images/red-star.svg' | prepend: site.baseurl }}"><span>Basis</span>
+				</a>
+			</div>
+			<div class="uk-navbar-right">
+				<ul class="uk-navbar-nav uk-visible@s">
+					<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
+					<li><a href="{{ "/docs" | prepend: site.baseurl }}">Documentation</a></li>
+					<li><a href="{{ "/posts" | prepend: site.baseurl }}">News</a></li>
+					<li><a title="Source code" href="https://gitlab.com/basisproject/"><icon>&#xF296;</icon>&nbsp;&nbsp;Source &raquo;</a></li>
+					<li><a title="Basis community" href="https://www.reddit.com/r/basisproject"><icon>&#xF281;</icon>&nbsp;&nbsp;Community &raquo;</a></li>
+				</ul>
+			</div>
 
+			<div class="uk-navbar-right uk-hidden@s">
+				<a class="uk-navbar-item" href="#mobile-nav" uk-toggle><span uk-icon="icon: menu"></span></a>
+			</div>
+			<div id="mobile-nav" uk-offcanvas>
+				<div class="uk-offcanvas-bar">
+					<a class="uk-offcanvas-close"><span uk-icon="icon: close"></span></a>
+					<ul class="uk-nav">
+						<li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+						<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
+						<li><a href="{{ "/docs" | prepend: site.baseurl }}">Documentation</a></li>
+						<li><a href="{{ "/posts" | prepend: site.baseurl }}">News</a></li>
+						<li><a title="Source code" href="https://gitlab.com/basisproject/"><icon>&#xF296;</icon>&nbsp;&nbsp;Source &raquo;</a></li>
+						<li><a title="Basis community" href="https://www.reddit.com/r/basisproject"><icon>&#xF281;</icon>&nbsp;&nbsp;Community &raquo;</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		{% if page.leader %}
+			<div class="hero uk-section uk-light uk-background-cover">
+				<div class="hero-container uk-container uk-container-small uk-padding">
+					<div class="info uk-flex uk-flex-middle uk-flex-center uk-flex-wrap uk-text-center">
+						<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-small-bottom">
+							{{ page.leader.text }}
+						</h1>
+						<h2 class="uk-margin-remove">
+							{{ page.leader.subtext }}
+						</h2>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+	</div>
+</div>
+
+<!--
 {% if page.leader %}
 	<div class="page-leader" style="background-image: url({{ page.leader.image | prepend: site.baseurl }});">
 		<div class="inner">
@@ -23,5 +66,8 @@
 			{% endif %}
 		</div>
 	</div>
+{% else %}
+lol
 {% endif %}
+-->
 

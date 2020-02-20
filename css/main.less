@@ -4,19 +4,153 @@
 // -----------------------------------------------------------------------------
 // Theme definition
 // -----------------------------------------------------------------------------
-@background: #f0f0f0;
+@background: #fff; //#f0f0f0;
 @text-color: #111;
 @header-color: #c22;  // #333;
 @site-width: 1024px;
 @font-text: 'Titillium Web', sans-serif;
 @font-header: 'Teko', sans-serif;
 @font-impact: 'Teko', sans-serif;
+@border-standard: 1px solid darken(@background, 10%);
+
+// -----------------------------------------------------------------------------
+// UIkit
+// -----------------------------------------------------------------------------
+@import './node_modules/uikit/src/less/uikit.theme.less';
+
+// overrides
+@global-background: @background;
+@global-font-family: @font-text;
+@global-primary-background: @header-color;
+@global-secondary-background: @text-color;
+@breadcrumb-divider-margin-horizontal: 10px;
+@base-em-color: inherit;
+@inverse-global-color: fade(@global-inverse-color, 85%);
+@navbar-nav-item-height: 64px;
+@base-heading-color: @header-color;
+//@base-heading-font-family: @font-header;
+@base-link-color: @header-color;
+.uk-button-primary {color: @background !important;}
 
 // -----------------------------------------------------------------------------
 // Fonts
 // -----------------------------------------------------------------------------
 @import './css/fonts.less';
 
+// -----------------------------------------------------------------------------
+// Template
+// -----------------------------------------------------------------------------
+html, body {color: @text-color;}
+body {background: @background;}
+.main-nav-container {border-bottom: @border-standard; box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.07);}
+.main-nav-container {
+	.overlay {position: absolute; z-index: 0; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.70);}
+}
+nav.main {
+	.uk-logo {font-family: 'Bolshevik';}
+	.uk-logo {
+		img {max-width: 46px;}
+		span {display: block; padding: 10px 0 0 3px; font-size: 26px; font-family: 'Bolshevik';}
+	}
+	ul.uk-navbar-nav {flex-wrap: wrap;}
+}
+
+a {color: @header-color;}
+a:visited {color: darken(@header-color, 15%);}
+a:hover {text-decoration: underline;}
+
+.main-page {min-height: 400px;}
+
+footer {border-top: @border-standard;}
+footer {
+	icon {font-size: 24px;}
+	.jab {font-weight: bold;}
+	.uk-iconnav {
+		a:hover {text-decoration: none;}
+	}
+}
+
+// -----------------------------------------------------------------------------
+// General page styles
+// -----------------------------------------------------------------------------
+h1, h2, h3, h4, h5, h6 {
+	a {color: @header-color;}
+}
+
+// -----------------------------------------------------------------------------
+// Posts
+// -----------------------------------------------------------------------------
+.post {
+	.date {font-weight: bold; font-size: 0.9em;}
+}
+.post-list {}
+.post-list {
+	.post {padding-bottom: 48px; margin-bottom: 48px; border-bottom: @border-standard;}
+	.post:last-child {border-bottom: 0;}
+	&.summary {
+		h3 {font-size: 18px;}
+		> .post {padding-top: 6px; padding-bottom: 16px; margin-bottom: 10px;}
+	}
+	.post-header {
+		&.brief {
+			h3 {margin: 0; padding: 0;}
+			.date {margin: 0; padding: 0; font-weight: normal;}
+		}
+	}
+}
+.post {
+	h1, h1 a {color: @header-color;}
+}
+
+// -----------------------------------------------------------------------------
+// Page modules
+// -----------------------------------------------------------------------------
+body.has-leader {
+	.main-nav-container {border-bottom: 1px solid rgba(0, 0, 0, 0);}
+	nav.main {
+		.uk-logo {
+			span {color: @background;}
+			@outline: rgba(red(@background), green(@background), blue(@background), 0.8);
+			@outline-px: 0.75px;
+			img {filter: drop-shadow(@outline-px 0px 0 @outline) drop-shadow(-@outline-px 0px 0 @outline) drop-shadow(0 @outline-px 0 @outline) drop-shadow(0 -@outline-px 0 @outline)}
+		}
+		.uk-navbar-nav {
+			li a {color: @background;}
+		}
+	}
+}
+.hero {}
+.hero {
+	.hero-container {position: relative;}
+	.info {
+		h1 {font-size: 64px; font-family: @font-impact;}
+		h2 {font-size: 22px; max-width: 569px;}
+	}
+}
+
+.home-grid {}
+.home-grid {
+	icon {font-size: 32px; color: @header-color;}
+}
+
+/*
+.hero {position: relative; background-image: url(../assets/images/train-station.jpg);}
+.hero {
+	.hero-container {position: relative;}
+	.info {
+		h1 {font-size: 64px; font-family: @font-impact;}
+		h2 {font-size: 22px; max-width: 569px;}
+	}
+}
+.page-leader {margin-bottom: 64px; background-position: center center; background-repeat: no-repeat; background-size: cover;}
+.page-leader {
+	.inner {display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px; text-align: center; color: #fff; background: rgba(0, 0, 0, 0.6);}
+	h1 {max-width: @site-width; font-size: 64px; font-family: @font-impact;}
+	h2 {max-width: (@site-width / 1.8); margin-top: 16px; font-size: 22px; line-height: 1.2em;}
+}
+*/
+
+/*
 // -----------------------------------------------------------------------------
 // Template
 // -----------------------------------------------------------------------------
@@ -123,4 +257,5 @@ body.has-leader {
 		.news {width: 30%; padding: 0 (3% / 2); border-left: 1px solid rgba(0, 0, 0, 0.1); }
 	}
 }
+*/
 
