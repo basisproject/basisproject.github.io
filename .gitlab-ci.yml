@@ -9,14 +9,17 @@ cache:
     files:
       - Gemfile
       - Gemfile.lock
+      - package.json
+      - package-lock.json
   paths:
     - vendor
+    - node_modules
 
 before_script:
   - gem install bundler
   - bundle config set path 'vendor/bundle/'
   - bundle install
-  - apt install nodejs
+  - apt install node
   - npm install
 
 test:
