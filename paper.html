@@ -23,7 +23,7 @@ title: 'Basis Paper'
 <li><a href="#public-market">Public market</a></li>
 <li><a href="#banking">Banking</a></li>
 <li><a href="#credit-system">Credit system</a></li>
-<li><a href="#asset-tracker">Asset tracker</a></li>
+<li><a href="#shared-asset-management">Shared asset management</a></li>
 <li><a href="#voting">Voting</a></li>
 <li><a href="#public-companiesprojects">Public companies/projects</a></li>
 </ul></li>
@@ -66,7 +66,7 @@ title: 'Basis Paper'
 <li><a href="#labor-and-resources">Labor and resources</a></li>
 <li><a href="#currency-exchange">Currency exchange</a></li>
 </ul></li>
-<li><a href="#chapter-8-asset-tracker">Chapter 8: Asset tracker</a></li>
+<li><a href="#chapter-8-shared-asset-management">Chapter 8: Shared asset management</a></li>
 <li><a href="#chapter-9-voting">Chapter 9: Voting</a></li>
 <li><a href="#chapter-10-public-services">Chapter 10: Public services</a></li>
 </ul>
@@ -130,7 +130,7 @@ title: 'Basis Paper'
 <p>In exchange for labor, credits are given to workers. Workers can have a wage multiplier that magnifies the number of credits they get for each hour worked. For instance, working eight hours with a wage multiplier of three means 24 credits would be given. The wage multiplier, like a wage, is decided beforehand by the worker and the company.</p>
 <p>When credits are spent (exchanged for products or services), they are destroyed. This way, they do not enter the productive economy but rather only serve as a means to track any member’s contribution.</p>
 <p>Each credit can also have a variable set of resources associated with it that allow spending on items that contain those resources.</p>
-<h2 id="asset-tracker">Asset tracker</h2>
+<h2 id="shared-asset-management">Shared asset management</h2>
 <p>Let’s say we communally own some houses, some office buildings, a few tractors…great! Who is in stewardship of them? Is there an end date to their use of that asset that we can use to determine if we need to acquire more? Are there specific terms for the use of it?</p>
 <p>Basis allows us to track these assets, who has them, how old they are, the costs of their maintenance, and so on. This data is transparent to members so communal decisions can be made in confidence.</p>
 <h2 id="voting">Voting</h2>
@@ -275,12 +275,11 @@ title: 'Basis Paper'
 <h2 id="loans">Loans</h2>
 <p>When a member company interacts with the outside market, it necessarily needs capital to start. The regional bank can supply this via a loan, and the application process would look much like a traditional loan might: showing a business plan and market viability. However, after the company’s loan is approved, things look different.</p>
 <p>Rather than the bank giving the company the money and letting them do what they will (while charging interest), the bank will rather <em>keep</em> the money and authorize the company to spend up to the loan amount on the bank’s behalf (without charging interest). All purchases made into the outside market will come from this account, and any incoming orders, whether from the market or from other member companies, will replenish the account.</p>
-<p>This real difference here is the bank is sectioning off a portion of its capital (which is owned by all regional members) that the company is allowed to spend out of in order to provide their products and services.</p>
+<p>The real difference here is the bank is sectioning off a portion of its capital (which is owned by all regional members) such that the company is allowed to spend out of in order to provide their products and services.</p>
 <h2 id="currency-tracking">Currency tracking</h2>
-<p>Here’s where things get more interesting. As mentioned when talking about the loans, if a company gets an incoming order, that order replenishes the capital account the company spends from. This is easy to imagine if selling into the market, but what about if another member company orders the products? Since no money changes hands, how is the account replenished?</p>
-<p>The answer is with currency tracking. Just as products and services can track labor content and resource content, they can also track currency content.</p>
-<p>Let’s say a widget company buys steel for their widgets from the market. They can make ten widgets for every $5 they spend on market steel, and each widget takes 15 minutes to make. So we know the cost of each widget is 0.25L + $0.50.</p>
-<p>When a member company orders a widget, they don’t just get the costs of the labor (0.25L)…they also take on the currency cost. So the amount of currency imbued in each product moves through the economy just like the cost of labor does.</p>
+<p>Here’s where things get more interesting. As mentioned when talking about the loans, if a company gets an incoming order, that order replenishes the capital account the company spends from. This is easy to imagine if selling into the market (the revenue from the sale goes back into the account), but what about if another member company orders the products? Since no money changes hands, how is the account replenished?</p>
+<p>The answer is with currency tracking. Just as products and services can track labor content and resource content, they can also track currency content. So when a member company orders a product that requires spending of capital, that order replenishes the producing company’s capital account, but the products that were ordered now have that currency value tracked with them.</p>
+<p>Let’s say a widget company buys steel for their widgets from the market. They can make ten widgets for every $5 they spend on market steel, and each widget takes 15 minutes to make. So we know the cost of each widget is 0.25L + $0.50. When a member company orders a widget, they don’t just get the costs of the labor (0.25L)…they also take on the currency cost. So the amount of currency imbued in each product moves through the economy just like the cost of labor does.</p>
 <p>Eventually, either the product is consumed by a member, or sold back into the market.</p>
 <p>If the product is consumed by a member, the final cost of the product is:</p>
 <pre><code>labor + resources + (currency * (regional_active_credits / regional_active_capital))</code></pre>
@@ -333,7 +332,8 @@ title: 'Basis Paper'
 <p>The labor content of credits will always be based on hours of work completed. The resource content of resources will be a globally-decided (democratically) set of resources that reflect the resource usage plan of the system. For instance, if the world’s iron reserves are estimated to be depleted in 10 years, the members of the system might vote to reduce the iron content of the resource credits, thus slowly weening off iron usage. Or if, hypothetically, some sort of climate disaster caused by unearthing some resource and burning it in excess runs rampant, the members of the system might vote to limit the resources responsible for that hypothetical climate problem.</p>
 <h2 id="currency-exchange">Currency exchange</h2>
 <p>Exchange between credits and national currency will be possible through the regional bank. This bank will have a pool of capital specifically used to back the value of the credits. Members can convert their credits into currency (say, USD), however credit exchange is one-way: <em>credits will never be issued in exchange for currency</em>. The only way for new credits to be issued is to perform labor in the system! This prevents speculation on the market value of labor credits and protects members from sudden changes in value caused by external forces.</p>
-<h1 id="chapter-8-asset-tracker">Chapter 8: Asset tracker</h1>
+<p>Currency exchange happens at a rate of <code>total regional credit fund / total active regional credits</code>. If the region has $1M in funds and has 100K active credits, then each credit exchanges for exactly $10. It’s important to note that the credit fund can be managed such that the amount of funds closely or exactly matches the nuber of active credits, creating a 1:1 peg on the local currency. This is up to the region and its banking policies to decide if this is desired.</p>
+<h1 id="chapter-8-shared-asset-management">Chapter 8: Shared asset management</h1>
 <p>TODO</p>
 <h1 id="chapter-9-voting">Chapter 9: Voting</h1>
 <p>TODO</p>
