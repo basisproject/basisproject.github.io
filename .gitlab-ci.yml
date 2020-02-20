@@ -14,7 +14,8 @@ cache:
     - node_modules
 
 before_script:
-  - apt install npm
+  - apt update
+  - apt install -y npm
   - gem install bundler
   - bundle config set path 'vendor/bundle/'
   - bundle install
