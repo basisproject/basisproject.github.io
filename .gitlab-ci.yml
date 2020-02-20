@@ -16,6 +16,7 @@ before_script:
   - gem install bundler
   - bundle config set path 'vendor/bundle/'
   - bundle install
+  - apt install nodejs
   - npm install
 
 test:

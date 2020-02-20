@@ -40,15 +40,18 @@
 		</nav>
 
 		{% if page.leader %}
-			<div class="hero uk-section uk-light uk-background-cover">
-				<div class="hero-container uk-container uk-container-small uk-padding">
-					<div class="info uk-flex uk-flex-middle uk-flex-center uk-flex-wrap uk-text-center">
-						<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-small-bottom">
+			<div class="hero uk-section uk-background-cover">
+				<div class="hero-container uk-container {% if page.leader.button %}uk-padding-small{% else %}uk-padding{% endif %}">
+					<div class="info uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-text-center">
+						<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-small-bottom uk-light">
 							{{ page.leader.text }}
 						</h1>
-						<h2 class="uk-margin-remove">
+						<h2 class="uk-margin-remove-top uk-light">
 							{{ page.leader.subtext }}
 						</h2>
+						{% if page.leader.button %}
+							<a class="uk-button uk-button-primary uk-button-large uk-text-emphasis" href="{{ page.leader.button.url }}">{{ page.leader.button.text }}</a>
+						{% endif %}
 					</div>
 				</div>
 			</div>

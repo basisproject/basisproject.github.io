@@ -5,13 +5,23 @@ leader:
   text: "A platform for a socialist economy"
   subtext: "Basis is a decentralized and transparent set of tools to collaboratively operate a profitless economy"
   image: "/assets/images/train-station.jpg"
+  button:
+    text: 'Read the paper &raquo;'
+    url: '/public/paper'
 ---
 
 <div class="home-opener uk-section uk-section">
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-text-emphasis">Basis is an <a href="https://gitlab.com/basisproject/">open-source</a> set of tools that facilitate the economic operations of a socialist economy based on the ideas behind the <a href="https://en.wikipedia.org/wiki/Free_association_(Marxism_and_anarchism)">free association of producers</a> and <a href="https://en.wikipedia.org/wiki/Calculation_in_kind">in-kind cost tracking</a>.</h3>
 		<p>The goal of Basis is not to provide a societal blueprint, but rather provide tools that empower people to build their own society around production based on need instead of profit. The project uses the concept of regions which act as federated geographical containers, allowing the people of a particular area to decide for themselves how their region should operate.</p>
-		<p><a href="{{ "/paper" | prepend: site.baseurl }}">Read the Basis paper</a> for more information.</p>
+		<div class="uk-grid-large uk-grid-divider uk-padding-small uk-padding-remove-bottom" uk-grid>
+			<div class="uk-width-1-2@s uk-text-right@s">
+				<a class="uk-button uk-button-secondary" href="{{ "/paper" | prepend: site.baseurl }}">Read the Basis paper</a>
+			</div>
+			<div class="uk-width-1-2@s">
+				<a class="uk-button uk-button-secondary" href="https://www.reddit.com/r/basisproject">Join the Basis community</a>
+			</div>
+		</div>
 	</div>
 </div>
 
