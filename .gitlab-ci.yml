@@ -14,10 +14,10 @@ cache:
     - node_modules
 
 before_script:
+  - apt install node
   - gem install bundler
   - bundle config set path 'vendor/bundle/'
   - bundle install
-  - apt install node
   - npm install
 
 test:
