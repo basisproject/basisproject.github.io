@@ -2,6 +2,8 @@
 layout: post
 title: "Duality, housing, and markets: strategies for socialist growth"
 author: "Andrew Lyon"
+leader:
+  image: '/assets/images/housing-barcelona.jpg'
 ---
 
 [The paper][1] references the concept of duality a few times and it seems it would be a good idea to address this in detail. When talking of duality, what's meant is two different modes of operation: a mode for members and a mode for non-members (the market system).

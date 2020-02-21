@@ -2,6 +2,8 @@
 layout: post
 title: "First Basis project update"
 author: "Andrew Lyon"
+leader:
+  image: '/assets/images/ancom-flag.png'
 ---
 
 After working on Basis for just about a year, I wanted to finally start sharing the results of the work. The project has gone through several spiritual evolutions, and in the process of all the change, I've found what I think are a core core set of ideas that can act as the foundation.

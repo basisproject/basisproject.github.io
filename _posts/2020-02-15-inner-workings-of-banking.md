@@ -2,6 +2,8 @@
 layout: post
 title: "Inner workings of banking (a rough draft)"
 author: "Andrew Lyon"
+leader:
+  image: "https://upload.wikimedia.org/wikipedia/commons/8/87/WinonaSavingsBankVault.JPG"
 ---
 
 This will be short and sweet, but I just wanted to go over some recent changes to [the banking section of the paper][1]. And when I say changes I mean actually writing it in the first place.

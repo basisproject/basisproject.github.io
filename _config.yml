@@ -27,7 +27,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 paginate: 10
 paginate_path: "/posts/page/:num"
 permalink: "/posts/:year/:month/:title/"
-asset_version: 1
+asset_version: 2
 
 # Build settings
 #theme: minima

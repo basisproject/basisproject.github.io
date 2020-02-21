@@ -2,7 +2,7 @@
 	<div class="post-list">
 		{% for post in paginator.posts %}
 			<div class="post">
-				{% include post-inner.html post=post skip_comment_link=1 %}
+				{% include post-inner.html post=post list=1 skip_comment_link=1 %}
 			</div>
 		{% endfor %}
 	</div>

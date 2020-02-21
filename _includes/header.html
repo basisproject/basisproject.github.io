@@ -1,5 +1,5 @@
 {% if page.leader %}
-<div class="main-nav-container uk-background-cover uk-position-relative" style="background-image: url({{ page.leader.image | prepend: site.baseurl }});" uk-parallax="media: @m; easing: 0.2; bgy: -64,0">
+<div class="main-nav-container uk-background-cover uk-position-relative" style="background-image: url({% if (page.leader.image | slice: 0, 4) == "http" %}{{ page.leader.image }}{% else %}{{ page.leader.image | prepend: site.baseurl }}{% endif %});" uk-parallax="media: @m; easing: 0.2; bgy: -64,0">
 	<div class="overlay">&nbsp;</div>
 {% else %}
 <div class="main-nav-container">
@@ -44,10 +44,18 @@
 				<div class="hero-container uk-container {% if page.leader.button %}uk-padding-small{% else %}uk-padding{% endif %}">
 					<div class="info uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-text-center">
 						<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-small-bottom uk-light">
-							{{ page.leader.text }}
+							{% if page.leader.text %}
+								{{ page.leader.text }}
+							{% else if page.title %}
+								{{ page.title }}
+							{% endif %}
 						</h1>
 						<h2 class="uk-margin-remove-top uk-light">
-							{{ page.leader.subtext }}
+							{% if page.leader.subtext %}
+								{{ page.leader.subtext }}
+							{% else if page.author %}
+								{{ page.author }} - {{ page.date | date: "%b %d, %Y" }}
+							{% endif %}
 						</h2>
 						{% if page.leader.button %}
 							<a class="uk-button uk-button-primary uk-text-emphasis uk-margin-small-top" href="{{ page.leader.button.url }}">{{ page.leader.button.text }}</a>

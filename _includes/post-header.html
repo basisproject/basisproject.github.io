@@ -1,0 +1,6 @@
+<div class="post-header {{ include.extra_classes }}">
+	<{{ include.tag }}>
+		<a class="post-link" href="{{ include.post.url | prepend: site.baseurl }}">{{ include.post.title }}</a>
+	</{{ include.tag }}>
+	<p class="date">{% if include.post.author %}{{ include.post.author }} - {% endif %}{{ include.post.date | date: "%b %d, %Y" }}</p>
+</div>
