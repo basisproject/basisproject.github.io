@@ -49,8 +49,8 @@ body {background: @background;}
 nav.main {
 	.uk-logo {font-family: 'Bolshevik';}
 	.uk-logo {
-		img {max-width: 46px;}
-		span {display: block; padding: 10px 0 0 3px; font-size: 26px; font-family: 'Bolshevik';}
+		img {max-width: 54px;}
+		span {display: block; padding: 10px 0 0 0px; font-size: 26px; font-family: 'Bolshevik';}
 	}
 	ul.uk-navbar-nav {flex-wrap: wrap;}
 }
@@ -110,9 +110,6 @@ body.has-leader {
 	nav.main {
 		.uk-logo {
 			span {color: @background;}
-			@outline: rgba(red(@background), green(@background), blue(@background), 0.8);
-			@outline-px: 0.75px;
-			img {filter: drop-shadow(@outline-px 0px 0 @outline) drop-shadow(-@outline-px 0px 0 @outline) drop-shadow(0 @outline-px 0 @outline) drop-shadow(0 -@outline-px 0 @outline)}
 		}
 		.uk-navbar-nav {
 			li a {color: @background;}

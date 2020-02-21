@@ -4,7 +4,9 @@
 	{% if include.list == 1 %}
 		{% include post-header.html post=post tag="h1" %}
 		{% if post.leader.image %}
-			<div class="uk-background-cover uk-section uk-section-large uk-section-secondary uk-margin-bottom" style="background-image: url({% if (post.leader.image | slice: 0, 4) == "http" %}{{ post.leader.image }}{% else %}{{ post.leader.image | prepend: site.baseurl }}{% endif %});">&nbsp;</div>
+			<div class="uk-background-cover uk-section uk-section-large uk-section-secondary uk-margin-bottom" style="background-image: url({{ post.leader.image | prepend: site.baseurl }});">&nbsp;</div>
+		{% else if post.leader.image_raw %}
+			<div class="uk-background-cover uk-section uk-section-large uk-section-secondary uk-margin-bottom" style="background-image: url({{ post.leader.image_raw }});">&nbsp;</div>
 		{% endif %}
 	{% else %}
 		{% unless include.post.leader %}

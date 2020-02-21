@@ -3,7 +3,7 @@ layout: post
 title: "Frequently asked questions about socialism"
 author: "Andrew Lyon"
 leader:
-  image: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Socialism.JPG'
+  image_raw: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Socialism.JPG'
 ---
 
 During the course of this project's slow and steady creation, I've had many conversations and debates about it. Here are some of the common questions I've received and their responses **in the context of Basis** and the long term vision of how it might be implemented.

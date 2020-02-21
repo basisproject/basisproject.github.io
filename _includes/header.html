@@ -1,5 +1,5 @@
 {% if page.leader %}
-<div class="main-nav-container uk-background-cover uk-position-relative" style="background-image: url({% if (page.leader.image | slice: 0, 4) == "http" %}{{ page.leader.image }}{% else %}{{ page.leader.image | prepend: site.baseurl }}{% endif %});" uk-parallax="media: @m; easing: 0.2; bgy: -64,0">
+<div class="main-nav-container uk-background-cover uk-position-relative" style="background-image: url({% if page.leader.image_raw %}{{ page.leader.image_raw }}{% else %}{{ page.leader.image | prepend: site.baseurl }}{% endif %});" uk-parallax="media: @m; easing: 0.2; bgy: -64,0">
 	<div class="overlay">&nbsp;</div>
 {% else %}
 <div class="main-nav-container">
@@ -8,7 +8,7 @@
 		<nav class="main" uk-navbar>
 			<div class="uk-navbar-left">
 				<a class="uk-navbar-item uk-logo uk-margin-right uk-text-secondary" href="{{ '/' | prepend: site.baseurl }}">
-					<img class="uk-margin-small-right" src="{{ '/assets/images/red-star.svg' | prepend: site.baseurl }}"><span>Basis</span>
+					<img class="uk-margin-small-right" src="{{ '/assets/images/red_star.256.outline.png' | prepend: site.baseurl }}"><span>Basis</span>
 				</a>
 			</div>
 			<div class="uk-navbar-right">
