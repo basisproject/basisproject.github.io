@@ -3,7 +3,7 @@ layout: post
 title: "ValueFlows, Holochain, and blockchain"
 author: "Andrew Lyon"
 leader:
-  image_raw: '/assets/images/holochain.jpg'
+  image: '/assets/images/holochain.jpg'
 ---
 
 After spending some time sharing the Basis project with others, I ended up catching wind of some really interesting projects that could augment the abilities of Basis quite a bit.
