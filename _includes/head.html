@@ -17,6 +17,9 @@
 	<script src="{{ "/assets/js/uikit.min.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
 	<script src="{{ "/assets/js/uikit-icons.min.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
 
+	{% if page.leader.image_raw %}<meta property="og:image" content="{{ page.leader.image_raw }}" />{% endif %}
+	{% if page.leader.image %}<meta property="og:image" content="{{ page.leader.image | prepend: site.baseurl }}" />{% endif %}
+
 	<!-- Matomo -->
 	<script type="text/javascript">
 		var _paq = _paq || [];
