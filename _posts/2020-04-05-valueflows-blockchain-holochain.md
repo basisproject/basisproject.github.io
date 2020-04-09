@@ -32,7 +32,7 @@ Immediately, this brought up a lot of questions for me and how this might work i
 
 - In theory, scales infinitely. Because there is no data consensus between all participants, only the members of a particular transaction need to hold that data (although the transaction itself is still verified by other members of the network). Scalability is important to us because while cryptocurrencies might get away with only matching Visa's peak tx/s, we're building a system that will hopefully scale to far beyond that, and having artificial limits imposed up-front represents technical dead-ends that will be difficult to reconcile when the time comes.
 - Supports private transactions where the body of the transaction does not leave the node, but rather the header is broadcast and stored by the network.
-- Has the concept of many different inter-operating networks. A company might have its own network private that deals with internal matters and connects to the greater network which would be more public.
+- Has the concept of many different inter-operating networks. A company might have its own private network that deals with internal matters and connects to the greater network which would be more public.
 - Handles network partitions more gracefully than blockchains. If a segment of the network is disconnected in a blockchain, participants might keep submitting transactions without knowing they are partitioned from a larger network. Upon reconnecting and joining the larger network again, the smaller network's history will be obliterated. Holochain handles this much more gracefully because it doesn't *need* absolute data consistency. The two networks will merge when the partition is healed without any data loss.
 - Truly distributed. Blockchain participants build centralized consensus via distributed mechanisms. Holochain uses distributed validation and storage. There is no centralization of data.
 - Holochain apps are built in Rust &lt;3 (Basis is built in rust already).
@@ -49,7 +49,7 @@ I'm convinced at this point that Basis should be build on top of ValueFlows. I'm
 
 It might be possible to use a blockchain in the places where blockchains are useful and Holochain where scalability is needed. Can the two coexist and interoperate?
 
-I'm meeting with the lead dev of soon, and we're hopefully going to do a deep dive on Basis, ValueFlows, and Holochain and figure out how all the pieces fit together.
+I'm meeting with the lead dev of holo-rea soon, and we're hopefully going to do a deep dive on Basis, ValueFlows, and Holochain and figure out how all the pieces fit together.
 
 While the above projects have made the immediate future of Basis a bit more uncertain, they came at a great time (during early formation). The ideas and goals behind Basis are the same as they were before, but now there are more tools to help make that vision come to life.
 
