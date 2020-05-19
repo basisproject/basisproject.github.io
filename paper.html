@@ -127,9 +127,9 @@ title: 'Basis Paper'
 <h2 id="banking">Banking</h2>
 <p>Because regions interface with the market system, they need some form of translation between credits earned from labor and the market currency. This is where the regional bank comes in. It acts as a holder for local currency and determines the exchange rate going from internal credits to external currency. The bank also enacts policies and criteria about the cost structure of companies. For instance, the bank determines the conditions under which a company is considered bankrupt (not providing enough value either to members or non-members to justify its existence).</p>
 <h2 id="credit-system">Credit system</h2>
-<p>In exchange for labor, credits are given to workers. Workers can have a wage multiplier that magnifies the number of credits they get for each hour worked. For instance, working eight hours with a wage multiplier of three means 24 credits would be given. The wage multiplier, like a wage, is decided beforehand by the worker and the company.</p>
+<p>In exchange for labor, credits are transferred to workers. How many credits per-hour or per-year is a decision made between the worker and the company, and is effectively the same as a wage in a market system.</p>
 <p>When credits are spent (exchanged for products or services), they are destroyed. This way, they do not enter the productive economy but rather only serve as a means to track any member’s contribution.</p>
-<p>Each credit can also have a variable set of resources associated with it that allow spending on items that contain those resources.</p>
+<p>The <em>price</em> of products (how many credits are used to purchase items) is a function of not just how much labor went into creating that product, but the resources (such as raw materials) and the socially-decided credit value for each of those resources.</p>
 <h2 id="asset-management">Asset management</h2>
 <p>Let’s say we communally own some houses, some office buildings, a few tractors…great! Who is in stewardship of them? Is there an end date to their use of that asset that we can use to determine if we need to acquire more? Are there specific terms for the use of it?</p>
 <p>Basis allows us to track these assets, who has them, how old they are, the costs of their maintenance, and so on. This data is transparent to members so communal decisions can be made in confidence.</p>
@@ -172,7 +172,7 @@ title: 'Basis Paper'
 <ul>
 <li>Number of average weekly hours worked required to be considered a member</li>
 <li>Number of average weekly hours worked above which someone is considered a full member</li>
-<li>Worker credit multiplier cap</li>
+<li>Worker credit wage cap</li>
 <li>Distribution plans for regional profits</li>
 <li>Budgets for regional projects and services (hospitals, schools, etc)</li>
 </ul>
@@ -327,9 +327,15 @@ title: 'Basis Paper'
 <p>Workers, in exchange for their labor, receive credits. After a labor record has been finalized by the company, credits are added to that worker’s Basis account balance.</p>
 <p>Credits can be spent on goods and services provided by companies in the Basis system, and are destroyed on spending. Credits do not expire, and are transferable to other members freely.</p>
 <h2 id="labor-and-resources">Labor and resources</h2>
-<p>Because Basis tracks costs of products and services in terms of labor and resources, it makes sense that the credits people can spend in exchange for those products and services would be denominated in labor and resources.</p>
-<p>Credits will have a negotiable multiplier. For instance, if a doctor has a multiplier of 9 and she works 5 hours, she will get 45 credits.</p>
-<p>The labor content of credits will always be based on hours of work completed. The resource content of resources will be a globally-decided (democratically) set of resources that reflect the resource usage plan of the system. For instance, if the world’s iron reserves are estimated to be depleted in 10 years, the members of the system might vote to reduce the iron content of the resource credits, thus slowly weening off iron usage. Or if, hypothetically, some sort of climate disaster caused by unearthing some resource and burning it in excess runs rampant, the members of the system might vote to limit the resources responsible for that hypothetical climate problem.</p>
+<p>In exchange for labor that meets social needs, workers get paid in credits. The amount they get paid or the particular arrangement they set up is between them and the company they are working with. Wages are completely negotiable (although a minimum/maximum wage can be set by each region if desired), and can be based off of hourly work or some form of ongoing salary.</p>
+<p>Credits are used to make purchases by members. How many credits something costs is a function of.</p>
+<ol type="1">
+<li>How much labor went into producing it.</li>
+<li>How much resources were used in its production.</li>
+</ol>
+<p>The cost of various resources will be decided both <em>regionally</em> and <em>systemwide</em> via democratic process. Participants are able to set costs on resources globally, and in addition to global costs, can set additional regional costs on resources. This allows implementing things like carbon taxes, but also local rations on certain local resources (for instance, water might be rationed in a region if it experiences a drought). The credit value for each resource might be based on resource consumption rates, renewal rates, and known supply.</p>
+<p>So if a chair took 5 hours to make, and is comprised of 3kg wood, and wood costs 0.4 credits/kg, then the total cost of the chair would be <code>5 + (3 * 0.4) = 6.2</code> credits.</p>
+<p>Thus, the cost of a final product can fluctuate somewhat depending on what the resource content of that product is. This allows fairly direct and simple implementations of things like carbon taxes or rations on certain resources in low supply.</p>
 <h2 id="currency-exchange">Currency exchange</h2>
 <p>Exchange between credits and national currency will be possible through the regional bank. This bank will have a pool of capital specifically used to back the value of the credits. Members can convert their credits into currency (say, USD), however credit exchange is one-way: <em>credits will never be issued in exchange for currency</em>. The only way for new credits to be issued is to perform labor in the system! This prevents speculation on the market value of labor credits and protects members from sudden changes in value caused by external forces.</p>
 <p>Currency exchange happens at a rate of <code>total regional credit fund / total active regional credits</code>. If the region has $1M in funds and has 100K active credits, then each credit exchanges for exactly $10. It’s important to note that the credit fund can be managed such that the amount of funds closely or exactly matches the number of active credits, creating a 1:1 peg on the local currency. This is up to the region and its banking policies to decide if this is desired.</p>
