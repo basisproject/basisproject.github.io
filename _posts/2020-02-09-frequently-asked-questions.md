@@ -68,7 +68,7 @@ What is really being done is creating a barrier around the productive system suc
 
 Because money isn't used in this system, investment will work much differently. Instead of borrowing money to pay for things that you can hopefully use to make *more* money, you simply order the things you need from various producers in the system. If they see the need behind what you're producing, they will no doubt have no problem expending some amount of their labor to produce the things you need. Granted, they might want to do so on a smaller scale at first while your company is still new and your relationship with them is still forming.
 
-Startup costs can be spread over longer periods of time using the system's concept of amortization pools, and each region would have its own rules surrounding cost amortization.
+Startup costs can be spread over longer periods of time using the system's concept of amortization, and each region would have its own rules surrounding the maximum amount of costs a company can carry.
 
 Essentially investment becomes distributed amongst the producers and the region itself, rather than capital holders.
 
