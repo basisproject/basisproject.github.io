@@ -96,7 +96,7 @@ No! Unlike traditional labor vouchers, credits *do not expire!* Does the value o
 
 The idea of expiring labor vouchers seems to fly in the face of all the things socialism stands for -- workers receiving the full value of their labor -- in an attempt to limit accumulation. But why should accumulation be limited? What if someone needs to save for a big family vacation? Or some other large purchase?
 
-Accumulation is a problem in a market system because profits distribute in uneven patterns and are subject to manipulation by those who already have capital. In a system of socialized production, worker ownership, and lack of profits, billionaires would be a distant memory. Enforcing this through the monetary system is nothing more than an admission that a socialist economy is incapable of egalitarian distribution.
+Accumulation is a problem in a market system because profits distribute in uneven patterns and are subject to manipulation by those who already have capital. In a system of socialized production, worker ownership, and lack of profits, billionaires would be a distant memory. Enforcing this through the monetary system is nothing more than an admission that a socialist economy is incapable of even distribution.
 
 ## Why track resources and not just labor?
 
@@ -108,7 +108,7 @@ This allows members of the system to adjust resource consumption to match the av
 
 ## Isn't this system just a more complicated version of money?
 
-Because quantitative easing, bond yield curves, treasury notes, packages of debt derivatives, options contracts, equity, convertible notes, commodity futures, price shocks, speculation, and 401Ks are all really simple?
+Because quantitative easing, bond yield curves, treasury notes, packages of debt derivatives, equity, convertible notes, price shocks, speculation, and 401Ks are all really simple?
 
 There is nothing inherently simple about currency in its current, modernized form. If anything we're simplifying the relations that money supposedly mediates.
 
