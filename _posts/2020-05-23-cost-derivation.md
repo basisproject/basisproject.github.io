@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Cost derivation"
+title: "Cost derivation: In-kind cost tracking in moneyless production"
 author: "Andrew Lyon"
 leader:
   image: '/assets/images/stocks.jpg'
