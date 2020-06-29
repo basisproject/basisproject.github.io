@@ -1,8 +1,9 @@
 ---
-layout: post
+layout: page
 title: "Frequently asked questions about socialism"
-author: "Andrew Lyon"
+permalink: '/faq'
 leader:
+  subtext: '&nbsp;'
   image_raw: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Socialism.JPG'
 ---
 
@@ -106,6 +107,36 @@ Tracking resources gives us other advantages. Because credits have both labor co
 
 This allows members of the system to adjust resource consumption to match the availability of various resources without relying on market conditions or complex government regulations.
 
+## If companies are still valuing their outputs based on labor costs, won't there be just as much pressure to externalize?
+
+Yes. Given the system as described so far, a company with lower costs will get more orders, and have less chance of no longer being able to meet social needs (ie, "bankruptcy" in the current system). So there's still a pressure to lower costs, and there's still a need to have a job, and that job being axed creates the same survival drive that exists in capitalism. While profit is removed from production, the dynamics from capitalism still exist.
+
+How do we fix this?
+
+UBI. Give everyone a living wage. Granted, it doesn't have to be a live-in-a-mcmansion-and-own-three-mercedes living wage, but it would take care of basic needs: food, housing, health, education.
+
+<!-- Do they owe us a living? Of course they fucking do. -->
+
+How does this help?
+
+People will be paid enough to live just for being members, so losing your job won't be as big of an issue. It's less of a struggle to survive, and lowers the need for competition. Everyone getting a living wage means it might become the norm to *not even take a wage at work*. This would significantly lower production costs, and as such lower pressure to externalize costs (because the cost of *survival* no longer needs to be covered by the productive system).
+
+Imagine this too: we all collectively decide that coal is something we no longer want to invest in. In the current system, coal miners (rightfully) worry for their livelihood because it *depends* on society valuing their craft. They might not have the money to educate in a new vocation, and certainly the bank squeezing them for the mortgage will not wait two years for them to get out of school. What are they to do? Well, under capitalism they fight tooth and nail to keep the mine open and to keep the coal power plants burning. Change is resisted at all costs, because people's livelihood is *tied to their job*.
+
+With a UBI, there would be much less pressure to fight for the coal mine. If the demand for coal disappears, so be it. The miners have much more time to consider their options and their next venture. Society becomes much less brittle, much more willing to make changes, much more likely to take important leaps that the current economy would drag its feet on.
+
+## Won't UBI make it so people just stop working?
+
+First of all, no. People are generally social and creative. We want to contribute. We want to feel we are making a difference. We want to be useful. The only reason we think people are lazy is because our current system treats us like we are. We're so used to being forced to have a wage that we can hardly imagine what it would be like *if we didn't need to have a wage.* Ask yourself what you would do if you didn't *need* a job anymore. What things do you love doing that work gets in the way of? Are none of them productive? And sure, some of them might be more difficult, and for jobs that cause more stress, require more physical endurance, or are more dangerous you can still negotiate a higher-paying wage and get a bigger share of the social output.
+
+Secondly, let's say everyone does stop working. Then what? Nobody repairs the roads. Nobody delivers your Wamazon packages. Nobody eats. You'd think at some point people might get sick of this. Let's trust each other to not let all of society unravel just because the imaginary number in our bank account goes up even if we don't work a job we hate.
+
+Thirdly, the people who would not do anything productive in a system with a living wage UBI are likely people who will not do anything productive *in any system*. If they're not going to work, they're not going to work. Why punish everyone by trying to solve a problem that can't be solved?
+
+But let's talk about another aspect of UBI: the people *who get paid for doing work the capitalist market doesn't value*. For instance, being a homemaker is a productive, thankless job that everyone looks down their nose on, but without homemakers our society would not be nearly as advanced as it is. I'd be writing this on a typewriter, shivering next to a wooden stove in a log cabin. A UBI gives homemakers the wage they deserve. What about people who volunteer their time to help those in need? Does capitalism mail them a check for their service? How about artists and musicians? They work tirelessly to make our drab world a bit more tolerable, but often the only way they can make a living doing this is by compromising their ideals.
+
+I believe we'll find that if we treat people as if they are by default productive, they will happily prove us right.
+
 ## Isn't this system just a more complicated version of money?
 
 Because quantitative easing, bond yield curves, treasury notes, packages of debt derivatives, equity, convertible notes, price shocks, speculation, and 401Ks are all really simple?
@@ -150,10 +181,7 @@ Yes, this is an experiment. Most great things start out that way.
 
 ## How is this different from communism?
 
-If everybody participating agreed to set their wages to zero, you'd essentially have a form of communism.
+If everybody participating agreed to set their wages to zero, you'd essentially have a form of communism. Granted, UBI is still a form of "money" and this might disagree with the "moneyless" attribute of communism, but it's a happy medium between no longer tracking wages and systemic limits on resource consumption. It's also possible that we all collectively agree to set UBI to zero, set the credit cost of all resources to zero, and trust each other to not take more than we need. Far-fetched, maybe, but conceivable (and supported by the system).
 
-In this case, nobody would get paid for their labor and the labor costs of products and services would be zero. That said, resources would still be tracked, and a global resource plan, along with something like UBI, might be needed to limit overconsumption...or maybe not. Maybe people would be happy to just take what they need and consumption would no longer need to be regulated in any way.
-
-In a case like this, Basis might have (happily) outlived its usefulness, although it still might be important to track costs of production, even if everything is "free."
-
+In other words, although Basis is a set of tools for managing a libertarian socialist economy, it is fully capable of operating a fully-communist system as well.
 
