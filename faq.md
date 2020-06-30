@@ -9,6 +9,11 @@ leader:
 
 During the course of this project's slow and steady creation, I've had many conversations and debates about it. Here are some of the common questions I've received and their responses **in the context of Basis** and the long term vision of how it might be implemented.
 
+<div class="page-toc uk-align-right@s uk-width-1-3@s">
+* toc plz replace me
+{:toc}
+</div>
+
 ## Who decides who can start a company?
 
 You do. There are no central planners. If your company agrees to use the Basis system and is a worker-owned cooperative, it can join, and by working there, you are a member. As long as the company is meeting a social need, it can operate within the system.
@@ -29,7 +34,7 @@ Keep in mind that the same mechanisms that lower costs in the market system exis
 
 ## Isn't collective decision making in companies inefficient?
 
-Just because a company is worker-owned does not mean every decision needs to be ratified by every worker. Co-ops can still have a top-down hierarchy. Rather, it just means the hierarchy is created by the workers themselves. In other words, a co-op can have a Steve Jobs at the helm, but the Steve Jobs answers to the board of the company, and the board is selected by the workers. Ownership becomes a function of participation, not a function of capital.
+Just because a company is worker-owned does not mean every decision needs to be ratified by every worker. Co-ops can still have a hierarchy. Rather, it just means the hierarchy is created by the workers themselves. In other words, a co-op can have a Steve Jobs at the helm, but the Steve Jobs answers to the board of the company, and the board is selected by the workers. Ownership becomes a function of participation, not a function of capital.
 
 ## What if a company needs to fire workers? Who would vote to fire themselves?
 
@@ -39,7 +44,9 @@ Co-ops have had to make tough decisions in the past. Just because a company is w
 
 ## What if I just want to be an employee and I don't want to vote on stuff?
 
-You can advocate for liquid democracy in your workplace, which allows you to revocably proxy your voting power through a trusted coworker. Then they can make all your decisions on your behalf and you can focus your energy on building widgets.
+Then abstain from voting, or don't join a company that expects you to vote.
+
+You can also advocate for liquid democracy in your workplace, which allows you to revocably proxy your voting power through a trusted coworker. Then they can make all your decisions on your behalf and you can focus your energy on building widgets.
 
 ## Can I own a house?
 
@@ -47,7 +54,7 @@ Ownership is an interesting concept.
 
 If you own a property in the United States, I would argue you actually own the title for use of your property, not the property itself. You cannot dig a mine on your own property without state approval. You cannot build a 1000ft tall structure without state approval. If the state or federal government wants to build a railroad track through your house, they can force you off your land. In essence, in the United States (and likely other countries), property is owned jointly between cities, counties, states, and the nation. You own a title of use of your property, but you do not own the property itself. Ownership is a misnomer.
 
-For our purposes, use of property would be much the same. Although the region, and therefor the community, would own houses and apartments, your use of that property would be almost exactly like it would be if you "owned" property in the US. You can make improvements to the house you're occupying. You can take out walls or build additions. You can park your 25 year old station wagon in your front yard. Even though you didn't "buy" the property, you are afforded the same privileges as if you did in the market system. The only tangible difference between this and the market system is that usage is based off of need (availability and waitlisting), rather than market forces.
+For our purposes, use of property would be much the same. Although the region, and therefor the community, would own houses and apartments, your use of that property would be like it would be if you "owned" property in the US. You can make improvements to the house you're occupying. You can take out walls or build additions. You can park your 25 year old station wagon in your front yard. Even though you didn't "buy" the property, you are afforded the same privileges as if you did in the market system. The only tangible difference between this and the market system is that usage is based off of need (availability and waitlisting), rather than market forces.
 
 ## How would shared housing like apartments work?
 
@@ -59,7 +66,9 @@ Do they elect one of themselves to be an ongoing maintenance person? Do they tak
 
 Companies don't use money. They simply order the things they need to fill the orders that they receive, and the system pays workers by printing credits for their labor.
 
-## So you're just printing money?
+That said, the system might have limits for how much costs each company can command at any given time. This creates an upper limit on a company's inputs, which would have to be balanced with equal outputs.
+
+## So wait you're just printing money to pay people?
 
 Yes, printing it when labor is completed, and destroying it when it's spent.
 
@@ -68,8 +77,6 @@ What is really being done is creating a barrier around the productive system suc
 ## How will investment work?
 
 Because money isn't used in this system, investment will work much differently. Instead of borrowing money to pay for things that you can hopefully use to make *more* money, you simply order the things you need from various producers in the system. If they see the need behind what you're producing, they will no doubt have no problem expending some amount of their labor to produce the things you need. Granted, they might want to do so on a smaller scale at first while your company is still new and your relationship with them is still forming.
-
-Startup costs can be spread over longer periods of time using the system's concept of amortization, and each region would have its own rules surrounding the maximum amount of costs a company can carry.
 
 Essentially investment becomes distributed amongst the producers and the region itself, rather than capital holders.
 
@@ -97,7 +104,7 @@ No! Unlike traditional labor vouchers, credits *do not expire!* Does the value o
 
 The idea of expiring labor vouchers seems to fly in the face of all the things socialism stands for -- workers receiving the full value of their labor -- in an attempt to limit accumulation. But why should accumulation be limited? What if someone needs to save for a big family vacation? Or some other large purchase?
 
-Accumulation is a problem in a market system because profits distribute in uneven patterns and are subject to manipulation by those who already have capital. In a system of socialized production, worker ownership, and lack of profits, billionaires would be a distant memory. Enforcing this through the monetary system is nothing more than an admission that a socialist economy is incapable of even distribution.
+Accumulation is a problem in a market system because profits distribute in uneven patterns and are subject to manipulation by those who already have capital. In a system of socialized profitless production and worker ownership, the billionaire class would disappear. Enforcing this through the monetary system is nothing more than an admission that a socialist economy is incapable of even distribution.
 
 ## Why track resources and not just labor?
 
@@ -121,7 +128,7 @@ How does this help?
 
 People will be paid enough to live just for being members, so losing your job won't be as big of an issue. It's less of a struggle to survive, and lowers the need for competition. Everyone getting a living wage means it might become the norm to *not even take a wage at work*. This would significantly lower production costs, and as such lower pressure to externalize costs (because the cost of *survival* no longer needs to be covered by the productive system).
 
-Imagine this too: we all collectively decide that coal is something we no longer want to invest in. In the current system, coal miners (rightfully) worry for their livelihood because it *depends* on society valuing their craft. They might not have the money to educate in a new vocation, and certainly the bank squeezing them for the mortgage will not wait two years for them to get out of school. What are they to do? Well, under capitalism they fight tooth and nail to keep the mine open and to keep the coal power plants burning. Change is resisted at all costs, because people's livelihood is *tied to their job*.
+Imagine this too: we all collectively decide that coal is something we no longer want to invest in. In the current system, coal miners (rightfully) worry for their livelihood because it *depends* on society valuing their labor. They might not have the money to educate in a new vocation, and certainly the bank squeezing them for the mortgage will not wait two years for them to get out of school. What are they to do? Well, under capitalism they fight tooth and nail to keep the mine open and to keep the coal power plants burning. Change is resisted at all costs, because a person's livelihood is *tied to their job*.
 
 With a UBI, there would be much less pressure to fight for the coal mine. If the demand for coal disappears, so be it. The miners have much more time to consider their options and their next venture. Society becomes much less brittle, much more willing to make changes, much more likely to take important leaps that the current economy would drag its feet on.
 
@@ -131,7 +138,7 @@ First of all, no. People are generally social and creative. We want to contribut
 
 Secondly, let's say everyone does stop working. Then what? Nobody repairs the roads. Nobody delivers your Wamazon packages. Nobody eats. You'd think at some point people might get sick of this. Let's trust each other to not let all of society unravel just because the imaginary number in our bank account goes up even if we don't work a job we hate.
 
-Thirdly, the people who would not do anything productive in a system with a living wage UBI are likely people who will not do anything productive *in any system*. If they're not going to work, they're not going to work. Why punish everyone by trying to solve a problem that can't be solved?
+Thirdly, the people who would not do anything productive in a system with a living wage UBI are likely people who will find a way to not do anything productive *in any system*. If they're not going to work, they're not going to work. Why punish everyone by trying to solve a problem that can't be solved?
 
 But let's talk about another aspect of UBI: the people *who get paid for doing work the capitalist market doesn't value*. For instance, being a homemaker is a productive, thankless job that everyone looks down their nose on, but without homemakers our society would not be nearly as advanced as it is. I'd be writing this on a typewriter, shivering next to a wooden stove in a log cabin. A UBI gives homemakers the wage they deserve. What about people who volunteer their time to help those in need? Does capitalism mail them a check for their service? How about artists and musicians? They work tirelessly to make our drab world a bit more tolerable, but often the only way they can make a living doing this is by compromising their ideals.
 
@@ -183,5 +190,5 @@ Yes, this is an experiment. Most great things start out that way.
 
 If everybody participating agreed to set their wages to zero, you'd essentially have a form of communism. Granted, UBI is still a form of "money" and this might disagree with the "moneyless" attribute of communism, but it's a happy medium between no longer tracking wages and systemic limits on resource consumption. It's also possible that we all collectively agree to set UBI to zero, set the credit cost of all resources to zero, and trust each other to not take more than we need. Far-fetched, maybe, but conceivable (and supported by the system).
 
-In other words, although Basis is a set of tools for managing a libertarian socialist economy, it is fully capable of operating a fully-communist system as well.
+In other words, Basis is a set of tools for managing an ecologically-focused libertarian socialist economy and could work in a fully-communist context as well.
 

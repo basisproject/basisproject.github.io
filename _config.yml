@@ -29,6 +29,9 @@ paginate_path: "/posts/page/:num"
 permalink: "/posts/:year/:month/:title/"
 asset_version: 2
 
+kramdown:
+  parse_block_html: true
+
 # Build settings
 #theme: minima
 plugins:
