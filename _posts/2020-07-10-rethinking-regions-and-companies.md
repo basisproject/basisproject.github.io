@@ -37,7 +37,7 @@ One thing that struck me when mulling this model over was the idea that regions 
 
 With the new company model, the idea of automatic pooling of regional profits gets eroded. Farms that make a market profit might keep the profit in their own farming company, and people who need housing wouldn't have the money to buy/build houses. What is to be done?
 
-What if any company can have its own pool of capital, and each membership in a company acted as a vector for capital distribution between these pools?
+What if every company has its own pool of capital, and each membership in a company acts as a vector for capital distribution between these pools?
 
 Let's say I'm a member of two companies: a farming company that has 100 members, and a housing company that has 1000 members. In a sense, I have a `1/100` say in the farm company and a `1/1000` say in the housing company. If the farm makes a profit of $1000 (and we can tell profit easily and immediately because we track *all costs of production*) then it would follow that I have a say in `$1000 / 100` of that capital, or $10. Because I'm a member of two companies (the farm and housing company) that $10 capital would automatically be split between them both such that they each get $5.
 
