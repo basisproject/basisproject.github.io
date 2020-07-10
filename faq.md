@@ -110,7 +110,7 @@ Accumulation is a problem in a market system because profits distribute in uneve
 
 The idea behind tracking labor *and* resources is that value is not just derived from labor, but also from what was given to us by the Earth. In order to know the *true cost* of something, we can't just look at its labor content. Knowing both, producers aren't just ordering products based on the labor content, but the resource content as well, which helps make more informed decisions along the supply chain.
 
-Tracking resources gives us other advantages. Because credits have both labor content *and* resource content, we can use the resource content of credits to limit certain types of consumption. For instance, if the fossil fuel content of all products is known, then a carbon tax can be enforced at the consumer level by adjusting the fossil fuel content of all credits. In other words, some amount of externalities can be accounted for by tracking various resources.
+Tracking resources gives us other advantages. Because credits have both labor content *and* resource content, we can use the resource content of credits to limit certain types of consumption. For instance, if the fossil fuel content of all products is known, then a carbon tax can be enforced at the consumer level by adjusting the fossil fuel price (in credits). In other words, some amount of externalities can be accounted for by tracking various resources.
 
 This allows members of the system to adjust resource consumption to match the availability of various resources without relying on market conditions or complex government regulations.
 
