@@ -6,7 +6,7 @@ leader:
   image: '/assets/images/region-map-drawing.png'
 ---
 
-The concept of regions in Basis is as old as the project itself. Originally intended as a container for federation, the idea is to group people and assets into somewhat blurry geographical spaces (for instance a city or county). After some incredibly interesting feedback and discussion about the project, I'm no longer convinced this is the best way forward.
+The concept of regions in Basis is as old as the project itself. Originally intended as a container for federation, the idea is to group people, companies, and assets into somewhat blurry geographical spaces (for instance a city or county). After some incredibly interesting feedback and discussion about the project, I'm no longer convinced this is the best way forward.
 
 Regions as they exist in the project are somewhat brittle. There's a concept of individual members, companies, and regions. If we define things in these terms, it can make sense on a small scale, but there are issues with this model:
 
