@@ -9,8 +9,8 @@
 @header-color: #c22;  // #333;
 @site-width: 1024px;
 @font-text: 'Titillium Web', sans-serif;
-@font-header: 'Teko', sans-serif;
-@font-impact: 'Teko', sans-serif;
+@font-header: 'Titillium Web', sans-serif;
+@font-impact: 'Titillium Web', sans-serif;
 @border-standard: 1px solid darken(@background, 10%);
 
 // -----------------------------------------------------------------------------
@@ -89,7 +89,10 @@ h1, h2, h3, h4, h5, h6 {
 	.post:last-child {border-bottom: 0;}
 	&.summary {
 		h3 {font-size: 18px;}
-		> .post {padding-top: 6px; padding-bottom: 16px; margin-bottom: 10px;}
+		> .post {
+			& {padding-top: 6px; padding-bottom: 16px; margin-bottom: 10px; border: 0;}
+			.cover {background-position: center center; background-size: cover;}
+		}
 	}
 	.post-header {
 		&.brief {
@@ -120,7 +123,7 @@ body.has-leader {
 .hero {
 	.hero-container {position: relative;}
 	.info {
-		h1 {font-size: 64px; font-family: @font-impact;}
+		h1 {font-size: 42px; font-family: @font-impact;}
 		h2 {font-size: 22px; /*max-width: 569px;*/}
 	}
 }
