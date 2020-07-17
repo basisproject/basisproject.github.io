@@ -1,5 +1,5 @@
 <div class="post-header {{ include.extra_classes }}">
-	{% if post.leader %}
+	{% if post.leader and include.image %}
 		<a href="{{ include.post.url | prepend: site.baseurl }}">
 			<div class="cover uk-margin-small-bottom uk-height-small" style="background-image: url({% if post.leader.image_raw %}{{ post.leader.image_raw }}{% else %}{{ post.leader.image | prepend: site.baseurl }}{% endif %});">&nbsp;</div>
 		</a>
