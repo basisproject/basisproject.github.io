@@ -14,6 +14,10 @@ During the course of this project's slow and steady creation, I've had many conv
 {:toc}
 </div>
 
+## Is there central planning?
+
+No. Production is distributed. However, various aspects of production are [tuned by the system](https://gitlab.com/basisproject/tracker/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=tag%3Acybernetics).
+
 ## Who decides who can start a company?
 
 You do. There are no central planners. If your company agrees to use the Basis system and is a worker-owned cooperative, it can join, and by working there, you are a member. As long as the company is meeting a social need, it can operate within the system.
@@ -62,11 +66,15 @@ Apartments would be "in-use" by multiple members of the region and therefor woul
 
 Do they elect one of themselves to be an ongoing maintenance person? Do they take turns managing the property? Split up duties? Hire an outside maintenance company? Let everything decay into squalor? It's up to the people occupying the property to decide how it will be managed.
 
+## Who decides who gets to live where?
+
+The communities that act as stewards of various resources (such as housing) would be responsible for determining how those resources are distributed to their members. There is no one-size-fits-all method to figuring out usage of shared resources.
+
 ## Where do companies get the money to pay workers and buy things?
 
 Companies don't use money. They simply order the things they need to fill the orders that they receive, and the system pays workers by printing credits for their labor.
 
-That said, the system might have limits for how much costs each company can command at any given time. This creates an upper limit on a company's inputs, which would have to be balanced with equal outputs.
+That said, the system has limits for how much costs each company can command at any given time. This creates an upper limit on a company's inputs, which would have to be balanced with equal outputs.
 
 ## So wait you're just printing money to pay people?
 
@@ -110,13 +118,13 @@ Accumulation is a problem in a market system because profits distribute in uneve
 
 The idea behind tracking labor *and* resources is that value is not just derived from labor, but also from what was given to us by the Earth. In order to know the *true cost* of something, we can't just look at its labor content. Knowing both, producers aren't just ordering products based on the labor content, but the resource content as well, which helps make more informed decisions along the supply chain.
 
-Tracking resources gives us other advantages. Because credits have both labor content *and* resource content, we can use the resource content of credits to limit certain types of consumption. For instance, if the fossil fuel content of all products is known, then a carbon tax can be enforced at the consumer level by adjusting the fossil fuel price (in credits). In other words, some amount of externalities can be accounted for by tracking various resources.
+Tracking resources gives us other advantages. When someone buys something with their credits, the resources contained in that item can have a credit cost that adds to the final price. For instance, if the fossil fuel content of all products is known, then a carbon tax can be enforced at the consumer level by adjusting the fossil fuel price (in credits). In other words, some amount of externalities can be accounted for by tracking various resources. We can raise the price of fossil fuel resources and watch as the productive system reorganize to limit use fo fossil fuels.
 
-This allows members of the system to adjust resource consumption to match the availability of various resources without relying on market conditions or complex government regulations.
+This allows members of the system to adjust resource consumption to match the availability of various resources without relying on capitalist markets to do the right thing or waiting for complex government regulations that take years of bickering to agree on a half-solution.
 
 ## If companies are still valuing their outputs based on labor costs, won't there be just as much pressure to externalize?
 
-Yes. Given the system as described so far, a company with lower costs will get more orders, and have less chance of no longer being able to meet social needs (ie, "bankruptcy" in the current system). So there's still a pressure to lower costs, and there's still a need to have a job, and that job being axed creates the same survival drive that exists in capitalism. While profit is removed from production, the dynamics from capitalism still exist.
+Yes. Given the system as described so far, a company with lower costs will get more orders, and have less chance of no longer being able to meet social needs (ie, "bankruptcy" in the current system). So there's still a pressure to lower costs, and there's still a need to have a job, and that job being axed creates the same survival drive that exists in capitalism. While profit is removed from production, some dynamics from capitalism still exist.
 
 How do we fix this?
 
