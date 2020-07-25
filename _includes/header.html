@@ -1,5 +1,8 @@
 {% if page.leader %}
-<div class="main-nav-container uk-background-cover uk-position-relative" style="background-image: url({% if page.leader.image_raw %}{{ page.leader.image_raw }}{% else %}{{ page.leader.image | prepend: site.baseurl }}{% endif %});" uk-parallax="media: @m; easing: 0.2; bgy: -64,0">
+<div class="main-nav-container uk-background-cover uk-position-relative" style="background-image: url({% if page.leader.image_raw %}{{ page.leader.image_raw }}{% else %}{{ page.leader.image | prepend: site.baseurl }}{% endif %});" {% if page.network_animation != true %}uk-parallax="media: @m; easing: 0.2; bgy: -64,0"{% endif %}>
+	{% if page.network_animation %}
+		<div class="network-animation" uk-parallax="media: @m; easing: 0.2; y: -32,32"></div>
+	{% endif %}
 	<div class="overlay">&nbsp;</div>
 {% else %}
 <div class="main-nav-container">
@@ -8,16 +11,17 @@
 		<nav class="main" uk-navbar>
 			<div class="uk-navbar-left">
 				<a class="uk-navbar-item uk-logo uk-margin-right uk-text-secondary" href="{{ '/' | prepend: site.baseurl }}">
-					<img class="uk-margin-small-right" alt="Basis logo" src="{{ '/assets/images/red_star.256.outline.png' | prepend: site.baseurl }}"><span>Basis</span>
+					<img class="uk-margin-xsmall-right" alt="Basis logo" src="{{ '/assets/images/logo.outline.png' | prepend: site.baseurl }}"><span>Basis</span>
 				</a>
 			</div>
 			<div class="uk-navbar-right">
 				<ul class="uk-navbar-nav uk-visible@s">
+					<li><a href="{{ "/contribute" | prepend: site.baseurl }}">Get involved</a></li>
 					<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
 					<li><a href="{{ "/posts" | prepend: site.baseurl }}">News</a></li>
 					<li><a href="{{ "/faq" | prepend: site.baseurl }}">FAQ</a></li>
 					<!--<li><a href="{{ "/docs" | prepend: site.baseurl }}">Documentation</a></li>-->
-					<li><a title="Source code" href="https://gitlab.com/basisproject/"><icon>&#xF296;</icon>&nbsp;&nbsp;Source &raquo;</a></li>
+					<li><a title="Source code" href="https://gitlab.com/basisproject/"><icon>&#xF296;</icon>&nbsp;&nbsp;Gitlab &raquo;</a></li>
 					<li><a title="Basis community" href="https://www.reddit.com/r/basisproject"><icon>&#xF281;</icon>&nbsp;&nbsp;Community &raquo;</a></li>
 				</ul>
 			</div>
@@ -42,7 +46,7 @@
 		</nav>
 
 		{% if page.leader %}
-			<div class="hero uk-section uk-background-cover">
+		<div class="hero uk-section {% if page.network_animation %}uk-section-large{% endif %} uk-background-cover {{ page.leader.class }}">
 				<div class="hero-container uk-container {% if page.leader.button %}uk-padding-small{% else %}uk-padding{% endif %}">
 					<div class="info uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-text-center">
 						<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-small-bottom uk-light">

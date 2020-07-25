@@ -42,9 +42,15 @@
 // -----------------------------------------------------------------------------
 html, body {color: @text-color;}
 body {background: @background;}
-.main-nav-container {border-bottom: @border-standard; box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.07);}
+.main-nav-container {overflow: hidden; border-bottom: @border-standard; box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.07);}
 .main-nav-container {
+	.network-animation {z-index: 0; position: absolute; top: -32px; bottom: -32px; left: 0; right: 0; overflow: hidden; background: #111;}
 	.overlay {position: absolute; z-index: 0; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.70);}
+}
+body.has-network-animation {
+	.main-nav-container {
+		.overlay {background: rgba(0, 0, 0, 0.45);}
+	}
 }
 nav.main {
 	.uk-logo {font-family: 'Bolshevik';}
@@ -128,9 +134,21 @@ body.has-leader {
 	}
 }
 
-.home-grid {}
-.home-grid {
-	icon {font-size: 32px; color: @header-color;}
+.icon-grid {}
+.icon-grid {
+	a {color: #666666 !important; text-decoration: none;}
+	a {
+		.uk-card-badge {opacity: 0.8; transition: opacity 250ms;}
+		&:hover .uk-card-badge {opacity: 1;}
+	}
+	icon {font-size: 16px;}
+}
+
+// -----------------------------------------------------------------------------
+// contributing
+// -----------------------------------------------------------------------------
+body.contributing {
+	a.uk-card-body:hover {text-decoration: none;}
 }
 
 /*

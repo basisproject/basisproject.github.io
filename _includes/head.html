@@ -12,10 +12,45 @@
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
-	<link rel="icon" href="{{ "/assets/images/red_star.256.png" | prepend: site.baseurl}}" type="image/png">
+	<link rel="icon" href="{{ "/assets/images/logo.png" | prepend: site.baseurl}}" type="image/png">
 
 	<script src="{{ "/assets/js/uikit.min.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
 	<script src="{{ "/assets/js/uikit-icons.min.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
+
+	{% if page.network_animation %}
+		<script src="{{ "/assets/js/d3.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
+		<script src="{{ "/assets/js/bus.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
+		<script src="{{ "/assets/js/network.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
+		<script>
+			window.addEventListener('load', () => {
+				// "mobile" gets a static image
+				const el = document.body.querySelector('.network-animation');
+				if(!el) return;
+				if(document.body.offsetWidth < 640) {
+					el.remove();
+					return;
+				}
+				Network.start(el, {
+					canvas: {
+						render: true,
+						node_color_active: '#cc00ff',
+						node_color_inactive: '#555555',
+						link_opacity: 0.3,
+					},
+					draw_fps: 30,
+					node_density: 0.0004,
+					max_links: 7,
+					queue_speed: {
+						min: 5,
+						div: 100,
+						pow: 2,
+						base: 1000,
+						jitter: 50,
+					},
+				});
+			}, false);
+		</script>
+	{% endif %}
 
 	{% if page.leader.image_raw %}<meta property="og:image" content="{{ page.leader.image_raw }}" />{% endif %}
 	{% if page.leader.image %}<meta property="og:image" content="{{ page.leader.image | prepend: site.baseurl | prepend: site.url }}" />{% endif %}

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
-	<body class="{{ page.body_class }} {% if page.leader %}has-leader{% endif %}">
+	<body class="{{ page.body_class }} {% if page.leader %}has-leader{% endif %} {% if page.network_animation %}has-network-animation{% endif %}">
 		{% include header.html %}
 
 {{ content }}

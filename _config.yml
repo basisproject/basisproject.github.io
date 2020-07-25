@@ -27,7 +27,7 @@ url: "https://basisproject.gitlab.io" # the base hostname & protocol for your si
 paginate: 10
 paginate_path: "/posts/page/:num"
 permalink: "/posts/:year/:month/:title/"
-asset_version: 2
+asset_version: 3
 
 kramdown:
   parse_block_html: true
