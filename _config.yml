@@ -22,8 +22,8 @@ title: Basis
 email: orthecreedence@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Documentation and information about the Basis project
-baseurl: "/public" # the subpath of your site, e.g. /blog
-url: "https://basisproject.gitlab.io" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://basisproject.net" # the base hostname & protocol for your site, e.g. http://example.com
 paginate: 10
 paginate_path: "/posts/page/:num"
 permalink: "/posts/:year/:month/:title/"
