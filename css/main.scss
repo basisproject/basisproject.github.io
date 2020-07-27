@@ -4,45 +4,47 @@
 // -----------------------------------------------------------------------------
 // Theme definition
 // -----------------------------------------------------------------------------
-@background: #fff; //#f0f0f0;
-@text-color: #111;
-@header-color: #c22;  // #333;
-@site-width: 1024px;
-@font-text: 'Titillium Web', sans-serif;
-@font-header: 'Titillium Web', sans-serif;
-@font-impact: 'Titillium Web', sans-serif;
-@border-standard: 1px solid darken(@background, 10%);
+$background: #fff;  //#f0f0f0;
+$text-color: #111;
+$header-color: #c22;  // #333;
+$site-width: 1024px;
+$font-text: 'Titillium Web', sans-serif;
+$font-header: 'Titillium Web', sans-serif;
+$font-impact: 'Titillium Web', sans-serif;
+$border-standard: 1px solid darken($background, 10%);
 
 // -----------------------------------------------------------------------------
 // UIkit
 // -----------------------------------------------------------------------------
-@import './node_modules/uikit/src/less/uikit.theme.less';
-
 // overrides
-@global-background: @background;
-@global-font-family: @font-text;
-@global-primary-background: @header-color;
-@global-secondary-background: @text-color;
-@breadcrumb-divider-margin-horizontal: 10px;
-@base-em-color: inherit;
-@inverse-global-color: fade(@global-inverse-color, 85%);
-@navbar-nav-item-height: 64px;
-@base-heading-color: @header-color;
-//@base-heading-font-family: @font-header;
-@base-link-color: @header-color;
-.uk-button-primary {color: @background !important;}
+$global-background: $background;
+$global-font-family: $font-text;
+$global-primary-background: $header-color;
+$global-secondary-background: $text-color;
+$breadcrumb-divider-margin-horizontal: 10px;
+$base-em-color: inherit;
+//$inverse-global-color: desaturate($global-inverse-color, 85%);
+$navbar-nav-item-height: 64px;
+$base-heading-color: $header-color;
+//$base-heading-font-family: $font-header;
+$base-link-color: $header-color;
+.uk-button-primary {color: $background !important;}
+
+@import "../node_modules/uikit/src/scss/variables-theme.scss";
+@import "../node_modules/uikit/src/scss/mixins-theme.scss";
+@import '../node_modules/uikit/src/scss/uikit-theme.scss';
 
 // -----------------------------------------------------------------------------
 // Fonts
 // -----------------------------------------------------------------------------
-@import './css/fonts.less';
+@import './fonts.scss';
 
 // -----------------------------------------------------------------------------
 // Template
 // -----------------------------------------------------------------------------
-html, body {color: @text-color;}
-body {background: @background;}
-.main-nav-container {overflow: hidden; border-bottom: @border-standard; box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.07);}
+html, body {color: $text-color;}
+body {background: $background;}
+.main-nav-container {overflow: hidden; border-bottom: $border-standard; box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.07);}
 .main-nav-container {
 	.network-animation {z-index: 0; position: absolute; top: -32px; bottom: -32px; left: 0; right: 0; overflow: hidden; background: #111;}
 	.overlay {position: absolute; z-index: 0; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.70);}
@@ -61,13 +63,13 @@ nav.main {
 	ul.uk-navbar-nav {flex-wrap: wrap;}
 }
 
-a {color: @header-color;}
-a:visited:not(.uk-button) {color: darken(@header-color, 15%);}
+a {color: $header-color;}
+a:visited:not(.uk-button) {color: darken($header-color, 15%);}
 a:hover {text-decoration: underline;}
 
 .main-page {min-height: 400px;}
 
-footer {border-top: @border-standard;}
+footer {border-top: $border-standard;}
 footer {
 	icon {font-size: 24px;}
 	.jab {font-weight: bold;}
@@ -80,7 +82,7 @@ footer {
 // General page styles
 // -----------------------------------------------------------------------------
 h1, h2, h3, h4, h5, h6 {
-	a {color: @header-color;}
+	a {color: $header-color;}
 }
 
 // -----------------------------------------------------------------------------
@@ -91,7 +93,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .post-list {}
 .post-list {
-	.post {padding-bottom: 48px; margin-bottom: 48px; border-bottom: @border-standard;}
+	.post {padding-bottom: 48px; margin-bottom: 48px; border-bottom: $border-standard;}
 	.post:last-child {border-bottom: 0;}
 	&.summary {
 		h3 {font-size: 18px;}
@@ -108,7 +110,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 .post {
-	h1, h1 a {color: @header-color;}
+	h1, h1 a {color: $header-color;}
 }
 
 // -----------------------------------------------------------------------------
@@ -118,10 +120,10 @@ body.has-leader {
 	.main-nav-container {border-bottom: 1px solid rgba(0, 0, 0, 0);}
 	nav.main {
 		.uk-logo {
-			span {color: @background;}
+			span {color: $background;}
 		}
 		.uk-navbar-nav {
-			li a {color: @background;}
+			li a {color: $background;}
 		}
 	}
 }
@@ -129,7 +131,7 @@ body.has-leader {
 .hero {
 	.hero-container {position: relative;}
 	.info {
-		h1 {font-size: 42px; font-family: @font-impact;}
+		h1 {font-size: 42px; font-family: $font-impact;}
 		h2 {font-size: 22px; /*max-width: 569px;*/}
 	}
 }
@@ -156,15 +158,15 @@ body.contributing {
 .hero {
 	.hero-container {position: relative;}
 	.info {
-		h1 {font-size: 64px; font-family: @font-impact;}
+		h1 {font-size: 64px; font-family: $font-impact;}
 		h2 {font-size: 22px; max-width: 569px;}
 	}
 }
 .page-leader {margin-bottom: 64px; background-position: center center; background-repeat: no-repeat; background-size: cover;}
 .page-leader {
 	.inner {display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px; text-align: center; color: #fff; background: rgba(0, 0, 0, 0.6);}
-	h1 {max-width: @site-width; font-size: 64px; font-family: @font-impact;}
-	h2 {max-width: (@site-width / 1.8); margin-top: 16px; font-size: 22px; line-height: 1.2em;}
+	h1 {max-width: $site-width; font-size: 64px; font-family: $font-impact;}
+	h2 {max-width: ($site-width / 1.8); margin-top: 16px; font-size: 22px; line-height: 1.2em;}
 }
 */
 
@@ -172,11 +174,11 @@ body.contributing {
 // -----------------------------------------------------------------------------
 // Template
 // -----------------------------------------------------------------------------
-body {padding: 0; margin: 0; color: @text-color; font-family: @font-text; background: @background;}
+body {padding: 0; margin: 0; color: $text-color; font-family: $font-text; background: $background;}
 
 body > header {margin: 0 0 64px 0; padding: 12px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.3);}
 body > header {
-	.inner {max-width: @site-width; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px;}
+	.inner {max-width: $site-width; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px;}
 	.nav {display: flex; flex-wrap: wrap; list-style: none; margin: 0 0 0 0; padding: 2px 0 0 0;}
 	.nav {
 		li a {display: block; margin: 0 8px; font-family: 'Teko'; font-size: 22px; color: #222; text-decoration: none;}
@@ -191,13 +193,13 @@ body > header {
 
 * {box-sizing: border-box;}
 
-a {color: @header-color;}
-a:visited {color: darken(@header-color, 15%);}
+a {color: $header-color;}
+a:visited {color: darken($header-color, 15%);}
 
-.page-content {max-width: @site-width; margin: 0 auto 64px auto; line-height: 1.4em;}
+.page-content {max-width: $site-width; margin: 0 auto 64px auto; line-height: 1.4em;}
 .page-content {
 	.wrapper {padding: 0 24px;}
-	h1, h2, h3 {font-family: @font-header; font-weight: 200; color: @header-color; line-height: 1.1em;}
+	h1, h2, h3 {font-family: $font-header; font-weight: 200; color: $header-color; line-height: 1.1em;}
 	h1 {font-size: 40px; margin-bottom: 18px;}
 	h2 {font-size: 30px; margin-bottom: 13px;}
 	h3 {font-size: 24px; margin-bottom: 10px;}
@@ -230,8 +232,8 @@ body.has-leader {
 .page-leader {margin-bottom: 64px; background-position: center center; background-repeat: no-repeat; background-size: cover;}
 .page-leader {
 	.inner {display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px; text-align: center; color: #fff; background: rgba(0, 0, 0, 0.6);}
-	h1 {max-width: @site-width; font-size: 64px; font-family: @font-impact;}
-	h2 {max-width: (@site-width / 1.8); margin-top: 16px; font-size: 22px; line-height: 1.2em;}
+	h1 {max-width: $site-width; font-size: 64px; font-family: $font-impact;}
+	h2 {max-width: ($site-width / 1.8); margin-top: 16px; font-size: 22px; line-height: 1.2em;}
 }
 
 // -----------------------------------------------------------------------------
@@ -255,7 +257,7 @@ body.has-leader {
 	}
 }
 .post {
-	h1, h1 a {text-decoration: none; color: @header-color;}
+	h1, h1 a {text-decoration: none; color: $header-color;}
 }
 
 // -----------------------------------------------------------------------------

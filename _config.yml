@@ -29,6 +29,9 @@ paginate_path: "/posts/page/:num"
 permalink: "/posts/:year/:month/:title/"
 asset_version: 3
 
+sass:
+  sass_dir: css
+
 kramdown:
   parse_block_html: true
 
