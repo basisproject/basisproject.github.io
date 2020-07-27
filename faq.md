@@ -16,7 +16,7 @@ During the course of this project's slow and steady creation, I've had many conv
 
 ## Is there central planning?
 
-No. Production is distributed. However, various aspects of production are [tuned by the system](https://gitlab.com/basisproject/tracker/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=tag%3Acybernetics).
+No, not by default. Production is distributed. However, various aspects of production are [tuned by the system](https://gitlab.com/basisproject/tracker/-/issues?scope=all&utf8=%E2%9C%93&state=all&label_name[]=tag%3Acybernetics). On top of this, planned companies can be created by members, so planning is not the default but is certainly not prohibited.
 
 ## Who decides who can start a company?
 
