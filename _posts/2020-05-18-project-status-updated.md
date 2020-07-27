@@ -40,7 +40,7 @@ Given that Basis is undergoing a fairly large change of integrating ValueFlows, 
 
 This is an exciting change. While it's an up-front investment in research and build time, It's going to make the project stronger and make development faster in the long run.
 
-[1]: https://basisproject.gitlab.io/public/posts/2020/04/valueflows-blockchain-holochain/
+[1]: {{ '/posts/2020/04/valueflows-blockchain-holochain/' | prepend: site.baseurl }}
 [2]: https://docs.rs/vf-rs/
 [3]: https://valueflo.ws/
 [4]: https://gitlab.com/basisproject/basis

@@ -47,7 +47,7 @@ That's it! Thanks for reading. As always, if you have questions or ideas, the [B
 [resources]: https://gitlab.com/basisproject/tracker/-/issues/86
 [permissions]: https://gitlab.com/basisproject/tracker/-/issues/74
 [cybernetics]: https://gitlab.com/basisproject/tracker/-/issues?label_name%5B%5D=tag%3Acybernetics
-[regions]: https://basisproject.gitlab.io/public/posts/2020/07/rethinking-regions-and-companies/
+[regions]: {{ '/posts/2020/07/rethinking-regions-and-companies/' | prepend: site.baseurl }}
 [paperchanges]: https://gitlab.com/basisproject/tracker/-/issues?label_name%5B%5D=project%3Apaper
 [community]:https://www.reddit.com/r/basisproject/
 [discussions]: https://gitlab.com/basisproject/tracker/-/issues?label_name%5B%5D=type%3Adiscussion
