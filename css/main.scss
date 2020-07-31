@@ -61,6 +61,9 @@ nav.main {
 		span {display: block; padding: 10px 0 0 0px; font-size: 26px; font-family: 'Bolshevik';}
 	}
 	ul.uk-navbar-nav {flex-wrap: wrap;}
+	ul.uk-navbar-nav {
+		icon {font-size: 16px;}
+	}
 }
 
 a {color: $header-color;}
