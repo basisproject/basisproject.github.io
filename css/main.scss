@@ -29,9 +29,9 @@ $base-heading-color: $header-color;
 //$base-heading-font-family: $font-header;
 $base-link-color: $header-color;
 
-@import "../node_modules/uikit/src/scss/variables-theme.scss";
-@import "../node_modules/uikit/src/scss/mixins-theme.scss";
-@import '../node_modules/uikit/src/scss/uikit-theme.scss';
+@import "./uikit/variables-theme.scss";
+@import "./uikit/mixins-theme.scss";
+@import './uikit/uikit-theme.scss';
 
 // -----------------------------------------------------------------------------
 // Fonts
