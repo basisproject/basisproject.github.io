@@ -29,5 +29,5 @@ While these questions aren't necessarily a burning priority for the project (mig
 If you're interested in systemic resource management, join our discussions on [the resource plan][plan] or [resource tagging][tagging].
 
 [costs]: {{ '/posts/2020/05/cost-derivation/' | prepend: site.baseurl }}
-[plan]: https://gitlab.com/basisproject/tracker/-/issues/58
-[tagging]: https://gitlab.com/basisproject/tracker/-/issues/17
+[plan]: https://github.com/basisproject/tracker/issues/58
+[tagging]: https://github.com/basisproject/tracker/issues/17

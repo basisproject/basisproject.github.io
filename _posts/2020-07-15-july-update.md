@@ -41,14 +41,14 @@ It's worth mentioning that in the last month or two, the project has undergone a
 
 That's it! Thanks for reading. As always, if you have questions or ideas, the [Basis community][community] is here for you, or feel free to join in on any of the [ongoing discussions][discussions] in the project tracker!
 
-[core]: https://gitlab.com/basisproject/core
+[core]: https://github.com/basisproject/core
 [vf]: https://valueflo.ws/
-[voting]: https://gitlab.com/basisproject/tracker/-/issues/87
-[resources]: https://gitlab.com/basisproject/tracker/-/issues/86
-[permissions]: https://gitlab.com/basisproject/tracker/-/issues/74
-[cybernetics]: https://gitlab.com/basisproject/tracker/-/issues?label_name%5B%5D=tag%3Acybernetics
+[voting]: https://github.com/basisproject/tracker/issues/87
+[resources]: https://github.com/basisproject/tracker/issues/86
+[permissions]: https://github.com/basisproject/tracker/issues/74
+[cybernetics]: https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics
 [regions]: {{ '/posts/2020/07/rethinking-regions-and-companies/' | prepend: site.baseurl }}
-[paperchanges]: https://gitlab.com/basisproject/tracker/-/issues?label_name%5B%5D=project%3Apaper
+[paperchanges]: https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Aproject%3Apaper
 [community]:https://www.reddit.com/r/basisproject/
-[discussions]: https://gitlab.com/basisproject/tracker/-/issues?label_name%5B%5D=type%3Adiscussion
+[discussions]: https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atype%3Adiscussion
 

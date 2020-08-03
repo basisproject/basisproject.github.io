@@ -13,9 +13,9 @@ Regions as they exist in the project are somewhat brittle. There's a concept of 
 - If I'm a member of a company in region A, but my housing is in region B, I'm breaking the geographical model of regions.
 - If two regions want to build something together (a bridge over a river that divides them) or invest into a public company together, it breaks the geographical model.
 
-In the paper as it exists now, there's a small section that's basically a TO-DO describing how regions might overcome these problems and coordinate their efforts on an extra-regional scale. In other words "we'll figure out these strange and difficult problems later." There's a [discussion issue](https://gitlab.com/basisproject/tracker/-/issues/75) going over how membership might work in a more fluid way, but it still suffers from some similar problems.
+In the paper as it exists now, there's a small section that's basically a TO-DO describing how regions might overcome these problems and coordinate their efforts on an extra-regional scale. In other words "we'll figure out these strange and difficult problems later." There's a [discussion issue](https://github.com/basisproject/tracker/issues/75) going over how membership might work in a more fluid way, but it still suffers from some similar problems.
 
-On top of this, regions have this idea of asset management and permissions surrounding it, but when I started to build out the company model in more detail, I realized [companies have this same concept](https://gitlab.com/basisproject/tracker/-/issues/74). Who gets to use what, and in what capacity? The decision making processes around assets are identical for both companies and regions. Hmm.
+On top of this, regions have this idea of asset management and permissions surrounding it, but when I started to build out the company model in more detail, I realized [companies have this same concept](https://github.com/basisproject/tracker/issues/74). Who gets to use what, and in what capacity? The decision making processes around assets are identical for both companies and regions. Hmm.
 
 Lastly, regions can own assets, which naturally means regions (like companies) can incur costs. How are those costs handled? What is the meaning of these costs if they are regional vs assigned to a producing entity?
 
@@ -45,11 +45,11 @@ On the flip side, let's say the housing company I'm a `1/1000` member of has mor
 
 In this way, membership in companies becomes a vector for market purchasing power to move freely between companies, and does so *without distributing to members individually*. In effect, production is still profitless internally and market success in one company is shared with others through membership.
 
-You might ask what happens if I'm a member of three or four companies. Does the $10 profit from the farm split four-ways equally? Can I choose the ratio to which this distribution occurs? This is an interesting question and a lot of dynamics around it arise that I've [discussed in this comment in the project tracker](https://gitlab.com/basisproject/tracker/-/issues/72#note_375254260) (see "Concerns with this model" section). Discussion here is welcome either in the project tracker or [the project reddit](https://www.reddit.com/r/basisproject/).
+You might ask what happens if I'm a member of three or four companies. Does the $10 profit from the farm split four-ways equally? Can I choose the ratio to which this distribution occurs? This is an interesting question and a lot of dynamics around it arise that I've [discussed in this comment in the project tracker](https://github.com/basisproject/tracker/issues/72#issuecomment-668266377) (see "Concerns with this model" section). Discussion here is welcome either in the project tracker or [the project reddit](https://www.reddit.com/r/basisproject/).
 
 ## Rethinking banking
 
-Although banking was somewhat loosely defined in the regional model both in [the paper]({{ '/paper#chapter-6-banking' | prepend: site.baseurl }}) and [another post]({{ '/posts/2020/02/inner-workings-of-banking/' | prepend: site.baseurl }}), with this new concept it now becomes even more loosely defined. I've made some [attempts at discussion](https://gitlab.com/basisproject/tracker/-/issues/72#note_375863179) but am ultimately not sure of where this will land. Feedback, ideas, and discussion are all greatly appreciated.
+Although banking was somewhat loosely defined in the regional model both in [the paper]({{ '/paper#chapter-6-banking' | prepend: site.baseurl }}) and [another post]({{ '/posts/2020/02/inner-workings-of-banking/' | prepend: site.baseurl }}), with this new concept it now becomes even more loosely defined. I've made some [attempts at discussion](https://github.com/basisproject/tracker/issues/72#issuecomment-668266407) but am ultimately not sure of where this will land. Feedback, ideas, and discussion are all greatly appreciated.
 
 The goal of the banking system is to facilitate
 

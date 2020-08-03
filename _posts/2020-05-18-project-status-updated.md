@@ -43,8 +43,8 @@ This is an exciting change. While it's an up-front investment in research and bu
 [1]: {{ '/posts/2020/04/valueflows-blockchain-holochain/' | prepend: site.baseurl }}
 [2]: https://docs.rs/vf-rs/
 [3]: https://valueflo.ws/
-[4]: https://gitlab.com/basisproject/basis
-[5]: https://gitlab.com/basisproject/core
+[4]: https://github.com/basisproject/basis
+[5]: https://github.com/basisproject/core
 [6]: https://www.substrate.io/
 [7]: https://exonum.com/index
 
