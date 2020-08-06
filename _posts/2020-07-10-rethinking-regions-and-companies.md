@@ -49,7 +49,7 @@ You might ask what happens if I'm a member of three or four companies. Does the 
 
 ## Rethinking banking
 
-Although banking was somewhat loosely defined in the regional model both in [the paper]({{ '/paper#chapter-6-banking' | prepend: site.baseurl }}) and [another post]({{ '/posts/2020/02/inner-workings-of-banking/' | prepend: site.baseurl }}), with this new concept it now becomes even more loosely defined. I've made some [attempts at discussion](https://github.com/basisproject/tracker/issues/72#issuecomment-668266407) but am ultimately not sure of where this will land. Feedback, ideas, and discussion are all greatly appreciated.
+Although banking was somewhat loosely defined in the regional model both in [the paper]({{ '/paper#chapter-5-banking' | prepend: site.baseurl }}) and [another post]({{ '/posts/2020/02/inner-workings-of-banking/' | prepend: site.baseurl }}), with this new concept it now becomes even more loosely defined. I've made some [attempts at discussion](https://github.com/basisproject/tracker/issues/72#issuecomment-668266407) but am ultimately not sure of where this will land. Feedback, ideas, and discussion are all greatly appreciated.
 
 The goal of the banking system is to facilitate
 

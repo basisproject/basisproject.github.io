@@ -23,6 +23,6 @@ So if we want to sell this product into the market, we know what we must price i
 
 There's more detail and nuance in here, but a good amount of it is covered in the paper's new banking chapter! Keep in mind this is still evolving and may change in a way that makes this post irrelevant.
 
-[1]: {{ "/paper#chapter-6-banking" | prepend: site.baseurl }}
+[1]: {{ "/paper#chapter-5-banking" | prepend: site.baseurl }}
 
 

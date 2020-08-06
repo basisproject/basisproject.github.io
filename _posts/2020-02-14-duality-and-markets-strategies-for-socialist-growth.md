@@ -32,6 +32,6 @@ By socializing housing, property by property, as regional mortgages are paid off
 This differential allows member companies to *pay lower wages* to themselves to out-compete market companies while *retaining their standard of living*. As costs of production lower due to lower wages, regional profits of products and services sold to the market rise, allowing more purchasing of housing and productive assets for member use.
 
 [1]: {{ "/paper" | prepend: site.baseurl }}
-[2]: {{ "/paper#chapter-6-banking" | prepend: site.baseurl }}
+[2]: {{ "/paper#chapter-5-banking" | prepend: site.baseurl }}
 
 
