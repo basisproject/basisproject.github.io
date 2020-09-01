@@ -52,8 +52,15 @@
 		</script>
 	{% endif %}
 
-	{% if page.leader.image_raw %}<meta property="og:image" content="{{ page.leader.image_raw }}" />{% endif %}
-	{% if page.leader.image %}<meta property="og:image" content="{{ page.leader.image | prepend: site.baseurl | prepend: site.url }}" />{% endif %}
+	{% if page.og_image %}
+		<meta property="og:image" content="{{ page.og_image | prepend: site.baseurl | prepend: site.url }}" />
+	{% else %}
+		{% if page.leader.image_raw %}
+			<meta property="og:image" content="{{ page.leader.image_raw }}" />
+		{% else if page.leader.image %}
+			<meta property="og:image" content="{{ page.leader.image | prepend: site.baseurl | prepend: site.url }}" />
+		{% endif %}
+	{% endif %}
 
 	<!-- Matomo -->
 	<script type="text/javascript">
