@@ -1,22 +1,22 @@
 ---
 layout: page
-title: "Frequently asked questions about socialism"
+title: "Frequently asked questions about Basis"
 permalink: '/faq'
 leader:
   subtext: '&nbsp;'
   image_raw: 'https://upload.wikimedia.org/wikipedia/commons/1/11/Socialism.JPG'
 ---
 
-During the course of this project's slow and steady creation, I've had many conversations and debates about it. Here are some of the common questions I've received and their responses **in the context of Basis** and the long term vision of how it might be implemented.
+During the course of this project's slow and steady creation, I've had many conversations and debates about it. Here are some of the common questions I've received and their responses.
 
 <div class="page-toc uk-align-right@s uk-width-1-3@s">
 * toc plz replace me
 {:toc}
 </div>
 
-## Is there central planning?
+## Is this central planning?
 
-No, not by default. Production is distributed. However, various aspects of production are [tuned by the system](https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics). On top of this, planned companies can be created by members, so planning is not the default but is certainly not prohibited.
+No, not really. Production is distributed as it is in a market system. However, various aspects of production are [automatically tuned by the system](https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics). On top of this, planned companies can be created by members, so while planning is not the default it is certainly not prohibited.
 
 ## Who decides who can start a company?
 
@@ -24,13 +24,13 @@ You do. There are no central planners. If your company agrees to use the Basis s
 
 ## How do you define meeting a social need?
 
-Because we define orders as a sign of direct demand, for our purposes "meeting a social need" means filling some amount of orders over a certain period of time. How many orders and how much time really depends on the region and the company, but the general metric is: how much direct demand is there for your products and services?
+Effectively, building or doing things for others without deriving profit.
 
 ## Doesn't removing the need for profit make companies less efficient?
 
 This depends entirely on what you're optimizing for. If you're optimizing for the company's personal gain at the expense of the rest of society and the environment, then yes, removing profit makes things less efficient.
 
-People who advocate for markets/capitalism talk of needs and prices being subjective. In that case, it follows that efficiency must also be subjective and cannot be used as an objective measure. It also follows that nothing is ever *just efficient*, but rather *efficient at something*. Is a whale efficient? It certainly is when holding its breath. However the same whale might not be an efficient trapeze artist.
+People who advocate for markets/capitalism talk of needs and prices being subjective. In that case, it follows that efficiency must also be subjective and cannot be used as an objective measure. It also follows that nothing is ever *just efficient*, but rather *efficient at something*. Is a whale efficient? It certainly is when holding its breath. However the same whale might not be an efficient trapeze artist. Let's also not forget that "lowering costs" might be the mark of an efficient company under a capitalist system, but most often lowering costs just means *externalizing costs*. That's not efficient, that's forcing your dirty laundry on everyone else.
 
 So when people say a company is "efficient" what exactly does this mean? For our purposes, it will be efficient at meeting a social need as an integrated part of a community.
 
@@ -56,19 +56,23 @@ You can also advocate for liquid democracy in your workplace, which allows you t
 
 Ownership is an interesting concept.
 
-If you own a property in the United States, I would argue you actually own the title for use of your property, not the property itself. You cannot dig a mine on your own property without state approval. You cannot build a 1000ft tall structure without state approval. If the state or federal government wants to build a railroad track through your house, they can force you off your land. In essence, in the United States (and likely other countries), property is owned jointly between cities, counties, states, and the nation. You own a title of use of your property, but you do not own the property itself. Ownership is a misnomer.
+If you own a property in the United States, it could be argued you actually own the *title for use* of your property, not the property itself. You cannot dig a mine on your own property without state approval. You cannot build a 1000ft tall structure without state approval. If the state or federal government wants to build a railroad track through your house, they can force you off your land. In essence, in the United States (and likely other countries), property is owned jointly between cities, counties, states, and the nation. You own a title of use of your property, but you do not own the property itself. Ownership is a misnomer.
 
-For our purposes, use of property would be much the same. Although the region, and therefor the community, would own houses and apartments, your use of that property would be like it would be if you "owned" property in the US. You can make improvements to the house you're occupying. You can take out walls or build additions. You can park your 25 year old station wagon in your front yard. Even though you didn't "buy" the property, you are afforded the same privileges as if you did in the market system. The only tangible difference between this and the market system is that usage is based off of need (availability and waitlisting), rather than market forces.
+For our purposes, use of property would be much the same. Although the community would own houses and apartments, your use of that property would be like it would be if you "owned" property in the US. You can make improvements to the house you're occupying. You can take out walls or build additions. You can park your 25 year old station wagon in your front yard. Even though you didn't "buy" the property, you are afforded the same privileges as if you did in the market system. The only tangible difference between this and the market system is that usage is based off of need (availability and waitlisting), rather than market forces.
+
+It's important to note that there's no pre-defined system of property management baked into Basis. Some housing companies might be more permissive and let you paint your house black with green polkadots. Other housing companies might be HOA hellscapes that want the houses, lawns, cars, streets, and sky in the neighborhood to all be beige. People are free to decide how their communities operate.
 
 ## How would shared housing like apartments work?
 
-Apartments would be "in-use" by multiple members of the region and therefor would be managed by those who are in use of it. There would be no regionally-assigned landlord or owner, but rather the tenants would decide amongst themselves how to manage the property.
+Apartments would be "in-use" by multiple members of the system and therefor would be managed by those who are in use of it. There would be no state-assigned landlord or owner, but rather the tenants would decide amongst themselves how to manage the property.
 
 Do they elect one of themselves to be an ongoing maintenance person? Do they take turns managing the property? Split up duties? Hire an outside maintenance company? Let everything decay into squalor? It's up to the people occupying the property to decide how it will be managed.
 
 ## Who decides who gets to live where?
 
-The communities that act as stewards of various resources (such as housing) would be responsible for determining how those resources are distributed to their members. There is no one-size-fits-all method to figuring out usage of shared resources.
+The communities that act as stewards of various resources (such as housing) would be responsible for determining how those resources are distributed to their members. There is no one-size-fits-all method to figuring out usage of shared resources. They might automate it such that it's on a first-come, first-serve basis. They might want to match families with houses that have the correct amount of bedrooms. They might use a lottery system.
+
+And yes, they might give the best properties to their cousins. However, all decisions about use of property are transparent and open to scrutiny of the community.
 
 ## Where do companies get the money to pay workers and buy things?
 
@@ -92,9 +96,9 @@ Essentially investment becomes distributed amongst the producers and the region 
 
 Anybody is free to start a company, and this company can do anything you'd like. That said, it must be a worker-owned co-op, so anyone you hire will also be part owner of the company.
 
-Entrepreneurship in the traditional sense of "I made this and therefor I get all the rewards" won't work here, and is a faulty idea to begin with. Rather, instead of rewarding people with perpetual profits and ownership for taking a grand risk, we significantly lower the risks themselves (mainly by distributing investment amongst the producers).
+Entrepreneurship in the traditional sense of "I made this and therefor I get all the rewards" won't work here, and is a faulty idea to begin with because *nobody builds a multinational corporation by themselves*. Rather, instead of rewarding people with perpetual profits and ownership for taking a grand risk, we significantly lower the risks themselves (mainly by distributing investment amongst the producers).
 
-By not requiring capital to start or run a company, we socialize the risks and lower the barriers to entry. Entrepreneurship is democratized and not just reserved for those with trust funds or deep connections.
+By not requiring a person to own capital to start or run a company, we socialize the risks and lower the barriers to entry. Entrepreneurship is democratized and not just reserved for those with trust funds or deep connections.
 
 ## Can credits be exchanged with other members?
 
@@ -110,9 +114,9 @@ In addition, this system would also let you convert your credits into various fo
 
 No! Unlike traditional labor vouchers, credits *do not expire!* Does the value of the labor you provided to society "expire?" No? Then neither should the representation of the labor you've provided.
 
-The idea of expiring labor vouchers seems to fly in the face of all the things socialism stands for -- workers receiving the full value of their labor -- in an attempt to limit accumulation. But why should accumulation be limited? What if someone needs to save for a big family vacation? Or some other large purchase?
+The idea of expiring labor vouchers seems to be at odds with the idea of workers receiving the full value of their labor in an attempt to limit accumulation. But why should accumulation be limited? What if someone needs to save for a big family vacation? Or some other large purchase?
 
-Accumulation is a problem in a market system because profits distribute in uneven patterns and are subject to manipulation by those who already have capital. In a system of socialized profitless production and worker ownership, the billionaire class would disappear. Enforcing this through the monetary system is nothing more than an admission that a socialist economy is incapable of even distribution.
+Accumulation is a problem in a market system because profits distribute in uneven patterns and are subject to manipulation by those who already have capital. In a system of profitless production and worker ownership, the billionaire class would disappear. Enforcing this through the monetary system is nothing more than a band-aid fix and an admission of failure.
 
 ## Why track resources and not just labor?
 
@@ -126,7 +130,7 @@ This allows members of the system to adjust resource consumption to match the av
 
 Yes. Given the system as described so far, a company with lower costs will get more orders, and have less chance of no longer being able to meet social needs (ie, "bankruptcy" in the current system). So there's still a pressure to lower costs, and there's still a need to have a job, and that job being axed creates the same survival drive that exists in capitalism. While profit is removed from production, some dynamics from capitalism still exist.
 
-How do we fix this?
+## How do we fix externalization then?
 
 UBI. Give everyone a living wage. Granted, it doesn't have to be a live-in-a-mcmansion-and-own-three-mercedes living wage, but it would take care of basic needs: food, housing, health, education.
 
@@ -148,7 +152,7 @@ Secondly, let's say everyone does stop working. Then what? Nobody repairs the ro
 
 Thirdly, the people who would not do anything productive in a system with a living wage UBI are likely people who will find a way to not do anything productive *in any system*. If they're not going to work, they're not going to work. Why punish everyone by trying to solve a problem that can't be solved?
 
-But let's talk about another aspect of UBI: the people *who get paid for doing work the capitalist market doesn't value*. For instance, being a homemaker is a productive, thankless job that everyone looks down their nose on, but without homemakers our society would not be nearly as advanced as it is. I'd be writing this on a typewriter, shivering next to a wooden stove in a log cabin. A UBI gives homemakers the wage they deserve. What about people who volunteer their time to help those in need? Does capitalism mail them a check for their service? How about artists and musicians? They work tirelessly to make our drab world a bit more tolerable, but often the only way they can make a living doing this is by compromising their ideals.
+But let's talk about another aspect of UBI: the people *who get paid for doing work the capitalist market doesn't value*. For instance, being a homemaker is a productive, thankless job that everyone looks down their nose on, but without homemakers our society would not be nearly as advanced as it is. I'd be writing this on a typewriter, shivering next to a wooden stove in a log cabin. A UBI gives homemakers the wage they deserve. And what about people who volunteer their time to help those in need? Does capitalism mail them a check for their service? How about artists and musicians? They work tirelessly to make our drab world a bit more tolerable, but often the only way they can scrape a living is by compromising their ideals.
 
 I believe we'll find that if we treat people as if they are by default productive, they will happily prove us right.
 
@@ -184,6 +188,10 @@ So while you probably won't walk down to the neighborhood Dental Rental Emporium
 
 No. Socialization requires an active intent: it is not implicit. Just because something is used in a productive capacity does not automatically mean it is now communally owned. Exactly what is socialized and what isn't is a decision made democratically by each region, and doesn't affect your personal belongings.
 
+## Isn't this socialism?
+
+Sure, yeah. A form of it.
+
 ## But isn't socialism evil?
 
 Certainly not if it's voluntary.
@@ -196,7 +204,7 @@ Yes, this is an experiment. Most great things start out that way.
 
 ## How is this different from communism?
 
-If everybody participating agreed to set their wages to zero, you'd essentially have a form of communism. Granted, UBI is still a form of "money" and this might disagree with the "moneyless" attribute of communism, but it's a happy medium between no longer tracking wages and systemic limits on resource consumption. It's also possible that we all collectively agree to set UBI to zero, set the credit cost of all resources to zero, and trust each other to not take more than we need. Far-fetched, maybe, but conceivable (and supported by the system).
+If everybody participating agreed to set their wages to zero, you'd essentially have a form of communism. Granted, UBI is still a form of "money" and this might disagree with the "moneyless" stipulation of communism, but it's a happy medium between no longer tracking wages and systemic limits on resource consumption. It's also possible that we all collectively agree to set UBI to zero, set the credit cost of all resources to zero, and trust each other to not take more than we need. Far-fetched, maybe, but conceivable (and supported by the system).
 
 In other words, Basis is a set of tools for managing an ecologically-focused libertarian socialist economy and could work in a fully-communist context as well.
 

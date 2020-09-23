@@ -25,61 +25,13 @@ body_class: 'contributing'
 <div id="talk-theory" class="uk-section uk-section-small uk-section-muted">
 	<div class="uk-container uk-container-small">
 		<h2 class="uk-text-center">Ongoing discussions</h2>
-		<div class="uk-grid-match uk-grid-medium uk-margin-medium-bottom icon-grid" uk-grid>
-			<div class="uk-width-1-2@s uk-width-1-3@m">
-				<a href="#banking" class="uk-card uk-card-default uk-card-body">
-					<div class="uk-card-badge uk-label"><icon>&#xF19C;</icon></div>
-					<h3 class="uk-card-title">Banking</h3>
-					<p>
-						How does decentralized banking translate between the network and capitalist markets?
-					</p>
-				</a>
-			</div>
-			<div class="uk-width-1-2@s uk-width-1-3@m">
-				<a href="#property-rights" class="uk-card uk-card-default uk-card-body">
-					<div class="uk-card-badge uk-label"><icon>&#xe80a;</icon></div>
-					<h3 class="uk-card-title">Property rights</h3>
-					<p>
-						How is usage of shared resources mediated without markets?
-					</p>
-				</a>
-			</div>
-			<div class="uk-width-1-2@s uk-width-1-3@m">
-				<a href="#governance" class="uk-card uk-card-default uk-card-body">
-					<div class="uk-card-badge uk-label"><icon>&#xE809;</icon></div>
-					<h3 class="uk-card-title">Governance</h3>
-					<p>
-						What are the technical implications of self-determination?
-					</p>
-				</a>
-			</div>
-			<div class="uk-width-1-2@s uk-width-1-3@m">
-				<a href="#privacy" class="uk-card uk-card-default uk-card-body">
-					<div class="uk-card-badge uk-label"><icon>&#xF21B;</icon></div>
-					<h3 class="uk-card-title">Privacy</h3>
-					<p>
-						How do members of the network protect personal information such as purchases?
-					</p>
-				</a>
-			</div>
-			<div class="uk-width-1-2@s uk-width-1-3@m">
-				<a href="#public-market" class="uk-card uk-card-default uk-card-body">
-					<div class="uk-card-badge uk-label"><icon>&#xF291;</icon></div>
-					<h3 class="uk-card-title">Public market</h3>
-					<p>
-						How do network producers and consumers find each other?
-					</p>
-				</a>
-			</div>
-			<div class="uk-width-1-2@s uk-width-1-3@m">
-				<a href="#economics" class="uk-card uk-card-default uk-card-body">
-					<div class="uk-card-badge uk-label"><icon>&#xE800;</icon></div>
-					<h3 class="uk-card-title">Economics</h3>
-					<p>
-						How is distributed production organized without money and prices?
-					</p>
-				</a>
-			</div>
+		<div class="uk-grid-match uk-grid-medium uk-margin-medium-bottom uk-child-width-1-2@s uk-child-width-1-3@m icon-grid" uk-grid>
+			{% include icon-grid-item.html href="#banking" icon="f19c" title="Banking" text="How does decentralized banking translate between the network and capitalist markets?" %}
+			{% include icon-grid-item.html href="#property-rights" icon="e80a" title="Property rights" text="How is usage of shared resources mediated without markets?" %}
+			{% include icon-grid-item.html href="#governance" icon="e809" title="Governance" text="What are the technical implications of self-determination?" %}
+			{% include icon-grid-item.html href="#privacy" icon="f21b" title="Privacy" text="How do members of the network protect personal information such as purchases?" %}
+			{% include icon-grid-item.html href="#public-market" icon="f291" title="Public market" text="How do network producers and consumers find each other?" %}
+			{% include icon-grid-item.html href="#economics" icon="e800" title="Economics" text="How is distributed production organized without money and prices?" %}
 		</div>
 		<p class="uk-text-small uk-text-center">
 			Don't forget, you can <a href="https://www.reddit.com/r/basisproject/">join us on Reddit <icon>&#xF281;</icon></a> for more discussion.

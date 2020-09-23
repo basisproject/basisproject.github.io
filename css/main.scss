@@ -142,7 +142,7 @@ body.has-leader {
 .icon-grid {
 	a {color: #666666 !important; text-decoration: none;}
 	a {
-		.uk-card-badge {opacity: 0.8; transition: opacity 250ms;}
+		.uk-card-badge {top: 8px; right: 8px; opacity: 0.8; transition: opacity 250ms;}
 		&:hover .uk-card-badge {opacity: 1;}
 	}
 	icon {font-size: 16px;}
