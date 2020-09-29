@@ -1,17 +1,7 @@
 ---
 ---
 
-// -----------------------------------------------------------------------------
-// Theme definition
-// -----------------------------------------------------------------------------
-$background: #fff;  //#f0f0f0;
-$text-color: #111;
-$header-color: #c22;  // #333;
-$site-width: 1024px;
-$font-text: 'Titillium Web', sans-serif;
-$font-header: 'Titillium Web', sans-serif;
-$font-impact: 'Titillium Web', sans-serif;
-$border-standard: 1px solid darken($background, 10%);
+@import './common.scss';
 
 // -----------------------------------------------------------------------------
 // UIkit
@@ -53,12 +43,12 @@ body.has-network-animation {
 		.overlay {background: rgba(0, 0, 0, 0.45);}
 	}
 }
+.basis-logo {font-family: 'Bolshevik';}
+.basis-logo {
+	img {max-width: 54px;}
+	span {display: block; padding: 10px 0 0 0px; font-size: 26px; font-family: 'Bolshevik';}
+}
 nav.main {
-	.uk-logo {font-family: 'Bolshevik';}
-	.uk-logo {
-		img {max-width: 54px;}
-		span {display: block; padding: 10px 0 0 0px; font-size: 26px; font-family: 'Bolshevik';}
-	}
 	ul.uk-navbar-nav {flex-wrap: wrap;}
 	ul.uk-navbar-nav {
 		icon {font-size: 16px;}
@@ -136,6 +126,7 @@ body.has-leader {
 		h1 {font-size: 42px; font-family: $font-impact;}
 		h2 {font-size: 22px; /*max-width: 569px;*/}
 	}
+	.basis-logo {display: flex-inline;}
 }
 
 .icon-grid {}

@@ -2,9 +2,15 @@
 <html>
 	{% include head.html %}
 	<body class="{{ page.body_class }} {% if page.leader %}has-leader{% endif %} {% if page.network_animation %}has-network-animation{% endif %}">
-		{% include header.html %}
+		<div class="columns">
+			<header class="column is-one-quarter-mobile">
+				{% include header.html %}
+			</header>
 
-{{ content }}
+			<div class="column">
+				{{ content }}
+			</div>
+		</div>
 
 		{% include footer.html %}
 	</body>

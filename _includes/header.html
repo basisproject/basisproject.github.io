@@ -10,22 +10,11 @@
 	<div class="uk-container">
 		<nav class="main" uk-navbar>
 			<div class="uk-navbar-left">
-				<a class="uk-navbar-item uk-logo uk-margin-right uk-text-secondary" href="{{ '/' | prepend: site.baseurl }}">
-					<img class="uk-margin-xsmall-right" alt="Basis logo" src="{{ '/assets/images/logo.outline.png' | prepend: site.baseurl }}"><span>Basis</span>
-				</a>
+				{% include logo.html %}
 			</div>
 			<div class="uk-navbar-right">
 				<ul class="uk-navbar-nav uk-visible@s">
-					<li><a href="{{ "/how" | prepend: site.baseurl }}">How it works</a></li>
-					<li><a href="{{ "/contribute" | prepend: site.baseurl }}">Get involved</a></li>
-					<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
-					<li><a href="{{ "/posts" | prepend: site.baseurl }}">News</a></li>
-					<li><a href="{{ "/faq" | prepend: site.baseurl }}">FAQ</a></li>
-					<!--<li><a href="{{ "/docs" | prepend: site.baseurl }}">Documentation</a></li>-->
-					<li><a title="Source code" href="https://github.com/basisproject/"><icon>&#xF113;</icon></a></li>
-					<li><a title="Reddit community" href="https://www.reddit.com/r/basisproject"><icon>&#xF281;</icon></a></li>
-					<li><a title="Twitter" href="https://twitter.com/basisproject"><icon>&#xF099;</icon></a></li>
-					<li><a title="Matrix (#basis:matrix.org)" href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org"><icon>&#xE80C;</icon></a></li>
+					{% include nav-items.html %}
 				</ul>
 			</div>
 
@@ -36,24 +25,14 @@
 				<div class="uk-offcanvas-bar">
 					<a class="uk-offcanvas-close"><span uk-icon="icon: close"></span></a>
 					<ul class="uk-nav">
-						<li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
-						<li><a href="{{ "/how" | prepend: site.baseurl }}">How it works</a></li>
-						<li><a href="{{ "/contribute" | prepend: site.baseurl }}">Get involved</a></li>
-						<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
-						<li><a href="{{ "/posts" | prepend: site.baseurl }}">News</a></li>
-						<li><a href="{{ "/faq" | prepend: site.baseurl }}">FAQ</a></li>
-						<!--<li><a href="{{ "/docs" | prepend: site.baseurl }}">Documentation</a></li>-->
-						<li><a title="Source code" href="https://github.com/basisproject/"><icon>&#xF113;</icon>&nbsp;&nbsp;Source &raquo;</a></li>
-						<li><a title="Reddit community" href="https://www.reddit.com/r/basisproject"><icon>&#xF281;</icon>&nbsp;&nbsp;Community &raquo;</a></li>
-						<li><a title="Twitter" href="https://twitter.com/basisproject"><icon>&#xF099;</icon>&nbsp;&nbsp;Twitter &raquo;</a></li>
-						<li><a title="Matrix (#basis:matrix.org)" href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org"><icon>&#xE80C;</icon>&nbsp;&nbsp;Matrix &raquo;</a></li>
+						{% include nav-items.html home=true social_labels=true %}
 					</ul>
 				</div>
 			</div>
 		</nav>
 
 		{% if page.leader %}
-		<div class="hero uk-section {% if page.network_animation %}uk-section-large{% endif %} uk-background-cover {{ page.leader.class }}">
+			<div class="hero uk-section {% if page.network_animation %}uk-section-large{% endif %} uk-background-cover {{ page.leader.class }}">
 				<div class="hero-container uk-container {% if page.leader.button %}uk-padding-small{% else %}uk-padding{% endif %}">
 					<div class="info uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-text-center">
 						<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-small-bottom uk-light">
@@ -63,13 +42,6 @@
 								{{ page.title }}
 							{% endif %}
 						</h1>
-						<h2 class="uk-margin-remove-top uk-light">
-							{% if page.leader.subtext %}
-								{{ page.leader.subtext }}
-							{% else if page.author %}
-								{{ page.author }} - {{ page.date | date: "%b %d, %Y" }}
-							{% endif %}
-						</h2>
 						{% if page.leader.button %}
 							<a class="uk-button uk-button-primary uk-margin-small-top" href="{{ page.leader.button.url }}">{{ page.leader.button.text }}</a>
 						{% endif %}

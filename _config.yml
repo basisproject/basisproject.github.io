@@ -52,6 +52,7 @@ plugins:
 exclude:
   - .sass-cache/
   - .jekyll-cache/
+  - css/uikit/
   - gemfiles/
   - Gemfile
   - Gemfile.lock
