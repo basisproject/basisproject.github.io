@@ -4,26 +4,6 @@
 @import './common.scss';
 
 // -----------------------------------------------------------------------------
-// UIkit
-// -----------------------------------------------------------------------------
-// overrides
-$global-background: $background;
-$global-font-family: $font-text;
-$global-primary-background: $primary-color;
-$global-secondary-background: $text-color;
-$breadcrumb-divider-margin-horizontal: 10px;
-$base-em-color: inherit;
-//$inverse-global-color: desaturate($global-inverse-color, 85%);
-$navbar-nav-item-height: 64px;
-$base-heading-color: $primary-color;
-//$base-heading-font-family: $font-header;
-$base-link-color: $primary-color;
-
-@import "./uikit/variables-theme.scss";
-@import "./uikit/mixins-theme.scss";
-@import './uikit/uikit-theme.scss';
-
-// -----------------------------------------------------------------------------
 // Fonts
 // -----------------------------------------------------------------------------
 @import './fonts.scss';
@@ -108,7 +88,7 @@ body.has-leader, body.dark-header {
 	.main-nav-container {border-bottom: 1px solid rgba(0, 0, 0, 0);}
 }
 body.has-leader, body.dark-header {
-	.main-nav-container {border-bottom: 1px solid $global-secondary-background;}
+	.main-nav-container {border-bottom: 1px solid $text-color;}
 }
 body.has-leader, body.dark-header {
 	nav.main {
@@ -128,7 +108,7 @@ body.has-leader, body.dark-header {
 	.info {
 		h1 {font-size: 42px; font-family: $font-impact;}
 		h2 {font-size: 22px; /*max-width: 569px;*/}
-		.uk-button-primary {color: $background; background-color: $global-primary-background;}
+		.uk-button-primary {color: $background; background-color: $primary-color;}
 	}
 }
 
