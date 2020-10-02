@@ -5,7 +5,7 @@
 		{% include post-header.html post=post tag="h1" %}
 		{% if post.leader.image %}
 			<div class="uk-background-cover uk-section uk-section-large uk-section-secondary uk-margin-bottom" style="background-image: url({{ post.leader.image | prepend: site.baseurl }});">&nbsp;</div>
-		{% else if post.leader.image_raw %}
+		{% elsif post.leader.image_raw %}
 			<div class="uk-background-cover uk-section uk-section-large uk-section-secondary uk-margin-bottom" style="background-image: url({{ post.leader.image_raw }});">&nbsp;</div>
 		{% endif %}
 	{% else %}

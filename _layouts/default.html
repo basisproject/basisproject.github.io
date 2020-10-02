@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
-	<body class="{{ page.body_class }} {% if page.leader %}has-leader{% endif %} {% if page.network_animation %}has-network-animation{% endif %}">
+	<body class="{{ page.body_class }} {% if page.leader %}has-leader{% endif %} {% if page.dark_header %}dark-header{% endif %} {% if page.network_animation %}has-network-animation{% endif %}">
 		<div class="columns">
 			<header class="column is-one-quarter-mobile">
 				{% include header.html %}
@@ -13,6 +13,10 @@
 		</div>
 
 		{% include footer.html %}
+		{% if page.scroll_animation %}
+			<script src="{{ "/assets/js/aos.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
+			<script>AOS.init()</script>
+		{% endif %}
 	</body>
 </html>
 

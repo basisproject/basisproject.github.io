@@ -10,6 +10,7 @@
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
 
 	<link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}">
+	<link rel="stylesheet" href="{{ "/css/aos.css" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}">
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="icon" href="{{ "/assets/images/logo.png" | prepend: site.baseurl}}" type="image/png">
@@ -24,7 +25,7 @@
 		<script>
 			window.addEventListener('load', () => {
 				// "mobile" gets a static image
-				const el = document.body.querySelector('.network-animation');
+				const el = document.body.querySelector('.network-animation-container');
 				if(!el) return;
 				if(document.body.offsetWidth < 640) {
 					el.remove();
@@ -42,7 +43,7 @@
 					max_links: 7,
 					queue_speed: {
 						min: 5,
-						div: 100,
+						div: 50,
 						pow: 2,
 						base: 1000,
 						jitter: 50,
@@ -57,7 +58,7 @@
 	{% else %}
 		{% if page.leader.image_raw %}
 			<meta property="og:image" content="{{ page.leader.image_raw }}" />
-		{% else if page.leader.image %}
+		{% elsif page.leader.image %}
 			<meta property="og:image" content="{{ page.leader.image | prepend: site.baseurl | prepend: site.url }}" />
 		{% endif %}
 	{% endif %}

@@ -1,0 +1,14 @@
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
+			<div><img src="{{ include.image | prepend: site.baseurl }}"></div>
+			<div {% if include.flip %}class="uk-flex-first@s"{% endif %}>
+				<h4>
+					{{ include.text }}
+				</h4>
+			</div>
+		</div>
+	</div>
+</div>
+
+

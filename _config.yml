@@ -27,7 +27,7 @@ url: "https://basisproject.net" # the base hostname & protocol for your site, e.
 paginate: 10
 paginate_path: "/posts/page/:num"
 permalink: "/posts/:year/:month/:title/"
-asset_version: 4
+asset_version: 5
 
 sass:
   sass_dir: css

@@ -1,25 +1,25 @@
 {% if page.leader %}
-<div class="main-nav-container uk-background-cover uk-position-relative" style="background-image: url({% if page.leader.image_raw %}{{ page.leader.image_raw }}{% else %}{{ page.leader.image | prepend: site.baseurl }}{% endif %});" {% if page.network_animation != true %}uk-parallax="media: @m; easing: 0.2; bgy: -64,0"{% endif %}>
+<div class="main-nav-container uk-background-secondary uk-background-cover uk-position-relative {% if page.dark_header %}uk-background-secondary{% endif %}" style="background-image: url({% if page.leader.image_raw %}{{ page.leader.image_raw }}{% else %}{{ page.leader.image | prepend: site.baseurl }}{% endif %});" {% if page.network_animation != true %}uk-parallax="media: @m; easing: 0.2; bgy: -64,0"{% endif %}>
 	{% if page.network_animation %}
-		<div class="network-animation" uk-parallax="media: @m; easing: 0.2; y: -32,32"></div>
+		<div class="network-animation-container" uk-parallax="media: @m; easing: 0.2; y: -32,32"></div>
 	{% endif %}
-	<div class="overlay">&nbsp;</div>
+	<div class="leader-overlay {% if page.network_animation %}network-animation{% endif %}">&nbsp;</div>	
 {% else %}
-<div class="main-nav-container">
+<div class="main-nav-container {% if page.dark_header %}uk-background-secondary{% endif %}">
 {% endif %}
-	<div class="uk-container">
+<div class="uk-container">
 		<nav class="main" uk-navbar>
 			<div class="uk-navbar-left">
 				{% include logo.html %}
 			</div>
 			<div class="uk-navbar-right">
-				<ul class="uk-navbar-nav uk-visible@s">
+				<ul class="uk-navbar-nav uk-visible@m">
 					{% include nav-items.html %}
 				</ul>
 			</div>
 
-			<div class="uk-navbar-right uk-hidden@s">
-				<a class="uk-navbar-item" href="#mobile-nav" uk-toggle><span uk-icon="icon: menu"></span></a>
+			<div class="uk-navbar-right uk-hidden@m">
+				<a class="menu uk-navbar-item" href="#mobile-nav" uk-toggle><icon>&#xF0C9;</icon></span></a>
 			</div>
 			<div id="mobile-nav" uk-offcanvas>
 				<div class="uk-offcanvas-bar">
@@ -32,22 +32,16 @@
 		</nav>
 
 		{% if page.leader %}
-			<div class="hero uk-section {% if page.network_animation %}uk-section-large{% endif %} uk-background-cover {{ page.leader.class }}">
-				<div class="hero-container uk-container {% if page.leader.button %}uk-padding-small{% else %}uk-padding{% endif %}">
-					<div class="info uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-text-center">
-						<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-small-bottom uk-light">
-							{% if page.leader.text %}
-								{{ page.leader.text }}
-							{% else if page.title %}
-								{{ page.title }}
-							{% endif %}
-						</h1>
-						{% if page.leader.button %}
-							<a class="uk-button uk-button-primary uk-margin-small-top" href="{{ page.leader.button.url }}">{{ page.leader.button.text }}</a>
-						{% endif %}
-					</div>
-				</div>
-			</div>
+			{% include leader.html
+				skip_overlay=true
+				author=page.author
+				class=page.leader.class
+				text=page.leader.text
+				subtext=page.leader.subtext
+				buttons=page.leader.buttons
+				dark_header=page.dark_header
+				network_animation=page.network_animation
+				image=false %}
 		{% endif %}
 	</div>
 </div>

@@ -112,7 +112,7 @@ const Network = (function() {
 		};
 
 		setInterval(() => {
-			console.log(`- draws/s: ${draws / ((new Date().getTime() - draws_start) / 1000)}`);
+			if(options.log) console.log(`- draws/s: ${draws / ((new Date().getTime() - draws_start) / 1000)}`);
 			if(draws_start + 5000 < new Date().getTime()) {
 				draws = 0;
 				draws_start = new Date().getTime();
@@ -351,7 +351,7 @@ const Network = (function() {
 			});
 		};
 		setInterval(() => {
-			console.log(`- nodes: ${nodes.length}, links: ${links.raw().length}, queue: ${queue.length}`);
+			if(options.log) console.log(`- nodes: ${nodes.length}, links: ${links.raw().length}, queue: ${queue.length}`);
 		}, 2000);
 
 		for(var i = 0; i < num_nodes; i++) {

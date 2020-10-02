@@ -2,6 +2,12 @@
 layout: default
 title: 'How Basis works'
 body_class: 'how'
+network_animation: true
+scroll_animation: false
+leader:
+  image: "/assets/images/network-home.jpg"
+  text: "How Basis works: Part 1 - The Network"
+  subtext: " "
 ---
 
 <!--
@@ -15,155 +21,80 @@ body_class: 'how'
 - banking
 -->
 
-<div class="uk-section uk-section uk-section-muted">
+<div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
-	</div>
-</div>
+		<h4 class="uk-margin-large-bottom">
+			Basis is a Distributed Ledger Technology system. This means it creates a network where
+			the members all participate under the same set of rules, providing a platform for equal
+			opportunity. It also means that the things that happen on the network are transparent
+			and open to review by the members, creating a culture of openness and honesty.
+		</h4>
 
-<div id="talk-theory" class="uk-section uk-section-small uk-section-muted">
-	<div class="uk-container uk-container-small">
-		<h2 class="uk-text-center"></h2>
-		<div class="uk-grid-match uk-grid-medium uk-margin-medium-bottom uk-child-width-1-2@s uk-child-width-1-3@m icon-grid" uk-grid>
-			{% include icon-grid-item.html href="#shared-resources" icon="e80a" title="Shared resources" text="Tools for managing the use of communally-owned assets (housing, factories, etc)" %}
-			{% include icon-grid-item.html href="#banking" icon="f19c" title="Banking" text="Facilitates and automates interfacing with the outside market system" %}
-			{% include icon-grid-item.html href="#cost-tracking" icon="e808" title="Cost tracking" text="Determines detailed costs of labor and resources (for example fossil fuels) for each product and service" %}
-			{% include icon-grid-item.html href="#governance" icon="e809" title="Governance" text="Supports self-management of companies, regions, and ecological resources" %}
-			{% include icon-grid-item.html href="#public-market" icon="f291" title="Public market" text="A place where members can discover and order products and services from each other (like a big socialist Amazon)" %}
-			{% include icon-grid-item.html href="#public-companies" icon="e802" title="Public companies" text="Allows defining and transparently operating social projects (hospitals, pharma research, schools, etc)" %}
+		<div class="uk-grid-medium uk-grid-divider uk-child-width-1-3@s uk-flex-middle uk-margin-large-bottom" uk-grid>
+			<div>
+				This type of distributed system acts like a self-enforcing constitution.
+				Participants can trust that everyone is playing by the same rules,
+			</div>
+			<div>
+				Basis provides a foundation for engaging in production without profit, managing
+				common property, and meeting the basic needs of members.
+			</div>
+			<div>
+				Bottom-up self-governance is at the core of Basis. Members have a voice in the
+				things affecting them, whether in the workplace or the entire system.
+			</div>
 		</div>
-		<p class="uk-text-small uk-text-center">
-			Want more detail? <a href="{{ "/paper" | prepend: site.baseurl }}">Check out the paper</a>.
+
+		<div class="animation drawing laptop-network uk-margin-auto uk-margin-large-bottom uk-width-1-2@s">
+			{% include /svg/laptops.svg %}
+		</div>
+		<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
+
+		<p class="uk-text-emphasis">
+			In the beginning, the network will be overseen by a central organization. As the
+			network's <a href="{{ '/paper#network-self-sufficiency' | prepend: site.baseurl }}">self-sufficiency</a>
+			increases, this organization's control cedes <em>automatically</em>. This setup helps
+			protect the network in its infancy while ensuring its autonomy as time goes forward.
 		</p>
 	</div>
 </div>
 
-<div class="uk-section uk-section-small">
-	<div class="uk-container uk-container-small discussions">
-		<h2 id="banking">
-			Banking
-		</h2>
-		<p>
-			Banking is arguably the most important part of the project. It's the entire translation
-			layer between profitless production and capitalist markets. It creates a protective
-			membrane around the network and allows it to grow just like a private company would.
-			Banking has the following goals:
-		</p>
-		<ul>
-			<li>Facilitate seamless transactions between in-network companies and capitalist entities</li>
-			<li>Allow network members to exchange their credits for local currency</li>
-			<li>Maintain a decentralized infrastructure to avoid single points of failure</li>
-		</ul>
-		<p>
-			Although many of the interactions of banking <a href="{{ '/paper#chapter-5-banking' | prepend: site.baseurl }}">have been described in the paper,</a>
-			much of it remains to be determined.
-		</p>
-		<p>
-			Join on some of the <a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Abanking">banking discussions.</a>
-		</p>
-
-		<h2 id="property-rights">
-			Property rights
-		</h2>
-		<p>
-			One of the primary goals of the Basis project is the conversion of privately-owned
-			productive and housing resources to be commonly held. However, the story doesn't
-			end there. We need ways to determine who ultimately manages which shared resources,
-			and then how use of these resources is determined. Who stays in which house? What 
-			company uses which factory? Who can log or hike or farm in the forest?
-		</p>
-		<p>
-			What ultimately makes sense is that the people most impacted by a resource have the
-			most say in managing it. How do we measure this impact, and how do we translate it into
-			a well-defined process? And how do we enable people to build on this process without
-			artificial limitations?
-		</p>
-		<p>Help us in <a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Aproperty">discussions regarding property.</a>
-
-		<h2 id="governance">
-			Governance
-		</h2>
-		<p>
-			What is the good of common ownership of anything if you have no say in how it's managed?
-			Governance is about harnessing democracy and consensus to give people a say in the things
-			that affect them. Not only this, but the ultimate goal of governance is to allow people to
-			propose changes to the system itself and collectively decide whether it should be implemented
-			or not.
-		</p>
-		<p>
-			This topic is very much about voting, security, and different methods of democracy. If this
-			interests you, <a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Agovernance">discuss governance with us.</a>
-		</p>
-
-		<h2 id="privacy">
-			Privacy
-		</h2>
-		<p>
-			Cash has this wonderful property of being anonymous. No government agency can see the things
-			you buy. No corporation can connect your purchases to your ad profile. Credit cards
-			and other electronic payment methods erode this attribute of cash, and while the general
-			public seems fine with the trade-off, the aggregation of this kind of data can ultimately
-			prove very harmful.
-		</p>
-		<p>
-			So while Basis makes <em>all productive transactions</em> open to member scrutiny, it also
-			protects the purchases of individual members such that only they and the company they're
-			buying from know all the details of the transaction. To the system, and thus the prying
-			eyes of of the public, we can see that <em>a</em> transaction happened. Never <em>your</em>
-			transaction happened. <!-- I don't own a... --> The buyer is completely obscured.
-		</p>
-		<p>
-			Beyond buying things, another essential facet to Basis is voting. While some groups might
-			want open voting, others might require anonymity and privacy in their democratic processes.
-			This needs to be supported fully.
-		</p>
-		<p>
-			If you have experience in cryptography, data privacy, or electronic voting, we'd 
-			<a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Aprivacy">love to get your input</a>.
-		</p>
-
-		<h2 id="public-market">
-			Public market
-		</h2>
-		<p>
-			A large part of this project is cost tracking. Cost tracking requires that people buy things
-			through the system itself. Think of it like a commonly-owned Amazon.com except that the
-			members of the system decide where the profits go.
-		</p>
-		<p>
-			Check out <a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Aproject%3Amarket">public market discussions</a>.
-		</p>
-
-		<h2 id="economics">
-			Economics
-		</h2>
-		<p>
-			While the economics of Basis has received a lot of thought and research and is currently
-			<a href="https://github.com/basisproject/core">being implemented in code</a>, some aspects
-			are still being determined. For instance, members can define public companies with subsidized
-			costs. Where do these subsidies come from? In Basis, there's no concept of costs disappearing.
-			All costs must be accounted for.
-		</p>
-		<p>
-			Do we implement taxation? Or are there other methods of covering costs?
-			<a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Aeconomics">Help us figure these things out.</a>
-		</p>
-		<p>
-			Also, what automated controls do we place on the economy to guide things in a direction
-			favorable to all participants? You might be interested in discussing
-			<a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics">cybernetics.</a>
-		</p>
-
-		<h2 id="your-discussions">
-			All discussions
-		</h2>
-		<p>
-			See the <a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atype%3Adiscussion">list of all ongoing project discussions</a>
-			to find one that interests you.
-		</p>
-		<p>
-			Want to bring up a topic that isn't here? Have a concern or an idea for the project? Stop by the
-			<a href="https://github.com/basisproject/tracker/issues">project tracker</a> and open a new
-			issue or join us at the <a href="https://www.reddit.com/r/basisproject/">community forum!</a>
-		</p>
+<div class="hero-container uk-section uk-section-secondary">
+	<div class="diagonal-box how-part2-bg">
+		<div class="uk-section">
+			<div class="info uk-text-center uk-padding uk-container uk-container-small">
+				<h1>How Basis works: Part 2 - Membership and Companies</h1>
+				<h2 class="uk-margin-remove-bottom">
+					Network membership is available to anybody at a worker-owned company which uses 
+					Basis as the means of ordering/providing inventory and tracking labor costs.
+				</h2>
+			</div>
+		</div>
 	</div>
 </div>
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+
+	</div>
+</div>
+
+{% comment %}
+{% include flip-flop.html
+	flip=true
+	image="/assets/images/stocks.jpg"
+	text="Companies that use Basis are kewl." %}
+
+{% include leader.html
+	text="How Basis works: Part 3 - Products"
+	image="/assets/images/train-station.jpg" %}
+
+{% include leader.html
+	text="How Basis works: Part 4 - Property"
+	image="/assets/images/train-station.jpg" %}
+
+{% include leader.html
+	text="How Basis works: Part 5 - UBI"
+	image="/assets/images/train-station.jpg" %}
+{% endcomment %}
+

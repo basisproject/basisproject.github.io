@@ -9,15 +9,15 @@
 // overrides
 $global-background: $background;
 $global-font-family: $font-text;
-$global-primary-background: $header-color;
+$global-primary-background: $primary-color;
 $global-secondary-background: $text-color;
 $breadcrumb-divider-margin-horizontal: 10px;
 $base-em-color: inherit;
 //$inverse-global-color: desaturate($global-inverse-color, 85%);
 $navbar-nav-item-height: 64px;
-$base-heading-color: $header-color;
+$base-heading-color: $primary-color;
 //$base-heading-font-family: $font-header;
-$base-link-color: $header-color;
+$base-link-color: $primary-color;
 
 @import "./uikit/variables-theme.scss";
 @import "./uikit/mixins-theme.scss";
@@ -33,35 +33,26 @@ $base-link-color: $header-color;
 // -----------------------------------------------------------------------------
 html, body {color: $text-color;}
 body {background: $background;}
-.main-nav-container {overflow: hidden; border-bottom: $border-standard; box-shadow: 0 0 12px 1px rgba(0, 0, 0, 0.07);}
-.main-nav-container {
-	.network-animation {z-index: 0; position: absolute; top: -32px; bottom: -32px; left: 0; right: 0; overflow: hidden; background: #111;}
-	.overlay {position: absolute; z-index: 0; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.70);}
-}
-body.has-network-animation {
-	.main-nav-container {
-		.overlay {background: rgba(0, 0, 0, 0.45);}
-	}
-}
+.main-nav-container {overflow: hidden; border-bottom: $border-standard;}
 .basis-logo {font-family: 'Bolshevik';}
 .basis-logo {
 	img {max-width: 54px;}
 	span {display: block; padding: 10px 0 0 0px; font-size: 26px; font-family: 'Bolshevik';}
 }
 nav.main {
+	.menu {font-size: 24px; color: #fff; text-decoration: none;}
 	ul.uk-navbar-nav {flex-wrap: wrap;}
 	ul.uk-navbar-nav {
 		icon {font-size: 16px;}
 	}
 }
 
-a {color: $header-color;}
-a:visited:not(.uk-button) {color: darken($header-color, 15%);}
+a {color: $primary-color;}
+a:visited:not(.uk-button) {color: darken($primary-color, 15%);}
 a:hover {text-decoration: underline;}
 
 .main-page {min-height: 400px;}
 
-footer {border-top: $border-standard;}
 footer {
 	icon {font-size: 24px;}
 	.jab {font-weight: bold;}
@@ -74,7 +65,7 @@ footer {
 // General page styles
 // -----------------------------------------------------------------------------
 h1, h2, h3, h4, h5, h6 {
-	a {color: $header-color;}
+	a {color: $primary-color;}
 }
 
 // -----------------------------------------------------------------------------
@@ -102,14 +93,24 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 .post {
-	h1, h1 a {color: $header-color;}
+	h1, h1 a {color: $primary-color;}
 }
 
 // -----------------------------------------------------------------------------
 // Page modules
 // -----------------------------------------------------------------------------
-body.has-leader {
+.leader-overlay {position: absolute; z-index: 0; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.70);}
+.leader-overlay {
+	&.network-animation {background: rgba(0, 0, 0, 0.50);}
+}
+.network-animation-container {z-index: 0; position: absolute; top: -32px; bottom: -32px; left: 0; right: 0; overflow: hidden; background: #111;}
+body.has-leader, body.dark-header {
 	.main-nav-container {border-bottom: 1px solid rgba(0, 0, 0, 0);}
+}
+body.has-leader, body.dark-header {
+	.main-nav-container {border-bottom: 1px solid $global-secondary-background;}
+}
+body.has-leader, body.dark-header {
 	nav.main {
 		.uk-logo {
 			span {color: $background;}
@@ -119,14 +120,16 @@ body.has-leader {
 		}
 	}
 }
-.hero {}
-.hero {
-	.hero-container {position: relative;}
+.hero-container {
+	.hero {position: relative;}
+	.hero.light {
+		h1, h2 {color: $text-color;}
+	}
 	.info {
 		h1 {font-size: 42px; font-family: $font-impact;}
 		h2 {font-size: 22px; /*max-width: 569px;*/}
+		.uk-button-primary {color: $background; background-color: $global-primary-background;}
 	}
-	.basis-logo {display: flex-inline;}
 }
 
 .icon-grid {}
@@ -139,136 +142,52 @@ body.has-leader {
 	icon {font-size: 16px;}
 }
 
+// they STOLE it from us: https://9elements.com/blog/pure-css-diagonal-layouts/
+.diagonal-box {position: relative;}
+.diagonal-box:before {content: ""; display: block; position: absolute; z-index: 0; top: 0; right: 0; bottom: 0; left: 0; transform: skewY(-9deg); transform-origin: 50% 0; outline: 1px solid transparent; backface-visibility: hidden; background-size: cover; background-repeat: no-repeat; opacity: 0.2; background-position: center center;}
+.diagonal-box > * {position: relative;}
+
+.drawing {
+	svg {max-width: 100%;}
+}
+
+// -----------------------------------------------------------------------------
+// how it works
+// -----------------------------------------------------------------------------
+.how-part2-bg:before {background-image: url(/assets/images/passport-stamps.jpg);}
+.laptop-network {
+	$default-color: $secondary-color;
+	$laptop1-color: #1885f8;
+	$laptop2-color: #00ffab;
+	$laptop3-color: #fdbf4a;
+	svg {
+		.transaction {fill: #0f0; stroke-width: 40px; stroke: #000;}
+		.transaction-from-laptop1,
+		#g-laptop1 ellipse,
+		#g-laptop1 path {fill: $laptop1-color;}
+		.transaction-from-laptop2,
+		#g-laptop2 ellipse,
+		#g-laptop2 path {fill: $laptop2-color;}
+		.transaction-from-laptop3,
+		#g-laptop3 ellipse,
+		#g-laptop3 path {fill: $laptop3-color;}
+		#laptop1-db,
+		#laptop2-db,
+		#laptop3-db {fill: $default-color !important; opacity: 0.9;}
+		#g-db-data path {
+			& {fill: none; opacity: 0; transition: opacity 1000ms;}
+			&.enabled {opacity: 1;}
+			&.data-laptop1 {fill: $laptop1-color;}
+			&.data-laptop2 {fill: $laptop2-color;}
+			&.data-laptop3 {fill: $laptop3-color;}
+		}
+	}
+}
+
 // -----------------------------------------------------------------------------
 // contributing
 // -----------------------------------------------------------------------------
 body.contributing {
 	a.uk-card-body:hover {text-decoration: none;}
 }
-
-/*
-.hero {position: relative; background-image: url(../assets/images/train-station.jpg);}
-.hero {
-	.hero-container {position: relative;}
-	.info {
-		h1 {font-size: 64px; font-family: $font-impact;}
-		h2 {font-size: 22px; max-width: 569px;}
-	}
-}
-.page-leader {margin-bottom: 64px; background-position: center center; background-repeat: no-repeat; background-size: cover;}
-.page-leader {
-	.inner {display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px; text-align: center; color: #fff; background: rgba(0, 0, 0, 0.6);}
-	h1 {max-width: $site-width; font-size: 64px; font-family: $font-impact;}
-	h2 {max-width: ($site-width / 1.8); margin-top: 16px; font-size: 22px; line-height: 1.2em;}
-}
-*/
-
-/*
-// -----------------------------------------------------------------------------
-// Template
-// -----------------------------------------------------------------------------
-body {padding: 0; margin: 0; color: $text-color; font-family: $font-text; background: $background;}
-
-body > header {margin: 0 0 64px 0; padding: 12px 0; border-bottom: 1px solid rgba(0, 0, 0, 0.3);}
-body > header {
-	.inner {max-width: $site-width; display: flex; align-items: center; justify-content: space-between; margin: 0 auto; padding: 0 24px;}
-	.nav {display: flex; flex-wrap: wrap; list-style: none; margin: 0 0 0 0; padding: 2px 0 0 0;}
-	.nav {
-		li a {display: block; margin: 0 8px; font-family: 'Teko'; font-size: 22px; color: #222; text-decoration: none;}
-		li a:hover {text-decoration: underline;}
-	}
-	.logo {display: flex; text-decoration: none; color: #000;}
-	.logo {
-		img {max-width: 42px;}
-		span {display: block; padding: 10px 0 0 3px; font-size: 26px; font-family: 'Bolshevik';}
-	}
-}
-
-* {box-sizing: border-box;}
-
-a {color: $header-color;}
-a:visited {color: darken($header-color, 15%);}
-
-.page-content {max-width: $site-width; margin: 0 auto 64px auto; line-height: 1.4em;}
-.page-content {
-	.wrapper {padding: 0 24px;}
-	h1, h2, h3 {font-family: $font-header; font-weight: 200; color: $header-color; line-height: 1.1em;}
-	h1 {font-size: 40px; margin-bottom: 18px;}
-	h2 {font-size: 30px; margin-bottom: 13px;}
-	h3 {font-size: 24px; margin-bottom: 10px;}
-	h1, h2 {
-		small {display: inline-block; margin: 0 0 0 9px; font-size: 18px; vertical-align: middle;}
-	}
-
-	ul, ol {margin-left: 32px; margin-bottom: 16px;}
-	ul, ol {
-		ul, ol {margin-bottom: 0};
-	}
-
-	* + h1, * + h2, * + h3 {margin-top: 32px;}
-	p {padding: 6px 0; margin: 0 0 10px 0;}
-
-	pre {margin: 0 0 16px 0; overflow-x: auto;}
-	code {padding: 2px 8px; white-space: pre; font-family: Consolas, "Liberation Mono", Courier, monospace; background: #eee5e5;}
-
-	strong {font-weight: bold;}
-	em {font-style: italic;}
-}
-
-
-// -----------------------------------------------------------------------------
-// Page modules
-// -----------------------------------------------------------------------------
-body.has-leader {
-	header {margin-bottom: 0;}
-}
-.page-leader {margin-bottom: 64px; background-position: center center; background-repeat: no-repeat; background-size: cover;}
-.page-leader {
-	.inner {display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 350px; text-align: center; color: #fff; background: rgba(0, 0, 0, 0.6);}
-	h1 {max-width: $site-width; font-size: 64px; font-family: $font-impact;}
-	h2 {max-width: ($site-width / 1.8); margin-top: 16px; font-size: 22px; line-height: 1.2em;}
-}
-
-// -----------------------------------------------------------------------------
-// Posts
-// -----------------------------------------------------------------------------
-.post {
-	.date {font-weight: bold; font-size: 0.9em;}
-}
-.post-list {list-style: none; margin: 0 !important; padding: 0 !important;}
-.post-list {
-	> li {padding-bottom: 16px; margin-bottom: 16px; border-bottom: 1px solid rgba(0, 0, 0, 0.2);}
-	> li:last-child {border-bottom: 0;}
-	&.summary {
-		> li {padding-top: 6px; margin-bottom: 10px;}
-	}
-	.post-header {
-		&.brief {
-			h3 {margin: 0; padding: 0;}
-			.date {margin: 0; padding: 0; font-weight: normal;}
-		}
-	}
-}
-.post {
-	h1, h1 a {text-decoration: none; color: $header-color;}
-}
-
-// -----------------------------------------------------------------------------
-// homepage
-// -----------------------------------------------------------------------------
-// NOTE: at 700px the font size drops but the new column remins under. oh well.
-@media only screen and (max-width: 699px) {
-	.home-layout {
-		h2 {font-size: 40px;}
-		.news {margin-top: 32px;}
-	}
-}
-@media only screen and (min-width: 700px) {
-	.home-layout {display: flex; justify-content: space-between;}
-	.home-layout {
-		.info {width: 67%;}
-		.news {width: 30%; padding: 0 (3% / 2); border-left: 1px solid rgba(0, 0, 0, 0.1); }
-	}
-}
-*/
 

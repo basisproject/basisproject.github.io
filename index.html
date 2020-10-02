@@ -1,46 +1,22 @@
 ---
 layout: default
 title: "Basis: A post-capitalist productive network"
-network_animation: true
 og_image: '/assets/images/logo.outline.png'
-leader:
-  image: "/assets/images/network-home.jpg"
-  text: "A post-capitalist productive network"
-  button:
-    text: 'Get involved &raquo;'
-    url: '/contribute'
+meta:
+  buttons:
+    - text: 'How it works &raquo;'
+      url: '/how'
+      class: 'uk-button-primary'
+    - text: 'Get involved &raquo;'
+      url: '/contribute'
+      class: 'uk-button-default'
 ---
 
-<div class="home-grid uk-section uk-section">
-	<div class="uk-container uk-container-small">
-		<!--<h2 class="uk-text-center">What is Basis?</h2>-->
-		<p class="uk-text-lead">
-			Basis is an <a href="https://github.com/basisproject/">open source</a> set of tools
-			enabling a self-organizing network where everyone has a say in their workplace, property
-			is managed by the people who use it, and production is focused on ecologically meeting
-			needs instead of generating profit.
-		</p>
-		<div class="uk-grid-large uk-grid-divider@s uk-padding-small uk-padding-remove-bottom uk-text-center" uk-grid>
-			<div class="uk-width-1-2@s uk-text-right@s">
-				<a class="uk-button uk-button-secondary" href="{{ '/how' | prepend: site.baseurl }}">How it works &raquo;</a>
-			</div>
-			<div class="uk-width-1-2@s uk-text-left@s">
-				<a class="uk-button uk-button-secondary" href="{{ "/contribute" | prepend: site.baseurl }}">Get involved &raquo;</a>
-			</div>
-		</div>
-		<!--
-		<p class="uk-margin-medium-bottom">
-			Basis is an <a href="https://github.com/basisproject/">open source</a> set of tools enabling
-			a decentralized network of co-ops that converts private resources
-			to shared and supports production based on use and need instead of profit. The project forges
-			an ecologically-focused transparent economy where members are free
-			to produce their own wants and needs without being subject to forces they have no say in.
-		</p>
-		-->
-		<!--
-		-->
-	</div>
-</div>
+{% include leader.html
+	light=true
+	text="A post-capitalist productive network"
+	subtext="Basis enables an economy where everyone has a say in their workplace, property is managed by the people who use it, and production focuses on ecologically meeting needs instead of generating profit."
+	buttons=page.meta.buttons %}
 
 <div class="uk-section uk-section-small uk-section-muted">
 	<div class="uk-container uk-container-small">
