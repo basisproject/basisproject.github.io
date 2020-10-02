@@ -1,4 +1,4 @@
-.PHONY: all build paper clean
+.PHONY: all build watch paper clean
 
 export SHELL := /bin/bash
 
@@ -10,6 +10,9 @@ all: build
 
 build:
 	bundle exec jekyll build $(DRAFTS) -d $(DEST)
+
+watch:
+	bundle exec jekyll build $(DRAFTS) -d $(DEST) --watch
 
 ../paper/converted/basis.html: $(PAPERFILES)
 	cd ../paper && make html
