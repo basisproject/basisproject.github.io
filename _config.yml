@@ -31,6 +31,7 @@ asset_version: 5
 
 sass:
   sass_dir: css
+  style: compressed
 
 kramdown:
   parse_block_html: true

@@ -9,10 +9,10 @@ DRAFTS ?= --drafts
 all: build
 
 build:
-	bundle exec jekyll build $(DRAFTS) -d $(DEST)
+	bundle exec jekyll build $(DRAFTS) -d $(DEST) --config _config.yml,_config.local.yml
 
 watch:
-	bundle exec jekyll build $(DRAFTS) -d $(DEST) --watch
+	bundle exec jekyll build $(DRAFTS) -d $(DEST) --config _config.yml,_config.local.yml --watch
 
 ../paper/converted/basis.html: $(PAPERFILES)
 	cd ../paper && make html
