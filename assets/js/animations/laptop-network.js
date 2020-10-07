@@ -1,20 +1,19 @@
 "use strict";
 
 (() => {
-	const sleep = (ms) => new Promise((res) => setTimeout(res, ms));
-	const coords = {};
+	const sleep = (ms) => new Promise((res) => setTimeout(res, ms || 0));
 	const load = (container) => {
 		const svg_el = container.querySelector('svg');
 		if(!svg_el) console.warn('laptop-network::load_animation() -- missing svg in el', container);
 		const svg = d3.select(svg_el);
 		svg.append('g').attr('class', 'transactions');
 		[1, 2, 3].forEach((id) => {
-			coords[`laptop${id}`] = [
-				svg.select(`#lap${id}-coord`).attr('cx'),
-				svg.select(`#lap${id}-coord`).attr('cy'),
-			];
+			const x = svg.select(`#lap${id}-coord`).attr('cx');
+			const y = svg.select(`#lap${id}-coord`).attr('cy');
+			container.style.setProperty(`--laptop${id}-coords-x`, x+'px');
+			container.style.setProperty(`--laptop${id}-coords-y`, y+'px');
 		});
-		animate(svg);
+		animate(svg, container);
 	};
 
 	const num_laptops = 3;
@@ -23,15 +22,11 @@
 	let runs = 0;
 	let transactions = [];
 	let data = [];
-	const animate = async (svg) => {
-		const trans = (opts) => {
-			opts || (opts = {});
-			return d3.transition()
-				.duration(opts.duration || 1000)
-				.delay(opts.delay || 0)
-				.ease(d3.easeCubic);
-		};
-
+	const animate = async (svg, container) => {
+		if(container.getAttribute('data-animation-disabled') == 'true') {
+			await sleep(1000);
+			return animate(svg, container);
+		}
 		const render_data = async () => {
 			const groups = {};
 			// clear selected data
@@ -60,9 +55,9 @@
 
 		const laptop_id = (numerical_idx) => `laptop${(numerical_idx % num_laptops) + 1}`;
 
-		const from = coords[`${laptop_id(current_laptop)}`];
-		const to1 = coords[`${laptop_id(current_laptop + 1)}`];
-		const to2 = coords[`${laptop_id(current_laptop + 2)}`];
+		const from = laptop_id(current_laptop);
+		const to1 = laptop_id(current_laptop + 1);
+		const to2 = laptop_id(current_laptop + 2);
 
 		transactions.push({ id: tid++, from, to: to1 });
 		transactions.push({ id: tid++, from, to: to2 });
@@ -72,33 +67,21 @@
 			.selectAll('circle.transaction')
 			.data(transactions)
 			.enter();
-		const enter_trans = enter.append('circle')
-			.attr('class', (d) => `transaction transaction-from-${laptop_id(current_laptop)}`)
-			.attr('cx', from[0])
-			.attr('cy', from[1])
-			.attr('r', 0)
-			.transition(trans())
+		const enter_g = enter.append('g')
+			.attr('class', (d) => `transaction-container from-${d.from}`);
+		const enter_cir = enter_g.append('circle')
+			.attr('class', (d) => `transaction from-${d.from}`)
+			.attr('cx', 0)
+			.attr('cy', 0)
 			.attr('r', 125);
-		sleep(250).then(() => {
-			data.push({ id: tid++, from: laptop_id(current_laptop), to: laptop_id(current_laptop) });
-			render_data();
-		});
-		const go_trans = enter_trans
-			.transition(trans())
-			.attr('cx', (d) => d.to[0])
-			.attr('cy', (d) => d.to[1]);
-		const leave_trans = go_trans
-			.transition(trans())
-			.attr('r', 0);
-		leave_trans.end().then(() => {
-			transactions = [];
-			g_trans
-				.selectAll('circle.transaction')
-				.data(transactions)
-				.exit()
-				.remove();
-		});
-		await go_trans.end();
+		await sleep();
+		enter_cir.attr('class', (d) => `transaction from-${d.from} open`);
+		data.push({ id: tid++, from: laptop_id(current_laptop), to: laptop_id(current_laptop) });
+		render_data();
+		await sleep(1000);
+		enter_g.attr('class', (d) => `transaction-container to-${d.to}`);
+		await sleep(1000);
+		enter_cir.attr('class', (d) => `transaction from-${d.from} close`);
 		data.push({ id: tid++, from: laptop_id(current_laptop), to: laptop_id(current_laptop + 1) });
 		data.push({ id: tid++, from: laptop_id(current_laptop), to: laptop_id(current_laptop + 2) });
 		await render_data();
@@ -110,7 +93,7 @@
 			data = [];
 			await render_data();
 		}
-		animate(svg);
+		return animate(svg, container);
 	};
 
 	window.addEventListener('load', () => {

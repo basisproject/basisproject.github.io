@@ -20,18 +20,23 @@ body {background: $background;}
 	span {display: block; padding: 10px 0 0 0px; font-size: 26px; font-family: 'Bolshevik';}
 }
 nav.main {
-	.menu {font-size: 24px; color: #fff; text-decoration: none;}
+	.menu {font-size: 24px; text-decoration: none;}
 	ul.uk-navbar-nav {flex-wrap: wrap;}
 	ul.uk-navbar-nav {
+		a {color: $link-color-dark;}
+		a:hover {text-decoration: underline;}
 		icon {font-size: 16px;}
 	}
 }
 
-a {color: $primary-color;}
-a:visited:not(.uk-button) {color: darken($primary-color, 15%);}
-a:hover {text-decoration: underline;}
-
-.main-page {min-height: 400px;}
+.main-content {min-height: 400px;}
+.main-content {
+	a:not(.uk-button) {
+		& {color: $link-color;}
+		&:visited {color: $link-color-dark;}
+		&:hover {text-decoration: underline;}
+	}
+}
 
 footer {
 	icon {font-size: 24px;}
@@ -134,21 +139,38 @@ body.has-leader, body.dark-header {
 // -----------------------------------------------------------------------------
 // how it works
 // -----------------------------------------------------------------------------
-.how-part2-bg:before {background-image: url(/assets/images/passport-stamps.jpg);}
-.laptop-network {
+.drawing.laptop-network {
+	--laptop1-coords-x: 0;
+	--laptop1-coords-y: 0;
+	--laptop2-coords-x: 0;
+	--laptop2-coords-y: 0;
+	--laptop3-coords-x: 0;
+	--laptop3-coords-y: 0;
 	$default-color: $secondary-color;
 	$laptop1-color: #1885f8;
 	$laptop2-color: #00ffab;
 	$laptop3-color: #fdbf4a;
 	svg {
-		.transaction {fill: #0f0; stroke-width: 40px; stroke: #000;}
-		.transaction-from-laptop1,
+		.transaction-container {transform: translate(0, 0); transition: transform 1000ms;}
+		.transaction-container {
+			&.from-laptop1 {transform: translate(var(--laptop1-coords-x), var(--laptop1-coords-y));}
+			&.from-laptop2 {transform: translate(var(--laptop2-coords-x), var(--laptop2-coords-y));}
+			&.from-laptop3 {transform: translate(var(--laptop3-coords-x), var(--laptop3-coords-y));}
+			&.to-laptop1 {transform: translate(var(--laptop1-coords-x), var(--laptop1-coords-y));}
+			&.to-laptop2 {transform: translate(var(--laptop2-coords-x), var(--laptop2-coords-y));}
+			&.to-laptop3 {transform: translate(var(--laptop3-coords-x), var(--laptop3-coords-y));}
+		}
+		.transaction {fill: #0f0; stroke-width: 40px; stroke: #000; transform: scale(0, 0); transition: transform 1000ms;}
+		.transaction {
+			&.open {transform: scale(1, 1);}
+		}
+		.transaction.from-laptop1,
 		#g-laptop1 ellipse,
 		#g-laptop1 path {fill: $laptop1-color;}
-		.transaction-from-laptop2,
+		.transaction.from-laptop2,
 		#g-laptop2 ellipse,
 		#g-laptop2 path {fill: $laptop2-color;}
-		.transaction-from-laptop3,
+		.transaction.from-laptop3,
 		#g-laptop3 ellipse,
 		#g-laptop3 path {fill: $laptop3-color;}
 		#laptop1-db,

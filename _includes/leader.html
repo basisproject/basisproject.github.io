@@ -1,13 +1,14 @@
 <div
-		class="hero-container uk-section {% if include.light != true %}uk-light{% endif %} {{ include.class }}
+		class="hero-container uk-section {% if include.large %}uk-section-large{% endif %} {% if include.light != true %}uk-light{% endif %} {{ include.class }}
 				{% if include.image || include.image_raw %}{% if include.light != true %}uk-background-secondary{% endif %} uk-background-cover uk-position-relative {% if include.dark_header %}uk-background-secondary{% endif %}{% endif %}"
-		{% if include.image || include.image_raw %}style="background-image: url({% if include.image_raw %}{{ include.image_raw }}{% else %}{{ include.image | prepend: site.baseurl }}{% endif %});" {% if include.network_animation != true %}uk-parallax="media: @m; easing: 0.2; bgy: -64,0"{% endif %}{% endif %}>
+		{% if include.image || include.image_raw %}style="background-image: url({% if include.image_raw %}{{ include.image_raw }}{% else %}{{ include.image | prepend: site.baseurl }}{% endif %});" {% if include.network_animation != true %}uk-parallax="media: @m; easing: 0.2; bgy: -64,0"{% endif %}{% endif %}
+	>
 	{% if include.skip_overlay != true and include.light != true %}
 		<div class="leader-overlay">&nbsp;</div>
 	{% endif %}
 	<div class="hero {% if include.light %}light{% endif %} uk-container uk-padding">
 		<div class="info uk-flex uk-flex-middle uk-flex-center uk-flex-column uk-text-center">
-			<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-small-bottom">
+			<h1 class="uk-heading-primary uk-margin-remove-top uk-margin-remove-bottom">
 				{% if include.text %}
 					{{ include.text }}
 				{% elsif page.title %}
@@ -15,9 +16,9 @@
 				{% endif %}
 			</h1>
 			{% if include.subtext %}
-				<h2 class="uk-margin-remove-top">{{ include.subtext }}</h2>
+				<h2 class="uk-margin-small-top">{{ include.subtext }}</h2>
 			{% elsif include.author %}
-				<h2 class="uk-margin-remove-top">
+				<h2 class="uk-margin-small-top">
 					{{ include.author }} - {{ page.date | date: "%b %d, %Y" }}
 				</h2>
 			{% endif %}

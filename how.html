@@ -10,55 +10,76 @@ leader:
   subtext: " "
 ---
 
-<!--
-- joining
-- companies
-- transactions between companies
-  - cost tracking
-  - public market
-- membership, productive property
-  - 
-- banking
--->
-
 <div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
-		<h4 class="uk-margin-large-bottom">
+		<h3 class="uk-margin-large-bottom">
 			Basis is a Distributed Ledger Technology system. This means it creates a network where
-			the members all participate under the same set of rules, providing a platform for equal
-			opportunity. It also means that the things that happen on the network are transparent
-			and open to review by the members, creating a culture of openness and honesty.
-		</h4>
+			all the members agree to participate under the same set of guidelines.
+		</h3>
 
 		<div class="uk-grid-medium uk-grid-divider uk-child-width-1-3@s uk-flex-middle uk-margin-large-bottom" uk-grid>
 			<div>
-				This type of distributed system acts like a self-enforcing constitution.
-				Participants can trust that everyone is playing by the same rules,
-			</div>
-			<div>
-				Basis provides a foundation for engaging in production without profit, managing
+				The network provides a foundation for engaging in production without profit, managing
 				common property, and meeting the basic needs of members.
 			</div>
 			<div>
 				Bottom-up self-governance is at the core of Basis. Members have a voice in the
 				things affecting them, whether in the workplace or the entire system.
 			</div>
+			<div>
+				This type of distributed system acts like a self-enforcing constitution.
+				Participants can trust that everyone is playing by the same rules.
+			</div>
 		</div>
 
-		<div class="animation drawing laptop-network uk-margin-auto uk-margin-large-bottom uk-width-1-2@s">
-			{% include /svg/laptops.svg %}
+		<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
+			<div>
+				<div class="animation drawing laptop-network uk-margin-auto uk-width-3-4@s" data-scroll>
+					{% include /svg/laptops.svg %}
+				</div>
+				<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
+			</div>
+			<div class="uk-flex-first@s">
+				<h4>
+					Everyone in the network shares the same view of what's happening. This means the
+					things that happen on the network are transparent and open to review by the
+					members, creating a culture of openness and honesty.
+				</h4>
+				<h4>
+					Knowledge and data are shared.
+				</h4>
+			</div>
 		</div>
-		<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
-
-		<p class="uk-text-emphasis">
-			In the beginning, the network will be overseen by a central organization. As the
-			network's <a href="{{ '/paper#network-self-sufficiency' | prepend: site.baseurl }}">self-sufficiency</a>
-			increases, this organization's control cedes <em>automatically</em>. This setup helps
-			protect the network in its infancy while ensuring its autonomy as time goes forward.
-		</p>
 	</div>
 </div>
 
+{% include leader.html
+	text="How Basis works: Part 2 - Production without profit"
+	image="/assets/images/port.jpg"
+	large=true %}
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Basis enables an economy where people are paid for <em>producing things</em> rather than
+			for <em>selling things.</em> This shift reorganizes the productive system to focus on
+			meeting needs instead of generating profit.
+		</h3>
+		<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
+			<div>
+				<div class="animation drawing forest uk-margin-auto uk-width-3-4@s">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+
+{% comment %}
+<!--
 <div class="hero-container uk-section uk-section-secondary">
 	<div class="diagonal-box how-part2-bg">
 		<div class="uk-section">
@@ -79,7 +100,6 @@ leader:
 	</div>
 </div>
 
-{% comment %}
 {% include flip-flop.html
 	flip=true
 	image="/assets/images/stocks.jpg"
@@ -96,5 +116,14 @@ leader:
 {% include leader.html
 	text="How Basis works: Part 5 - UBI"
 	image="/assets/images/train-station.jpg" %}
+-->
 {% endcomment %}
+
+<script src="{{ '/assets/js/scroll-out.min.js' | prepend: site.basurl }}"></script>
+<script>
+	ScrollOut({
+		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
+		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
+	});
+</script>
 
