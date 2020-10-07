@@ -29,15 +29,6 @@ nav.main {
 	}
 }
 
-.main-content {min-height: 400px;}
-.main-content {
-	a:not(.uk-button) {
-		& {color: $link-color;}
-		&:visited {color: $link-color-dark;}
-		&:hover {text-decoration: underline;}
-	}
-}
-
 footer {
 	icon {font-size: 24px;}
 	.jab {font-weight: bold;}
@@ -49,8 +40,13 @@ footer {
 // -----------------------------------------------------------------------------
 // General page styles
 // -----------------------------------------------------------------------------
-h1, h2, h3, h4, h5, h6 {
-	a {color: $primary-color;}
+.main-content {min-height: 400px;}
+.main-content {
+	a:not(.uk-button) {
+		& {color: $link-color;}
+		&:visited {color: $link-color-dark;}
+		&:hover {text-decoration: underline;}
+	}
 }
 
 // -----------------------------------------------------------------------------
@@ -76,9 +72,6 @@ h1, h2, h3, h4, h5, h6 {
 			.date {margin: 0; padding: 0; font-weight: normal;}
 		}
 	}
-}
-.post {
-	h1, h1 a {color: $primary-color;}
 }
 
 // -----------------------------------------------------------------------------
