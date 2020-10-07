@@ -20,7 +20,7 @@ watch:
 paper.html: ../paper/converted/basis.html
 	@echo "---" > $@
 	@echo "layout: 'page'" >> $@
-	@echo "permalink: '/paper'" >> $@
+	@echo "permalink: '/paper/'" >> $@
 	@echo "title: 'Basis Paper'" >> $@
 	@echo "---" >> $@
 	cat $^ | sed '0,/<body>/d' | grep -v -P '</(body|html)>' >> $@
