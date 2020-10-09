@@ -23,7 +23,7 @@ nav.main {
 	.menu {font-size: 24px; text-decoration: none;}
 	ul.uk-navbar-nav {flex-wrap: wrap;}
 	ul.uk-navbar-nav {
-		a {color: $link-color-dark;}
+		a {color: $link-color-dark; font-size: 14px;}
 		a:hover {text-decoration: underline;}
 		icon {font-size: 16px;}
 	}
@@ -104,8 +104,8 @@ body.has-leader, body.dark-header {
 		h1, h2 {color: $text-color;}
 	}
 	.info {
-		h1 {font-size: 42px; font-family: $font-impact;}
-		h2 {font-size: 22px; /*max-width: 569px;*/}
+		h1 {font-size: 48px; font-family: $font-impact;}
+		h2 {font-size: 24px; /*max-width: 569px;*/}
 		.uk-button-primary {color: $background; background-color: $primary-color;}
 	}
 }
