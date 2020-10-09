@@ -13,6 +13,8 @@
 // -----------------------------------------------------------------------------
 html, body {color: $text-color;}
 body {background: $background;}
+body.dark {background: $text-color};
+.site-container {max-width: 1800px; margin: 0 auto;}
 .main-nav-container {overflow: hidden; border-bottom: $border-standard;}
 .basis-logo {font-family: 'Bolshevik';}
 .basis-logo {
@@ -47,6 +49,7 @@ footer {
 		&:visited {color: $link-color-dark;}
 		&:hover {text-decoration: underline;}
 	}
+	.text-bullets {font-style: italic;}
 }
 
 // -----------------------------------------------------------------------------
@@ -122,16 +125,27 @@ body.has-leader, body.dark-header {
 
 // they STOLE it from us: https://9elements.com/blog/pure-css-diagonal-layouts/
 .diagonal-box {position: relative;}
-.diagonal-box:before {content: ""; display: block; position: absolute; z-index: 0; top: 0; right: 0; bottom: 0; left: 0; transform: skewY(-9deg); transform-origin: 50% 0; outline: 1px solid transparent; backface-visibility: hidden; background-size: cover; background-repeat: no-repeat; opacity: 0.2; background-position: center center;}
-.diagonal-box > * {position: relative;}
+.diagonal-box {
+	&:before {content: ""; display: block; position: absolute; z-index: 0; top: 0; right: 0; bottom: 0; left: 0; transform: skewY(-4deg); transform-origin: 50% 0; outline: 1px solid transparent; backface-visibility: hidden; background-size: cover; background-repeat: no-repeat; opacity: 1; background-position: center center;}
+	&.overtake {margin-top: -133px;}
+	&.bg-dark:before {background-color: #181818;}
+	&.bg-black:before {background-color: #000;}
+	> * {position: relative;}
+}
 
 .drawing {
-	svg {max-width: 100%;}
+	svg {width: 100%;}
 }
 
 // -----------------------------------------------------------------------------
 // how it works
 // -----------------------------------------------------------------------------
+body.how {
+	.main-content {
+		em {color: lighten($secondary-color, 20%); font-style: normal;}
+	}
+}
+.how-part2-bg:before {opacity: 0.2; background-image: url({{ '/assets/images/port.jpg' | prepend: site.baseurl }});}
 .drawing.laptop-network {
 	--laptop1-coords-x: 0;
 	--laptop1-coords-y: 0;

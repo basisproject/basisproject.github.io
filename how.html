@@ -1,53 +1,71 @@
 ---
 layout: default
 title: 'How Basis works'
-body_class: 'how'
+body_class: 'how dark'
 network_animation: true
 scroll_animation: false
 leader:
   image: "/assets/images/network-home.jpg"
   text: "How Basis works: Part 1 - The Network"
   subtext: " "
+  large: true
 ---
 
-<div class="uk-section uk-section-secondary">
-	<div class="uk-container uk-container-small">
-		<h3 class="uk-margin-large-bottom">
-			Basis is a Distributed Ledger Technology system. This means it creates a network where
-			all the members agree to participate under the same set of guidelines.
-		</h3>
+<div class="hero-container uk-section uk-section-secondary uk-padding-remove-bottom">
+	<div class="diagonal-box overtake bg-dark">
+		<div class="uk-section uk-section-large">
+			<div class="uk-container uk-container-small">
 
-		<div class="uk-grid-medium uk-grid-divider uk-child-width-1-3@s uk-flex-middle uk-margin-large-bottom" uk-grid>
-			<div>
-				The network provides a foundation for engaging in production without profit, managing
-				common property, and meeting the basic needs of members.
-			</div>
-			<div>
-				Bottom-up self-governance is at the core of Basis. Members have a voice in the
-				things affecting them, whether in the workplace or the entire system.
-			</div>
-			<div>
-				This type of distributed system acts like a self-enforcing constitution.
-				Participants can trust that everyone is playing by the same rules.
+				<h3 class="uk-margin-large-bottom">
+					Basis is a Distributed Ledger Technology system. This means it creates a network where
+					all the members agree to participate under the same set of guidelines.
+				</h3>
+
+				<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s uk-flex-middle uk-margin-large-bottom" uk-grid>
+					<div>
+						The network provides a foundation for engaging in production without profit, managing
+						common property, and meeting the basic needs of members.
+					</div>
+					<div>
+						Bottom-up self-governance is at the core of Basis. Members have a voice in the
+						things affecting them, whether in the workplace or the entire system.
+					</div>
+					<div>
+						This type of distributed system acts like a self-enforcing constitution. The
+						participants can trust that everyone is playing by the same rules.
+					</div>
+				</div>
+
+				<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
+					<div>
+						<div class="animation drawing laptop-network uk-margin-auto uk-width-3-4@s" data-scroll>
+							{% include /svg/laptops.svg %}
+						</div>
+						<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
+					</div>
+					<div class="uk-flex-first@s">
+						<h4>
+							Everyone in the network shares the same view of what's happening. This means the
+							things that happen on the network are <em>transparent</em> and open to review by
+							the members, creating a culture of <em>accountability and honesty</em>.
+						</h4>
+					</div>
+				</div>
+			
 			</div>
 		</div>
+	</div>
+</div>
 
-		<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
-			<div>
-				<div class="animation drawing laptop-network uk-margin-auto uk-width-3-4@s" data-scroll>
-					{% include /svg/laptops.svg %}
-				</div>
-				<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
-			</div>
-			<div class="uk-flex-first@s">
-				<h4>
-					Everyone in the network shares the same view of what's happening. This means the
-					things that happen on the network are transparent and open to review by the
-					members, creating a culture of openness and honesty.
-				</h4>
-				<h4>
-					Knowledge and data are shared.
-				</h4>
+<div class="hero-container uk-section uk-section-secondary uk-padding-remove-top">
+	<div class="diagonal-box bg-black">
+		<div class="uk-section uk-section-large">
+			<div class="info uk-text-center uk-padding uk-container uk-container-small">
+				<h1>How Basis works: Part 2 - Membership and Companies</h1>
+				<!--<h2 class="uk-margin-remove-bottom">
+					Network membership is available to anybody at a worker-owned company which uses 
+					Basis as the means of ordering/providing inventory and tracking labor costs.
+				</h2>-->
 			</div>
 		</div>
 	</div>
@@ -62,24 +80,59 @@ leader:
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
 			Basis enables an economy where people are paid for <em>producing things</em> rather than
-			for <em>selling things.</em> This shift reorganizes the productive system to focus on
-			meeting needs instead of generating profit.
+			selling things. This shift organizes the productive system around  <em>meeting
+			needs</em> rather than generating profit.
 		</h3>
+		<div class="animation drawing company-costs">
+			{% include /svg/company-costs.svg %}
+		</div>
+	</div>
+</div>
+
+
+{% comment %}
+<!--
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Basis is a Distributed Ledger Technology system. This means it creates a network where
+			all the members agree to participate under the same set of guidelines.
+		</h3>
+
+		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s uk-flex-middle uk-margin-large-bottom" uk-grid>
+			<div>
+				The network provides a foundation for engaging in production without profit, managing
+				common property, and meeting the basic needs of members.
+			</div>
+			<div>
+				Bottom-up self-governance is at the core of Basis. Members have a voice in the
+				things affecting them, whether in the workplace or the entire system.
+			</div>
+			<div>
+				This type of distributed system acts like a self-enforcing constitution. The
+				participants can trust that everyone is playing by the same rules.
+			</div>
+		</div>
+
 		<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
 			<div>
-				<div class="animation drawing forest uk-margin-auto uk-width-3-4@s">
+				<div class="animation drawing laptop-network uk-margin-auto uk-width-3-4@s" data-scroll>
+					{% include /svg/laptops.svg %}
 				</div>
+				<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
+			</div>
+			<div class="uk-flex-first@s">
+				<h4>
+					Everyone in the network shares the same view of what's happening. This means the
+					things that happen on the network are <em>transparent</em> and open to review by
+					the members, creating a culture of <em>accountability and honesty</em>.
+				</h4>
 			</div>
 		</div>
 	</div>
 </div>
 
 
-
-
-
-{% comment %}
-<!--
 <div class="hero-container uk-section uk-section-secondary">
 	<div class="diagonal-box how-part2-bg">
 		<div class="uk-section">
@@ -119,6 +172,7 @@ leader:
 -->
 {% endcomment %}
 
+<!-- disable animations when they are not scrolled into view -->
 <script src="{{ '/assets/js/scroll-out.min.js' | prepend: site.basurl }}"></script>
 <script>
 	ScrollOut({
