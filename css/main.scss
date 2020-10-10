@@ -50,6 +50,10 @@ footer {
 		&:hover {text-decoration: underline;}
 	}
 	.text-bullets {font-style: italic;}
+	.text-bullets {
+		.read-more {display: block; margin-top: 6px;}
+		&.uk-grid-divider > :not(.uk-first-column)::before {opacity: 0.5;}
+	}
 }
 
 // -----------------------------------------------------------------------------
