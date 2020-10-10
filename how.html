@@ -8,9 +8,130 @@ leader:
   image: "/assets/images/network-home.jpg"
   text: "How Basis works: Part 1 - The Network"
   subtext: " "
-  large: true
 ---
 
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Basis forms a decentralized network of people who actively engage in a post-capitalist
+			economic system.
+		</h3>
+
+		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
+			<div>
+				The network acts as a foundation for members to provide goods and services to each
+				other without organizing around profit.
+				<br>
+				<a href="#production-without-profit" data-scroll>Read more &raquo;</a>
+			</div>
+
+			<div>
+				Property in the network is shared by all members. Housing, factories, office space,
+				and machinery are managed by those using them.
+				<br>
+				<a href="#managing-common-property" data-scroll>Read more &raquo;</a>
+			</div>
+			<div>
+				The needs of the members are met by a Basic Income that grows into a living wage as
+				the network becomes more self-sufficient.
+				<br>
+				<a href="#meeting-basic-needs" data-scroll>Read more &raquo;</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="uk-section uk-section-secondary bg-black">
+	<div class="uk-container uk-container-small">
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="Bottom-up <em>self-governance</em> is at the core of Basis. From the workplace to the global system, <em>members have a voice</em> in the things affecting them." %}
+		</div>
+		<!--<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>-->
+
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="The rules that define the network's abilities are determined and enforced by all the members equally, creating a <em>self-enforcing, distributed consitution.</em>" %}
+			<!--<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>-->
+		</div>
+
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/laptops.svg"
+				animation_class="laptop-network"
+				text="Everyone in the network shares the same view of what's happening. This means the things that happen on the network are <em>transparent</em> and open to review by the members, creating a culture of <em>accountability and honesty</em>." %}
+			<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
+		</div>
+	</div>
+</div>
+
+{% include leader.html
+	text="How Basis works: Part 2 - Production without profit"
+	image="/assets/images/port.jpg"
+	id="production-without-profit"
+	large=true %}
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Basis enables an economy where people are paid for <em>producing things</em> rather than
+			selling things. This shift organizes the productive system around  <em>meeting
+			needs</em> rather than generating profit.
+		</h3>
+		<div class="animation drawing company-costs">
+			{% include /svg/company-costs.svg %}
+		</div>
+	</div>
+</div>
+
+{% include leader.html
+	text="How Basis works: Part 3 - Managing common property"
+	image="/assets/images/port.jpg"
+	id="managing-common-property"
+	large=true %}
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Basis enables an economy where people are paid for <em>producing things</em> rather than
+			selling things. This shift organizes the productive system around  <em>meeting
+			needs</em> rather than generating profit.
+		</h3>
+		<div class="animation drawing company-costs">
+			{% include /svg/company-costs.svg %}
+		</div>
+	</div>
+</div>
+
+{% include leader.html
+	text="How Basis works: Part 4 - Meeting basic needs"
+	image="/assets/images/port.jpg"
+	id="meeting-basic-needs"
+	large=true %}
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Basis enables an economy where people are paid for <em>producing things</em> rather than
+			selling things. This shift organizes the productive system around  <em>meeting
+			needs</em> rather than generating profit.
+		</h3>
+		<div class="animation drawing company-costs">
+			{% include /svg/company-costs.svg %}
+		</div>
+	</div>
+</div>
+
+
+{% comment %}
+<!--
 <div class="hero-container uk-section uk-section-secondary uk-padding-remove-bottom">
 	<div class="diagonal-box overtake bg-dark">
 		<div class="uk-section uk-section-large">
@@ -62,71 +183,10 @@ leader:
 		<div class="uk-section uk-section-large">
 			<div class="info uk-text-center uk-padding uk-container uk-container-small">
 				<h1>How Basis works: Part 2 - Membership and Companies</h1>
-				<!--<h2 class="uk-margin-remove-bottom">
+				<h2 class="uk-margin-remove-bottom">
 					Network membership is available to anybody at a worker-owned company which uses 
 					Basis as the means of ordering/providing inventory and tracking labor costs.
-				</h2>-->
-			</div>
-		</div>
-	</div>
-</div>
-
-{% include leader.html
-	text="How Basis works: Part 2 - Production without profit"
-	image="/assets/images/port.jpg"
-	large=true %}
-
-<div class="uk-section uk-section-secondary">
-	<div class="uk-container uk-container-small">
-		<h3 class="uk-margin-large-bottom">
-			Basis enables an economy where people are paid for <em>producing things</em> rather than
-			selling things. This shift organizes the productive system around  <em>meeting
-			needs</em> rather than generating profit.
-		</h3>
-		<div class="animation drawing company-costs">
-			{% include /svg/company-costs.svg %}
-		</div>
-	</div>
-</div>
-
-
-{% comment %}
-<!--
-<div class="uk-section uk-section-secondary">
-	<div class="uk-container uk-container-small">
-		<h3 class="uk-margin-large-bottom">
-			Basis is a Distributed Ledger Technology system. This means it creates a network where
-			all the members agree to participate under the same set of guidelines.
-		</h3>
-
-		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s uk-flex-middle uk-margin-large-bottom" uk-grid>
-			<div>
-				The network provides a foundation for engaging in production without profit, managing
-				common property, and meeting the basic needs of members.
-			</div>
-			<div>
-				Bottom-up self-governance is at the core of Basis. Members have a voice in the
-				things affecting them, whether in the workplace or the entire system.
-			</div>
-			<div>
-				This type of distributed system acts like a self-enforcing constitution. The
-				participants can trust that everyone is playing by the same rules.
-			</div>
-		</div>
-
-		<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
-			<div>
-				<div class="animation drawing laptop-network uk-margin-auto uk-width-3-4@s" data-scroll>
-					{% include /svg/laptops.svg %}
-				</div>
-				<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
-			</div>
-			<div class="uk-flex-first@s">
-				<h4>
-					Everyone in the network shares the same view of what's happening. This means the
-					things that happen on the network are <em>transparent</em> and open to review by
-					the members, creating a culture of <em>accountability and honesty</em>.
-				</h4>
+				</h2>
 			</div>
 		</div>
 	</div>
@@ -173,11 +233,15 @@ leader:
 {% endcomment %}
 
 <!-- disable animations when they are not scrolled into view -->
-<script src="{{ '/assets/js/scroll-out.min.js' | prepend: site.basurl }}"></script>
+<script src="{{ '/assets/js/vnd/smooth-scroll.polyfills.min.js' | prepend: site.basurl }}"></script>
+<script src="{{ '/assets/js/vnd/scroll-out.min.js' | prepend: site.basurl }}"></script>
 <script>
 	ScrollOut({
 		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
 		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
+	});
+	var scroll = new SmoothScroll('a[data-scroll]', {
+		speed: 250
 	});
 </script>
 

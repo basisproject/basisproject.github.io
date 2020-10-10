@@ -15,11 +15,11 @@
 	<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="icon" href="{{ "/assets/images/logo.png" | prepend: site.baseurl}}" type="image/png">
 
-	<script src="{{ "/assets/js/uikit.min.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
-	<script src="{{ "/assets/js/uikit-icons.min.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
+	<script src="{{ "/assets/js/vnd/uikit.min.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
+	<script src="{{ "/assets/js/vnd/uikit-icons.min.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
 
 	{% if page.network_animation %}
-		<script src="{{ "/assets/js/d3.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
+		<script src="{{ "/assets/js/vnd/d3.js?v=5.12.0" | prepend: site.baseurl }}"></script>
 		<script src="{{ "/assets/js/bus.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
 		<script src="{{ "/assets/js/network.js" | prepend: site.baseurl | append: '?v=' | append: site.asset_version }}"></script>
 		<script>

@@ -143,7 +143,11 @@ body.has-leader, body.dark-header {
 body.how {
 	.main-content {
 		em {color: lighten($secondary-color, 20%); font-style: normal;}
+		a:not(.uk-button) {
+			&:visited {color: $link-color;}
+		}
 	}
+	.bg-black {background-color: #000;}
 }
 .how-part2-bg:before {opacity: 0.2; background-image: url({{ '/assets/images/port.jpg' | prepend: site.baseurl }});}
 .drawing.laptop-network {

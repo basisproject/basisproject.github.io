@@ -1,13 +1,18 @@
-<div class="uk-section uk-section-secondary">
-	<div class="uk-container uk-container-small">
-		<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
-			<div><img src="{{ include.image | prepend: site.baseurl }}"></div>
-			<div {% if include.flip %}class="uk-flex-first@s"{% endif %}>
-				<h4>
-					{{ include.text }}
-				</h4>
+<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
+	<div>
+		{% if include.image %}
+			<img src="{{ include.image | prepend: site.baseurl }}">
+		{% elsif include.svg %}
+			<div class="animation drawing {{ include.animation_class }} uk-margin-auto uk-width-3-4@s" data-scroll>
+				{% include {{ include.svg }} %}
 			</div>
-		</div>
+		{% endif %}
+	</div>
+
+	<div {% if include.flip %}class="uk-flex-first@s"{% endif %}>
+		<h4>
+			{{ include.text }}
+		</h4>
 	</div>
 </div>
 
