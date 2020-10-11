@@ -178,26 +178,30 @@ const Boids = (function() {
 	}
 
 	function draw_boid(ctx, boid) {
-		ctx.beginPath();
-		ctx.fillStyle = options.boid_color;
-		ctx.moveTo(boid.x, boid.y);
-		ctx.arc(boid.x, boid.y, 2.0, 0, 2 * Math.PI);
-		ctx.fill();
-
-		/*
-		const angle = Math.atan2(boid.dy, boid.dx);
-		ctx.translate(boid.x, boid.y);
-		ctx.rotate(angle);
-		ctx.translate(-boid.x, -boid.y);
-		ctx.fillStyle = options.boid_color;
-		ctx.beginPath();
-		ctx.moveTo(boid.x, boid.y);
-		ctx.lineTo(boid.x - 8, boid.y + 2);
-		ctx.lineTo(boid.x - 8, boid.y - 2);
-		ctx.lineTo(boid.x, boid.y);
-		ctx.fill();
-		ctx.setTransform(1, 0, 0, 1, 0, 0);
-		*/
+		switch(options.boid_shape) {
+			case 'arrow':
+				const angle = Math.atan2(boid.dy, boid.dx);
+				ctx.translate(boid.x, boid.y);
+				ctx.rotate(angle);
+				ctx.translate(-boid.x, -boid.y);
+				ctx.fillStyle = options.boid_color;
+				ctx.beginPath();
+				ctx.moveTo(boid.x, boid.y);
+				ctx.lineTo(boid.x - 8, boid.y + 2);
+				ctx.lineTo(boid.x - 8, boid.y - 2);
+				ctx.lineTo(boid.x, boid.y);
+				ctx.fill();
+				ctx.setTransform(1, 0, 0, 1, 0, 0);
+				break;
+			case 'circle':
+			default:
+				ctx.beginPath();
+				ctx.fillStyle = options.boid_color;
+				ctx.moveTo(boid.x, boid.y);
+				ctx.arc(boid.x, boid.y, 2.0, 0, 2 * Math.PI);
+				ctx.fill();
+				break;
+		}
 	}
 
 	function draw() {
