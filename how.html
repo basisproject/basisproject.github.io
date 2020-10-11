@@ -14,13 +14,13 @@ leader:
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
 			Basis forms a decentralized network of people who actively engage in a post-capitalist
-			economic system.
+			economy with one another.
 		</h3>
 
 		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
 			<div>
 				The network acts as a foundation for members to provide goods and services to each
-				other without organizing around profit.
+				other without needing the profit motive.
 				<br>
 				<a class="read-more" href="#production-without-profit" data-scroll>Read more &raquo;</a>
 			</div>
@@ -41,16 +41,40 @@ leader:
 	</div>
 </div>
 
-<div class="uk-section uk-section-secondary bg-black">
+<div class="uk-section uk-section-secondary bg-black uk-overflow-hidden">
 	<div class="uk-container uk-container-small">
 		<div class="uk-section">
+			<!-- there you go, bringing class into it again -->
 			{% include flip-flop.html
 				flip=true
-				svg="/svg/company-costs.svg"
-				animation_class="laptop-network-"
-				text="Bottom-up <em>self-governance</em> is at the core of Basis. From the workplace to the global system, <em>members have a voice</em> in the things affecting them." %}
+				canvas="boids"
+				animation_class="boids-container"
+				text="<em>Self-organization</em> and bottom-up governance are at the core of Basis. From the workplace to the global system, <em>members have a voice</em> in the things affecting them." %}
+			<script>
+				window.addEventListener('load', () => {
+					Boids.init({
+						container: document.body.querySelector('.boids-container canvas'),
+						num_boids: 300,
+						height: 'auto',
+						dimension_multiplier: 2.0,
+						loop_delay: 5,
+						boid_color: '#cc00ff',
+
+						visual_range: 40,
+						velocity_match_factor: 0.03,
+						bounding_margin: 300,
+						bounding_turn_factor: 0.08,
+						centering_factor: 0.002,
+						min_distance: 15,
+						avoid_factor: 0.15,
+						speed_limit: 4,
+						self_determination_probability: 0.0001,
+						self_determination_ticks: 60 * 5,
+						self_determination_weight: 10,
+					});
+				}, false);
+			</script>
 		</div>
-		<!--<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>-->
 
 		<div class="uk-section">
 			{% include flip-flop.html
@@ -193,6 +217,7 @@ leader:
 </div>
 
 
+.how-part2-bg:before {opacity: 0.2; background-image: url({{ '/assets/images/port.jpg' | prepend: site.baseurl }});}
 <div class="hero-container uk-section uk-section-secondary">
 	<div class="diagonal-box how-part2-bg">
 		<div class="uk-section">
@@ -232,16 +257,26 @@ leader:
 -->
 {% endcomment %}
 
-<!-- disable animations when they are not scrolled into view -->
+
+
+<!-- init our heroic smooth scroll which i normally hate with a passion but for a long-ass explanatory page it kinda works -->
 <script src="{{ '/assets/js/vnd/smooth-scroll.polyfills.min.js' | prepend: site.basurl }}"></script>
-<script src="{{ '/assets/js/vnd/scroll-out.min.js' | prepend: site.basurl }}"></script>
 <script>
-	ScrollOut({
-		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
-		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
-	});
 	var scroll = new SmoothScroll('a[data-scroll]', {
 		speed: 250
 	});
 </script>
+
+<!-- disable animations when they are not scrolled into view -->
+<script src="{{ '/assets/js/vnd/scroll-out.min.js' | prepend: site.basurl }}"></script>
+<script>
+	ScrollOut({
+		targets: '[data-scroll-out]',
+		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
+		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
+	});
+</script>
+
+<!-- release the boids -->
+<script src="{{ '/assets/js/vnd/boids.js' | prepend: site.basurl }}"></script>
 

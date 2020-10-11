@@ -153,7 +153,10 @@ body.how {
 	}
 	.bg-black {background-color: #000;}
 }
-.how-part2-bg:before {opacity: 0.2; background-image: url({{ '/assets/images/port.jpg' | prepend: site.baseurl }});}
+.drawing.boids-container {
+	& {height: 250px;}
+	.canvas-scaler {position: relative; width: 250%; height: 200%; left: -75%; top: -50%;}
+}
 .drawing.laptop-network {
 	--laptop1-coords-x: 0;
 	--laptop1-coords-y: 0;
