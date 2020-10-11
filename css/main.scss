@@ -155,7 +155,7 @@ body.how {
 }
 .drawing.boids-container {
 	& {height: 250px;}
-	.canvas-scaler {position: relative; width: 250%; height: 200%; left: -75%; top: -50%;}
+	.canvas-scaler {position: relative; width: 250%; height: 200%; left: -75%; top: -50%; opacity: 0.8;}
 }
 .drawing.laptop-network {
 	--laptop1-coords-x: 0;

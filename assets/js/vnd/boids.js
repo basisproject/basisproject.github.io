@@ -34,7 +34,7 @@ const Boids = (function() {
 				dx: Math.random() * 10 - 5,
 				dy: Math.random() * 10 - 5,
 				// how many ticks left until this boid joins the other sheeple
-				self_determination_ticks: 0,
+				self_determination_duration: 0,
 				// the point this boid has decided it will go toward, come hell
 				// or highwater
 				self_determination_point: null,
@@ -65,32 +65,15 @@ const Boids = (function() {
 		canvas.height = height;
 	}
 
-	// Constrain a boid to within the window. If it gets too close to an edge,
-	// nudge it back in and reverse its direction.
-	function keep_within_bounds(boid) {
-		if (boid.x < options.bounding_margin) {
-			boid.dx += options.bounding_turn_factor;
-		}
-		if (boid.x > width - options.bounding_margin) {
-			boid.dx -= options.bounding_turn_factor;
-		}
-		if (boid.y < options.bounding_margin) {
-			boid.dy += options.bounding_turn_factor;
-		}
-		if (boid.y > height - options.bounding_margin) {
-			boid.dy -= options.bounding_turn_factor;
-		}
-	}
-
-	function self_determination(boid) {
-		if(boid.self_determination_ticks > 0) {
-			boid.self_determination_ticks--;
+	function self_determination(boid, duration) {
+		if(boid.self_determination_duration > 0) {
+			boid.self_determination_duration -= duration;
 			return;
 		}
 		if(Math.random() >= options.self_determination_probability) {
 			return;
 		}
-		boid.self_determination_ticks = options.self_determination_ticks;
+		boid.self_determination_ticks = options.self_determination_duration;
 		boid.self_determination_point = [
 			Math.round(Math.random() * width),
 			Math.round(Math.random() * height),
@@ -99,7 +82,7 @@ const Boids = (function() {
 
 	// Find the center of mass of the other boids and adjust velocity slightly to
 	// point towards the center of mass.
-	function center_boid(boid) {
+	function center_boid(boid, time_index) {
 		let centerX = 0;
 		let centerY = 0;
 		if(boid.self_determination_ticks > 0) {
@@ -121,13 +104,13 @@ const Boids = (function() {
 			centerX = centerX / numNeighbors;
 			centerY = centerY / numNeighbors;
 
-			boid.dx += (centerX - boid.x) * options.centering_factor;
-			boid.dy += (centerY - boid.y) * options.centering_factor;
+			boid.dx += (centerX - boid.x) * options.centering_factor * time_index;
+			boid.dy += (centerY - boid.y) * options.centering_factor * time_index;
 		}
 	}
 
 	// Move away from other boids that are too close to avoid colliding
-	function avoid_others(boid) {
+	function avoid_others(boid, time_index) {
 		let moveX = 0;
 		let moveY = 0;
 		for (let otherBoid of boids) {
@@ -138,13 +121,13 @@ const Boids = (function() {
 			}
 		}
 
-		boid.dx += moveX * options.avoid_factor;
-		boid.dy += moveY * options.avoid_factor;
+		boid.dx += moveX * options.avoid_factor * time_index;
+		boid.dy += moveY * options.avoid_factor * time_index;
 	}
 
 	// Find the average velocity (speed and direction) of the other boids and
 	// adjust velocity slightly to match.
-	function match_velocity(boid) {
+	function match_velocity(boid, time_index) {
 		let avgDX = 0;
 		let avgDY = 0;
 		let numNeighbors = 0;
@@ -162,18 +145,35 @@ const Boids = (function() {
 			avgDX = avgDX / numNeighbors;
 			avgDY = avgDY / numNeighbors;
 
-			boid.dx += (avgDX - boid.dx) * options.velocity_match_factor;
-			boid.dy += (avgDY - boid.dy) * options.velocity_match_factor;
+			boid.dx += (avgDX - boid.dx) * options.velocity_match_factor * time_index;
+			boid.dy += (avgDY - boid.dy) * options.velocity_match_factor * time_index;
 		}
 	}
 
 	// Speed will naturally vary in flocking behavior, but real animals can't go
 	// arbitrarily fast.
-	function limit_speed(boid) {
+	function limit_speed(boid, _time_index) {
 		const speed = Math.sqrt((boid.dx * boid.dx) + (boid.dy * boid.dy));
 		if (speed > options.speed_limit) {
 			boid.dx = (boid.dx / speed) * options.speed_limit;
 			boid.dy = (boid.dy / speed) * options.speed_limit;
+		}
+	}
+
+	// Constrain a boid to within the window. If it gets too close to an edge,
+	// nudge it back in and reverse its direction.
+	function keep_within_bounds(boid, time_index) {
+		if (boid.x < options.bounding_margin) {
+			boid.dx += (options.bounding_turn_factor * time_index);
+		}
+		if (boid.x > width - options.bounding_margin) {
+			boid.dx -= (options.bounding_turn_factor * time_index);
+		}
+		if (boid.y < options.bounding_margin) {
+			boid.dy += (options.bounding_turn_factor * time_index);
+		}
+		if (boid.y > height - options.bounding_margin) {
+			boid.dy -= (options.bounding_turn_factor * time_index);
 		}
 	}
 
@@ -212,24 +212,31 @@ const Boids = (function() {
 	}
 
 	// Main animation loop
+	let last_run = new Date().getTime();
 	function tick() {
 		if(!active()) {
 			setTimeout(() => { window.requestAnimationFrame(tick); }, 250);
 			return;
 		}
+		const now = new Date().getTime();
+		const duration = now - last_run;
+		last_run = now;
+		const time_index = options.time_multiplier ?
+			options.time_multiplier * duration :
+			1;
 		// Update each boid
 		for (let boid of boids) {
 			// Update the velocities according to each rule
-			self_determination(boid);
-			center_boid(boid);
-			avoid_others(boid);
-			match_velocity(boid);
-			limit_speed(boid);
-			keep_within_bounds(boid);
+			self_determination(boid, duration);
+			center_boid(boid, time_index);
+			avoid_others(boid, time_index);
+			match_velocity(boid, time_index);
+			limit_speed(boid, time_index);
+			keep_within_bounds(boid, time_index);
 
 			// Update the position based on the current velocity
-			boid.x += boid.dx;
-			boid.y += boid.dy;
+			boid.x += boid.dx * time_index;
+			boid.y += boid.dy * time_index;
 		}
 
 		draw();
@@ -244,6 +251,7 @@ const Boids = (function() {
 		opts || (opts = {});
 		if(!opts.container) throw new Error('boids: missing opts.container');
 		container = opts.container;
+		console.log('opts: ', opts);
 		Object.assign(options, opts);
 		// Make sure the canvas always fills the whole window
 		window.addEventListener("resize", resize, false);

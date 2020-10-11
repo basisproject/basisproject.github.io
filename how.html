@@ -13,7 +13,7 @@ leader:
 <div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
-			Basis forms a decentralized network of people who actively engage in a post-capitalist
+			Basis forms a decentralized network of people actively engaging in a post-capitalist
 			economy with one another.
 		</h3>
 
@@ -55,9 +55,12 @@ leader:
 					Boids.init({
 						container: document.body.querySelector('.boids-container canvas'),
 						num_boids: 300,
+						//loop_delay: 5,
+						//time_multiplier: false,
+						loop_delay: 17,
+						time_multiplier: 0.06,
 						height: 'auto',
 						dimension_multiplier: 2.0,
-						loop_delay: 5,
 						boid_color: '#cc00ff',
 						boid_shape: 'circle',
 
@@ -70,7 +73,7 @@ leader:
 						avoid_factor: 0.15,
 						speed_limit: 4,
 						self_determination_probability: 0.0001,
-						self_determination_ticks: 60 * 5,
+						self_determination_duration: 2000,
 						self_determination_weight: 10,
 					});
 				}, false);
