@@ -307,7 +307,6 @@ const Boids = (function() {
 		opts || (opts = {});
 		if(!opts.container) throw new Error('boids: missing opts.container');
 		container = opts.container;
-		console.log('opts: ', opts);
 		Object.assign(options, opts);
 		// Make sure the canvas always fills the whole window
 		window.addEventListener("resize", resize, false);
