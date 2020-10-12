@@ -10,18 +10,51 @@ const Boids = (function() {
 	let height = 150;
 	let container = null;
 	const options = {
+		// required
+		container: null,
 		num_boids: 100,
+		// ms between each iteration.
 		loop_delay: Math.round(1000 / 60),
+		// how much affect time has on movements and forces
+		time_multiplier: 0.06,
+		// either a numeric valu, or 'auto' to match the height of container
+		height: 'auto',
+		// honestly, who knows wtf this does. it was originally supposed to make
+		// the canvas bigger, but ended up just shrinking everything in it,
+		// which looks good so i kept it.
+		dimension_multiplier: 2.0,
+		// obvis
 		boid_color: '#cc00ff',
-		visual_range: 75,
-		bounding_turn_factor: 0.8,
-		bounding_margin: 200,
-		centering_factor: 0.005,
-		min_distance: 20,
-		avoid_factor: 0.05,
-		velocity_matching_factor: 0.05,
-		speed_limit: 15,
-		self_determination_probability: 0.005,
+		// the color our boid is when it's self-determined (ie, decides to do
+		// its own thing and not follow other boids). yes, even boids can be
+		// anarchists
+		boid_determined_color: '#0000cc',
+		// "circle" or "arrow"
+		boid_shape: 'circle',
+
+		// how far can a boid see? (px)
+		visual_range: 40,
+		// by what factor does a boid try to mimic its compadres?
+		velocity_match_factor: 0.03,
+		// how big in px are the margins of the play area? once a margin is
+		// crossed, a boid starts to turn back the other way
+		bounding_margin: 300,
+		// how much a boid turns once it goes out of bounds
+		bounding_turn_factor: 0.08,
+		// how much a boid tries to center itself amongst its compatriots
+		centering_factor: 0.002,
+		// how much distance boids try to keep between each other
+		min_distance: 15,
+		// how hard boids try to avoid each other once min_distance is crossed
+		avoid_factor: 0.15,
+		// how fast boids are allowed to go
+		speed_limit: 4,
+		// the probability a boid will self-determine
+		self_determination_probability: 0.0001,
+		// how long a boid stays determined
+		self_determination_duration: 2000,
+		// how much more likely other boids will follow a self-determined boid
+		self_determination_charisma: 5,
 	};
 
 	const boids = [];
@@ -33,7 +66,7 @@ const Boids = (function() {
 				y: Math.random() * height,
 				dx: Math.random() * 10 - 5,
 				dy: Math.random() * 10 - 5,
-				// how many ticks left until this boid joins the other sheeple
+				// how many ms left until this boid joins the other sheeple
 				self_determination_duration: 0,
 				// the point this boid has decided it will go toward, come hell
 				// or highwater
@@ -70,10 +103,11 @@ const Boids = (function() {
 			boid.self_determination_duration -= duration;
 			return;
 		}
+		boid.self_determination_duration = 0;
 		if(Math.random() >= options.self_determination_probability) {
 			return;
 		}
-		boid.self_determination_ticks = options.self_determination_duration;
+		boid.self_determination_duration = options.self_determination_duration;
 		boid.self_determination_point = [
 			Math.round(Math.random() * width),
 			Math.round(Math.random() * height),
@@ -82,73 +116,82 @@ const Boids = (function() {
 
 	// Find the center of mass of the other boids and adjust velocity slightly to
 	// point towards the center of mass.
-	function center_boid(boid, time_index) {
-		let centerX = 0;
-		let centerY = 0;
-		if(boid.self_determination_ticks > 0) {
-			centerX = boid.self_determination_point[0];
-			centerY = boid.self_determination_point[1];
-		}
-		let numNeighbors = 0;
-
-		for (let otherBoid of boids) {
-			if(boid === otherBoid) continue;
-			if (distance(boid, otherBoid) < options.visual_range) {
-				centerX += otherBoid.x;
-				centerY += otherBoid.y;
-				numNeighbors += 1;
+	const center_boid = {
+		iter: (state, boid, boid2, dist) => {
+			if(!state.neighbors) {
+				state.neighbors = 0;
+				state.centerX = 0;
+				state.centerY = 0;
 			}
-		}
-
-		if (numNeighbors) {
-			centerX = centerX / numNeighbors;
-			centerY = centerY / numNeighbors;
-
+			if(boid.self_determination_duration > 0) {
+				state.neighbors += 1;
+				state.centerX += boid.self_determination_point[0];
+				state.centerY += boid.self_determination_point[1];
+			}
+			if (dist < options.visual_range) {
+				state.neighbors += 1;
+				state.centerX += boid2.x;
+				state.centerY += boid2.y;
+			}
+		},
+		apply: (state, boid, time_index) => {
+			if(state.neighbors == 0) return;
+			const centerX = state.centerX / state.neighbors;
+			const centerY = state.centerY / state.neighbors;
 			boid.dx += (centerX - boid.x) * options.centering_factor * time_index;
 			boid.dy += (centerY - boid.y) * options.centering_factor * time_index;
-		}
-	}
+		},
+	};
 
 	// Move away from other boids that are too close to avoid colliding
-	function avoid_others(boid, time_index) {
-		let moveX = 0;
-		let moveY = 0;
-		for (let otherBoid of boids) {
-			if(boid === otherBoid) continue;
-			if (distance(boid, otherBoid) < options.min_distance) {
-				moveX += boid.x - otherBoid.x;
-				moveY += boid.y - otherBoid.y;
+	const avoid_others = {
+		iter: (state, boid, boid2, dist) => {
+			if(!state.move_x && !state.move_y) {
+				state.move_x = 0;
+				state.move_y = 0;
 			}
-		}
-
-		boid.dx += moveX * options.avoid_factor * time_index;
-		boid.dy += moveY * options.avoid_factor * time_index;
-	}
+			if(dist < options.min_distance) {
+				state.move_x += boid.x - boid2.x;
+				state.move_y += boid.y - boid2.y;
+			}
+		},
+		apply: (state, boid, time_index) => {
+			boid.dx += state.move_x * options.avoid_factor * time_index;
+			boid.dy += state.move_y * options.avoid_factor * time_index;
+		},
+	};
 
 	// Find the average velocity (speed and direction) of the other boids and
 	// adjust velocity slightly to match.
-	function match_velocity(boid, time_index) {
-		let avgDX = 0;
-		let avgDY = 0;
-		let numNeighbors = 0;
-
-		for (let otherBoid of boids) {
-			if(boid === otherBoid) continue;
-			if (distance(boid, otherBoid) < options.visual_range) {
-				avgDX += otherBoid.dx;
-				avgDY += otherBoid.dy;
-				numNeighbors += 1;
+	const match_velocity = {
+		iter: (state, boid, boid2, dist) => {
+			if(!state.neighbors) {
+				state.neighbors = 0;
+				state.avg_dx = 0;
+				state.avg_dy = 0;
 			}
-		}
-
-		if (numNeighbors) {
-			avgDX = avgDX / numNeighbors;
-			avgDY = avgDY / numNeighbors;
-
-			boid.dx += (avgDX - boid.dx) * options.velocity_match_factor * time_index;
-			boid.dy += (avgDY - boid.dy) * options.velocity_match_factor * time_index;
-		}
-	}
+			if(dist < options.visual_range) {
+				let factor = 1;
+				let dx = boid2.dx;
+				let dy = boid2.dy;
+				if(boid2.self_determination_duration > 0) {
+					factor = options.self_determination_charisma;
+					dx *= options.self_determination_charisma;
+					dy *= options.self_determination_charisma;
+				}
+				state.neighbors += factor;
+				state.avg_dx += dx;
+				state.avg_dy += dy;
+			}
+		},
+		apply: (state, boid, time_index) => {
+			if(state.neighbors == 0) return;
+			const avg_dx = state.avg_dx / state.neighbors;
+			const avg_dy = state.avg_dy / state.neighbors;
+			boid.dx += (avg_dx - boid.dx) * options.velocity_match_factor * time_index;
+			boid.dy += (avg_dy - boid.dy) * options.velocity_match_factor * time_index;
+		},
+	};
 
 	// Speed will naturally vary in flocking behavior, but real animals can't go
 	// arbitrarily fast.
@@ -184,8 +227,10 @@ const Boids = (function() {
 				ctx.translate(boid.x, boid.y);
 				ctx.rotate(angle);
 				ctx.translate(-boid.x, -boid.y);
-				ctx.fillStyle = options.boid_color;
 				ctx.beginPath();
+				ctx.fillStyle = boid.self_determination_duration > 0 ?
+					options.boid_determined_color :
+					options.boid_color;
 				ctx.moveTo(boid.x, boid.y);
 				ctx.lineTo(boid.x - 8, boid.y + 2);
 				ctx.lineTo(boid.x - 8, boid.y - 2);
@@ -196,7 +241,9 @@ const Boids = (function() {
 			case 'circle':
 			default:
 				ctx.beginPath();
-				ctx.fillStyle = options.boid_color;
+				ctx.fillStyle = boid.self_determination_duration > 0 ?
+					options.boid_determined_color :
+					options.boid_color;
 				ctx.moveTo(boid.x, boid.y);
 				ctx.arc(boid.x, boid.y, 2.0, 0, 2 * Math.PI);
 				ctx.fill();
@@ -215,29 +262,38 @@ const Boids = (function() {
 	let last_run = new Date().getTime();
 	function tick() {
 		if(!active()) {
+			last_run = new Date().getTime();
 			setTimeout(() => { window.requestAnimationFrame(tick); }, 250);
 			return;
 		}
 		const now = new Date().getTime();
 		const duration = now - last_run;
 		last_run = now;
-		const time_index = options.time_multiplier ?
-			options.time_multiplier * duration :
-			1;
-		// Update each boid
-		for (let boid of boids) {
-			// Update the velocities according to each rule
+		const time_index = options.time_multiplier ? options.time_multiplier * duration : 1;
+		boids.forEach((boid) => {
 			self_determination(boid, duration);
-			center_boid(boid, time_index);
-			avoid_others(boid, time_index);
-			match_velocity(boid, time_index);
-			limit_speed(boid, time_index);
+
+			const center_state = {};
+			const avoid_state = {};
+			const match_velocity_state = {};
+			const bounding_state = {};
+			boids.forEach((boid2) => {
+				if(boid === boid2) return;
+				const dist = distance(boid, boid2);
+				center_boid.iter(center_state, boid, boid2, dist);
+				avoid_others.iter(avoid_state, boid, boid2, dist);
+				match_velocity.iter(match_velocity_state, boid, boid2, dist);
+			});
+			center_boid.apply(center_state, boid, time_index);
+			avoid_others.apply(avoid_state, boid, time_index);
+			match_velocity.apply(match_velocity_state, boid, time_index);
 			keep_within_bounds(boid, time_index);
+			limit_speed(boid, time_index);
 
 			// Update the position based on the current velocity
 			boid.x += boid.dx * time_index;
 			boid.y += boid.dy * time_index;
-		}
+		});
 
 		draw();
 
