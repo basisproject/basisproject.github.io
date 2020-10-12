@@ -245,7 +245,7 @@ const Boids = (function() {
 					options.boid_determined_color :
 					options.boid_color;
 				ctx.moveTo(boid.x, boid.y);
-				ctx.arc(boid.x, boid.y, 2.0, 0, 2 * Math.PI);
+				ctx.arc(boid.x, boid.y, 2.4, 0, 2 * Math.PI);
 				ctx.fill();
 				break;
 		}
