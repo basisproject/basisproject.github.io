@@ -10,14 +10,17 @@ const Anonymizer = (() => {
 		if(!canvas) throw new Error('Anonymizer::load() -- missing canvas in container');
 		canvas.className = 'reset start';
 		canvas.className = 'start';
+		const canvas2 = document.createElement('canvas');
 		const img = new Image();
 		const resize = () => {
 			canvas.width = img.width;
 			canvas.height = img.height;
+			canvas2.width = canvas.width;
+			canvas2.height = canvas.height;
 		};
 		img.onload = () => {
 			resize();
-			animate(canvas, container, { ...options, img });
+			animate(canvas, container, { ...options, img, canvas2 });
 		};
 		img.src = options.image;
 	};
@@ -29,16 +32,21 @@ const Anonymizer = (() => {
 			return loop();
 		}
 		const ctx = canvas.getContext('2d');
+		ctx.mozImageSmoothingEnabled = false;
+		ctx.webkitImageSmoothingEnabled = false;
+		ctx.imageSmoothingEnabled = false;
 		const redraw = (scale) => {
+			const ctx2 = options.canvas2.getContext('2d');
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.mozImageSmoothingEnabled = false;
-			ctx.webkitImageSmoothingEnabled = false;
-			ctx.imageSmoothingEnabled = false;
+			ctx2.clearRect(0, 0, canvas.width, canvas.height);
+			ctx2.mozImageSmoothingEnabled = false;
+			ctx2.webkitImageSmoothingEnabled = false;
+			ctx2.imageSmoothingEnabled = false;
 			const img = options.img;
 			const width = canvas.width * scale;
 			const height = canvas.height * scale;
-			ctx.drawImage(img, 0, 0, width, height);
-			ctx.drawImage(canvas, 0, 0, width, height, 0, 0, canvas.width, canvas.height);
+			ctx2.drawImage(img, 0, 0, width, height);
+			ctx.drawImage(options.canvas2, 0, 0, width, height, 0, 0, canvas.width, canvas.height);
 		};
 
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
