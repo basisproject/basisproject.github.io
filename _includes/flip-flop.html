@@ -15,7 +15,7 @@
 		{% endif %}
 	</div>
 
-	<div {% if include.flip %}class="uk-flex-first@s"{% endif %}>
+	<div class="{% if include.flip %}uk-flex-first@s{% endif %} {% if include.text_relative %}uk-position-relative{% endif %}">
 		<h4>
 			{{ include.text }}
 		</h4>

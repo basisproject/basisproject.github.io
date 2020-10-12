@@ -49,6 +49,7 @@ leader:
 				flip=true
 				canvas="boids"
 				animation_class="boids-container"
+				text_relative=true
 				text="<em>Self-organization</em> and bottom-up governance are at the core of Basis. From the workplace to the global system, <em>members have a voice</em> in the things affecting them." %}
 			<script>
 				window.addEventListener('load', () => {
@@ -122,7 +123,7 @@ leader:
 
 {% include leader.html
 	text="How Basis works: Part 3 - Managing common property"
-	image="/assets/images/port.jpg"
+	image="/assets/images/housing-sf.jpg"
 	id="managing-common-property"
 	large=true %}
 
@@ -283,5 +284,5 @@ leader:
 </script>
 
 <!-- release the boids -->
-<script src="{{ '/assets/js/vnd/boids.js' | prepend: site.basurl }}"></script>
+<script src="{{ '/assets/js/boids.js' | prepend: site.basurl }}"></script>
 
