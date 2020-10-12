@@ -20,7 +20,7 @@ leader:
 		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
 			<div>
 				The network acts as a foundation for members to provide goods and services to each
-				other without needing the profit motive.
+				other without the profit motive.
 				<br>
 				<a class="read-more" href="#production-without-profit" data-scroll>Read more &raquo;</a>
 			</div>
@@ -85,19 +85,27 @@ leader:
 		<div class="uk-section">
 			{% include flip-flop.html
 				flip=false
-				svg="/svg/company-costs.svg"
-				animation_class="laptop-network-"
-				text="The rules that define the network's abilities are determined and enforced by all the members equally, creating a <em>self-enforcing, distributed consitution.</em>" %}
-			<!--<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>-->
+				svg="/svg/laptops.svg"
+				animation_class="laptop-network"
+				text="Everyone in the network shares the same view of what's happening. This means things like orders between companies, decisions regarding property, and results of votes are <em>transparent</em> and open to review by the members, creating a culture of <em>accountability and honesty.</em>" %}
+			<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
 		</div>
 
 		<div class="uk-section">
 			{% include flip-flop.html
 				flip=true
-				svg="/svg/laptops.svg"
-				animation_class="laptop-network"
-				text="Everyone in the network shares the same view of what's happening. This means things like orders between companies, the decisions regarding property, and the results of votes are <em>transparent</em> and open to review by the members, creating a culture of <em>accountability and honesty</em>." %}
-			<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
+				canvas="anonymizer"
+				animation_class="anonymize"
+				text_relative=true
+				text="While openness and transparency are important, some things <em>require anonymity</em> like consumer purchases or casting a vote in an election. Basis is built using strong cryptography to <em>protect member privacy.</em>" %}
+			<script>
+				window.addEventListener('load', () => {
+					Anonymizer({
+						container: document.querySelector('.drawing.anonymize'),
+						image: '{{ "/assets/images/holochain.jpg" | prepend: site.baseurl }}',
+					});
+				});
+			</script>
 		</div>
 	</div>
 </div>
@@ -134,9 +142,6 @@ leader:
 			selling things. This shift organizes the productive system around  <em>meeting
 			needs</em> rather than generating profit.
 		</h3>
-		<div class="animation drawing company-costs">
-			{% include /svg/company-costs.svg %}
-		</div>
 	</div>
 </div>
 
@@ -150,12 +155,9 @@ leader:
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
 			Basis enables an economy where people are paid for <em>producing things</em> rather than
-			selling things. This shift organizes the productive system around  <em>meeting
+			selling things. This shift organizes the productive system around <em>meeting
 			needs</em> rather than generating profit.
 		</h3>
-		<div class="animation drawing company-costs">
-			{% include /svg/company-costs.svg %}
-		</div>
 	</div>
 </div>
 
@@ -285,4 +287,7 @@ leader:
 
 <!-- release the boids -->
 <script src="{{ '/assets/js/boids.js' | prepend: site.basurl }}"></script>
+
+<!-- anonymizer animation -->
+<script src="{{ '/assets/js/animations/anonymizer.js' | prepend: site.basurl }}"></script>
 
