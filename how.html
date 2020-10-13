@@ -49,6 +49,7 @@ leader:
 				flip=true
 				canvas="boids"
 				animation_class="boids-container"
+				outer_scroll=true
 				text_relative=true
 				text="<em>Self-organization</em> and bottom-up governance are at the core of Basis. From the workplace to the global system, <em>members have a voice</em> in the things affecting them." %}
 			<script>
@@ -61,6 +62,7 @@ leader:
 						loop_delay: Math.round(1000 / 60),
 						time_multiplier: 0.06,
 						height: 'auto',
+						dimension_multiplier: 2.0,
 						boid_color: '#cc00ff',
 						boid_determined_color: '#cc00ff',
 						boid_shape: 'circle',
@@ -86,7 +88,6 @@ leader:
 				flip=false
 				svg="/svg/laptops.svg"
 				animation_class="laptop-network"
-				middle_scroll=true
 				text="Everyone in the network shares the same view of what's happening. This means things like orders between companies, decisions regarding property, and results of votes are <em>transparent</em> and open to review by the members, creating a culture of <em>accountability and honesty.</em>" %}
 			<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
 		</div>
@@ -96,7 +97,6 @@ leader:
 				flip=true
 				canvas="anonymizer"
 				animation_class="anonymize"
-				middle_scroll=true
 				text_relative=true
 				text="While transparency is important, some things <em>require anonymity</em> like consumer purchases or casting a vote in an election. Basis uses strong cryptography to <em>protect member privacy.</em>" %}
 			<script>
