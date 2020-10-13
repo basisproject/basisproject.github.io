@@ -9,6 +9,7 @@ const Boids = (function() {
 	let width = 150;
 	let height = 150;
 	let container = null;
+	let canvas = null;
 	const options = {
 		// required
 		container: null,
@@ -85,10 +86,9 @@ const Boids = (function() {
 	// Called initially and whenever the window resizes to update the canvas
 	// size and width/height variables.
 	function resize() {
-		const canvas = container;
-		width = container.parentNode.offsetWidth;
+		width = canvas.parentNode.offsetWidth;
 		height = options.height == 'auto' ?
-			container.parentNode.offsetHeight :
+			canvas.parentNode.offsetHeight :
 			options.height;
 		if(options.dimension_multiplier) {
 			width *= options.dimension_multiplier;
@@ -253,7 +253,7 @@ const Boids = (function() {
 
 	function draw() {
 		// Clear the canvas and redraw all the boids in their current positions
-		const ctx = container.getContext("2d");
+		const ctx = canvas.getContext("2d");
 		ctx.clearRect(0, 0, width, height);
 		boids.forEach((boid) => draw_boid(ctx, boid));
 	}
@@ -307,6 +307,8 @@ const Boids = (function() {
 		opts || (opts = {});
 		if(!opts.container) throw new Error('boids: missing opts.container');
 		container = opts.container;
+		canvas = container.querySelector('canvas');
+		if(!canvas) throw new Error('boids: missing canvas');
 		Object.assign(options, opts);
 		// Make sure the canvas always fills the whole window
 		window.addEventListener("resize", resize, false);

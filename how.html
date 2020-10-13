@@ -54,14 +54,13 @@ leader:
 			<script>
 				window.addEventListener('load', () => {
 					Boids.init({
-						container: document.body.querySelector('.boids-container canvas'),
+						container: document.body.querySelector('.boids-container'),
 						num_boids: 300,
 						//loop_delay: 5,
 						//time_multiplier: false,
 						loop_delay: Math.round(1000 / 60),
 						time_multiplier: 0.06,
 						height: 'auto',
-						dimension_multiplier: 2.0,
 						boid_color: '#cc00ff',
 						boid_determined_color: '#cc00ff',
 						boid_shape: 'circle',
@@ -87,6 +86,7 @@ leader:
 				flip=false
 				svg="/svg/laptops.svg"
 				animation_class="laptop-network"
+				middle_scroll=true
 				text="Everyone in the network shares the same view of what's happening. This means things like orders between companies, decisions regarding property, and results of votes are <em>transparent</em> and open to review by the members, creating a culture of <em>accountability and honesty.</em>" %}
 			<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
 		</div>
@@ -96,8 +96,9 @@ leader:
 				flip=true
 				canvas="anonymizer"
 				animation_class="anonymize"
+				middle_scroll=true
 				text_relative=true
-				text="While openness and transparency are important, some things <em>require anonymity</em> like consumer purchases or casting a vote in an election. Basis is built using strong cryptography to <em>protect member privacy.</em>" %}
+				text="While transparency is important, some things <em>require anonymity</em> like consumer purchases or casting a vote in an election. Basis uses strong cryptography to <em>protect member privacy.</em>" %}
 			<script>
 				window.addEventListener('load', () => {
 					Anonymizer({
@@ -120,11 +121,51 @@ leader:
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
 			Basis enables an economy where people are paid for <em>producing things</em> rather than
-			selling things. This shift organizes the productive system around  <em>meeting
+			selling things. This shift organizes the productive system around <em>meeting
 			needs</em> rather than generating profit.
 		</h3>
-		<div class="animation drawing company-costs">
-			{% include /svg/company-costs.svg %}
+
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="A <em>decentralized, public marketplace</em> provides a place for members to find each other's products and services." %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="Member companies order their productive inputs through the public marketplace. <em>Money is not used between member companies</em>. Instead, costs of products and services are transferred between companies." %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="<em>Members get paid</em> by tracking their labor for the company they work for. The cost of this labor is added to their company's costs. Members are paid in internal currency called &quot;credits.&quot;" %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="The <em>orders between member companies</em> on the public marketplace and the <em>costs of labor</em> of workers allow the system to determine a company's <em>total costs</em>, which they assign to their products and services." %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="When a product is ready for purchase by a member consumer, the system <em>incentivizes companies</em> that set the product's final price to its tracked cost. Any difference between price and cost is <em>not realized by the selling company.</em>" %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="Credits that are spent on final products are destroyed and <em>do not circulate the economy</em>. The productive system can be <em>moneyless</em> because it tracks costs directly." %}
 		</div>
 	</div>
 </div>
@@ -282,6 +323,12 @@ leader:
 		targets: '[data-scroll-out]',
 		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
 		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
+	});
+	ScrollOut({
+		targets: '[data-scroll-out-middle]',
+		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
+		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
+		threshold: 0.8,
 	});
 </script>
 

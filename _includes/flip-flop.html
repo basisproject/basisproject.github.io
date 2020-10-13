@@ -3,13 +3,13 @@
 		{% if include.image %}
 			<img src="{{ include.image | prepend: site.baseurl }}">
 		{% elsif include.svg %}
-			<div class="animation drawing {{ include.animation_class }} uk-margin-auto uk-width-3-4@s" data-scroll-out>
+		<div class="animation drawing {{ include.animation_class }} uk-margin-auto uk-width-3-4@s" {% if include.middle_scroll %}data-scroll-out-middle{% else %}data-scroll-out{% endif %}>
 				{% include {{ include.svg }} %}
 			</div>
 		{% elsif include.canvas %}
-			<div class="animation drawing {{ include.animation_class }} uk-margin-auto uk-width-3-4@s" data-scroll-out>
+			<div class="animation drawing {{ include.animation_class }} uk-margin-auto uk-width-3-4@s" {% if include.middle_scroll %}data-scroll-out-middle{% else %}data-scroll-out{% endif %}>
 				<div class="canvas-scaler">
-					<canvas class="{{ include.canvas }}" width="100%" height="100" data-scroll-out></canvas>
+					<canvas class="{{ include.canvas }}" width="100%" height="100"></canvas>
 				</div>
 			</div>
 		{% endif %}
