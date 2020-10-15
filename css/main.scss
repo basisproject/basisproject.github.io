@@ -44,7 +44,7 @@ footer {
 // -----------------------------------------------------------------------------
 .main-content {min-height: 400px;}
 .main-content {
-	a:not(.uk-button) {
+	a:not(.uk-button):not(.uk-slidenav) {
 		& {color: $link-color;}
 		&:visited {color: $link-color-dark;}
 		&:hover {text-decoration: underline;}
@@ -147,7 +147,7 @@ body.has-leader, body.dark-header {
 body.how {
 	.main-content {
 		em {color: lighten($secondary-color, 20%); font-style: normal;}
-		a:not(.uk-button) {
+		a:not(.uk-button):not(.uk-slidenav) {
 			&:visited {color: $link-color;}
 		}
 	}
@@ -155,7 +155,9 @@ body.how {
 }
 .drawing.boids-container {
 	& {height: 250px;}
-	.canvas-scaler {position: relative; z-index: 0; width: 250%; height: 200%; left: -75%; top: -50%; opacity: 0.8;}
+	.canvas-scaler {position: relative; z-index: 0; width: 250%; height: 200%; left: -75%; top: -50%; transition: opacity 1000ms;}
+	.canvas-scaler[data-scroll="out"] {opacity: 0.0;}
+	.canvas-scaler[data-scroll="in"] {opacity: 0.8;}
 }
 .drawing.laptop-network {
 	--laptop1-coords-x: 0;
@@ -212,6 +214,9 @@ body.how {
 		&.done {left: 120%;}
 		&.reset {visibility: hidden;};
 	}
+}
+.animation-slides {
+	.viewbox {position: absolute; left: 0; right: 0; top: 0; bottom: 0;}
 }
 
 // -----------------------------------------------------------------------------

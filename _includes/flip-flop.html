@@ -1,17 +1,20 @@
 {% capture animation_attrs %}
-	class="animation drawing {{ include.animation_class }} uk-margin-auto uk-width-3-4@s" {% if include.outer_scroll %}data-scroll-out{% else %}data-scroll-out-middle{% endif %}
+	class="animation drawing {{ include.animation_class }} uk-margin-auto uk-width-3-4@s"
+{% endcapture %}
+{% capture scroll_attrs %}
+	{% if include.scroll_class %}data-scroll-{{ include.scroll_class }}{% else %}data-scroll-all{% endif %}
 {% endcapture %}
 <div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle flip-flop" uk-grid>
 	<div>
 		{% if include.image %}
 			<img src="{{ include.image | prepend: site.baseurl }}">
 		{% elsif include.svg %}
-			<div {{ animation_attrs }}>
+			<div {{ animation_attrs }} {{ scroll_attrs }}>
 				{% include {{ include.svg }} %}
 			</div>
 		{% elsif include.canvas %}
 			<div {{ animation_attrs }}>
-				<div class="canvas-scaler">
+				<div class="canvas-scaler" {{ scroll_attrs }}>
 					<canvas class="{{ include.canvas }}" width="100%" height="100"></canvas>
 				</div>
 			</div>
