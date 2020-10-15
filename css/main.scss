@@ -156,7 +156,7 @@ body.how {
 .drawing.boids-container {
 	& {height: 250px;}
 	.canvas-scaler {position: relative; z-index: 0; width: 250%; height: 200%; left: -75%; top: -50%; transition: opacity 1000ms;}
-	.canvas-scaler[data-scroll="out"] {opacity: 0.0;}
+	.canvas-scaler[data-scroll="out"] {opacity: 0.2;}
 	.canvas-scaler[data-scroll="in"] {opacity: 0.8;}
 }
 .drawing.laptop-network {
