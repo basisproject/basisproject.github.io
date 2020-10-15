@@ -1,0 +1,16 @@
+// -----------------------------------------------------------------------------
+// Theme definition
+// -----------------------------------------------------------------------------
+$background: #fff;  //#f0f0f0;
+$text-color: #111;
+$primary-color: #c22;
+$secondary-color: #cc00ff;
+$link-color: $primary-color;
+$link-color-dark: darken($primary-color, 15%);
+$site-width: 1024px;
+$base-font-size: 17px;
+$font-text: 'Titillium Web', sans-serif;
+$font-header: 'Titillium Web', sans-serif;
+$font-impact: 'Titillium Web', sans-serif;
+$border-standard: 1px solid darken($background, 10%);
+

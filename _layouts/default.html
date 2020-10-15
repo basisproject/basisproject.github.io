@@ -1,12 +1,18 @@
 <!DOCTYPE html>
 <html>
 	{% include head.html %}
-	<body class="{{ page.body_class }} {% if page.leader %}has-leader{% endif %} {% if page.network_animation %}has-network-animation{% endif %}">
-		{% include header.html %}
+	<body class="{{ page.body_class }} {% if page.leader %}has-leader{% endif %} {% if page.dark_header %}dark-header{% endif %} {% if page.network_animation %}has-network-animation{% endif %}">
+		<div class="site-container">
+			<header class="column is-one-quarter-mobile">
+				{% include header.html %}
+			</header>
 
-{{ content }}
+			<div class="main-content">
+				{{ content }}
+			</div>
 
-		{% include footer.html %}
+			{% include footer.html %}
+		</div>
 	</body>
 </html>
 

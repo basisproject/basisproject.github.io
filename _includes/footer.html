@@ -2,6 +2,7 @@
 	<div class="uk-container uk-container-small">
 		<div class="uk-flex uk-flex-middle uk-flex-center uk-flex-wrap uk-text-center">
 			<ul class="uk-nav uk-nav-default uk-width-1-3@s uk-flex-left@s uk-text-left@s">
+				<li><a href="{{ "/how" | prepend: site.baseurl }}">How it works</a></li>
 				<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
 				<!--<li><a href="{{ "/docs" | prepend: site.baseurl }}">Documentation</a></li>-->
 				<li><a href="{{ "/posts" | prepend: site.baseurl }}">News</a></li>
@@ -13,11 +14,8 @@
 				<p class="jab">Capitalism? More like <em>Crap</em>italism!</p>
 				-->
 			</div>
-			<ul class="uk-iconnav uk-width-1-3@s uk-padding uk-flex-right@s">
-				<li><a title="Source code" href="https://github.com/basisproject/"><icon>&#xF113;</icon></a></li>
-				<li><a title="Reddit community" href="https://www.reddit.com/r/basisproject"><icon>&#xF281;</icon></a></li>
-				<li><a title="Twitter" href="https://twitter.com/basisproject"><icon>&#xF099;</icon></a></li>
-				<li><a title="Matrix (#basis:matrix.org)" href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org"><icon>&#xE80C;</icon></a></li>
+			<ul class="uk-iconnav uk-flex-center uk-width-1-3@s uk-padding uk-flex-right@s">
+				{% include nav-items-social.html %}
 			</ul>
 		</div>
 	</div>

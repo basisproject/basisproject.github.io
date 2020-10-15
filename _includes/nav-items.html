@@ -1,0 +1,9 @@
+{% if include.home %}
+	<li><a href="{{ "/" | prepend: site.baseurl }}">Home</a></li>
+{% endif %}
+<li><a href="{{ "/how" | prepend: site.baseurl }}">How it works</a></li>
+<li><a href="{{ "/contribute" | prepend: site.baseurl }}">Get involved</a></li>
+<li><a href="{{ "/paper" | prepend: site.baseurl }}">Paper</a></li>
+<li><a href="{{ "/posts" | prepend: site.baseurl }}">News</a></li>
+<li><a href="{{ "/faq" | prepend: site.baseurl }}">FAQ</a></li>
+{% include nav-items-social.html social_labels=include.social_labels %}

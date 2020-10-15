@@ -1,0 +1,26 @@
+---
+---
+
+@import './common.scss';
+
+// -----------------------------------------------------------------------------
+// UIkit
+// -----------------------------------------------------------------------------
+// overrides
+$global-background: $background;
+$global-font-size: $base-font-size;
+$global-font-family: $font-text;
+$global-primary-background: $primary-color;
+$global-secondary-background: $text-color;
+$breadcrumb-divider-margin-horizontal: 10px;
+$base-em-color: inherit;
+//$inverse-global-color: desaturate($global-inverse-color, 85%);
+$navbar-nav-item-height: 64px;
+$base-heading-color: $primary-color;
+//$base-heading-font-family: $font-header;
+$base-link-color: $primary-color;
+
+@import "./uikit/variables-theme.scss";
+@import "./uikit/mixins-theme.scss";
+@import './uikit/uikit-theme.scss';
+

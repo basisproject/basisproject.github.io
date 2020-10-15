@@ -1,4 +1,4 @@
-.PHONY: all build paper clean
+.PHONY: all build watch paper clean
 
 export SHELL := /bin/bash
 
@@ -9,7 +9,10 @@ DRAFTS ?= --drafts
 all: build
 
 build:
-	bundle exec jekyll build $(DRAFTS) -d $(DEST)
+	bundle exec jekyll build $(DRAFTS) -d $(DEST) --config _config.yml,_config.local.yml
+
+watch:
+	bundle exec jekyll build $(DRAFTS) -d $(DEST) --config _config.yml,_config.local.yml --watch
 
 ../paper/converted/basis.html: $(PAPERFILES)
 	cd ../paper && make html
@@ -17,7 +20,7 @@ build:
 paper.html: ../paper/converted/basis.html
 	@echo "---" > $@
 	@echo "layout: 'page'" >> $@
-	@echo "permalink: '/paper'" >> $@
+	@echo "permalink: '/paper/'" >> $@
 	@echo "title: 'Basis Paper'" >> $@
 	@echo "---" >> $@
 	cat $^ | sed '0,/<body>/d' | grep -v -P '</(body|html)>' >> $@

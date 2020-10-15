@@ -3,7 +3,7 @@ layout: post
 title: "July 2020 Basis project status update"
 author: "Andrew Lyon"
 leader:
-  image: '/assets/images/marx-glasses.jpg'
+  image: '/assets/images/control_panel2.jpg'
 ---
 
 Hey, y'all. Wanted to give a quick project update on direction and progress.

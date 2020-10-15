@@ -1,0 +1,400 @@
+---
+layout: default
+title: 'How Basis works'
+body_class: 'how dark'
+network_animation: true
+scroll_animation: false
+leader:
+  image: "/assets/images/network-home.jpg"
+  text: "How Basis works: Part 1 - The Network"
+  subtext: " "
+---
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Basis forms a decentralized network of people actively engaging in a post-capitalist
+			economy with one another.
+		</h3>
+
+		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
+			<div>
+				The network acts as a foundation for members to provide goods and services to each
+				other without the profit motive.
+				<br>
+				<a class="read-more" href="#production-without-profit" data-smoothscroll>Read more &raquo;</a>
+			</div>
+
+			<div>
+				Property in the network is shared by all members. Housing, factories, office space,
+				and machinery are managed by those using them.
+				<br>
+				<a class="read-more" href="#managing-common-property" data-smoothscroll>Read more &raquo;</a>
+			</div>
+			<div>
+				The needs of the members are met by a Basic Income that grows into a living wage as
+				the network becomes more self-sufficient.
+				<br>
+				<a class="read-more" href="#meeting-basic-needs" data-smoothscroll>Read more &raquo;</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="uk-section uk-section-secondary bg-black uk-overflow-hidden">
+	<div class="uk-container uk-container-small">
+		<div class="uk-section">
+			<!-- there you go, bringing class into it again -->
+			{% include flip-flop.html
+				flip=true
+				canvas="boids"
+				animation_class="boids-container"
+				scroll_class="part"
+				text_relative=true
+				text="<em>Self-organization</em> and bottom-up governance are at the core of Basis. From the workplace to the global system, <em>members have a voice</em> in the things affecting them." %}
+			<script>
+				window.addEventListener('load', () => {
+					Boids.init({
+						container: document.body.querySelector('.boids-container > .canvas-scaler'),
+						num_boids: 300,
+						//loop_delay: 5,
+						//time_multiplier: false,
+						loop_delay: Math.round(1000 / 60),
+						time_multiplier: 0.06,
+						height: 'auto',
+						dimension_multiplier: 2.0,
+						boid_color: '#cc00ff',
+						boid_determined_color: '#cc00ff',
+						boid_shape: 'circle',
+
+						visual_range: 40,
+						velocity_match_factor: 0.04,
+						bounding_margin: 300,
+						bounding_turn_factor: 0.08,
+						centering_factor: 0.002,
+						min_distance: 13,
+						avoid_factor: 0.15,
+						speed_limit: 4,
+						self_determination_probability: 0.0001,
+						self_determination_duration: 4000,
+						self_determination_charisma: 5,
+					});
+				}, false);
+			</script>
+		</div>
+
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/laptops.svg"
+				animation_class="laptop-network"
+				text="Everyone in the network shares the same view of what's happening. This means things like orders between companies, decisions regarding property, and results of votes are <em>transparent</em> and open to review by the members, creating a culture of <em>accountability and honesty.</em>" %}
+			<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
+		</div>
+
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				canvas="anonymizer"
+				animation_class="anonymize"
+				text_relative=true
+				text="While transparency is important, some things <em>require anonymity</em> like consumer purchases or casting a vote in an election. Basis uses strong cryptography to <em>protect member privacy.</em>" %}
+			<script>
+				window.addEventListener('load', () => {
+					Anonymizer({
+						container: document.querySelector('.drawing.anonymize .canvas-scaler'),
+						image: '{{ "/assets/images/holochain.jpg" | prepend: site.baseurl }}',
+					});
+				});
+			</script>
+		</div>
+	</div>
+</div>
+
+{% include leader.html
+	text="How Basis works: Part 2 - Production without profit"
+	image="/assets/images/port.jpg"
+	id="production-without-profit"
+	large=true %}
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Work in progress.
+		</h3>
+		{% comment %}
+		<h3 class="uk-margin-large-bottom">
+			Basis enables an economy where people are paid for producing things rather than selling
+			things. This shift organizes the productive system around meeting needs rather than
+			generating profit.
+		</h3>
+		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
+			<div>
+				Instead of using money, companies track their costs directly and assign them to
+				products and services ordered by other companies.
+			</div>
+			<div>
+				People in the Basis network are paid for producing things rather than selling
+				things.
+			</div>
+			<div>
+				jj
+			</div>
+		</div>
+		{% endcomment %}
+	</div>
+</div>
+
+{% comment %}
+<div class="uk-section uk-section-secondary bg-black">
+	<div class="uk-container uk-container-small">
+		<div class="animation-slides profitless" uk_slideshow="finite: true; min-height: 400;">
+			<div class="uk_position-relative">
+				<div class="viewbox" data-scroll-any>
+					<svg></svg>
+				</div>
+				<ul class="uk_slideshow-items">
+					{% include slide.html text="A <em>decentralized, public marketplace</em> provides a place for members to find each other's products and services." %}
+					{% include slide.html text="Member companies order their productive inputs through the public marketplace. <em>Money is not used between member companies</em>. Instead, costs of products and services are transferred between companies." %}
+					{% include slide.html text="<em>Members get paid</em> by tracking their labor for the company they work for. The cost of this labor is added to their company's costs. Members are paid in internal currency called &quot;credits.&quot;" %}
+					{% include slide.html text="The <em>orders between member companies</em> on the public marketplace and the <em>costs of labor</em> of workers allow the system to determine a company's <em>total costs</em>, which they assign to their products and services." %}
+					{% include slide.html text="When a product is ready for purchase by a member consumer, the system <em>incentivizes companies</em> that set the product's final price to its tracked cost. Any difference between price and cost is <em>not realized by the selling company.</em>" %}
+					{% include slide.html text="Credits that are spent on final products are destroyed and <em>do not circulate the economy</em>. The productive system can be <em>moneyless</em> because it tracks costs directly." %}
+				</ul>
+				<!--<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>-->
+				<!--<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>-->
+			</div>
+			<!--<div class="uk-slideshow-nav uk-dotnav uk-flex-center uk-margin"></div>-->
+		</div>
+		<script>
+			window.addEventListener('load', () => {
+				Profitless({
+					container: document.querySelector('.animation-slides.profitless .viewbox'),
+				});
+			});
+		</script>
+		<script>
+			UIkit.util.on('.animation-slides', 'itemshow', (ev) => {
+				const slide = ev.target;
+			});
+		</script>
+	</div>
+</div>
+{% endcomment %}
+
+{% include leader.html
+	text="How Basis works: Part 3 - Managing common property"
+	image="/assets/images/housing-sf.jpg"
+	id="managing-common-property"
+	large=true %}
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Work in progress.
+		</h3>
+	</div>
+</div>
+
+{% include leader.html
+	text="How Basis works: Part 4 - Meeting basic needs"
+	image="/assets/images/market.jpg"
+	id="meeting-basic-needs"
+	large=true %}
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+		<h3 class="uk-margin-large-bottom">
+			Work in progress.
+		</h3>
+	</div>
+</div>
+
+
+{% comment %}
+<!--
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="A <em>decentralized, public marketplace</em> provides a place for members to find each other's products and services." %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="Member companies order their productive inputs through the public marketplace. <em>Money is not used between member companies</em>. Instead, costs of products and services are transferred between companies." %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="<em>Members get paid</em> by tracking their labor for the company they work for. The cost of this labor is added to their company's costs. Members are paid in internal currency called &quot;credits.&quot;" %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="The <em>orders between member companies</em> on the public marketplace and the <em>costs of labor</em> of workers allow the system to determine a company's <em>total costs</em>, which they assign to their products and services." %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="When a product is ready for purchase by a member consumer, the system <em>incentivizes companies</em> that set the product's final price to its tracked cost. Any difference between price and cost is <em>not realized by the selling company.</em>" %}
+		</div>
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/company-costs.svg"
+				animation_class="laptop-network-"
+				text="Credits that are spent on final products are destroyed and <em>do not circulate the economy</em>. The productive system can be <em>moneyless</em> because it tracks costs directly." %}
+		</div>
+
+<div class="hero-container uk-section uk-section-secondary uk-padding-remove-bottom">
+	<div class="diagonal-box overtake bg-dark">
+		<div class="uk-section uk-section-large">
+			<div class="uk-container uk-container-small">
+
+				<h3 class="uk-margin-large-bottom">
+					Basis is a Distributed Ledger Technology system. This means it creates a network where
+					all the members agree to participate under the same set of guidelines.
+				</h3>
+
+				<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s uk-flex-middle uk-margin-large-bottom" uk-grid>
+					<div>
+						The network provides a foundation for engaging in production without profit, managing
+						common property, and meeting the basic needs of members.
+					</div>
+					<div>
+						Bottom-up self-governance is at the core of Basis. Members have a voice in the
+						things affecting them, whether in the workplace or the entire system.
+					</div>
+					<div>
+						This type of distributed system acts like a self-enforcing constitution. The
+						participants can trust that everyone is playing by the same rules.
+					</div>
+				</div>
+
+				<div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle" uk-grid>
+					<div>
+						<div class="animation drawing laptop-network uk-margin-auto uk-width-3-4@s" data-scroll>
+							{% include /svg/laptops.svg %}
+						</div>
+						<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
+					</div>
+					<div class="uk-flex-first@s">
+						<h4>
+							Everyone in the network shares the same view of what's happening. This means the
+							things that happen on the network are <em>transparent</em> and open to review by
+							the members, creating a culture of <em>accountability and honesty</em>.
+						</h4>
+					</div>
+				</div>
+			
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="hero-container uk-section uk-section-secondary uk-padding-remove-top">
+	<div class="diagonal-box bg-black">
+		<div class="uk-section uk-section-large">
+			<div class="info uk-text-center uk-padding uk-container uk-container-small">
+				<h1>How Basis works: Part 2 - Membership and Companies</h1>
+				<h2 class="uk-margin-remove-bottom">
+					Network membership is available to anybody at a worker-owned company which uses 
+					Basis as the means of ordering/providing inventory and tracking labor costs.
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+.how-part2-bg:before {opacity: 0.2; background-image: url({{ '/assets/images/port.jpg' | prepend: site.baseurl }});}
+<div class="hero-container uk-section uk-section-secondary">
+	<div class="diagonal-box how-part2-bg">
+		<div class="uk-section">
+			<div class="info uk-text-center uk-padding uk-container uk-container-small">
+				<h1>How Basis works: Part 2 - Membership and Companies</h1>
+				<h2 class="uk-margin-remove-bottom">
+					Network membership is available to anybody at a worker-owned company which uses 
+					Basis as the means of ordering/providing inventory and tracking labor costs.
+				</h2>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="uk-section uk-section-secondary">
+	<div class="uk-container uk-container-small">
+
+	</div>
+</div>
+
+{% include flip-flop.html
+	flip=true
+	image="/assets/images/stocks.jpg"
+	text="Companies that use Basis are kewl." %}
+
+{% include leader.html
+	text="How Basis works: Part 3 - Products"
+	image="/assets/images/train-station.jpg" %}
+
+{% include leader.html
+	text="How Basis works: Part 4 - Property"
+	image="/assets/images/train-station.jpg" %}
+
+{% include leader.html
+	text="How Basis works: Part 5 - UBI"
+	image="/assets/images/train-station.jpg" %}
+-->
+{% endcomment %}
+
+
+
+<!-- init our heroic smooth scroll which i normally hate with a passion but for a long-ass explanatory page it kinda works -->
+<script src="{{ '/assets/js/vnd/smooth-scroll.polyfills.min.js' | prepend: site.basurl }}"></script>
+<script>
+	var scroll = new SmoothScroll('a[data-smoothscroll]', {
+		speed: 250
+	});
+</script>
+
+<!-- disable animations when they are not scrolled into view -->
+<script src="{{ '/assets/js/vnd/scroll-out.min.js' | prepend: site.basurl }}"></script>
+<script>
+	ScrollOut({
+		targets: '[data-scroll-any]',
+		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
+		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
+	});
+	ScrollOut({
+		targets: '[data-scroll-all]',
+		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
+		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
+		threshold: 0.8,
+	});
+	ScrollOut({
+		targets: '[data-scroll-part]',
+		onShown: (el) => el.setAttribute('data-animation-disabled', ''),
+		onHidden: (el) => el.setAttribute('data-animation-disabled', 'true'),
+		threshold: 0.3,
+	});
+</script>
+
+<!-- release the boids -->
+<script src="{{ '/assets/js/boids.js' | prepend: site.basurl }}"></script>
+
+<!-- anonymizer animation -->
+<script src="{{ '/assets/js/animations/anonymizer.js' | prepend: site.basurl }}"></script>
+
+<!-- profitless slides -->
+<script src="{{ '/assets/js/animations/profitless.js' | prepend: site.basurl }}"></script>
+
