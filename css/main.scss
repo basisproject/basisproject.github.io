@@ -150,6 +150,7 @@ body.how {
 		a:not(.uk-button):not(.uk-slidenav) {
 			&:visited {color: $link-color;}
 		}
+		hr.uk-divider-vertical {border-left-color: adjust-color($primary-color, $alpha: -0.6);}
 	}
 	.bg-black {background-color: #000;}
 }
@@ -211,10 +212,9 @@ body.how {
 		anon {display: block;}
 	}
 	.drawing.coffee-purchase {
-		path#cup,
-		path#steam {fill: #aaa;}
+		path#cup {fill: #fdbf4a;}
 		path#steam {
-			& {transform-origin: 23% 50%;};
+			& {fill: #fff; transform-origin: 23% 50%; opacity: 0.4;}
 			&.flip {transform: scale(-1, 1);}
 		}
 	}

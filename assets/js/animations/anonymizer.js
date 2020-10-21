@@ -49,7 +49,7 @@ const Anonymizer = (() => {
 				update_text(letters);
 				await sleep(50);
 			}
-			letters[idx] = final;
+			letters[idx] = final || '';
 			update_text(letters);
 		};
 		for(var i = 0; i < letters.length; i++) {
