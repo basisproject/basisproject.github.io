@@ -6,6 +6,9 @@
 {% endcapture %}
 <div class="uk-grid-medium uk-child-width-1-2@s uk-flex-middle flip-flop" uk-grid>
 	<div>
+		{% if include.header %}
+			{{ include.header }}
+		{% endif %}
 		{% if include.image %}
 			<img src="{{ include.image | prepend: site.baseurl }}">
 		{% elsif include.svg %}

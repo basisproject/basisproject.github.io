@@ -3,67 +3,62 @@
 const Anonymizer = (() => {
 	const sleep = (ms) => new Promise((res) => setTimeout(res, ms || 0));
 
-	const load = (options) => {
+	const load = async (options) => {
 		const container = options.container;
 		if(!container) throw new Error('Anonymizer::load() -- missing `container`');
-		const canvas = container.querySelector('canvas');
-		if(!canvas) throw new Error('Anonymizer::load() -- missing canvas in container');
-		canvas.className = 'reset start';
-		canvas.className = 'start';
-		const canvas2 = document.createElement('canvas');
-		const img = new Image();
-		const resize = () => {
-			canvas.width = img.width;
-			canvas.height = img.height;
-			canvas2.width = canvas.width;
-			canvas2.height = canvas.height;
-		};
-		img.onload = () => {
-			resize();
-			animate(canvas, container, { ...options, img, canvas2 });
-		};
-		img.src = options.image;
+		const svg = container.querySelector('svg');
+		if(!svg) throw new Error('Anonymizer::load() -- missing svg in container');
+		animate_text(container, options);
+		await sleep(1500);
+		animate_steam(svg, container, options);
 	};
 
-	const animate = async (canvas, container, options) => {
-		const loop = () => animate(canvas, container, options);
-		if(container.getAttribute('data-animation-disabled') == 'true') {
+	const animate_steam = async (svg, container, options) => {
+		const loop = () => animate_steam(svg, container, options);
+		const steam = svg.querySelector('#steam');
+		if(!steam || container.getAttribute('data-animation-disabled') == 'true') {
 			await sleep(1000);
 			return loop();
 		}
-		const ctx = canvas.getContext('2d');
-		ctx.mozImageSmoothingEnabled = false;
-		ctx.webkitImageSmoothingEnabled = false;
-		ctx.imageSmoothingEnabled = false;
-		const redraw = (scale) => {
-			const ctx2 = options.canvas2.getContext('2d');
-			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx2.clearRect(0, 0, canvas.width, canvas.height);
-			ctx2.mozImageSmoothingEnabled = false;
-			ctx2.webkitImageSmoothingEnabled = false;
-			ctx2.imageSmoothingEnabled = false;
-			const img = options.img;
-			const width = canvas.width * scale;
-			const height = canvas.height * scale;
-			ctx2.drawImage(img, 0, 0, width, height);
-			ctx.drawImage(options.canvas2, 0, 0, width, height, 0, 0, canvas.width, canvas.height);
-		};
+		steam.classList.toggle('flip');
+		await sleep(1500);
+		return loop();
+	};
 
-		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		canvas.className = 'reset start';
-		redraw(1);
-		await sleep(1);
-		canvas.className = 'show';
-		await sleep(1500);
-		for(var i = 0, n = 1; i < 6; i++, n *= 2) {
-			redraw(1 / n);
-			await sleep(250);
+	const animate_text = async (container, options) => {
+		const loop = () => animate_text(container, options);
+		const text = container.parentNode.querySelector('anon');
+		if(!text || container.getAttribute('data-animation-disabled') == 'true') {
+			await sleep(1000);
+			return loop();
 		}
-		await sleep(500);
-		canvas.className = 'done';
 		await sleep(1500);
-		canvas.className = 'reset start';
-		await sleep(1000);
+		let letters = text.innerHTML.split('');
+		const copy = letters.slice(0);
+		const promises = [];
+		const randomchar = () => {
+			const chars = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@$%^()*&[]#/\\';
+			const char = chars[Math.floor(Math.random() * chars.length)];
+			return char;
+		};
+		const update_text = (arr) => { text.innerHTML = arr.join(''); };
+		const switcher = async (idx, final) => {
+			const num_switches = 5;
+			for(var i = 0; i < num_switches; i++) {
+				letters[idx] = randomchar();
+				update_text(letters);
+				await sleep(50);
+			}
+			letters[idx] = final;
+			update_text(letters);
+		};
+		for(var i = 0; i < letters.length; i++) {
+			promises.push(switcher(i, options.to_message[i]));
+			await sleep(75);
+		}
+		await Promise.all(promises);
+		await sleep(3000);
+		update_text(copy);
 		return loop();
 	};
 

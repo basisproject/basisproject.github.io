@@ -13,8 +13,8 @@ leader:
 <div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
-			Basis forms a decentralized network of people actively engaging in a post-capitalist
-			economy with one another.
+			Basis enables a network of people actively engaging in a post-capitalist economy with one
+			another.
 		</h3>
 
 		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
@@ -27,7 +27,7 @@ leader:
 
 			<div>
 				Property in the network is shared by all members. Housing, factories, office space,
-				and machinery are managed by those using them.
+				and machinery are managed by the people using them.
 				<br>
 				<a class="read-more" href="#managing-common-property" data-smoothscroll>Read more &raquo;</a>
 			</div>
@@ -83,6 +83,8 @@ leader:
 			</script>
 		</div>
 
+		<hr class="uk-divider-vertical">
+
 		<div class="uk-section">
 			{% include flip-flop.html
 				flip=false
@@ -92,24 +94,24 @@ leader:
 			<script src="{{ '/assets/js/animations/laptop-network.js' | prepend: site.basurl }}"></script>
 		</div>
 
-		{% comment %}
-		<div class="uk-section">
+		<hr class="uk-divider-vertical">
+
+		<div class="uk-section anonymizer">
 			{% include flip-flop.html
 				flip=true
-				canvas="anonymizer"
-				animation_class="anonymize"
-				text_relative=true
+				svg="/svg/coffee.svg"
+				animation_class="coffee-purchase"
+				header='<h4 class="code"><anon>Alice purchased a coffee</anon></h4>'
 				text="While transparency is important, some things <em>require anonymity</em> like consumer purchases or casting a vote in an election. Basis uses strong cryptography to <em>protect member privacy.</em>" %}
 			<script>
 				window.addEventListener('load', () => {
 					Anonymizer({
-						container: document.querySelector('.drawing.anonymize .canvas-scaler'),
-						image: '{{ "/assets/images/holochain.jpg" | prepend: site.baseurl }}',
+						container: document.querySelector('.drawing.coffee-purchase'),
+						to_message: 'A coffee was purchased',
 					});
 				});
 			</script>
 		</div>
-		{% endcomment %}
 	</div>
 </div>
 
@@ -122,39 +124,53 @@ leader:
 <div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
-			Work in progress.
-		</h3>
-		{% comment %}
-		<h3 class="uk-margin-large-bottom">
-			Basis enables an economy where people are paid for producing things rather than selling
+			Basis creates an economy where people are paid for producing things rather than selling
 			things. This shift organizes the productive system around meeting needs rather than
 			generating profit.
 		</h3>
 		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
 			<div>
-				Instead of using money, companies track their costs directly and assign them to
-				products and services ordered by other companies.
+				Companies in Basis don't use money, but instead manage costs directly. Costs are
+				tracked as distinct sets of labor and resources.
 			</div>
 			<div>
-				People in the Basis network are paid for producing things rather than selling
-				things.
+				A company's costs come from the labor of the company's workers and the products or
+				services ordered from other companies.
 			</div>
 			<div>
-				jj
+				Companies assign their costs to their products and services, which are then ordered
+				by other companies or by consumers.
 			</div>
+
+
+
+			<!--
+			<div>
+				Workers track their labor in Basis. The system prints currency (called "credits") to
+				pay them and adds the cost of this labor to their company's total costs.
+			</div>
+			<div>
+				Instead of using money, companies manage their costs directly. They assign these
+				costs to their products and services, which consumers or other companies order.
+			</div>
+			<div>
+				Members use the credits obtained from their labor to buy products. When the credits
+				are spent, they are destroyed and do not circulate the economy.
+			</div>
+			-->
 		</div>
-		{% endcomment %}
 	</div>
 </div>
 
-{% comment %}
 <div class="uk-section uk-section-secondary bg-black">
 	<div class="uk-container uk-container-small">
 		<div class="animation-slides profitless" uk_slideshow="finite: true; min-height: 400;">
 			<div class="uk_position-relative">
+				<!--
 				<div class="viewbox" data-scroll-any>
 					<svg></svg>
 				</div>
+				-->
 				<ul class="uk_slideshow-items">
 					{% include slide.html text="A <em>decentralized, public marketplace</em> provides a place for members to find each other's products and services." %}
 					{% include slide.html text="Member companies order their productive inputs through the public marketplace. <em>Money is not used between member companies</em>. Instead, costs of products and services are transferred between companies." %}
@@ -170,9 +186,9 @@ leader:
 		</div>
 		<script>
 			window.addEventListener('load', () => {
-				Profitless({
-					container: document.querySelector('.animation-slides.profitless .viewbox'),
-				});
+				//Profitless({
+				//	container: document.querySelector('.animation-slides.profitless .viewbox'),
+				//});
 			});
 		</script>
 		<script>
@@ -182,7 +198,6 @@ leader:
 		</script>
 	</div>
 </div>
-{% endcomment %}
 
 {% include leader.html
 	text="How Basis works: Part 3 - Managing common property"
@@ -193,7 +208,7 @@ leader:
 <div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
-			Work in progress.
+			I told him <em>"take the money!"</em> He called <em>me</em> a thief!
 		</h3>
 	</div>
 </div>
@@ -207,7 +222,7 @@ leader:
 <div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
-			Work in progress.
+			Take some shooting lessons, <em>asshole.</em>
 		</h3>
 	</div>
 </div>
