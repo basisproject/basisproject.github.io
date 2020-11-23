@@ -13,7 +13,7 @@ leader:
 <div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
-			Basis enables a network of people actively engaging in a post-capitalist economy with one
+			Basis forms a network of people actively engaging in a post-capitalist economy with one
 			another.
 		</h3>
 
@@ -130,34 +130,17 @@ leader:
 		</h3>
 		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
 			<div>
-				Companies in Basis don't use money, but instead manage costs directly. Costs are
-				tracked as distinct sets of labor and resources.
+				Companies in Basis don't use money, but <em>manage costs directly</em>.
+				Costs are tracked as distinct sets of labor and resources.
 			</div>
 			<div>
-				A company's costs come from the labor of the company's workers and the products or
-				services ordered from other companies.
+				A company assigns its costs to its products. When another company orders one of
+				those products, it takes on the associated cost.
 			</div>
 			<div>
-				Companies assign their costs to their products and services, which are then ordered
-				by other companies or by consumers.
+				When a product is finally sold to a consumer, the difference between the price and
+				the cost is <em>absorbed by the network.</em>
 			</div>
-
-
-
-			<!--
-			<div>
-				Workers track their labor in Basis. The system prints currency (called "credits") to
-				pay them and adds the cost of this labor to their company's total costs.
-			</div>
-			<div>
-				Instead of using money, companies manage their costs directly. They assign these
-				costs to their products and services, which consumers or other companies order.
-			</div>
-			<div>
-				Members use the credits obtained from their labor to buy products. When the credits
-				are spent, they are destroyed and do not circulate the economy.
-			</div>
-			-->
 		</div>
 	</div>
 </div>
@@ -172,12 +155,25 @@ leader:
 				</div>
 				-->
 				<ul class="uk_slideshow-items">
+					{% include slide.html text="Zoe likes to make chairs, so she starts a chair company." %}
+					{% include slide.html text="She orders some wood to make her first chairs. The wood has a resource cost of <code>10kg wood</code> and <code>50₡ logger labor</code>, which is added to her company's costs" %}
+					{% include slide.html text="In five hours, Zoe uses all her wood and makes five chairs. The cost of her labor is 20₡ (&quot;credits&quot;) per hour, totaling 100₡." %}
+					{% include slide.html text="When Zoe tracks her labor in Basis, the system prints 100₡ in credits and transfers it to her, while also adding 100₡ of costs to her company." %}
+					{% include slide.html text="Her company's costs now total <code>10kg wood, 50₡ logger, and 100₡ chairmaker</code>." %}
+					{% include slide.html text="Zoe divides her company's costs equally between each of the five chairs. One of her chairs now costs <code>2kg wood, 10₡ logger, and 20₡ chairmaker</code>." %}
+					{% include slide.html text="Zoe publishes a listing for her chairs on the decentralized, public marketplace Basis provides. Now other companies or individual members can find her chairs!" %}
+					{% include slide.html text="When another company orders one of her chairs, the cost of the chair is subtracted from her company and added to the other company." %}
+					{% include slide.html text="When an individual member purchases one of her chairs using their credits, this also subtracts the chair's costs from Zoe's company." %}
+					{% include slide.html text="Credits are destroyed when spent, and so are the costs of the item they are used to purchase. Credits do not circulate the productive system." %}
+
+					{% comment %}
 					{% include slide.html text="A <em>decentralized, public marketplace</em> provides a place for members to find each other's products and services." %}
 					{% include slide.html text="Member companies order their productive inputs through the public marketplace. <em>Money is not used between member companies</em>. Instead, costs of products and services are transferred between companies." %}
 					{% include slide.html text="<em>Members get paid</em> by tracking their labor for the company they work for. The cost of this labor is added to their company's costs. Members are paid in internal currency called &quot;credits.&quot;" %}
 					{% include slide.html text="The <em>orders between member companies</em> on the public marketplace and the <em>costs of labor</em> of workers allow the system to determine a company's <em>total costs</em>, which they assign to their products and services." %}
 					{% include slide.html text="When a product is ready for purchase by a member consumer, the system <em>incentivizes companies</em> that set the product's final price to its tracked cost. Any difference between price and cost is <em>not realized by the selling company.</em>" %}
 					{% include slide.html text="Credits that are spent on final products are destroyed and <em>do not circulate the economy</em>. The productive system can be <em>moneyless</em> because it tracks costs directly." %}
+					{% endcomment %}
 				</ul>
 				<!--<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>-->
 				<!--<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>-->
@@ -222,11 +218,82 @@ leader:
 <div class="uk-section uk-section-secondary">
 	<div class="uk-container uk-container-small">
 		<h3 class="uk-margin-large-bottom">
-			Take some shooting lessons, <em>asshole.</em>
+			A living wage basic income is provided to everyone in the network to meet the needs of
+			all members.
 		</h3>
+		<div class="text-bullets uk-grid-medium uk-grid-divider uk-child-width-1-3@s" uk-grid>
+			<div>
+				Members get basic income whether they are working or not, <em>freeing them</em> from
+				the need to sell themselves for economic survival.
+			</div>
+			<div>
+				Having basic needs covered outside of production means all products become cheaper
+				and the economy can be <em>adaptable and fluid.</em>
+			</div>
+			<div>
+				Because credits in Basis do not circulate after they are spent, basic income can be
+				provided to everyone <em>without taxation</em>.
+			</div>
+		</div>
 	</div>
 </div>
 
+<div class="uk-section uk-section-secondary bg-black uk-overflow-hidden">
+	<div class="uk-container uk-container-small">
+		<div class="uk-section">
+			<!-- there you go, bringing class into it again -->
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/button.svg"
+				animation_class="monotonous-button"
+				scroll_class="part"
+				text="There is a constant pressure in our society to make money, even if the things we do aren't particularly useful or helpful. A basic income <em>alleviates this pressure</em>, allowing people to engage in activities they <em>find meaningful.</em>" %}
+			<div class="monotonous-button-frame2">{% include svg/button2.svg %}</div>
+			<script>
+				window.addEventListener('load', () => {
+					MonotonousButton({
+						container: document.querySelector('.drawing.monotonous-button'),
+						frame2: document.querySelector('.monotonous-button-frame2'),
+					});
+				});
+			</script>
+		</div>
+
+		<hr class="uk-divider-vertical">
+
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/coffee.svg"
+				animation_class="zing"
+				text="A basic income pays for various types of labor which <em>markets are unable to value.</em> People like homemakers, artists, musicians, volunteer workers, and many others who improve our world are now <em>systemically compensated for their efforts.</em>" %}
+		</div>
+
+		<hr class="uk-divider-vertical">
+
+		<div class="uk-section anonymizer">
+			{% include flip-flop.html
+				flip=true
+				svg="/svg/coffee.svg"
+				animation_class="herp"
+				text="If everyone has a living wage, then the only way to get people to do crappy jobs is to <em>pay them more</em>, driving up the cost of undesirable work or eliminating it entirely. <em>Automating menial labor</em> becomes much cheaper than it is in capitalism." %}
+		</div>
+
+		<hr class="uk-divider-vertical">
+
+		<div class="uk-section">
+			{% include flip-flop.html
+				flip=false
+				svg="/svg/coffee.svg"
+				animation_class="zing"
+				text="People become <em>free to choose</em> how to associate with others, whether business partners or life partners. Nobody is trapped in an arrangement they do not want simply because of fear of economic survival." %}
+		</div>
+
+		<!--
+		  Free association
+		-->
+	</div>
+</div>
 
 {% comment %}
 <!--
@@ -414,4 +481,7 @@ leader:
 
 <!-- profitless slides -->
 <script src="{{ '/assets/js/animations/profitless.js' | prepend: site.basurl }}"></script>
+
+<!-- monotonous animation -->
+<script src="{{ '/assets/js/animations/monotonous-button.js' | prepend: site.basurl }}"></script>
 

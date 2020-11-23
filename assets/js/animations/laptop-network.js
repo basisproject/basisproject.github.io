@@ -2,6 +2,7 @@
 
 (() => {
 	const sleep = (ms) => new Promise((res) => setTimeout(res, ms || 0));
+	const frame = () => new Promise((res) => window.requestAnimationFrame(res));
 	const load = (container) => {
 		const svg_el = container.querySelector('svg');
 		if(!svg_el) console.warn('laptop-network::load_animation() -- missing svg in el', container);
@@ -29,20 +30,10 @@
 		}
 		const render_data = async () => {
 			const groups = {};
-			// clear selected data
-			if(data.length == 0) {
-				svg.selectAll('#g-db-data path')
-					.each(function(el, u) { this.classList.remove('enabled'); });
-				return sleep(1000);
-			} else {
-				svg.selectAll('#g-db-data path').attr('class', '');
-			}
-
 			data.forEach((dat) => {
 				if(!groups[dat.to]) groups[dat.to] = [];
 				groups[dat.to].push(dat);
 			});
-			const promises = [];
 			Object.keys(groups).forEach((lid) => {
 				groups[lid].forEach((dat, i) => {
 					const dat_id = `#${dat.to}-data-${i + 1}`;
@@ -50,6 +41,12 @@
 						.attr('class', `enabled data-${dat.from}`);
 				});
 			});
+			return sleep(1000);
+		};
+		const clear_data = async () => {
+			// clear selected data
+			svg.selectAll('#g-db-data path')
+				.each(function(el, u) { this.classList.remove('enabled'); });
 			return sleep(1000);
 		};
 
@@ -63,18 +60,19 @@
 		transactions.push({ id: tid++, from, to: to2 });
 
 		const g_trans = svg.select('g.transactions');
-		const enter = g_trans
-			.selectAll('circle.transaction')
-			.data(transactions)
-			.enter();
-		const enter_g = enter.append('g')
+		const enter_g = g_trans
+			.selectAll('g')
+			.data(transactions, (d) => d.id)
+			.enter()
+			.append('g')
 			.attr('class', (d) => `transaction-container from-${d.from}`);
 		const enter_cir = enter_g.append('circle')
 			.attr('class', (d) => `transaction from-${d.from}`)
 			.attr('cx', 0)
 			.attr('cy', 0)
 			.attr('r', 125);
-		await sleep();
+		await frame();
+		await sleep(10);
 		enter_cir.attr('class', (d) => `transaction from-${d.from} open`);
 		data.push({ id: tid++, from: laptop_id(current_laptop), to: laptop_id(current_laptop) });
 		render_data();
@@ -86,12 +84,19 @@
 		data.push({ id: tid++, from: laptop_id(current_laptop), to: laptop_id(current_laptop + 2) });
 		await render_data();
 
+		transactions = [];
+		g_trans
+			.selectAll('g')
+			.data(transactions, (d) => d.id)
+			.exit()
+			.remove();
+
 		current_laptop = Math.round(Math.random() * num_laptops);
 		await sleep(1000);
 		runs = (runs + 1) % num_laptops;
 		if(runs == 0) {
 			data = [];
-			await render_data();
+			await clear_data();
 		}
 		return animate(svg, container);
 	};
