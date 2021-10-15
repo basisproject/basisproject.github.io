@@ -8,7 +8,7 @@ leader:
 
 Wow, it's been over a year since the last update. It wasn't my intention to give no updates on this project for this long, but life and the complications it brings have slowed down my work on Basis. It hasn't stopped my work though, and short of death itself, few things hold the power to keep me from what I'm passionate about.
 
-The reason for my passion is that I view Basis as a solution to an existential threat: the relationship between humanity and our environment. The larger the population of humankind on this planet, the more important this relationship becomes. It is my belief that we our gaining collective awareness of this relationship in important ways, however our current economic and social systems do not facilitate a medium for this awareness to grow or develop.
+The reason for my passion is that I view Basis as a solution to an existential threat: the relationship between humanity and our environment. The larger the population of humankind on this planet, the more important this relationship becomes. It is my belief that we are gaining collective awareness of this relationship in important ways, however our current economic and social systems do not facilitate a medium for this awareness to grow or develop.
 
 Stepping back and looking at Basis, one could call it a method of socialist organization, or a protocol for a resource-based economy, but these things are incidental. They are in support of the ultimate vision: Basis is a system of collective awareness. It's a way to measure and mediate humanity's relationship with the environment.
 
