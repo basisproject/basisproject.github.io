@@ -6,7 +6,7 @@ BUILD := docs
 allwww := $(shell find $(SRC) -type f)
 allsrc := main.js $(shell find plugins/)
 
-all: $(BUILD)/index.html
+all: $(BUILD)/index.html $(BUILD)/CNAME
 
 $(BUILD)/index.html: $(allsrc) $(allwww) tailwind.config.js postcss.config.js $(SRC)/paper.html
 	SRC=$(SRC) DEST=$(BUILD) node main
@@ -20,6 +20,9 @@ $(SRC)/paper.html: ../paper/converted/basis.html
 	@echo "hide_title: true" >> $@
 	@echo "---" >> $@
 	cat $^ | sed '0,/<body>/d' | grep -v -P '</(body|html)>' >> $@
+
+$(BUILD)/CNAME:
+	cp CNAME $@
 
 paper: $(SRC)/paper.html all
 
