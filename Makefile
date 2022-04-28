@@ -1,36 +1,31 @@
-.PHONY: all build watch paper clean
+.PHONY: all publish paper clean watch
 
-export SHELL := /bin/bash
+SRC := www
+BUILD := dist
 
-DEST ?= public
-PAPERFILES = $(shell find ../paper/src)
-DRAFTS ?= --drafts
+allwww := $(shell find $(SRC) -type f)
+allsrc := main.js $(shell find plugins/)
 
-all: build
+all: dist/index.html
 
-build:
-	bundle exec jekyll build $(DRAFTS) -d $(DEST) --config _config.yml,_config.local.yml
+$(BUILD)/index.html: $(allsrc) $(allwww) tailwind.config.js postcss.config.js $(SRC)/paper.html
+	SRC=$(SRC) DEST=$(BUILD) node main
+	npx postcss dist/css/**/*.css --base dist/ --dir dist/
 
-watch:
-	bundle exec jekyll build $(DRAFTS) -d $(DEST) --config _config.yml,_config.local.yml --watch
-
-../paper/converted/basis.html: $(PAPERFILES)
-	cd ../paper && make html
-
-paper.html: ../paper/converted/basis.html
+$(SRC)/paper.html: ../paper/converted/basis.html
 	@echo "---" > $@
-	@echo "layout: 'page'" >> $@
-	@echo "permalink: '/paper/'" >> $@
+	@echo "layout: 'page.njk'" >> $@
 	@echo "title: 'Basis Paper'" >> $@
+	@echo "permalink: 'paper/'" >> $@
+	@echo "hide_title: true" >> $@
 	@echo "---" >> $@
 	cat $^ | sed '0,/<body>/d' | grep -v -P '</(body|html)>' >> $@
 
-paper: paper.html all
-
-deploy: DRAFTS :=
-deploy: all
+paper: $(SRC)/paper.html all
 
 clean:
-	rm -rf $(DEST)
-	rm -f paper.html
+	rm -rf $(BUILD)
+
+watch: all
+	while true; do inotifywait -qr -e close_write *.js www/ plugins/; make; done
 

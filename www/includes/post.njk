@@ -1,0 +1,9 @@
+<h1>
+	<a href="{{ site.base }}{{ post.url }}">{{ post.title }}</a>
+</h1>
+{% set authordata = [post.author, post.date_moment.format('MMM D, YYYY') ] %}
+<p class="date -mt-4 mb-6 font-semibold">{{ authordata | join(' - ') }}</p>
+
+{% set postimage = post.leader %}
+{% include "./post-image.njk" %}
+{{ post.contents }}

@@ -1,0 +1,50 @@
+---
+layout: post.njk
+title: "May 2020 Basis project status update"
+author: "Andrew Lyon"
+leader:
+  image: '/assets/images/network.jpg'
+---
+
+Hi, everyone. I know the project has seemed quiet recently, but there's a good reason for this: I'm spending a lot of time working on the next steps. This is somewhat of a continuation of our [last post][1] and also a general update on the project direction.
+
+## ValueFlows
+
+I've decided to move forward with integrating ValueFlows into Basis. This is a fairly intricate process of deciding which parts of the existing project should remain and which should be replaced by the [rust-based ValueFlows vocabulary][2] I spent a good amount of time building out.
+
+Not only is this about replacing code (more on this later) but also about gaining a deeper understanding of ValueFlows and how it fits together. This consists of me re-reading the [ValueFlows website][3] over and over and pestering the creators ceaselessly (thank you, Lynn and Bob).
+
+So far the experience and thought put into VF is helping immensely, not just with data structures but with my own thought patterns. It's truly an excellent economic vocabulary.
+
+## Holochain
+
+I've decided to move forward without Holochain. There are a few good reasons for this, but the main reason has to do with Basis requiring *some* about of data consensus. Holochain's agent-based verification is truly a revolutionary way of building distributed applications, and there are parts of it that would be extremely useful for the goals of Basis, but in its current form it's not ready for our use.
+
+The main problem we're facing is that companies in Basis require an exact accounting of inputs and outputs, and this needs to happen *on the company level*. In Holochain, this can only really happen on the agent (ie, personal) level. In other words, if someone in the company orders 100 widgets and someone else works 12 hours, it's fairly difficult to attribute those costs to the various outputs of the company, because they are effectively siloed to those individuals. There needs to be some built-in way to have consensus on data for it to work for Basis, even if just on the company level. I've toyed with the idea of using blockchain for data consensus within companies and Holochain for everything else, however I think at this point it makes sense to limit complexity and move forward with what we know works.
+
+This could change in the future, and this brings me to my final update.
+
+## Basis core
+
+The [current implementation of Basis][4] tightly couples data types, logic, and a blockchain such that they are all inseparable. This means that if we eventually want to leave [Exonum][7] as the blockchain layer for the project, we have to essentially do a lot of ripping and reprogramming. It also makes the project's core logic harder to test because it has to be wrapped in a blockchain to operate effectively.
+
+To mitigate this, [Basis core][5] has been created and will be the place the Basis data structures and logic live. No storage, no config, no blockchain, no third-party services. The goal is to be operationally functional, meaning all operations require the needed data to be passed in. This provides a barrier between the *essence* of Basis and whatever transactional medium it uses.
+
+This will help in a few extremely important ways:
+
+1. The next version of Basis can be built without having to worry about getting it working within a blockchain. This speeds up development significantly.
+1. Basis can be tested in a functional and self-contained manner.
+1. The blockchain layer can be "swapped out" down the road without disrupting the core logic of Basis. This could be Exonum, Holochain, [Substrate][6], etc.
+
+Given that Basis is undergoing a fairly large change of integrating ValueFlows, this is a good time to focus on separating out the core logic into its own project.
+
+This is an exciting change. While it's an up-front investment in research and build time, It's going to make the project stronger and make development faster in the long run.
+
+[1]: {{ site.base }}/posts/2020/04/valueflows-blockchain-holochain/
+[2]: https://docs.rs/vf-rs/
+[3]: https://valueflo.ws/
+[4]: https://github.com/basisproject/basis
+[5]: https://github.com/basisproject/core
+[6]: https://www.substrate.io/
+[7]: https://exonum.com/index
+

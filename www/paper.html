@@ -1,0 +1,564 @@
+---
+layout: 'page.njk'
+title: 'Basis Paper'
+permalink: 'paper/'
+hide_title: true
+---
+<header id="title-block-header">
+<h1 class="title">Basis: a protocol for a post-capitalist economy (v3.0)</h1>
+<p class="subtitle">Or: How I learned to stop worrying and produce without profits and private property<br><br><strong>(Last update: April 28, 2022)</strong></p>
+<p class="author">Andrew M. Lyon</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#part-1-introduction">Part 1: Introduction</a>
+<ul>
+<li><a href="#chapter-1-on-capitalism-and-why-alternatives-are-needed">Chapter 1: On capitalism, and why alternatives are needed</a></li>
+<li><a href="#chapter-2-the-basis-protocol">Chapter 2: The Basis protocol</a></li>
+</ul></li>
+<li><a href="#part-2-protocol-definition">Part 2: Protocol definition</a>
+<ul>
+<li><a href="#chapter-1-a-high-level-view-of-basis">Chapter 1: A high level view of Basis</a>
+<ul>
+<li><a href="#economics">Economics</a></li>
+<li><a href="#two-layer-organization">Two-layer organization</a></li>
+</ul></li>
+<li><a href="#chapter-2-agents">Chapter 2: Agents</a>
+<ul>
+<li><a href="#agents-and-identity">Agents and identity</a></li>
+<li><a href="#accounts">Accounts</a></li>
+</ul></li>
+<li><a href="#chapter-3-resources">Chapter 3: Resources</a>
+<ul>
+<li><a href="#stewardship">Stewardship</a></li>
+<li><a href="#use">Use</a></li>
+<li><a href="#determining-stewardship">Determining stewardship</a></li>
+<li><a href="#resource-costs">Resource costs</a></li>
+</ul></li>
+<li><a href="#chapter-4-blocs">Chapter 4: Blocs</a>
+<ul>
+<li><a href="#bloc-voting">Bloc voting</a></li>
+<li><a href="#bloc-cost-allowance">Bloc cost allowance</a></li>
+<li><a href="#cost-staging">Cost staging</a></li>
+</ul></li>
+<li><a href="#chapter-5-costs">Chapter 5: Costs</a>
+<ul>
+<li><a href="#cost-representation">Cost representation</a></li>
+<li><a href="#cost-extensions">Cost extensions</a></li>
+<li><a href="#mathematical-operations-on-costs">Mathematical operations on costs</a></li>
+</ul></li>
+<li><a href="#chapter-6-cost-and-resource-flows">Chapter 6: Cost and resource flows</a>
+<ul>
+<li><a href="#bloc-cost-tracking">Bloc cost tracking</a></li>
+<li><a href="#orders">Orders</a></li>
+<li><a href="#transparency">Transparency</a></li>
+</ul></li>
+<li><a href="#chapter-7-trackers-occupations-resources-and-processes">Chapter 7: Trackers (occupations, resources, and processes)</a>
+<ul>
+<li><a href="#trackers">Trackers</a></li>
+<li><a href="#occupations">Occupations</a></li>
+<li><a href="#resources">Resources</a></li>
+<li><a href="#processes">Processes</a></li>
+<li><a href="#converting-costs-to-a-single-value">Converting costs to a single value</a></li>
+</ul></li>
+<li><a href="#chapter-8-investment">Chapter 8: Investment</a>
+<ul>
+<li><a href="#cybernetics">Cybernetics</a></li>
+<li><a href="#agent-investment">Agent investment</a></li>
+</ul></li>
+<li><a href="#chapter-9-bankruptcy">Chapter 9: Bankruptcy</a></li>
+<li><a href="#chapter-10-currency-credits-and-ubi">Chapter 10: Currency, credits, and UBI</a>
+<ul>
+<li><a href="#labor-credits">Labor credits</a></li>
+<li><a href="#ubi-credits-universal-basic-income">UBI Credits (Universal Basic Income)</a></li>
+<li><a href="#consumer-purchases">Consumer purchases</a></li>
+</ul></li>
+</ul></li>
+<li><a href="#part-3-the-real-world">Part 3: The Real World</a>
+<ul>
+<li><a href="#chapter-1-interfacing-with-the-outside-world">Chapter 1: Interfacing with the outside world</a></li>
+<li><a href="#chapter-2-banking">Chapter 2: Banking</a></li>
+<li><a href="#chapter-3-currency-interfacing">Chapter 3: Currency interfacing</a>
+<ul>
+<li><a href="#currency-tracking">Currency tracking</a></li>
+<li><a href="#ubi">UBI</a></li>
+</ul></li>
+<li><a href="#chapter-4-transitioning-existing-companies">Chapter 4: Transitioning existing companies</a></li>
+<li><a href="#chapter-5-network-self-sufficiency">Chapter 5: Network self-sufficiency</a></li>
+</ul></li>
+<li><a href="#references">References</a></li>
+</ul>
+</nav>
+<h1 id="part-1-introduction">Part 1: Introduction</h1>
+<h2 id="chapter-1-on-capitalism-and-why-alternatives-are-needed">Chapter 1: On capitalism, and why alternatives are needed</h2>
+<p>As various parts of our modern economic system inevitably fail, it will be important to quickly find alternatives. This paper, and the system it describes, is a step in the direction of finding new modes of relating to each other in a way that balances self-determination, personal fulfillment, productivity, and ecology.</p>
+<p>When asked the question “What is capitalism?” some might say it’s a system of distributed production. Or a set of property relations. However, in the more general sense, it’s an economic protocol.</p>
+<p>You “own” a thing. You rent it to others. They buy things and transform them into new things. If they sell the new things for more than the cost of buying and transforming them, they win. If they sell for less, they lose. The protocol itself is almost painfully simple.</p>
+<p>Yet hidden in this simple protocol is worlds of complexity. The driving force of profit – selling things for more than it <em>cost</em> to make them – has the side-effect of incentivizing pushing the <em>costs</em> involved in producing things <em>onto other people</em> (externalities). This could be anything from dumping toxic waste into a river to selling products that are designed to fail a few days after the warranty expires. When your systemic survival as an economic entity depends on making one number go higher than another one, most entities will do just that regardless of the negative effects suffered by those around them. There’s another effect to this as well. If one entity decides it wants to <em>do the right thing</em> and not externalize its costs onto the rest of society, it now has to compete with other entities who <em>do externalize their costs</em>. This might work if wealth distribution were even enough for consumers to make informed, responsible decisions, but more often than not distribution is uneven and people are forced to think in terms of personal survival much more than the greater good. Economic entities that take more wholistic approaches to production are often forced into obscurity by the forces of competition and uneven wealth distribution.</p>
+<p>Thus, capitalism actively incentivizes externalities both individually and systemically. And so, although praised for its simplicity and effectiveness, more complex systems must grow out of capitalism as control mechanisms. In a sense, <em>capitalism itself is only simple because it externalizes its complexity onto those who are subject to it</em>. Now we have governments and states that work tirelessly to not just counteract the negative externalities of capitalism, but to resist (with limited effectiveness) the onslaught of the holders of capital who wish to see restrictions lifted and more wealth diverted toward them. On top of this, these states also need to enforce another quite expensive aspect of capitalism: absentee ownership of property. In effect, this is the ability to exercise control over something you’ve never once used in a productive or even personal capacity. Simple in theory, complex and expensive to enforce in reality.</p>
+<p>What’s needed is a more balanced approach to economics. There are very important aspects of capitalism (or, rather, markets in general) that are worth preserving, such as the ability to act as a distributed signal processing mechanism. However, this paper will show that distributed economic signal processing can be done <em>without</em> profit and without absentee ownership of property. It will also outline more effective methods of signal processing than simple prices (which erase massive amounts of useful economic data).</p>
+<h2 id="chapter-2-the-basis-protocol">Chapter 2: The Basis protocol</h2>
+<p>There’s a somewhat unexplored space between a planned economy and a capitalist market system. The positive attributes of planning – democratic participation and production for use (as opposed to production <em>for profit</em>) – can exist alongside the best part of a market system: autonomous distributed production. Basis is an analysis of this space; a non-authoritarian journey into the intersection of building things to satisfy a known need, ecology, and free association.</p>
+<p>At its core, Basis is a protocol that defines a transactional economic fabric and provides detailed cost tracking on top of this fabric. It allows agents of an economic network to order products and services from each other in a way that automatically accounts for labor and resource content much more accurately than money and prices. As a result, all products output by this network have not just a list of all the different occupation hours/wages that went into producing them but also both the details on the resources used and by what quantities and the processes that transformed these resources. All productive transactions in this network are transparent to participants. This means for any given product, anybody can see its entire supply chain: what companies were involved, what wages were paid, where the resources were originally sourced, and more.</p>
+<p>Basis also defines a currency system, the ability to democratically price resources independently of their extraction costs (for instance, participants might democratically raise the price of fossil fuels as a mechanism for lowering their usage globally), and the means for determining use of property <em>outside of market mechanisms.</em></p>
+<p>Lastly, in Part 3 of this paper, we will explore not just the described system as a big fat what-if but also the path to transition from <em>here</em> to <em>there</em> and many of the mechanisms that will get us there.</p>
+<h1 id="part-2-protocol-definition">Part 2: Protocol definition</h1>
+<h2 id="chapter-1-a-high-level-view-of-basis">Chapter 1: A high level view of Basis</h2>
+<p>Basis – a protocol for post-capitalist production – can be broken down at a high level into three main components: agents, resources, and blocs. All other actions or parts of the protocol are in support of the interactions between these three components.</p>
+<p>An <strong>agent</strong> represents a single person participating in the protocol. Agents are the initiating force behind any movement within the protocol: from performing labor to voting to consuming products. All actions within the protocol are driven by agents.</p>
+<p><strong>Resources</strong> are anything that can be used or consumed. This could be a chair, a tractor, a factory, a river, a beach condo complex…anything that might be used or consumed in a productive capacity or for normal use by individuals.</p>
+<p><strong>Blocs</strong> are groupings of <a href="#chapter-2-agents">agents</a> and <a href="#chapter-3-resources">resources</a>. All productive activity, cost accounting, use of shared resources, and protocol-based group decision-making happens through blocs. A bloc can have just one single member, or can have millions of members. A bloc can be a productive entity, a geographic grouping of people and resources (a town, for instance), or any other grouping people wish to associate under.</p>
+<p>It’s important to note that this part of the paper assumes the Basis protocol is ubiquitous. It focuses solely on the dynamics of the protocol itself. Part 3 of the paper will outline methods of interacting with systems outside of the protocol and detail how value translations are made.</p>
+<h3 id="economics">Economics</h3>
+<p>As most of this protocol revolves around economics, it’s important to outline some of the ultimate goals of the economic relations in Basis.</p>
+<p>Production is engaged in without profit or exchange of currency. Blocs track costs directly, and assign these costs to their products and services. Costs are separate groupings of <em>labor</em>, <a href="#BROKEN-tracked-resources">tracked resources</a>, and <a href="#BROKEN-tracked-processes">tracked economic processes</a>. Blocs then assign these costs to their products, and they are only able to assign costs already assumed by the bloc: inputs and outputs must match. When another bloc orders one of these products, the product’s cost is transferred from the producing bloc to the ordering bloc. No exchange of currency happens. When an agent consumes a product, the costs of that product are removed from the system. This direct cost tracking avoids the need for currency within the productive system and eliminates the idea of profit.</p>
+<p>When a bloc marks a product as available for agent consumption, it is given a price. This price can be set <em>independently</em> of the <em>cost</em> of the product (for instance if demand drops, the bloc can set a clearing price). However, the bloc does not realize any difference between the <em>cost</em> and the <em>price</em> because the currency used by the consuming agent is destroyed on spend.</p>
+<p>In the absence of profit and a strong link between <em>price</em> and <em>cost</em>, another mechanism must act as the feedback mechanism for blocs. Basis uses a <a href="#cybernetics">cybernetics system</a> that adjusts a bloc’s “cost allowance” (how much costs it can assume in total at any given point) based on its overall, ongoing performance.</p>
+<p>As a final note, the economic vocabulary used in the Basis protocol are an extension of the ValueFlows <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> protocol, a Resource-Event-Agent (REA) accounting system that allows defining flows of resources through productive networks. Many of the processes or actions described in the Basis protocol will reference various portions of ValueFlows.</p>
+<h3 id="two-layer-organization">Two-layer organization</h3>
+<p>Basis defines two main layers of operation. The inner layer is the primary productive system. This is the layer that <a href="#chapter-4-blocs">blocs</a> and <a href="#chapter-3-resources">resources</a> exist inside of. This is where <a href="#chapter-5-costs">detailed cost tracking</a> occurs, and all transactions within this layer are <em>transparent</em>.</p>
+<p>The outer layer is where things like setting <a href="#BROKEN-network-parameters">network parameters</a>, making consumer purchases, secondary market exchanges, and other actions occur. In other words, this is the layer where things happen when agents are not engaging in primary production. Things that happen in this layer are private by default.</p>
+<p>The distinction between layers is important because while much of what happens in the outer layer affects the inner layer (for instance, consumer purchases acting as a demand signal), the meat of the protocol focuses on the processes and interactions of the inner layer: profitless production.</p>
+<h2 id="chapter-2-agents">Chapter 2: Agents</h2>
+<p>An agent is any individual who wishes to be a part of the Basis protocol. The particulars of how somebody becomes an agent is left to <a href="#part-3-the-real-world">Part 3</a>. For our purposes here, we will assume that somebody is an agent for no other reason than they wish to be one, and leave it at that.</p>
+<p>All agents are equal within the Basis protocol. They all have the same abilities and privileges. This includes equal abilities to freely associate with other agents, equal decision-making power in the blocs they are associated with, and equal treatment regarding access to and management of the resources around them.</p>
+<p>Every action within the protocol, whether direct or indirect, is driven by an agent acting as an agent of the protocol. While this is probably true of most protocols, it’s worth stating.</p>
+<h3 id="agents-and-identity">Agents and identity</h3>
+<p>Basis requires the use of an identity protocol for agentship. This ensures various aspects of the protocol are the same for everyone. For instance, without <em>identity</em> the protocol would not be able to determine if someone cast multiple votes in a decision.</p>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/132">#132 - Identity system</a></li>
+</ul>
+<h3 id="accounts">Accounts</h3>
+<p>An account is a protocol-defined electronic storage for <a href="#chapter-10-currency-credits-and-ubi">the protocol’s currency, credits.</a> These would be analogous to bank accounts that can be accessed via the web or a mobile app. Agents can have any number of accounts and can transfer their credits freely between them.</p>
+<h2 id="chapter-3-resources">Chapter 3: Resources</h2>
+<p>A resource in Basis, which <a href="https://www.valueflo.ws/concepts/resources/">extends the concept of a resource as modeled by ValueFlows</a>, can be anything that’s useful in a productive sense, either as an input to production or an output of production. A resource could be a house, a river, a chair, a factory, a farm, a tractor, etc. It’s important to note that in Basis, resources must be explicitly entered. There must be intention behind a resource existing in the system.</p>
+<p>Ownership of all resources described in the protocol is shared by all agents <em>equally</em>. An agent in India is an equal owner of the factory in Canada, and an agent in Hawaii is an equal owner of widget batch #506771 produced by Widgets”R”Us in Africa.</p>
+<p>Everyone owning everything might be a fact of the protocol, but it’s not a particularly useful distinction. Resources in Basis have two more relationships (beyond ownership) that apply: stewardship and use.</p>
+<h3 id="stewardship">Stewardship</h3>
+<p>Stewardship is a relationship between a <a href="#chapter-4-blocs">bloc</a> and a resource. Stewardship allows determining how a resource can be used or consumed. This can include setting time limits on use, determining costs of use, and any other facet that might arise. For instance, a farming guild bloc might have tractors available for local farmers to use. A chair production bloc might make their chairs available to order for other blocs or for consumption by agents. Blocs don’t have to be productive either: a housing bloc, which stewards houses or apartments, can determine the rules for use of their units. A municipal bloc might set hours of acceptable use on a public park.</p>
+<h3 id="use">Use</h3>
+<p>Use is a relationship in which a resource is in active consumption by either an agent or another bloc. Usage of a resource might often happen by members of the bloc in stewardship, but this isn’t a given, and anyone can use a resource within the bounds set by the steward.</p>
+<p>Usage could be something like living in a house, taking a bus, operating a lathe, etc.</p>
+<h3 id="determining-stewardship">Determining stewardship</h3>
+<p>The system we use for distributing “property” and resource stewardship is somewhat simple: agents and blocs negotiate this amongst themselves. There is no protocol-defined criteria for who stewards what and why. Trying to devise a framework which can determine optimal placement of resources for any set of people or circumstances is futile, and any attempt would be brittle. So we don’t.</p>
+<p>As a general guideline, resources are best stewarded by the groups of people in use of them. However, while Basis strives to quantify some forms of use, it’s impossible to do so for <em>all</em> types of use, so participants must determine this for themselves. And to a large extent, people already do this in the current system.</p>
+<h4 id="reassigning-stewardship">Reassigning stewardship</h4>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/134">#134 - Reassigning stewardship</a></li>
+</ul>
+<h3 id="resource-costs">Resource costs</h3>
+<p>As mentioned, resources in Basis extend resources in ValueFlows. Basis adds two properties to VF resources: who is in current use of the resource and a set of costs associated with the resource.</p>
+<p>What exactly costs are is expanded in more detail in the <a href="#chapter-5-costs">costs</a> section of the paper, however it’s worth mentioning here. Costs are useful to think about in the context of usefulness of resources: a building that took labor and resources to construct, an inventory item for a factory that’s consumed for the creation of another product, or even some set of land that requires ongoing maintenance like a forest or a park. Almost all useful resources generally have some cost associated with them.</p>
+<p>Note that while resources can hold a <em>cost</em>, the bloc in stewardship of that resource is responsible for the cost.</p>
+<h2 id="chapter-4-blocs">Chapter 4: Blocs</h2>
+<p>A bloc is a grouping of <a href="#chapter-2-agents">agents</a> and <a href="#chapter-3-resources">resources</a>. The agents that are part of a bloc are known as “members” and the relationship between a bloc and a resource is known as <a href="#stewardship">stewardship</a>.</p>
+<p>All blocs are cooperative entities controlled by their members. Leadership (if any) must ultimately be selected by individual agents, and all policies regarding membership of blocs must be ratified by the members. As such, Basis defines a bloc as a bottom-up power structure that puts individual agents in ultimate control of the groups they are members of.</p>
+<p>Blocs and agents are freely-associating entities: any agent can join any bloc as long as the entities involved consent to the association.</p>
+<p>Blocs are free to use whatever organization structure they see fit. There is not any predetermined pattern or framework blocs must follow, with the caveat that the members in a bloc have ultimate power regrading the bloc. Blocs can use a traditional top-down structure where members select a board/council that determines overall direction and leadership, or blocs can be run as a collective where everyone is involved in making every decision. Blocs can have vesting schedules for new members. They can be set up as multi-stakeholder entities (for instance, shared control between workers, customers, vendors, and/or the public).</p>
+<p>Membership in a bloc is completely decided by the bloc itself. Membership might be determined by geographical location, interest or skill in a particular sector of production, and can even depend on things like compulsory ordering of a service every month (which could be structured as a membership fee or even a tax in the case of a municipal bloc). Some blocs might require membership in sister blocs: perhaps you cannot be a member of the Duluth Housing bloc if you are not also a member of the Duluth Municipal bloc.</p>
+<h3 id="bloc-voting">Bloc voting</h3>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/60">#60 - Voting</a></li>
+</ul>
+<h3 id="bloc-cost-allowance">Bloc cost allowance</h3>
+<p>Every bloc has a cost allowance. This is a variable number that determines the upper limit on costs that the bloc can assume. If the bloc’s total costs (the sum of all the bloc’s resources and processes) reaches this number, the protocol prevents the bloc from taking on any new costs, be it ordering inventory, paying wages, or any other ways that blocs can take on new costs. The cost allowance can be thought of as the total amount of societal debt that a bloc may take on.</p>
+<p>The total costs of a bloc can be determined by taking the costs of all the bloc’s resources and all the bloc’s processes and <a href="#addition">summing them together</a>. This gives a final cost object, which can be <a href="#converting-costs-to-a-single-value">converted into a final number</a>.</p>
+<p>Once a bloc’s total costs reaches its cost allowance, a bloc must find a way to unload its costs. This would happen via other blocs <a href="#orders">ordering products</a> or through direct member taxation.</p>
+<p>The actual cost allowance value is determined by the <a href="#chapter-8-investment">investment</a> and <a href="#cybernetics">cybernetics</a> systems defined by the protocol.</p>
+<h4 id="allowance-exceptions">Allowance exceptions</h4>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/135">#135 - Cost allowance overage</a></li>
+</ul>
+<h3 id="cost-staging">Cost staging</h3>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/139">#139 - Cost staging</a></li>
+</ul>
+<h2 id="chapter-5-costs">Chapter 5: Costs</h2>
+<p>Cost tracking is the core of Basis; its primary function. How costs are interpreted or acted upon is important, but secondary to the actual gathering of costing information.</p>
+<p>When people think of a cost, they often think of a number, and usually a price. Basis expands this concept of cost into something much more dimensional than a number. It tries to answer the question “what did it cost to make something?” How much labor? How much raw materials? What transformational processes did resources/raw materials go through to become the final product?</p>
+<p>Costs in Basis are not a number, but rather separate collections of individual values bundled together. By default, this includes:</p>
+<ul>
+<li><code>labor-hours</code>: Hours of labor, grouped by occupation. Occupations are managed as <a href="#BROKEN-network-parameters">network-global parameters</a>.</li>
+<li><code>labor-wages</code>: Credits paid to workers, grouped by occupation. Occupations here are the same dataset as those managed in <code>labor-hours</code>.</li>
+<li><code>resources</code>: Generally raw/semi-raw materials, grouped by the resource/raw material type, and optionally broken down further by extraction location. Resources are extensions of <a href="https://www.valueflo.ws/concepts/resources/">ValueFlows resources</a>.</li>
+<li><code>processes</code>: Economic processes that transform resources (such as “refine oil”). Processes are extensions of <a href="https://www.valueflo.ws/concepts/processes/">ValueFlows processes</a>.</li>
+</ul>
+<p>Note that this is known as in-kind <a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> cost tracking.</p>
+<p>Resources and processes tracked as part of costs objects are not exhaustive. While it generally makes sense to track every kind of labor that goes into building something (so workers can be remunerated), it doesn’t necessarily make sense to track every single resource type or every single economic process. The general idea is to track resources that are scarce so their consumption rates are known and to track resources/processes <em>that have known externalities</em> so their costs can be internalized.</p>
+<p>For instance, we know that burning gasoline has externalities relating to carbon output. We could track the <em>process of burning gasoline</em>, however doing so would require a lot of overhead. Instead it might make sense to track just gasoline, assume that it’s in almost all cases going to be burned, and assign the externality cost to the resource itself.</p>
+<p>But how do we get gasoline? This is where processes come in. Not only can processes in Basis be assigned an externality cost, but they can also transform resources: crude oil is <em>consumed</em> by the process of “refining” and becomes gasoline, jet fuel, etc.</p>
+<h4 id="distinction-between-tracked-processes-and-bloc-processes">Distinction between tracked processes and bloc processes</h4>
+<p>It’s worth noting that the <a href="#bloc-processes">processes blocs use when producing</a> are determined by the bloc and are independent of the concept of <em>tracked processes</em> described above.</p>
+<p>For instance, a bloc might have the process <code>build chair</code> it uses when producing chairs, but <code>build chair</code> does not need to be a network-wide tracked process in order for that bloc to use it. In other words, blocs are free to track internal processes in any way they deem fit, <em>however</em> cost resource transformations (crude oil -&gt; gasoline, jet fuel, etc) can <em>only</em> happen through network-tracked processes.</p>
+<h3 id="cost-representation">Cost representation</h3>
+<p>Here’s an example of what a cost object might look like:</p>
+<pre><code>{
+    labor_hours: {
+        president: 0.2578
+        accountant: 0.0965
+        miner: 1.0363
+    }
+    labor_wages: {
+        president: 15.468
+        accountant: 3.86
+        miner: 36.2705
+    }
+    resources: {
+        iron: 8.5
+        gasoline: 2.9
+        silicon: 0.03
+    }
+    processes: {
+        refine: {crude oil: 5.8, methane: 0.5}
+    }
+}</code></pre>
+<p>The actual labels like <code>president</code>, <code>iron</code>, <code>refine</code>, etc will generally not be names, but rather be network-specific uniform resource identifiers that point to a part of the network’s <a href="#BROKEN-network-parameters">global storage</a>. We use names here for the purposes of simplicity to show how costs are structured.</p>
+<h3 id="cost-extensions">Cost extensions</h3>
+<p>The protocol allows cost objects to be extended to track other types of costs. For instance, <code>currency</code> (covered in <a href="#BROKEN-currency-tracking">part 3</a>).</p>
+<p>This accomplishes two things: it keeps the Basis cost tracking core lean and simple, and it allows tracking cost types that the protocol’s creators couldn’t think up at the time of creation.</p>
+<h3 id="mathematical-operations-on-costs">Mathematical operations on costs</h3>
+<p>Even though costs are not single numeric values, they can still have a number of mathematical operations performed on them. Here are a few examples:</p>
+<h4 id="addition">Addition</h4>
+<p>Costs can be added to each other. As an example:</p>
+<pre><code>  {
+      labor_hours: {
+          lumberjack: 3
+      }
+      labor_wages: {
+          lumberjack: 60
+      }
+      resources: {
+          wood: 500
+          gasoline: 4
+      }
+      processes: {
+          refine: {oil: 8, methane: 0.7}
+      }
+  }
++ {
+      labor_hours: {
+          trucker: 1.5
+      }
+      labor_wages: {
+          trucker: 37.5
+      }
+      resources: {
+          diesel: 3
+      }
+      processes: {
+          refine: {oil: 9, methane: 0.8}
+      }
+  }
+----------------------------------------
+  {
+      labor_hours: {
+          lumberjack: 3
+          trucker: 1.5
+      }
+      labor_wages: {
+          lumberjack: 60
+          trucker: 37.5
+      }
+      resources: {
+          wood: 500
+          gasoline: 4
+          diesel: 3
+      }
+      processes: {
+          refine: {oil: 17, methane: 1.5}
+      }
+  }</code></pre>
+<h4 id="subtraction">Subtraction</h4>
+<p>Costs can also be subtracted from each other, although costs with negative values are invalid and <em>will result in an error</em>.</p>
+<pre><code>  {
+      labor_hours: {
+          lumberjack: 3
+          trucker: 2
+      }
+      labor_wages: {
+          lumberjack: 60
+          trucker: 50
+      }
+      resources: {
+          wood: 500
+          gasoline: 4
+      }
+      processes: {
+          refine: {oil: 8, methane: 0.7}
+      }
+  }
+- {
+      labor_hours: {
+          lumberjack: 1
+      }
+      labor_wages: {
+          lumberjack: 20
+      }
+      resources: {
+          wood: 200
+          gasoline: 1
+      }
+      processes: {
+          refine: {oil: 2, methane: 0.1}
+      }
+  }
+----------------------------------------
+  {
+      labor_hours: {
+          lumberjack: 2
+          trucker: 2
+      }
+      labor_wages: {
+          lumberjack: 40
+          trucker: 50
+      }
+      resources: {
+          wood: 300
+          gasoline: 3
+      }
+      processes: {
+          refine: {oil: 6, methane: 0.6}
+      }
+  }</code></pre>
+<p>As mentioned, costs with negative values are invalid, so</p>
+<pre><code>  { labor_hours: { carpenter: 15 } }
+- { labor_hours: { carpenter: 5, trucker: 3 } }
+-----------------------------------------------
+  { labor_hours: { carpenter: 10, trucker: -3 } }</code></pre>
+<p>would result in a protocol error. To allow this would be unfair to our friend, the trucker, whose labor would be negated.</p>
+<h4 id="multiplication">Multiplication</h4>
+<p>Costs can be multiplied by a decimal value:</p>
+<pre><code>  { labor_hours: { carpenter: 2 }, resources: { wood: 5 } }
+* 3.5
+-----------------------------------------------------------
+  { labor_hours: { carpenter: 7 }, resources: { wood: 17.5 } }</code></pre>
+<h4 id="division">Division</h4>
+<p>Costs can be divided by a decimal value as well:</p>
+<pre><code>  { labor_hours: { carpenter: 16 }, resources: { wood: 12 } }
+/ 4
+-------------------------------------------------------------
+  { labor_hours: { carpenter: 4 }, resources: { wood: 3 } }</code></pre>
+<h2 id="chapter-6-cost-and-resource-flows">Chapter 6: Cost and resource flows</h2>
+<p>Now that we know what costs are and the information they track, let’s look at how costs (and resources) are tracked and how they move through the system.</p>
+<h3 id="bloc-cost-tracking">Bloc cost tracking</h3>
+<p>Costs are tracked by blocs in two main ways: costs are created when workers perform labor and costs are assumed from other blocs when ordering products/inventory. Looking at this from a high level, a bloc orders inventory, applies labor to it, and creates a product. The resulting cost of the product would be <code>cost_inventory + cost_labor</code> (see the section on <a href="#addition">cost addition</a>).</p>
+<p>So if a woodworking bloc with one worker orders 50kg of lumber with a cost of</p>
+<pre><code>{
+    labor_hours: {
+        miller: 0.5
+        trucker: 0.1
+    }
+    labor_wages: {
+        miller: 15
+        trucker: 2.5
+    }
+    resources: {
+        lumber: 50
+        diesel: 0.5
+    }
+    processes: {
+        refine: {oil: 5}
+    }</code></pre>
+<p>and then applies 10 hours of labor to make five chairs, we get the total costs:</p>
+<pre><code>{
+    labor_hours: {
+        miller: 0.5
+        trucker: 0.1
+        woodworker: 10
+    }
+    labor_wages: {
+        miller: 15
+        trucker: 2.5
+        woodworker: 200
+    }
+    resources: {
+        lumber: 50
+        diesel: 0.5
+    }
+    processes: {
+        refine: {oil: 5}
+    }</code></pre>
+<p>If the woodworker wishes to assign each of the five chairs the same cost, then we take the above cost and divide by <code>5</code>:</p>
+<pre><code>{
+    labor_hours: {
+        miller: 0.1
+        trucker: 0.02
+        woodworker: 2
+    }
+    labor_wages: {
+        miller: 3
+        trucker: 0.5
+        woodworker: 40
+    }
+    resources: {
+        lumber: 10
+        diesel: 0.1
+    }
+    processes: {
+        refine: {oil: 1}
+    }</code></pre>
+<p>This is the cost of each chair. Now, if another bloc needs a chair, when they order one from our woodworker, the cost of that chair is removed from the woodworker’s costs and assigned to the ordering bloc’s cost because the <em>cost is associated with the chair resource</em> and as the chair flows through the system, so does the cost.</p>
+<p>This is an example of how costs are created and assigned to resources. Blocs are free to manage costs however they see fit with a few constraints enforced by the protocol:</p>
+<ol type="1">
+<li>Costs out must equal costs in. Blocs cannot remove, reduce, or otherwise modify the amount of costs (other than adding to them).</li>
+<li>A bloc must not exceed its <a href="#bloc-cost-allowance">cost allowance</a>.</li>
+</ol>
+<h4 id="bloc-processes">Bloc processes</h4>
+<p>At a lower level, a bloc can use <em>processes</em> as a way of breaking down flows of resources and labor internally. A process is an activity that transforms economic inputs to outputs. In Basis, processes extend the concept of <a href="https://www.valueflo.ws/concepts/processes/">processes in ValueFlows</a> by adding a set of <a href="#chapter-5-costs">costs</a> associated with that process. A bloc can have as many processes as it wants, each with a set of associated costs.</p>
+<p>In the above example, our chair maker might have a process for <code>unload lumber shipment</code>, which yields usable lumber which can be used in the <code>make chairs</code> process.</p>
+<p>It’s important to note that as resources have costs, so do processes. For instance, <code>make chairs</code> might first have the cost of the lumber added to it, and then the labor of the chair maker. Once the chairs are created, the total cost of the <code>make chairs</code> process might be assigned equally to the chairs.</p>
+<h4 id="labor-and-wages">Labor and Wages</h4>
+<p>When an agent performs labor for a bloc they are a member of and if they track this labor within the protocol then they will receive wages in the form of <a href="#labor-credits">credits</a>. The exact arrangement of how the wage is arranged is between the member and the bloc: it could be hourly, it could be salary, it could be project or commission based, some combination of all three, or something entirely different. The protocol does not enforce any form of arrangement, but it does allow the bloc or the member to register the labor and provides methods for compensating it with credits.</p>
+<p>This is how <code>labor_hours</code> and <code>labor_wages</code> are created and tracked in the protocol: agents get paid for their work by creating labor transactions.</p>
+<p>For details on when labor transactions are created versus when credits are paid, see the <a href="#cost-staging">section on cost staging</a>.</p>
+<h3 id="orders">Orders</h3>
+<p>So far we’ve alluded to things like “a bloc orders inventory” but we haven’t talked much about orders or how they work. Basis defines a transactional fabric to facilitate blocs ordering products from each other. An order is an expression of intent from one bloc to another that communicates that a resource or service is needed (and the ordering bloc is willing to take on a specific cost in exchange for that resource/service).</p>
+<p>So if one bloc needs lumber to make their widgets, they might find another bloc that produces lumber and they create an order in Basis for what they need. If the lumber bloc approves, then the order is finalized and the lumber (and the costs associated with them) are transferred to the widget bloc. This is a simplistic example and ignores things like logistics, but the general idea is that Basis facilitates the expression of intent and movement of costs between blocs.</p>
+<p>Orders are the drivers of flows of value through the system. Orders move resources and costs between blocs and facilitate production.</p>
+<p>Orders in Basis are a direct extension of <a href="https://www.valueflo.ws/concepts/exchanges/#agreements">Agreements</a> and <a href="https://www.valueflo.ws/concepts/proposals/">Intents</a> in ValueFlows.</p>
+<h3 id="transparency">Transparency</h3>
+<p>All orders, processes, resources, and transactions that affect all of these things are completely transparent to any agent of the network.</p>
+<p>This means that the order book for any given bloc can be viewed by any other company. While this might seem radical to the casual reader, the reasoning behind it is that if demand can be sensed directly (via knowing the incoming orders for any given products), profit becomes vestigial. One primary goal of Basis is to eliminate the profit mechanism in production, and what better way than to allow for reading demand directly?</p>
+<h2 id="chapter-7-trackers-occupations-resources-and-processes">Chapter 7: Trackers (occupations, resources, and processes)</h2>
+<p>We’ve covered the <a href="#chapter-6-cost-and-resource-flows">flows of costs</a> and we’ve covered how <a href="#labor-and-wages">labor is tracked</a>, but we still need to detail <em>how occupations, resources, and processes are categorized</em> as well as <em>the incentives blocs have for tracking them.</em></p>
+<h3 id="trackers">Trackers</h3>
+<p>Anything that can be tallied as part of a <a href="#chapter-5-costs">set of costs</a> is described by what is called a “tracker.” A tracker is an intent created by the agents of the network that guide costs to incorporate certain information.</p>
+<p>Trackers come in three different classes: occupations, resources, and processes. Each class is structured as a hierarchical tree: a top-level node that can have unlimited children, with each child capable of having unlimited children, and so on.</p>
+<p>Every tracker in the network has a set of standard fields that all trackers share, as well as any number of translations for that tracker:</p>
+<pre><code>Translatable {
+  translations: {
+    en-US: {
+      name: &lt;english tracker name&gt;
+      description: &lt;english tracker description&gt;
+    }
+    &lt;localized names/descriptions&gt; ...
+  }
+}
+
+Tracker: Translatable {
+  id: &lt;unique id&gt;
+  parent: &lt;unique id&gt;
+  children: [ &lt;unique id&gt; ... ]
+  &lt;type-specific data&gt; ...
+}</code></pre>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/140">#140 - Crowdsourced trackers</a></li>
+</ul>
+<h3 id="occupations">Occupations</h3>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/89">#89 - Tracked occupation governance</a></li>
+</ul>
+<h3 id="resources">Resources</h3>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/17">#17 - Tracked resource governance</a></li>
+</ul>
+<h3 id="processes">Processes</h3>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/137">#137 - Tracked process governance</a></li>
+</ul>
+<h3 id="converting-costs-to-a-single-value">Converting costs to a single value</h3>
+<p>TODO: make note in wages section that 1 labor hour = 1 credit</p>
+<p>Although costs are tracked as separate collections of distinct values, it’s important that they are able to be summed into one aggregate number: a total cost. This allows blocs to get a quick sense for their overall cost amounts, which factors into determine how much of their <a href="#bloc-cost-allowance">cost allowance</a> is used.</p>
+<p>Deriving this total value is simple in the case of <code>labor</code> and <code>labor_hours</code>, we simply sum the values together. For instance, in the object above, we would have <code>12.89 + 3.38 + 41.45 + 0.2578 + 0.0965 + 1.0363</code> or <code>59.1106</code>.</p>
+<p>The tricky bit comes when we convert our resource values into a cost, and this is where <a href="#BROKEN-tracked-resources">tracked resources</a> and <a href="#BROKEN-tracked-processes">tracked processes</a> come in: they allow categorizing a <a href="#chapter-3-resources">resource</a> within the cost tracking system such that a standard unit can be assigned a cost value. Thus, if in our example above, <code>iron</code> is tracked in grams, and the cost-per-gram is <code>0.3</code> then the iron cost would be <code>8.5 * 0.3</code> or <code>2.55</code>. If done for all <code>resources</code> in the costs set, we can add this to our labor costs and find our total aggregate cost value.</p>
+<h2 id="chapter-8-investment">Chapter 8: Investment</h2>
+<p>Investment determines the <a href="#bloc-cost-allowance">cost allowance</a> of a bloc, allowing that bloc to take on greater or lesser costs.</p>
+<h3 id="cybernetics">Cybernetics</h3>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics">Cybernetics metrics and signals</a></li>
+</ul>
+<h4 id="product-pricing">Product pricing</h4>
+<p>So far we’ve talked a lot about costs. Does this mean that every product purchased by a consumer will be provided at-cost? No, and there two facets to this.</p>
+<p>First, for agents, the system will <em>optimize for</em> providing products at-cost. In other words, companies that do sell products for exactly their cost will be rewarded (more on this in the <a href="#cybernetics">cybernetics section</a>). That said, companies can set whatever prices above or below cost they want. The difference from a capitalist market however is that when a company sells a widget for 10₡ that only cost 8₡ to produce, it doesn’t realize the extra 2₡: the credits are still burned on purchase.</p>
+<p>Secondly, for non-members, companies are incentivized to sell at the highest price they can. So each product that is available for public consumption will have at least two prices: the in-network price and the market price.</p>
+<p>So why let companies set arbitrary prices at all? It enables things like clearing inventory for products that didn’t sell well, and also it enables inventory control for higher-value items. Member companies don’t realize the delta between cost and price as a gain or loss, but rather it is used as a signal to determine if the production of that particular product should be expanded or contracted. In other words, we retain the <em>signal mechanism</em> from pricing <em>without using it as a distribution mechanism</em>.</p>
+<p>This system of pricing is described in “Towards a New Socialism” <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<h3 id="agent-investment">Agent investment</h3>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/124">#124 - Investment system</a></li>
+</ul>
+<h2 id="chapter-9-bankruptcy">Chapter 9: Bankruptcy</h2>
+<p>What happens to a bloc when its cost allowance is reached and it has no incoming orders? What happens if the last member of a bloc leaves and that bloc still holds costs?</p>
+<p>Where are these costs transferred to?</p>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/96">#96 - Bankruptcy / company with no members</a></li>
+</ul>
+<h2 id="chapter-10-currency-credits-and-ubi">Chapter 10: Currency, credits, and UBI</h2>
+<p>Every agent has the ability to accrue the network currency (credits, ₡) in any number of accounts they wish to manage. Credits can be spent on goods and services provided by companies in the Basis system. Credits differ from money in that they are <em>destroyed when spent</em>. Credits do not circulate the primary economy, and only exist within the accounts of agents.</p>
+<h3 id="labor-credits">Labor credits</h3>
+<p>Labor credits are created by performing work within a productive bloc and are transferred to the agent once that work has been validated by the bloc. This creation and transfer has two effects: the value of the credits is added to one of the agent’s accounts, and the labor cost of that amount is added to the bloc’s <a href="#chapter-5-costs">set of costs</a>.</p>
+<p>While it might be somewhat clear that credits share some DNA with labor vouchers, there are some significant differences.</p>
+<p>Credits do not expire. There is no attempt made by the monetary system to limit individual accumulation of credits in any way.</p>
+<p>Secondly, credits are freely transferable, privately and anonymously, to other members. This allows for secondary markets, which Basis has no desire to control or eliminate in any way. If your toaster breaks, why buy a new toaster when you can buy your neighbor’s for half the price? It’s not ecological to force everyone in the system to buy everything new. It’s also futile to attempt to eliminate secondary markets completely. So we don’t bother.</p>
+<p>The case for non-transferable credits is that people might <em>sell their labor</em> in the secondary market and therefor the secondary market must be eliminated. If we have a situation where people feel compelled to sell their labor in the secondary market instead of the primary market, Basis is a failed system. What we need instead of control and force is strong incentives to participate in the primary economy. For instance, someone selling their labor in the secondary economy would need enough credits to buy the equipment they need <em>up-front</em> whereas if they are a producing member in the main economy, they might be given an up-front cost allowance (ie, a social investment). Secondly, member companies cannot pay people directly in credits because they don’t handle credits, so if you’re selling your labor in the secondary economy only those who are also operating in the secondary economy can hire you.</p>
+<h3 id="ubi-credits-universal-basic-income">UBI Credits (Universal Basic Income)</h3>
+<p>UBI credits are earned simply by being an agent in the Basis protocol and accrue on a regular schedule. UBI credits act differently to labor credits in a few ways:</p>
+<ul>
+<li>UBI credits are printed and paid out whenever participants wish to claim them, and are paid based on how much time has elapsed since they were last claimed.</li>
+<li>Labor credits and UBI credits are not interchangeable. They are distinct currencies.</li>
+<li>UBI credits are paid into a special account that is attached to each agent.</li>
+<li>The UBI account has a ceiling value which caps the maximum amount of credits the account can hold. For instance this ceiling value might be 12 months’ worth of periodic value. This effectively limits UBI from accumulating endlessly if it’s not spent.</li>
+<li>Unlike labor credits, UBI credits cannot be transferred to other members. It is always attached to one person.</li>
+</ul>
+<h4 id="ubi-governance">UBI Governance</h4>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/133">#133 - UBI governance and automation</a></li>
+</ul>
+<h3 id="consumer-purchases">Consumer purchases</h3>
+<p>TODO</p>
+<h4 id="anonymity">Anonymity</h4>
+<p>While the transactions between member companies are transparent and freely observable by any member of the network, there are a few cases where privacy is offered:</p>
+<p>Consumer purchases. Whether a member or a non-member, purchasing goods from a member bloc is anonymous. The order is viewable by members, but looks like it came from the Basis system directly and is not tied back to the originator in any way. Only the user and the bloc have the full information on the order.</p>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/4">#4 - Privacy for consumer orders</a></li>
+</ul>
+<h1 id="part-3-the-real-world">Part 3: The Real World</h1>
+<h2 id="chapter-1-interfacing-with-the-outside-world">Chapter 1: Interfacing with the outside world</h2>
+<p>Great, so we’ve detailed a protocol that will slowly alter the course of our global productive system into a much more intentional, ecological direction. Now what?</p>
+<p>Here we will explore how might Basis function not just in a fantasy world but within our existing one. We’ll detail purchasing of external market goods, selling of network goods into the market, the banking system that makes this possible, and the incentive structures that allow the network to grow steadily.</p>
+<p>After all, this protocol is no good if it cannot interface with the outside world.</p>
+<h2 id="chapter-2-banking">Chapter 2: Banking</h2>
+<p>Banking provides the actual interface between the Basis network and the outside market system.</p>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/88">#88 - Banking, market currency, and the peg</a></li>
+<li><a href="https://github.com/basisproject/tracker/issues/92">#92 - Capital pools</a></li>
+</ul>
+<h2 id="chapter-3-currency-interfacing">Chapter 3: Currency interfacing</h2>
+<p>TODO</p>
+<h3 id="currency-tracking">Currency tracking</h3>
+<p>When a company needs to buy something from capitalist markets, it spends currency out of a <a href="#BROKEN-capital-pools">capital pool</a> to do so. The cost of this currency, like all other costs, is tracked by Basis. This is covered in more detail in <a href="#chapter-2-banking">the banking section</a>.</p>
+<p>TODO</p>
+<h3 id="ubi">UBI</h3>
+<p>UBI can <em>only</em> be spent on non-currency costs of products and services. In other words, if an apple has a cost of <code>3₡ + $2</code>, the UBI can pay for the apple’s three credits, but the $2 of currency value will have to be covered by credits obtained through labor. The reason for this is that currency costs are an obligation to the market that must be paid back by value creation. If this obligation is not met, the network will go bankrupt and fail. This has another interesting side effect though: producers are incentivized to obtain their inputs to production in-network because it means their outputs will have less currency and consumers will be able to afford them at a higher rate. In other words, a systemic incentive on productive self-sufficiency.</p>
+<h2 id="chapter-4-transitioning-existing-companies">Chapter 4: Transitioning existing companies</h2>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/130">#130 - Transitioning existing companies into Basis</a></li>
+</ul>
+<h2 id="chapter-5-network-self-sufficiency">Chapter 5: Network self-sufficiency</h2>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/123">#123 - Implement network self-sufficiency metric</a></li>
+</ul>
+<h1 id="references">References</h1>
+<section class="footnotes" role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1" role="doc-endnote"><p>Foster, Lynn &amp; Haugen, Bob, &amp; et al. (2020, June 6). A vocabulary for the distributed economic networks of the next economy. ValueFlows. https://valueflo.ws/<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>Wikipedia (2021, August 11). Calculation in kind. https://en.wikipedia.org/w/index.php?title=Calculation_in_kind&amp;direction=next&amp;oldid=1030707980<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>Cockshott, W. P., &amp; Cottrell, A. (1993). Chapter 8 - The Marketing of Consumer Goods. In Towards a new socialism. Essay, Spokesman.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
