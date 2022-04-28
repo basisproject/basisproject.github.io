@@ -1,8 +1,5 @@
-_site
 /public
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
+/dist
 vendor
 node_modules
 /play

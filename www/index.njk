@@ -1,0 +1,188 @@
+---
+layout: default.njk
+title: 'Basis'
+hide_title: true
+---
+
+<page class="pt-4">
+	<div class="bs-container py-8">
+		<h1 class="text-center mb-4">A protocol for scalable, ecological production</h1>
+		<h3 class="text-center mb-0 text-gray-600">Basis enables an economy that limits externalities by aligning personal gain with social well-being</h3>
+	</div>
+
+	{% macro bullet(icon, link, title, text, accent = 'slate-400') %}
+	<li class="block p-4 sm:w-1/2">
+		<a class="custom group hover:no-underline" href="{{ link }}">
+			<div class="flex items-center bg-slate-50 rounded-lg drop-shadow-md">
+				<icon class="block pl-6 pr-6 text-2xl text-center text-{{ accent }} sm:opacity-70 sm:group-hover:opacity-100 sm:transition-opacity">{{ icon }}</icon>
+				<div class="p-4 border-l overflow-hidden" title="{{ text }}">
+					<h4 class="mb-0 text-ink sm:text-ink/[0.80] sm:group-hover:text-ink sm:transition-colors">{{ title }}</h3>
+					<p class="mb-0 text-sm text-slate-500 truncate">
+						{{ text }}
+					</p>
+				</div>
+			</div>
+		</a>
+	</li>
+	{% endmacro %}
+	<div class="bs-container py-4">
+		<ul class="list-none ml-0 pl-0 mb-0 sm:flex sm:flex-wrap sm:items-start">
+			{{ bullet('&#xE800;', "#transactional-medium", "Transactional medium", "Underneath all the economic operations in Basis is the transactional system", 'primary') }}
+			{{ bullet('&#xE808;', "#cost-tracking", "In-kind cost tracking", "Basis replaces the concept of a price with separate collections of labor and resources.", 'violet-600') }}
+			{{ bullet('&#x20A1;', "#currency", "Currency system", "Credits (&#x20A1;) in Basis are paid as wages to workers and can be used for consumer purchases.", 'lime-600') }}
+			{{ bullet('&#xF0AE;', "#cybernetics", "Cybernetics", "The profit mechanism is replaced with a more intentful approach that balances the well-being of workers, the health of the environment, and consumer relationships.", 'blue-600') }}
+			{{ bullet('&#xE80A;', "#basic-income", "Basic income", "Basic income is distributed to all participants periodically.", 'teal-600') }}
+			{{ bullet('&#xF24E;', "#value-systems", "Value systems", "Severing the link between <em>cost and consumption price</em> allows for the use of different value systems.", 'yellow-600') }}
+		</ul>
+	</div>
+
+	<div class="bs-container py-8">
+		<p>
+			The Basis project is an economic protocol: a specification that
+			describes different types of economic entities (<a href="{{ site.base }}/paper/#chapter-2-agents">agents</a>,
+			<a href="{{ site.base }}/paper/#chapter-3-resources">resources</a>,
+			<a href="{{ site.base }}/paper/#chapter-4-blocs">blocs</a>) and defines the relationships and
+			interactions between them. The project has a <a href="https://github.com/basisproject/core">reference
+			implementation</a> and eventually plans to form the networks and build the interfaces
+			that facilitate participation in the protocol.
+		</p>
+
+		<h2>How Basis works</h2>
+		<p>
+			Think of Basis like a network of people making things. To participate in this network,
+			you play by the same rules as the other participants. Capitalism is much the same way.
+			The interactions and relations in capitalism are enforced by the participants themselves.
+			Basis shifts some of the ways things work in capitalism to create a healthier and more
+			aware productive system, and does so without requiring some authority mandating the rules.
+		</p>
+
+		<h3 id="transactional-medium">Transactional medium</h3>
+		<p>
+			Underneath all the economic operations in Basis is the transactional system. This allows
+			producers (<a href="{{ site.base }}/paper/#chapter-4-blocs">"blocs"</a>) to order products and services from each other, tracks labor and
+			resource costs, and facilitates the other operations in the protocol. This is transparent to
+			participants: all economic interactions are visible to all, creating a culture of openness
+			and collaboration (with the exception of consumer purchases, which are entirely confidential).
+			This does not eliminate competition, but allows space for other forms of production.
+		</p>
+
+		<h3 id="cost-tracking">In-kind cost tracking</h3>
+		<p>
+			Basis replaces the concept of a price with separate collections of labor and resources. A chair
+			no longer cost $35, but rather 4kg wood from a new growth forest in Oregon, 37 minutes of
+			sawmill worker labor, 1.2 hours of trucker labor, 1.1L of diesel fuel, etc. This cost tracking
+			in <em>disaggregate</em> allows much more accurate pricing when consumers make purchases than a
+			simple, aggregate price. When producers order goods or services from each other, they are able
+			to assign these costs to their products, which then transfer to the recipient. Using this
+			method there is no profit at all, as all outputs match all inputs.
+		</p>
+
+		<h3 id="currency">Currency system</h3>
+		<p>
+			Credits (&#x20A1;) in Basis are paid as wages to workers and can be used for consumer
+			purchases. Upon spending credits on consumer goods purchased from the producer network
+			Basis forms, credits are destroyed. They do not circulate the economy and exist only
+			outside the productive system. This creates a barrier around production which not only
+			enforces its profitless nature but also allows for producers to price products
+			<em>separately from their cost</em> without realizing those gains or losses directly.
+		</p>
+
+		<h3 id="cybernetics">Cybernetics</h3>
+		<p>
+			The profit mechanism is replaced with a more intentful approach that balances the well-being of
+			workers, the health of the environment, and consumer relationships. This is done using
+			cybernetics, which determines producer performance in the absence of profit, instead using
+			the other available information in the protocol as a guideline. This allows automatic
+			adjustment of the ongoing societal investment in a producer based on the demand for their
+			products, the delta between their costs and their prices, etc. The cybernetics system can
+			be thought of as a slow-moving gravitational pull toward benefiting society as a whole.
+		</p>
+
+		<h3 id="basic-income">Basic income</h3>
+		<p>
+			Basic income is distributed to all participants periodically. Because the currency system
+			is set up to not circulate the productive system, the basic income <em>can be printed without
+			taxation</em>. Instead of taking from some and giving to others, it represents a social
+			agreement that we are all productive to some extent, whether our wages reflect this or not.
+			This not only acts as a simple safety net but also allows weakening the bond between
+			<em>productivity</em> and <em>economic survival</em>, making the economy much more adaptable
+			while also making a big shift towards <em>free association</em>.
+		</p>
+
+		<h3 id="value-systems">Value systems</h3>
+		<p>
+			Severing the link between <em>cost and consumption price</em> allows for the use of different value
+			systems. Maybe disabled people get much cheaper wheelchairs. Maybe we scrap currency
+			altogether and try out a gift economy. However people wish to associate with each other
+			in a productive sense is achievable in Basis because the currency and cybernetics systems
+			can be adapted to fit many needs.
+		</p>
+
+		<hr class="m-0 mt-8">
+
+		<div class="text-center pt-8">
+			<a class="custom button mb-4 uppercase" href="{{ site.base }}/paper/">Would you like to know more? &raquo;</a>
+			<p>
+				Read the paper and find out how the protocol works in painful detail!
+			</p>
+		</div>
+
+		<!--
+		<p>
+			One of the largest problems in our economy is collective awareness. For instance,
+			most of us know that the continued usage of fossil fuels at their
+			current scale is extremely costly: why isn't this cost reflected in their price?
+			Our current system incentivizes the individual to act against their knowledge and
+			against the health of the planet.
+		</p>
+
+		<p>
+			Basis creates an economy that shifts incentives to balance the needs of the individual
+			with the needs of our communities and planet.
+		</p>
+
+		<p>
+			Basis creates a method of strict accounting not just for labor costs, but resources
+			as well. By tracking what resources are used in the production of any given product,
+			we gain a 
+		</p>
+		-->
+	</div>
+
+	<div class="bg-slate-50">
+		<div class="bs-container py-8 pb-2">
+			<h2>
+				Project news
+				<a class="text-xl" href="/posts/"><small>All news &raquo;</small></a>
+			</h2>
+			<ul class="ml-0 list-none sm:flex sm:flex-wrap">
+			{% for post in posts.slice(0, 12) %}
+				<li class="sm:w-1/3 py-3 px-6 sm:pl-0">
+					<div>
+						{% set postimage = post.leader %}
+						{% set postimage_medium = true %}
+						<a href="{{ post.url }}">
+							{% include "www/includes/post-image.njk" %}
+						</a>
+					</div>
+					<h4 class="text-xl">
+						<a class="block" href="{{ post.url }}">
+							{{ post.title }}
+						</a>
+						<small class="text-slate-700">{{ post.author }} - {{ post.date_moment.format('MMM D, YYYY') }}</small>
+					</h4>
+				</li>
+			{% endfor %}
+			</ul>
+		</div>
+	</div>
+
+	<div class="bs-container py-16 text-center">
+		<a class="custom button mb-4 uppercase" href="{{ site.base }}/contribute/">Want to contribute?</a>
+		<p>
+			Come join us at the <a href="https://www.reddit.com/r/basisproject">Basis community</a>
+			or <a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atype%3Adiscussion">join in on ongoing discussions!</a>
+		</p>
+	</div>
+</page>
+
