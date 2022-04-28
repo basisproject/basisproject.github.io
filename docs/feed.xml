@@ -2,10 +2,10 @@
     <channel>
         <title><![CDATA[Basis]]></title>
         <description><![CDATA[Documentation and information about the Basis project]]></description>
-        <link>http://www.basis.loc</link>
+        <link>https://basisproject.net</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Thu, 28 Apr 2022 07:59:15 GMT</lastBuildDate>
-        <atom:link href="http://www.basis.loc/feed.xml" rel="self" type="application/rss+xml"/>
+        <lastBuildDate>Thu, 28 Apr 2022 08:02:46 GMT</lastBuildDate>
+        <atom:link href="https://basisproject.net/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[Protocol updates: a new look at what Basis is]]></title>
             <description><![CDATA[
@@ -42,8 +42,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 [how]: /how
 
 ]]></description>
-            <link>http://www.basis.loc/posts/2021/10/protocol-updates/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2021/10/protocol-updates/</guid>
+            <link>https://basisproject.net/posts/2021/10/protocol-updates/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2021/10/protocol-updates/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Fri, 08 Oct 2021 00:00:00 GMT</pubDate>
         </item>
@@ -64,8 +64,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 
 <p>I intended to create a number of helpful visualizations when I made the <a href="/how/">how Basis works page</a> but I&#39;m beginning to think I approached it too much from a marketing standpoint, and I really need to remake the page as more of a guide to understanding the protocol.</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2021/10/protocol-updates/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2021/10/protocol-updates/</guid>
+            <link>https://basisproject.net/posts/2021/10/protocol-updates/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2021/10/protocol-updates/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Fri, 08 Oct 2021 00:00:00 GMT</pubDate>
         </item>
@@ -86,8 +86,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <p>While these questions aren&#39;t necessarily a burning priority for the project (might be quite a while before resource management is a problem we have), it&#39;s good to start thinking about these issues.</p>
 <p>If you&#39;re interested in systemic resource management, join our discussions on <a href="https://github.com/basisproject/tracker/issues/58">the resource plan</a> or <a href="https://github.com/basisproject/tracker/issues/17">resource tagging</a>.</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/07/on-resources-and-raw-materials/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/07/on-resources-and-raw-materials/</guid>
+            <link>https://basisproject.net/posts/2020/07/on-resources-and-raw-materials/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/07/on-resources-and-raw-materials/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Fri, 31 Jul 2020 00:00:00 GMT</pubDate>
         </item>
@@ -114,8 +114,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <p>It&#39;s worth mentioning that in the last month or two, the project has undergone a lot of philosophical changes and most of these are absent in the paper. If you&#39;ve read the paper, to get the most up to date understanding of the pending changes in the project, <a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Aproject%3Apaper">check out the &quot;paper&quot; label</a> in the project tracker.</p>
 <p>That&#39;s it! Thanks for reading. As always, if you have questions or ideas, the <a href="https://www.reddit.com/r/basisproject/">Basis community</a> is here for you, or feel free to join in on any of the <a href="https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atype%3Adiscussion">ongoing discussions</a> in the project tracker!</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/07/july-update/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/07/july-update/</guid>
+            <link>https://basisproject.net/posts/2020/07/july-update/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/07/july-update/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Wed, 15 Jul 2020 00:00:00 GMT</pubDate>
         </item>
@@ -160,8 +160,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <p>It&#39;s important to note that the most difficult parts of the problems we&#39;re solving revolve around capital itself, and that at the point capital is no longer required, ie the network can provide its own collective needs internally, large amounts of the system can simplify.</p>
 <p>There is one piece we touched on above that hasn&#39;t been solved in this post. All companies will have costs they manage, and producing companies will have upper limits on how much costs they can manage at any given time. However, there are necessarily going to be public companies (ie, planned) that have costs themselves which are not required to flow through to the outputs of that company (ie, not consumer-demand driven). For instance, if a number of people band together and say &quot;we want public pharma research&quot; this new pharma company might have some amount of costs available to it that <em>do not need to be covered via consumption</em>. Where do these costs go if not covered by customers, and how are they handled? This is an important question and we&#39;ll tackle it soon.</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/07/rethinking-regions-and-companies/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/07/rethinking-regions-and-companies/</guid>
+            <link>https://basisproject.net/posts/2020/07/rethinking-regions-and-companies/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/07/rethinking-regions-and-companies/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Fri, 10 Jul 2020 00:00:00 GMT</pubDate>
         </item>
@@ -205,8 +205,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <hr>
 <p><small>(Apologies for the douchey header image, our marketing team has mandated that all blog posts have a picture)</small></p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/05/cost-derivation/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/05/cost-derivation/</guid>
+            <link>https://basisproject.net/posts/2020/05/cost-derivation/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/05/cost-derivation/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Sat, 23 May 2020 00:00:00 GMT</pubDate>
         </item>
@@ -233,8 +233,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <p>Given that Basis is undergoing a fairly large change of integrating ValueFlows, this is a good time to focus on separating out the core logic into its own project.</p>
 <p>This is an exciting change. While it&#39;s an up-front investment in research and build time, It&#39;s going to make the project stronger and make development faster in the long run.</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/05/project-status-updated/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/05/project-status-updated/</guid>
+            <link>https://basisproject.net/posts/2020/05/project-status-updated/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/05/project-status-updated/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Mon, 18 May 2020 00:00:00 GMT</pubDate>
         </item>
@@ -272,8 +272,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <p>I&#39;m meeting with the lead dev of holo-rea soon, and we&#39;re hopefully going to do a deep dive on Basis, ValueFlows, and Holochain and figure out how all the pieces fit together.</p>
 <p>While the above projects have made the immediate future of Basis a bit more uncertain, they came at a great time (during early formation). The ideas and goals behind Basis are the same as they were before, but now there are more tools to help make that vision come to life.</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/04/valueflows-blockchain-holochain/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/04/valueflows-blockchain-holochain/</guid>
+            <link>https://basisproject.net/posts/2020/04/valueflows-blockchain-holochain/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/04/valueflows-blockchain-holochain/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Sun, 05 Apr 2020 00:00:00 GMT</pubDate>
         </item>
@@ -291,8 +291,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <p>So if we want to sell this product into the market, we know what we must price it at in order to cover all costs of production. Everything above that price becomes regional profit. As far as what price to use, it would be nice if there was a way to automate this, however in all reality the company itself would be responsible for setting this based on their industry-specific knowledge. The regional production cost would serve as a pricing floor (possibly a soft one, TBD).</p>
 <p>There&#39;s more detail and nuance in here, but a good amount of it is covered in the paper&#39;s new banking chapter! Keep in mind this is still evolving and may change in a way that makes this post irrelevant.</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/02/inner-workings-of-banking/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/02/inner-workings-of-banking/</guid>
+            <link>https://basisproject.net/posts/2020/02/inner-workings-of-banking/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/02/inner-workings-of-banking/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Sat, 15 Feb 2020 00:00:00 GMT</pubDate>
         </item>
@@ -316,8 +316,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <p>By socializing housing, property by property, as regional mortgages are paid off, the costs drop significantly. The monthly cost of a regionally-owned house with no mortgage on it would be cost of insurance, property taxes, and ongoing maintenance. This is key to the growth of the socialist network: as time goes on costs of market housing rise while costs of regional housing stay similar (taxes and insurance may rise in cost, but trivially compared to the cost of a mortgage), creating an ever-growing differential in costs of living between members and non-members.</p>
 <p>This differential allows member companies to <em>pay lower wages</em> to themselves to out-compete market companies while <em>retaining their standard of living</em>. As costs of production lower due to lower wages, regional profits of products and services sold to the market rise, allowing more purchasing of housing and productive assets for member use.</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/02/duality-and-markets-strategies-for-socialist-growth/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/02/duality-and-markets-strategies-for-socialist-growth/</guid>
+            <link>https://basisproject.net/posts/2020/02/duality-and-markets-strategies-for-socialist-growth/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/02/duality-and-markets-strategies-for-socialist-growth/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Fri, 14 Feb 2020 00:00:00 GMT</pubDate>
         </item>
@@ -331,8 +331,8 @@ I intended to create a number of helpful visualizations when I made the [how Bas
 <p>These are some examples of the project-wide changes that give people the power to shape their own lives. Basis has been evolving more and more to better align itself with the ideas of libertarian socialism: free association, direct democracy, worker self-management, voluntary participation, and prosperity through common ownership. This is why I am finally happy to release and I&#39;m now looking for people who want to contribute to the project, either in code or in ideas.</p>
 <p>Please see <a href="/roadmap/">our roadmap</a> if you&#39;re interested in helping out!</p>
 ]]></description>
-            <link>http://www.basis.loc/posts/2020/02/first-update/</link>
-            <guid isPermaLink="true">http://www.basis.loc/posts/2020/02/first-update/</guid>
+            <link>https://basisproject.net/posts/2020/02/first-update/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2020/02/first-update/</guid>
             <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
             <pubDate>Sun, 02 Feb 2020 00:00:00 GMT</pubDate>
         </item>

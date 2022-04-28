@@ -9,7 +9,7 @@ allsrc := main.js $(shell find plugins/)
 all: $(BUILD)/index.html $(BUILD)/CNAME
 
 $(BUILD)/index.html: $(allsrc) $(allwww) tailwind.config.js postcss.config.js $(SRC)/paper.html
-	SRC=$(SRC) DEST=$(BUILD) URL='http://www.basis.loc' node main
+	SRC=$(SRC) DEST=$(BUILD) URL='https://basisproject.net' node main
 	npx postcss $(BUILD)/css/**/*.css --base $(BUILD)/ --dir $(BUILD)/
 
 $(SRC)/paper.html: ../paper/converted/basis.html
