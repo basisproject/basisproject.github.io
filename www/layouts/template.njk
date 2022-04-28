@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>{% if title %}{{ title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+		<meta name="description" content="{% if excerpt %}{{ excerpt | striptags | replace("\n", "") | truncate(160) }}{% else %}{{ site.description }}{% endif %}">
+
+		<link rel="stylesheet" href="{{ site.url }}{{ "/css/main.css" }}?v={{ site.asset_version }}">
+		<link rel="canonical" href="{{ site.url }}/{{ permalink | replace('index.html', '') }}">
+		<link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ site.url }}{{ "/feed.xml" }}">
+		<link rel="icon" href="{{ site.url }}/assets/images/logo.png" type="image/png">
+		{% if og_image %}
+			<meta property="og:image" content="{{ site.url }}{{ og_image }}" />
+		{% else %}
+			{% if leader.image_raw %}
+				<meta property="og:image" content="{{ leader.image_raw }}" />
+			{% elseif leader.image %}
+				<meta property="og:image" content="{{ site.url }}{{ leader.image }}" />
+			{% endif %}
+		{% endif %}
+
+		<script src="{{ site.base }}/assets/js/nav.js"></script>
+		<!-- Matomo -->
+		<script type="text/javascript">
+			var _paq = _paq || [];
+			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="//killtheradiostats.nfshost.com/";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', '15']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script>
+		<!-- End Matomo Code -->
+	</head>
+
+	<body class="bg-white text-ink{% if body_class %} {{ body_class }}{% endif %}">
+		<site-container class="block">
+			<div>
+				{% set sitenav = [
+					['/', 'Home', 'sm:hidden'],
+					['/contribute/', 'Get involved'],
+					['/paper/', 'Paper'],
+					['/posts/', 'News'],
+					['/faq/', 'FAQ']
+				] %}
+				<div class="border-b mb-4">
+					<header class="flex justify-center sm:justify-between max-w-6xl mx-auto">
+						<div class="text-center pt-2 sm:pt-0 sm:text-left">
+							<a class="inline-flex logo items-center mx-auto" href="{{ site.base }}/">
+								<img alt="Basis logo" class="w-14 justify-self-center" width="56" height="56" src="{{ site.base }}/assets/images/logo.outline.png">
+								<span class="block text-2xl mt-1 font-logo">Basis</span>
+							</a>
+						</div>
+
+						<a id="page-nav" class="absolute top-0 right-0 text-4xl p-4 sm:hidden" href="#nav"><icon>&#xF0C9;</icon></a>
+						<nav class="absolute z-10 w-5/6 p-4 bg-slate-700 top-0 bottom-0 left-0 -translate-x-full transition-transform text-white sm:static sm:z-auto sm:text-ink sm:bg-inherit sm:translate-x-0 sm:flex sm:justify-end">
+							<a id="page-nav-close" class="absolute block top-0 right-0 p-4 m-4 leading-none text-xl font-bold bg-white text-ink rounded-full text-center w-12 sm:hidden" href="#close">X</a>
+							<ul class="sm:flex sm:text-primary">
+								{% for url, title, extra_class in sitenav %}
+									<li class="{{ extra_class }} sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="{{ site.base }}{{ url }}">{{ title }}</a>
+								{% endfor %}
+							</ul>
+							<ul class="sm:flex sm:pl-3.5 py-12 sm:py-0 sm:text-primary">
+								{% set social_labels = true %}
+								{% include "includes/nav-items-social.njk" %}
+								{% set social_labels = false %}
+							</ul>
+						</nav>
+					</header>
+				</div>
+
+				<div class="main-content">
+					{% block content %}{% endblock %}
+				</div>
+			</div>
+
+			<footer class="py-16 bg-black text-slate-200">
+				<div class="bs-container">
+					<div class="flex items-center place-content-between">
+						<ul class="columns-2 text-slate-400 text-sm">
+							{% for url, title, extra_class in sitenav %}
+								<li class="{{ extra_class }} sm:pb-2 sm:pr-4"><a class="hover:underline" href="{{ site.base }}{{ url }}">{{ title }}</a>
+							{% endfor %}
+						</ul>
+						<ul class="float-right inline-flex text-xl text-slate-400">
+							{% include "includes/nav-items-social.njk" %}
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</site-container>
+	</body>
+</html>
+

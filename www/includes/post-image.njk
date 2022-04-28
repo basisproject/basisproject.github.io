@@ -1,0 +1,8 @@
+{% if postimage.image or postimage.image_raw  %}
+	<div
+			class="{% if postimage_small %}w-24 h-16{% elif postimage_medium %}h-40 mb-4{% else %}h-64 mb-4{% endif %} bg-cover bg-center"
+			style="background-image: url({% if postimage.image %}{{ site.base }}{{ postimage.image }}{% else %}{{ postimage.image_raw }}{% endif %})">
+		&nbsp;
+	</div>
+{% endif %}
+

@@ -1,0 +1,15 @@
+{% set nav = [
+	{ title: "Source code", href: "https://github.com/basisproject/", icon: "&#xF113;", text: "Source &raquo;" },
+	{ title: "Reddit community", href: "https://www.reddit.com/r/basisproject", icon: "&#xF281;", text: "Community &raquo;" },
+	{ title: "Twitter", href: "https://twitter.com/basisproject", icon: "&#xF099;", text: "Twitter &raquo;" },
+	{ title: "Matrix (#basis:matrix.org)", href: "https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org", icon: "&#xE80C;", text: "Matrix &raquo;" }
+] %}
+{% for item in nav %}
+	<li class="{% if social_labels %}sm:px-2 sm:first:pl-0{% else %}px-2 first:pl-0{% endif %}">
+		<a class="text-slate-400 {% if social_labels %}hover:text-white sm:text-primary sm:hover:text-red-800{% else %}hover:text-red-800 {% endif %} hover:no-underline" title="{{ item.title }}" href="{{ item.href }}">
+			<icon>{{ item.icon }}</icon>
+			{% if social_labels %}<span class="text-white sm:hidden px-2">{{ item.text }}</span>{% endif %}
+		</a>
+	</li>
+{% endfor %}
+

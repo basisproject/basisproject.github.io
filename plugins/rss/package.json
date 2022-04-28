@@ -1,0 +1,69 @@
+{
+  "_from": "@metalsmith/rss",
+  "_id": "@metalsmith/rss@1.0.1",
+  "_inBundle": false,
+  "_integrity": "sha512-27untrvM6ltnFbeSajzSU5e+7zJ4EfUsyqWR8m64S9GXw1gQqKnZbDKMhPbmHv8AMXVqtGPCayhBcYjJWKj+hQ==",
+  "_location": "/@metalsmith/rss",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@metalsmith/rss",
+    "name": "@metalsmith/rss",
+    "escapedName": "@metalsmith%2frss",
+    "scope": "@metalsmith",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/@metalsmith/rss/-/rss-1.0.1.tgz",
+  "_shasum": "efbd4d31849f2b8ffc784b4c10296e9afaa2e8f4",
+  "_spec": "@metalsmith/rss",
+  "_where": "/var/www/basis/www2",
+  "author": {
+    "name": "Maxime Thirouin"
+  },
+  "bugs": {
+    "url": "https://github.com/metalsmith/rss/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "rss": "^1.2.2"
+  },
+  "deprecated": false,
+  "description": "Metalsmith plugin to generate rss feed",
+  "devDependencies": {
+    "eslint": "^7.12.1",
+    "metalsmith": "^2.3.0",
+    "tap": "^14.10.8"
+  },
+  "files": [
+    "CHANGELOG.md",
+    "LICENSE",
+    "lib"
+  ],
+  "homepage": "https://github.com/metalsmith/rss",
+  "keywords": [
+    "metalsmith",
+    "metalsmith-plugin"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "name": "@metalsmith/rss",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/metalsmith/rss.git"
+  },
+  "scripts": {
+    "lint": "eslint --fix .",
+    "postversion": "git push && git push --tags && npm publish --scope=@metalsmith",
+    "preversion": "npm test",
+    "tap": "tap test -J",
+    "test": "npm run lint && npm run tap"
+  },
+  "version": "1.0.1"
+}
