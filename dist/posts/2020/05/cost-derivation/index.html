@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>Cost derivation: In-kind cost tracking in moneyless production</title>
+		<meta name="description" content="Documentation and information about the Basis project">
+
+		<link rel="stylesheet" href="http://www.basis.loc/css/main.css?v=6">
+		<link rel="canonical" href="http://www.basis.loc/posts/2020/05/cost-derivation/">
+		<link rel="alternate" type="application/rss+xml" title="Basis" href="http://www.basis.loc/feed.xml">
+		<link rel="icon" href="http://www.basis.loc/assets/images/logo.png" type="image/png">
+		
+			
+				<meta property="og:image" content="http://www.basis.loc/assets/images/stocks.jpg" />
+			
+		
+
+		<script src="/assets/js/nav.js"></script>
+		<!-- Matomo -->
+		<script type="text/javascript">
+			var _paq = _paq || [];
+			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="//killtheradiostats.nfshost.com/";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', '15']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script>
+		<!-- End Matomo Code -->
+	</head>
+
+	<body class="bg-white text-ink">
+		<site-container class="block">
+			<div>
+				
+				<div class="border-b mb-4">
+					<header class="flex justify-center sm:justify-between max-w-6xl mx-auto">
+						<div class="text-center pt-2 sm:pt-0 sm:text-left">
+							<a class="inline-flex logo items-center mx-auto" href="/">
+								<img alt="Basis logo" class="w-14 justify-self-center" width="56" height="56" src="/assets/images/logo.outline.png">
+								<span class="block text-2xl mt-1 font-logo">Basis</span>
+							</a>
+						</div>
+
+						<a id="page-nav" class="absolute top-0 right-0 text-4xl p-4 sm:hidden" href="#nav"><icon>&#xF0C9;</icon></a>
+						<nav class="absolute z-10 w-5/6 p-4 bg-slate-700 top-0 bottom-0 left-0 -translate-x-full transition-transform text-white sm:static sm:z-auto sm:text-ink sm:bg-inherit sm:translate-x-0 sm:flex sm:justify-end">
+							<a id="page-nav-close" class="absolute block top-0 right-0 p-4 m-4 leading-none text-xl font-bold bg-white text-ink rounded-full text-center w-12 sm:hidden" href="#close">X</a>
+							<ul class="sm:flex sm:text-primary">
+								
+									<li class="sm:hidden sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/">Home</a>
+								
+									<li class=" sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/contribute/">Get involved</a>
+								
+									<li class=" sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/paper/">Paper</a>
+								
+									<li class=" sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/posts/">News</a>
+								
+									<li class=" sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/faq/">FAQ</a>
+								
+							</ul>
+							<ul class="sm:flex sm:pl-3.5 py-12 sm:py-0 sm:text-primary">
+								
+								
+
+	<li class="sm:px-2 sm:first:pl-0">
+		<a class="text-slate-400 hover:text-white sm:text-primary sm:hover:text-red-800 hover:no-underline" title="Source code" href="https://github.com/basisproject/">
+			<icon>&#xF113;</icon>
+			<span class="text-white sm:hidden px-2">Source &raquo;</span>
+		</a>
+	</li>
+
+	<li class="sm:px-2 sm:first:pl-0">
+		<a class="text-slate-400 hover:text-white sm:text-primary sm:hover:text-red-800 hover:no-underline" title="Reddit community" href="https://www.reddit.com/r/basisproject">
+			<icon>&#xF281;</icon>
+			<span class="text-white sm:hidden px-2">Community &raquo;</span>
+		</a>
+	</li>
+
+	<li class="sm:px-2 sm:first:pl-0">
+		<a class="text-slate-400 hover:text-white sm:text-primary sm:hover:text-red-800 hover:no-underline" title="Twitter" href="https://twitter.com/basisproject">
+			<icon>&#xF099;</icon>
+			<span class="text-white sm:hidden px-2">Twitter &raquo;</span>
+		</a>
+	</li>
+
+	<li class="sm:px-2 sm:first:pl-0">
+		<a class="text-slate-400 hover:text-white sm:text-primary sm:hover:text-red-800 hover:no-underline" title="Matrix (#basis:matrix.org)" href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org">
+			<icon>&#xE80C;</icon>
+			<span class="text-white sm:hidden px-2">Matrix &raquo;</span>
+		</a>
+	</li>
+
+
+
+								
+							</ul>
+						</nav>
+					</header>
+				</div>
+
+				<div class="main-content">
+					
+	<post class="bs-container my-12">
+		
+		<h1>
+	<a href="/posts/2020/05/cost-derivation/">Cost derivation: In-kind cost tracking in moneyless production</a>
+</h1>
+
+<p class="date -mt-4 mb-6 font-semibold">Andrew Lyon - May 23, 2020</p>
+
+
+
+	<div
+			class="h-64 mb-4 bg-cover bg-center"
+			style="background-image: url(/assets/images/stocks.jpg)">
+		&nbsp;
+	</div>
+
+
+
+<p>I&#39;ve been asked many times what Basis does, and when I say it tracks costs of production without money, it can cause confusion. How can something cost anything without money?</p>
+<p>When you think about the <em>price</em> of some thing (say, a chair) what does that price mean? In our current system, it means that at each node in the economic network (the logging company, the lumber yard, the chair factory, the reseller) there was some process that took place that essentially derived the cost of the Thing they were selling by tallying up the inputs they bought. That&#39;s not the only story though: they add (or subtract, in many cases) another value, which is the margin of the sold item.</p>
+<p>So for each company involved in making the chair, the price looks like <code>inventory + labor + margin</code>. Now repeat this for every hop of the supply chain until you&#39;re driving home with your brand new chair in your McLaren F1 after having paid the chair&#39;s price of $35.99.</p>
+<p>What does $35.99 mean? Nothing! The chair didn&#39;t <em>cost</em> $35.99 to make, otherwise there would be no margin on any of the sales in the supply chain. But what if there was no margin? If all companies involved made no profit or loss, what does $35.99 mean? Effectively, it&#39;s an aggregate sum of the labor and resources that went into building and shipping the chair and its constituent inputs (yes, I know of marginal economics, but if you want to argue that price isn&#39;t derived from labor and resources, then you&#39;re just proving my point even more that price is meaningless).</p>
+<p>Now, let&#39;s say we want to deconstruct that $35.99. I want to know <em>how much wood</em> is in it. I want to know how much fuel was used to transport it and its inputs. I want to know the costs of leadership, machining, sales, accounting, etc. How would we do this? We would need to open the books of all the companies involved and trace back from the moment it was sold back to the logging company. But this is an impossible task, because even if you could obtain this data from just the participants in the direct supply chain, there are offshoots that need to be accounted for. For instance, the logging company might have used a chainsaw to cut down the tree used in your chair. The cost of that chainsaw is <em>imbued</em> in the chair, so now you have to examine the entire supply chain for the chainsaw! And what about the truck that delivers the chair to the showroom? A complex machine with a vast supply chain (not to mention the fuel it uses to operate, which also has its own supply chain). All of a sudden, deriving cost requires traversing data on a vast network with recursive temporal loops and shifting complexity.</p>
+<p>This is where Basis comes in.</p>
+<h2 id="disaggregate-cost-tracking">Disaggregate cost tracking</h2>
+<p>Basis operates on a company level (ie, the single node of the economic network). It knows the inputs and outputs of a company (by facilitating the orders between them) and using this information accurately tracks costs, in disaggregate, of labor by occupation and resources (raw and semi-raw materials).</p>
+<p>Now when you buy your chair, it no longer costs $35.99, but rather it costs 4kg wood, 3L diesel fuel, 4g silicon, 0.3 hours of logger time (at $20/hr), 0.6 hours of machinist labor (at $22/hr), etc etc.</p>
+<h2 id="but-why">But, why?</h2>
+<p>The purpose of doing this is not just to derive a fancy way of determining price, but to collect and store information on the <em>cost of producing</em> something. If we know how much fossil fuels were burned to transport it, or how much money was spent on marketing to convince you to want it, or what wages people were paid to build it, both producers and consumers could make much more informed decisions based on ecology and personal preference.</p>
+<p>Pair this with production that doesn&#39;t rely on profit for continued existence, and you have an economic system that, while realistically will not account for all externalities, at least does not grossly incentivize them.</p>
+<h2 id="so-what-does-a-price-in-basis-look-like">So what does a &quot;price&quot; in Basis look like?</h2>
+<p>A bit like this:</p>
+<pre><code>{
+    &quot;labor&quot;: {
+        &quot;ceo&quot;: 1.2,
+        &quot;cfo&quot;: 0.6,
+        &quot;machinist&quot;: 2.3
+    },
+    &quot;labor_hours&quot;: {
+        &quot;ceo&quot;: 0.03,
+        &quot;cfo&quot;: 0.02,
+        &quot;machinist&quot;: 0.115
+    },
+    &quot;resources&quot;: {
+        &quot;wood&quot;: 5612,
+        &quot;steel&quot;: 12,
+        &quot;diesel&quot;: 0.87
+    }
+}
+</code></pre>
+<p>The final price would be a combination of the <code>labor</code> costs in addition to <code>resources</code> costs. Resources is a measure of the <em>amount</em> of each resource in standard units, not its final <em>price</em>. The price of resources is democratically decided at both the global level and regional level, such that the per-unit cost of each resource becomes effectively a labor cost (credits) and can be added to the labor values sum.</p>
+<p>So above, if wood was 0.0004 credits/g, steel was 0.1 credits/g, and diesel 1.5 credits/L, then our total cost in credits would be <code>1.2 + 0.6 + 2.3 + (5612 * 0.0004) + (12 * 0.1) + (0.87 * 1.5) = 8.8498</code>. If you have <code>8.8498</code> credits, the great job, you can afford to buy this widget.</p>
+<p>In the cost list, <code>labor_hours</code> is currently just used for tracking and has no bearing on pricing.</p>
+<hr>
+<p><small>(Apologies for the douchey header image, our marketing team has mandated that all blog posts have a picture)</small></p>
+
+
+	</post>
+
+				</div>
+			</div>
+
+			<footer class="py-16 bg-black text-slate-200">
+				<div class="bs-container">
+					<div class="flex items-center place-content-between">
+						<ul class="columns-2 text-slate-400 text-sm">
+							
+								<li class="sm:hidden sm:pb-2 sm:pr-4"><a class="hover:underline" href="/">Home</a>
+							
+								<li class=" sm:pb-2 sm:pr-4"><a class="hover:underline" href="/contribute/">Get involved</a>
+							
+								<li class=" sm:pb-2 sm:pr-4"><a class="hover:underline" href="/paper/">Paper</a>
+							
+								<li class=" sm:pb-2 sm:pr-4"><a class="hover:underline" href="/posts/">News</a>
+							
+								<li class=" sm:pb-2 sm:pr-4"><a class="hover:underline" href="/faq/">FAQ</a>
+							
+						</ul>
+						<ul class="float-right inline-flex text-xl text-slate-400">
+							
+
+	<li class="px-2 first:pl-0">
+		<a class="text-slate-400 hover:text-red-800  hover:no-underline" title="Source code" href="https://github.com/basisproject/">
+			<icon>&#xF113;</icon>
+			
+		</a>
+	</li>
+
+	<li class="px-2 first:pl-0">
+		<a class="text-slate-400 hover:text-red-800  hover:no-underline" title="Reddit community" href="https://www.reddit.com/r/basisproject">
+			<icon>&#xF281;</icon>
+			
+		</a>
+	</li>
+
+	<li class="px-2 first:pl-0">
+		<a class="text-slate-400 hover:text-red-800  hover:no-underline" title="Twitter" href="https://twitter.com/basisproject">
+			<icon>&#xF099;</icon>
+			
+		</a>
+	</li>
+
+	<li class="px-2 first:pl-0">
+		<a class="text-slate-400 hover:text-red-800  hover:no-underline" title="Matrix (#basis:matrix.org)" href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org">
+			<icon>&#xE80C;</icon>
+			
+		</a>
+	</li>
+
+
+
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</site-container>
+	</body>
+</html>
+

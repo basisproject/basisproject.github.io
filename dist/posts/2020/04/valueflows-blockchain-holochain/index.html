@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>ValueFlows, Holochain, and blockchain</title>
+		<meta name="description" content="Documentation and information about the Basis project">
+
+		<link rel="stylesheet" href="http://www.basis.loc/css/main.css?v=6">
+		<link rel="canonical" href="http://www.basis.loc/posts/2020/04/valueflows-blockchain-holochain/">
+		<link rel="alternate" type="application/rss+xml" title="Basis" href="http://www.basis.loc/feed.xml">
+		<link rel="icon" href="http://www.basis.loc/assets/images/logo.png" type="image/png">
+		
+			
+				<meta property="og:image" content="http://www.basis.loc/assets/images/holochain.jpg" />
+			
+		
+
+		<script src="/assets/js/nav.js"></script>
+		<!-- Matomo -->
+		<script type="text/javascript">
+			var _paq = _paq || [];
+			/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+			_paq.push(['trackPageView']);
+			_paq.push(['enableLinkTracking']);
+			(function() {
+				var u="//killtheradiostats.nfshost.com/";
+				_paq.push(['setTrackerUrl', u+'piwik.php']);
+				_paq.push(['setSiteId', '15']);
+				var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+				g.type='text/javascript'; g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s);
+			})();
+		</script>
+		<!-- End Matomo Code -->
+	</head>
+
+	<body class="bg-white text-ink">
+		<site-container class="block">
+			<div>
+				
+				<div class="border-b mb-4">
+					<header class="flex justify-center sm:justify-between max-w-6xl mx-auto">
+						<div class="text-center pt-2 sm:pt-0 sm:text-left">
+							<a class="inline-flex logo items-center mx-auto" href="/">
+								<img alt="Basis logo" class="w-14 justify-self-center" width="56" height="56" src="/assets/images/logo.outline.png">
+								<span class="block text-2xl mt-1 font-logo">Basis</span>
+							</a>
+						</div>
+
+						<a id="page-nav" class="absolute top-0 right-0 text-4xl p-4 sm:hidden" href="#nav"><icon>&#xF0C9;</icon></a>
+						<nav class="absolute z-10 w-5/6 p-4 bg-slate-700 top-0 bottom-0 left-0 -translate-x-full transition-transform text-white sm:static sm:z-auto sm:text-ink sm:bg-inherit sm:translate-x-0 sm:flex sm:justify-end">
+							<a id="page-nav-close" class="absolute block top-0 right-0 p-4 m-4 leading-none text-xl font-bold bg-white text-ink rounded-full text-center w-12 sm:hidden" href="#close">X</a>
+							<ul class="sm:flex sm:text-primary">
+								
+									<li class="sm:hidden sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/">Home</a>
+								
+									<li class=" sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/contribute/">Get involved</a>
+								
+									<li class=" sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/paper/">Paper</a>
+								
+									<li class=" sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/posts/">News</a>
+								
+									<li class=" sm:px-3.5"><a class="uppercase text-sm hover:underline font-accent" href="/faq/">FAQ</a>
+								
+							</ul>
+							<ul class="sm:flex sm:pl-3.5 py-12 sm:py-0 sm:text-primary">
+								
+								
+
+	<li class="sm:px-2 sm:first:pl-0">
+		<a class="text-slate-400 hover:text-white sm:text-primary sm:hover:text-red-800 hover:no-underline" title="Source code" href="https://github.com/basisproject/">
+			<icon>&#xF113;</icon>
+			<span class="text-white sm:hidden px-2">Source &raquo;</span>
+		</a>
+	</li>
+
+	<li class="sm:px-2 sm:first:pl-0">
+		<a class="text-slate-400 hover:text-white sm:text-primary sm:hover:text-red-800 hover:no-underline" title="Reddit community" href="https://www.reddit.com/r/basisproject">
+			<icon>&#xF281;</icon>
+			<span class="text-white sm:hidden px-2">Community &raquo;</span>
+		</a>
+	</li>
+
+	<li class="sm:px-2 sm:first:pl-0">
+		<a class="text-slate-400 hover:text-white sm:text-primary sm:hover:text-red-800 hover:no-underline" title="Twitter" href="https://twitter.com/basisproject">
+			<icon>&#xF099;</icon>
+			<span class="text-white sm:hidden px-2">Twitter &raquo;</span>
+		</a>
+	</li>
+
+	<li class="sm:px-2 sm:first:pl-0">
+		<a class="text-slate-400 hover:text-white sm:text-primary sm:hover:text-red-800 hover:no-underline" title="Matrix (#basis:matrix.org)" href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org">
+			<icon>&#xE80C;</icon>
+			<span class="text-white sm:hidden px-2">Matrix &raquo;</span>
+		</a>
+	</li>
+
+
+
+								
+							</ul>
+						</nav>
+					</header>
+				</div>
+
+				<div class="main-content">
+					
+	<post class="bs-container my-12">
+		
+		<h1>
+	<a href="/posts/2020/04/valueflows-blockchain-holochain/">ValueFlows, Holochain, and blockchain</a>
+</h1>
+
+<p class="date -mt-4 mb-6 font-semibold">Andrew Lyon - Apr 5, 2020</p>
+
+
+
+	<div
+			class="h-64 mb-4 bg-cover bg-center"
+			style="background-image: url(/assets/images/holochain.jpg)">
+		&nbsp;
+	</div>
+
+
+
+<p>After spending some time sharing the Basis project with others, I ended up catching wind of some really interesting projects that could augment the abilities of Basis quite a bit.</p>
+<h2 id="valueflows">ValueFlows</h2>
+<p>The first, and probably most impactful, is <a href="https://valueflo.ws/">ValueFlows</a>. It&#39;s effectively a language/vocabulary to describe economic networks and processes, evolved from the <a href="https://en.wikipedia.org/wiki/Resources,_events,_agents_(accounting_model)">REA</a> system of accounting. After reading through the website and documentation, I realized that it&#39;s a much more detailed and thought-out set of processes than what exists in Basis. Interestingly enough, I did a lot of research before starting Basis to find &quot;standards&quot; or best practices for ordering systems and supply chain automation, but had trouble finding anything that felt applicable.</p>
+<p>ValueFlows is the exact thing I wish I had found before starting work on Basis. That said, none of it was wasted work, but rather it would be taking the incomplete work I had already started and finishing it with some level of standardization.</p>
+<p>On top of this, while Basis touches on the idea of resource tracking, one thing it has yet to model is the concept of resource transformation. In other words, crude oil might be a tracked resource, but once refined, it is used up and transformed into several other different types of resources. Transformations are modeled into ValueFlows, although there&#39;s not a mechanism to make sure the outputs match the inputs, which Basis tries to do very carefully, so transformations would still need some level of standardization and scrutiny.</p>
+<p>Also, ValueFlows isn&#39;t just theoretical, but is being used in productive capacities in various companies. It&#39;s a wonderful place to start if building economic software.</p>
+<h2 id="holochain">Holochain</h2>
+<p>While talking to the authors of ValueFlows, <a href="http://mikorizal.org/about.html">Lynn Foster and Bob Haugen</a> I came across an interesting project call <a href="https://github.com/holo-rea/holo-rea">holo-rea</a>. Effectively, this is a ValueFlows implementation on top of <a href="https://holochain.org/">Holochain</a>.</p>
+<p>I had not heard of Holochain before, so I did a deep dive. It looks like a blockchain if a blockchain had infinite sharding and eventual consistency. It&#39;s almost built from the perspective of complete distribution and infinite scalability and moving towards data consensus, as opposed to blockchain, which starts with data consensus and tries to move toward scalability.</p>
+<p>Essentially, Holochain isn&#39;t a cryptocurrency with &quot;smart&quot; contracts, but rather an agent-based networking platform that offers application validation. Each participant has their own personal blockchain (entries are data + header with hash of data and reference to previous header) and when transactions are submitted to the network, they are verified by a set of peers determined by the hash of the transaction before being saved into a distributed hash table (DHT).</p>
+<p>Immediately, this brought up a lot of questions for me and how this might work in the context of Basis. Holochain has some pros and cons, which I will try to list exhaustively here.</p>
+<h3 id="pros">Pros</h3>
+<ul>
+<li>In theory, scales infinitely. Because there is no data consensus between all participants, only the members of a particular transaction need to hold that data (although the transaction itself is still verified by other members of the network). Scalability is important to us because while cryptocurrencies might get away with only matching Visa&#39;s peak tx/s, we&#39;re building a system that will hopefully scale to far beyond that, and having artificial limits imposed up-front represents technical dead-ends that will be difficult to reconcile when the time comes.</li>
+<li>Supports private transactions where the body of the transaction does not leave the node, but rather the header is broadcast and stored by the network.</li>
+<li>Has the concept of many different inter-operating networks. A company might have its own private network that deals with internal matters and connects to the greater network which would be more public.</li>
+<li>Handles network partitions more gracefully than blockchains. If a segment of the network is disconnected in a blockchain, participants might keep submitting transactions without knowing they are partitioned from a larger network. Upon reconnecting and joining the larger network again, the smaller network&#39;s history will be obliterated. Holochain handles this much more gracefully because it doesn&#39;t <em>need</em> absolute data consistency. The two networks will merge when the partition is healed without any data loss.</li>
+<li>Truly distributed. Blockchain participants build centralized consensus via distributed mechanisms. Holochain uses distributed validation and storage. There is no centralization of data.</li>
+<li>Holochain apps are built in Rust &lt;3 (Basis is built in rust already).</li>
+</ul>
+<h3 id="cons">Cons</h3>
+<ul>
+<li>Represents an entirely new and challenging paradigm when dealing with data. For instance, because all data is agent-centric, <a href="https://forum.holochain.org/t/how-will-holochain-handle-group-agents/1095">there&#39;s no built-in concept of a group in Holochain</a>. In Basis, groups (companies, regions, etc) are essential. Companies have members, and members can perform actions such that it looks like the company itself is acting in its own agency. In effect, given the tools Holochain provides, we have to work backwards toward data consensus on a group level. This is currently a blocker for thinking about using as a platform for Basis. Word has it <a href="https://github.com/holochain-open-dev/agent-registration">group agents are planned</a>, although I&#39;m not sure what the scope of this project is yet.</li>
+<li>Extremely new, and therefor somewhat unproven. The ideas behind blockchains haven&#39;t really stood the test of time yet, but if blockchains are teenagers, Holochain is a toddler (this is not meant to put it down in any way).</li>
+<li>Documentation lacking. I&#39;ve found a lot of the documentation to be much less detailed than desired, specifically about how transactions are validated and what data is available to them when this happens. A lot of this knowledge seems to be floating around in the forums. That said, I don&#39;t blame the Holochain team because the project is evolving so quickly that accurate and up-to-date documentation would divert a lot of resources that could otherwise go into building a stable platform.</li>
+</ul>
+<h2 id="whats-next">What&#39;s next?</h2>
+<p>I&#39;m convinced at this point that Basis should be build on top of ValueFlows. I&#39;m also convinced that Holochain will be involved in the project in some capacity, although right now I&#39;m not sure what that will be. Will this mean building Basis on top of Holochain? Does it mean building Basis on top of <a href="https://github.com/holo-rea/holo-rea">holo-rea</a>?</p>
+<p>It might be possible to use a blockchain in the places where blockchains are useful and Holochain where scalability is needed. Can the two coexist and interoperate?</p>
+<p>I&#39;m meeting with the lead dev of holo-rea soon, and we&#39;re hopefully going to do a deep dive on Basis, ValueFlows, and Holochain and figure out how all the pieces fit together.</p>
+<p>While the above projects have made the immediate future of Basis a bit more uncertain, they came at a great time (during early formation). The ideas and goals behind Basis are the same as they were before, but now there are more tools to help make that vision come to life.</p>
+
+
+	</post>
+
+				</div>
+			</div>
+
+			<footer class="py-16 bg-black text-slate-200">
+				<div class="bs-container">
+					<div class="flex items-center place-content-between">
+						<ul class="columns-2 text-slate-400 text-sm">
+							
+								<li class="sm:hidden sm:pb-2 sm:pr-4"><a class="hover:underline" href="/">Home</a>
+							
+								<li class=" sm:pb-2 sm:pr-4"><a class="hover:underline" href="/contribute/">Get involved</a>
+							
+								<li class=" sm:pb-2 sm:pr-4"><a class="hover:underline" href="/paper/">Paper</a>
+							
+								<li class=" sm:pb-2 sm:pr-4"><a class="hover:underline" href="/posts/">News</a>
+							
+								<li class=" sm:pb-2 sm:pr-4"><a class="hover:underline" href="/faq/">FAQ</a>
+							
+						</ul>
+						<ul class="float-right inline-flex text-xl text-slate-400">
+							
+
+	<li class="px-2 first:pl-0">
+		<a class="text-slate-400 hover:text-red-800  hover:no-underline" title="Source code" href="https://github.com/basisproject/">
+			<icon>&#xF113;</icon>
+			
+		</a>
+	</li>
+
+	<li class="px-2 first:pl-0">
+		<a class="text-slate-400 hover:text-red-800  hover:no-underline" title="Reddit community" href="https://www.reddit.com/r/basisproject">
+			<icon>&#xF281;</icon>
+			
+		</a>
+	</li>
+
+	<li class="px-2 first:pl-0">
+		<a class="text-slate-400 hover:text-red-800  hover:no-underline" title="Twitter" href="https://twitter.com/basisproject">
+			<icon>&#xF099;</icon>
+			
+		</a>
+	</li>
+
+	<li class="px-2 first:pl-0">
+		<a class="text-slate-400 hover:text-red-800  hover:no-underline" title="Matrix (#basis:matrix.org)" href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org">
+			<icon>&#xE80C;</icon>
+			
+		</a>
+	</li>
+
+
+
+						</ul>
+					</div>
+				</div>
+			</footer>
+		</site-container>
+	</body>
+</html>
+
