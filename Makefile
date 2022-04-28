@@ -1,7 +1,7 @@
 .PHONY: all publish paper clean watch
 
 SRC := www
-BUILD := dist
+BUILD := docs
 
 allwww := $(shell find $(SRC) -type f)
 allsrc := main.js $(shell find plugins/)
