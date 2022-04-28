@@ -6,11 +6,11 @@ BUILD := docs
 allwww := $(shell find $(SRC) -type f)
 allsrc := main.js $(shell find plugins/)
 
-all: dist/index.html
+all: $(BUILD)/index.html
 
 $(BUILD)/index.html: $(allsrc) $(allwww) tailwind.config.js postcss.config.js $(SRC)/paper.html
 	SRC=$(SRC) DEST=$(BUILD) node main
-	npx postcss dist/css/**/*.css --base dist/ --dir dist/
+	npx postcss $(BUILD)/css/**/*.css --base $(BUILD)/ --dir $(BUILD)/
 
 $(SRC)/paper.html: ../paper/converted/basis.html
 	@echo "---" > $@
