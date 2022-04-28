@@ -14,6 +14,7 @@ const toc = require('./plugins/toc');
 
 const SRC = process.env['SRC'] || 'www';
 const DEST = process.env['DEST'] || 'dist';
+const URL = process.env['URL'] || 'https://basisproject.net';
 
 const NUNJUCK_OPTS = {
 	autoescape: false,
@@ -22,8 +23,7 @@ const NUNJUCK_OPTS = {
 Metalsmith(__dirname)
 	.metadata({
 		site: {
-			url: 'http://www.basis.loc',
-			//url: 'https://basisproject.net',
+			url: URL,
 			base: '',
 			title: 'Basis',
 			description: 'Documentation and information about the Basis project',
