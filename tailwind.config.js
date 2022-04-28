@@ -1,6 +1,6 @@
 module.exports = {
 	content: [
-		'dist/**/*.html',
+		'docs/**/*.html',
 	],
 	//purge: [
 	//	'**/*.html',
