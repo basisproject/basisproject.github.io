@@ -12,77 +12,74 @@ permalink: contribute/
 			ideas, and critiques. Right now the project is mostly theory-based, and we could use your
 			help figuring things out.
 		</p>
-		<p>
-			Join the discussion and help keep Basis moving forward!
-		</p>
-	</div>
-</page>
 
-{% macro grid_item(href, icon, title, text, bg="bg-white") %}
-	<div class="sm:w-1/3 p-2">
-		<div class="{{ bg }} p-4">
-			<a href="{{ href }}" class="flex items-center">
-				<h4 class="w-full text-ink">
-					<icon class="float-right text-lg text-primary">&#x{{ icon }}</icon>
-					{{ title }} &raquo;
-				</h4>
-			</a>
-			<p>{{ text }}</p>
-		</div>
-	</div>
-{% endmacro %}
-<page>
-	<div class="bg-slate-50">
+		{% import "www/includes/page-bullet.njk" as pagebullet %}
 		<div class="bs-container py-8">
 			<h2 class="text-center">Ongoing discussions</h2>
-			<div class="sm:flex sm:flex-wrap" uk-grid>
-				{{ grid_item(
+			<ul class="list-none ml-0 pl-0 mb-0 sm:flex sm:flex-wrap sm:items-start">
+				{{ pagebullet.bullet(
+					"&#xF0AE;",
 					"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics",
-					"F0AE",
-					"Cybernetics",
-					"What automated systemic incentives shape the behavior of the productive system?"
+					"Cybernetics &raquo;",
+					"What automated systemic incentives shape the behavior of the productive system?",
+					'primary',
+					short=false
 				) }}
-				{{ grid_item(
+				{{ pagebullet.bullet(
+					"&#xe800;",
 					"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Aeconomics",
-					"e800",
-					"Economics",
-					"What mechanisms allow distributed production organized without money and profit?"
+					"Economics &raquo;",
+					"What mechanisms organize distributed production without money and profit?",
+					'violet-600',
+					short=false
 				) }}
-				{{ grid_item(
+				{{ pagebullet.bullet(
+					"&#xF277;",
 					"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Agovernance",
-					"F277",
-					"Governance",
-					"What tools are provided for network participants to shape the systems within Basis?"
+					"Governance &raquo;",
+					"How do network participants shape the systems within Basis?",
+					'lime-600',
+					short=false
 				) }}
-				{{ grid_item(
+				{{ pagebullet.bullet(
+					"&#xF2B5;",
 					"https://github.com/basisproject/tracker/labels/layer%3Ainterface",
-					"F2B5",
-					"Interfacing",
-					"How do producers interact with the outside world in a way that benefits the overall network?"
+					"Interfacing &raquo;",
+					"How do producers interact with the outside world in ways benefitial to the network?",
+					'blue-600',
+					short=false
 				) }}
-				{{ grid_item(
+				{{ pagebullet.bullet(
+					"&#xE80A;",
 					"https://github.com/basisproject/tracker/labels/tag%3Aproperty",
-					"E80A",
-					"Property",
-					"How do particpants manage properties and resources shared by all members of the network?"
+					"Property &raquo;",
+					"How do particpants manage shared properties and resources?",
+					'teal-600',
+					short=false
 				) }}
-				{{ grid_item(
+				{{ pagebullet.bullet(
+					"&#xE80D;",
 					"https://github.com/basisproject/tracker/labels/tag%3Asecurity",
-					"E80D",
-					"Security",
-					"What guarantees are in place to ensure the safety, security, and privacy of network members? "
+					"Security &raquo;",
+					"How does the protocol ensure the safety, security, and privacy of participants?",
+					'yellow-600',
+					short=false
 				) }}
 			</div>
-			<p class="pt-6 pb-2 text-sm text-center">
+			<p class="pt-0 pb-0 text-sm text-center">
 				<a href="https://github.com/basisproject/tracker/issues">Check out the rest of the discussions &raquo</a>
 			</p>
 		</div>
 	</div>
 </page>
 
-<page class="bs-container my-24">
-	<p class="text-xl text-center">
-		Don't forget, you can <a href="https://www.reddit.com/r/basisproject/">join us on Reddit <icon>&#xF281;</icon></a> to open new discussions, ask questions, or just say hi.
-	</p>
+<page>
+	<div class="bg-slate-50">
+		<div class="bs-container py-16">
+			<p class="text-xl text-center">
+				Don't forget, you can <a href="https://www.reddit.com/r/basisproject/">join us on Reddit <icon>&#xF281;</icon></a> to open new discussions, ask questions, or just say hi.
+			</p>
+		</div>
+	</div>
 </page>
 

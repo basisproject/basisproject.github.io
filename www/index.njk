@@ -4,35 +4,22 @@ title: 'Basis'
 hide_title: true
 ---
 
+{% import "www/includes/page-bullet.njk" as pagebullet %}
+
 <page class="pt-4">
 	<div class="bs-container py-8">
 		<h1 class="text-center mb-4">A protocol for scalable, ecological production</h1>
 		<h3 class="text-center mb-0 text-gray-600">Basis enables an economy that limits externalities by aligning personal gain with social well-being</h3>
 	</div>
 
-	{% macro bullet(icon, link, title, text, accent = 'slate-400') %}
-	<li class="block p-4 sm:w-1/2">
-		<a class="custom group hover:no-underline" href="{{ link }}">
-			<div class="flex items-center bg-slate-50 rounded-lg drop-shadow-md">
-				<icon class="block pl-6 pr-6 text-2xl text-center text-{{ accent }} sm:opacity-70 sm:group-hover:opacity-100 sm:transition-opacity">{{ icon }}</icon>
-				<div class="p-4 border-l overflow-hidden" title="{{ text }}">
-					<h4 class="mb-0 text-ink sm:text-ink/[0.80] sm:group-hover:text-ink sm:transition-colors">{{ title }}</h3>
-					<p class="mb-0 text-sm text-slate-500 truncate">
-						{{ text }}
-					</p>
-				</div>
-			</div>
-		</a>
-	</li>
-	{% endmacro %}
 	<div class="bs-container py-4">
 		<ul class="list-none ml-0 pl-0 mb-0 sm:flex sm:flex-wrap sm:items-start">
-			{{ bullet('&#xE800;', "#transactional-medium", "Transactional medium", "Underneath all the economic operations in Basis is the transactional system", 'primary') }}
-			{{ bullet('&#xE808;', "#cost-tracking", "In-kind cost tracking", "Basis replaces the concept of a price with separate collections of labor and resources.", 'violet-600') }}
-			{{ bullet('&#x20A1;', "#currency", "Currency system", "Credits (&#x20A1;) in Basis are paid as wages to workers and can be used for consumer purchases.", 'lime-600') }}
-			{{ bullet('&#xF0AE;', "#cybernetics", "Cybernetics", "The profit mechanism is replaced with a more intentful approach that balances the well-being of workers, the health of the environment, and consumer relationships.", 'blue-600') }}
-			{{ bullet('&#xE80A;', "#basic-income", "Basic income", "Basic income is distributed to all participants periodically.", 'teal-600') }}
-			{{ bullet('&#xF24E;', "#value-systems", "Value systems", "Severing the link between <em>cost and consumption price</em> allows for the use of different value systems.", 'yellow-600') }}
+			{{ pagebullet.bullet('&#xE800;', "#transactional-medium", "Transactional medium", "Underneath all the economic operations in Basis is the transactional system", 'primary') }}
+			{{ pagebullet.bullet('&#xE808;', "#cost-tracking", "In-kind cost tracking", "Basis replaces the concept of a price with separate collections of labor and resources.", 'violet-600') }}
+			{{ pagebullet.bullet('&#x20A1;', "#currency", "Currency system", "Credits (&#x20A1;) in Basis are paid as wages to workers and can be used for consumer purchases.", 'lime-600') }}
+			{{ pagebullet.bullet('&#xF0AE;', "#cybernetics", "Cybernetics", "The profit mechanism is replaced with a more intentful approach that balances the well-being of workers, the health of the environment, and consumer relationships.", 'blue-600') }}
+			{{ pagebullet.bullet('&#xE80A;', "#basic-income", "Basic income", "Basic income is distributed to all participants periodically.", 'teal-600') }}
+			{{ pagebullet.bullet('&#xF24E;', "#value-systems", "Value systems", "Severing the link between <em>cost and consumption price</em> allows for the use of different value systems.", 'yellow-600') }}
 		</ul>
 	</div>
 
