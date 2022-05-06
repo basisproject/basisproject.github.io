@@ -2,12 +2,16 @@
 <li class="block p-4 sm:w-1/2">
 	<a class="custom group hover:no-underline" href="{{ link }}">
 		<div class="flex items-center bg-slate-50 rounded-lg drop-shadow-md">
-			<icon class="block pl-6 pr-6 text-2xl text-center text-{{ accent }} sm:opacity-70 sm:group-hover:opacity-100 sm:transition-opacity">{{ icon }}</icon>
-			<div class="p-4 border-l {% if short %}overflow-hidden{% endif %}" title="{{ text }}">
-				<h4 class="mb-0 text-ink sm:text-ink/[0.80] sm:group-hover:text-ink sm:transition-colors">{{ title }}</h3>
-				<p class="mb-0 text-sm text-slate-500 {% if short %}truncate{% endif %}">
-					{{ text }}
-				</p>
+			<div class="w-1/6 text-center">
+				<icon class="text-2xl text-center text-{{ accent }} sm:opacity-70 sm:group-hover:opacity-100 sm:transition-opacity">{{ icon }}</icon>
+			</div>
+			<div class="w-5/6 {% if short %}overflow-hidden{% endif %}" title="{{ text }}">
+				<div class="p-4 border-l">
+					<h4 class="mb-0 text-ink sm:text-ink/[0.80] sm:group-hover:text-ink sm:transition-colors">{{ title }}</h3>
+					<p class="mb-0 text-sm text-slate-500 {% if short %}truncate{% endif %}">
+						{{ text }}
+					</p>
+				</div>
 			</div>
 		</div>
 	</a>
