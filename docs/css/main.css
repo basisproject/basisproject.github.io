@@ -644,6 +644,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-l {
   border-left-width: 1px;
 }
+.border-t {
+  border-top-width: 1px;
+}
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
@@ -1044,6 +1047,14 @@ post hr, page hr {
 
   .sm\:justify-between {
     justify-content: space-between;
+  }
+
+  .sm\:border-t-0 {
+    border-top-width: 0px;
+  }
+
+  .sm\:border-l {
+    border-left-width: 1px;
   }
 
   .sm\:bg-inherit {
