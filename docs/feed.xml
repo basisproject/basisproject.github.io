@@ -4,7 +4,7 @@
         <description><![CDATA[Documentation and information about the Basis project]]></description>
         <link>https://basisproject.net</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 06 May 2022 13:01:21 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 06 May 2022 13:06:25 GMT</lastBuildDate>
         <atom:link href="https://basisproject.net/feed.xml" rel="self" type="application/rss+xml"/>
         <item>
             <title><![CDATA[New paper: v3.0]]></title>
@@ -15,7 +15,10 @@
 <p>Although not currently in the paper, the <a href="https://github.com/basisproject/tracker/issues/140">tracker model</a> is really starting to take shape in a material way. Trackers have gone from &quot;yeah, we should definitely figure that out&quot; to &quot;here&#39;s an actual proposal&quot; which is a great step. Beyond that, an incentive model for trackers is also now somewhat solidified: when a person wants to get paid, they track their labor, so it follows that if we want to systemically incentivize tracking resources and processes, the system pays members of blocs when they do this tracking. There are some other mechanisms at play here (such as <a href="https://github.com/basisproject/tracker/issues/139">cost staging</a>) to limit runaway effects of this, but the idea is that interacting with trackers is incentivized by the currency system.</p>
 <p>The paper still has many blank spots as things in the <a href="https://github.com/basisproject/tracker/issues/">project tracker</a> are in flux, but it&#39;s a significant improvement to what it was before.</p>
 <p>I&#39;m looking forward to finalizing much of the <a href="/contribute/">ongoing discussions</a> so new work can be started on the protocol implementation.</p>
-<p><a href="/contribute/">Help keep things moving!</a></p>
+<div class="text-center">
+    <a class="custom button mb-4 uppercase" href="/contribute/">Help keep things moving!</a>
+</div>
+
 ]]></description>
             <link>https://basisproject.net/posts/2022/05/new-paper-v3/</link>
             <guid isPermaLink="true">https://basisproject.net/posts/2022/05/new-paper-v3/</guid>
