@@ -656,6 +656,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
+.bg-transparent {
+  background-color: transparent;
+}
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
@@ -668,6 +671,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .p-4 {
   padding: 1rem;
+}
+.p-2 {
+  padding: 0.5rem;
 }
 .py-12 {
   padding-top: 3rem;
@@ -684,6 +690,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+.px-0 {
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .py-3 {
   padding-top: 0.75rem;
@@ -705,6 +719,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pl-0 {
   padding-left: 0px;
+}
+.pb-4 {
+  padding-bottom: 1rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -955,6 +972,9 @@ post hr, page hr {
 .first\:pl-0:first-child {
   padding-left: 0px;
 }
+.first-of-type\:border-0:first-of-type {
+  border-width: 0px;
+}
 .hover\:text-white:hover {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1016,6 +1036,10 @@ post hr, page hr {
 
   .sm\:justify-end {
     justify-content: flex-end;
+  }
+
+  .sm\:justify-center {
+    justify-content: center;
   }
 
   .sm\:justify-between {
