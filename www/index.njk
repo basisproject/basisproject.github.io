@@ -54,14 +54,39 @@ hide_title: true
 		</p>
 
 		<h3 id="cost-tracking">In-kind cost tracking</h3>
+		{% macro cost(icon, title, text, accent = 'slate-400') %}
+		<div class="block p-2 sm:w-1/3 border-l first-of-type:border-0">
+			<div class="flex items-center">
+				<div class="w-1/6 text-center">
+					<icon class="text-l text-center text-{{ accent }}">{{ icon }}</icon>
+				</div>
+				<div class="w-5/6 overflow-hidden" title="{{ text }}">
+					<div class="p-2">
+						<h5 class="mb-0 text-ink">{{ title }}</h3>
+						<p class="mb-0 text-sm text-slate-500 truncate" title="{{ text }}">
+							<code class="bg-transparent px-0">{{ text }}</code>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% endmacro %}
 		<p>
 			Basis replaces the concept of a price with separate collections of labor, resources, and processes. A chair
-			no longer cost $35, but rather 4kg wood from a new growth forest in Oregon, 37 minutes of
-			sawmill worker labor, 1.2 hours of trucker labor, 1.1L of diesel fuel, etc. This cost tracking
+			no longer costs $35, but rather 4kg wood from a new growth forest in Oregon, 37 minutes of
+			sawmill worker labor, 1.2 hours of trucker labor, 1.1L of diesel fuel, etc.
+		</p>
+		<div class="sm:flex sm:justify-center pb-4 px-8">
+			{{ cost('&#xE80E;', 'Labor', '2hr logger + 1hr trucker', 'primary') }}
+			{{ cost('&#xF1BB;', 'Resources', '200kg lumber + 6L diesel', 'lime-600') }}
+			{{ cost('&#xE80F;', 'Processes', 'refine(8L oil)', 'violet-600') }}
+		</div>
+		<p>
+			This cost tracking
 			in <em>disaggregate</em> allows much more accurate pricing when consumers make purchases than a
 			simple, aggregate price. When producers order goods or services from each other, they are able
 			to assign these costs to their products, which then transfer to the recipient. Using this
-			method there is no profit at all, as all outputs match all inputs.
+			method <em>there is no profit at all, as all outputs match all inputs.</em>
 		</p>
 
 		<h3 id="currency">Currency system</h3>
