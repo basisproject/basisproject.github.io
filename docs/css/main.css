@@ -589,6 +589,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .w-12 {
   width: 3rem;
 }
+.w-1\/6 {
+  width: 16.666667%;
+}
 .max-w-6xl {
   max-width: 72rem;
 }
@@ -702,12 +705,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .pl-0 {
   padding-left: 0px;
-}
-.pl-6 {
-  padding-left: 1.5rem;
-}
-.pr-6 {
-  padding-right: 1.5rem;
 }
 .pt-8 {
   padding-top: 2rem;
