@@ -4,8 +4,24 @@
         <description><![CDATA[Documentation and information about the Basis project]]></description>
         <link>https://basisproject.net</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 06 May 2022 12:57:15 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 06 May 2022 13:01:21 GMT</lastBuildDate>
         <atom:link href="https://basisproject.net/feed.xml" rel="self" type="application/rss+xml"/>
+        <item>
+            <title><![CDATA[New paper: v3.0]]></title>
+            <description><![CDATA[<p>I mentioned in my <a href="/posts/2021/10/protocol-updates/">last update</a> that I&#39;m working on a new paper for Basis.</p>
+<p>Well, <strong><a href="/paper/">it&#39;s here!</a></strong></p>
+<p>The new paper breaks things down into three types and describes the interactions between them: <a href="/paper/#chapter-2-agents">agents</a> (you and me), <a href="/paper/#chapter-3-resources">resources</a> (basically the same), and <a href="/paper/#chapter-4-blocs">blocs</a> (what were &quot;companies&quot; before). It describes the protocol (in plain english, still) in its pure form, separating the interactions with the outside market systems <a href="/paper/#part-3-the-real-world">into its own section</a> (largely unfinished).</p>
+<p>A new addition to the protocol is the <a href="/paper/#processes">concept of processes</a> (which extends the <a href="https://www.valueflo.ws/concepts/processes/">ValueFlows process model</a>) allowing for the transformation of resources and the cost tracking of those transformations. For instance, <code>refine oil(100L crude oil)</code> might be a process with an input of crude oil and an output of gasoline, jet fuel, etc that could be priced (like a resource) based on its input amounts of oil. This allows incorporating costs of externalities of various economic processes into production.</p>
+<p>Although not currently in the paper, the <a href="https://github.com/basisproject/tracker/issues/140">tracker model</a> is really starting to take shape in a material way. Trackers have gone from &quot;yeah, we should definitely figure that out&quot; to &quot;here&#39;s an actual proposal&quot; which is a great step. Beyond that, an incentive model for trackers is also now somewhat solidified: when a person wants to get paid, they track their labor, so it follows that if we want to systemically incentivize tracking resources and processes, the system pays members of blocs when they do this tracking. There are some other mechanisms at play here (such as <a href="https://github.com/basisproject/tracker/issues/139">cost staging</a>) to limit runaway effects of this, but the idea is that interacting with trackers is incentivized by the currency system.</p>
+<p>The paper still has many blank spots as things in the <a href="https://github.com/basisproject/tracker/issues/">project tracker</a> are in flux, but it&#39;s a significant improvement to what it was before.</p>
+<p>I&#39;m looking forward to finalizing much of the <a href="/contribute/">ongoing discussions</a> so new work can be started on the protocol implementation.</p>
+<p><a href="/contribute/">Help keep things moving!</a></p>
+]]></description>
+            <link>https://basisproject.net/posts/2022/05/new-paper-v3/</link>
+            <guid isPermaLink="true">https://basisproject.net/posts/2022/05/new-paper-v3/</guid>
+            <dc:creator><![CDATA[Andrew Lyon]]></dc:creator>
+            <pubDate>Fri, 06 May 2022 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[Protocol updates: a new look at what Basis is]]></title>
             <description><![CDATA[<p>Wow, it&#39;s been over a year since the last update. It wasn&#39;t my intention to give no updates on this project for this long, but life and the complications it brings have slowed down my work on Basis. It hasn&#39;t stopped my work though, and short of death itself, few things hold the power to keep me from what I&#39;m passionate about.</p>
