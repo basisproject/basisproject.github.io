@@ -32,3 +32,14 @@ clean:
 watch: all
 	while true; do inotifywait -qr -e close_write *.js www/ plugins/; make; done
 
+publish:
+	@echo "Remember to commit your changes to master for publishing to work!"
+	@sleep 5
+	git checkout publish
+	git merge master
+	make clean all
+	git add .
+	git commit -m "build"
+	git push
+	git checkout -
+
