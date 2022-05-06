@@ -4,72 +4,70 @@ title: 'Contribute to the Basis project'
 permalink: contribute/
 ---
 
-<page class="bs-container my-12">
-	<div>
-		<h1>Contribute to Basis: We'd love your help!</h1>
-		<p>
-			This project is constantly evolving and being shaped by the people contributing thoughts,
-			ideas, and critiques. Right now the project is mostly theory-based, and we could use your
-			help figuring things out.
-		</p>
+{% import "www/includes/page-bullet.njk" as pagebullet %}
 
-		{% import "www/includes/page-bullet.njk" as pagebullet %}
-		<div class="bs-container py-8">
-			<h2 class="text-center">Ongoing discussions</h2>
-			<ul class="list-none ml-0 pl-0 mb-0 sm:flex sm:flex-wrap sm:items-start">
-				{{ pagebullet.bullet(
-					"&#xF0AE;",
-					"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics",
-					"Cybernetics &raquo;",
-					"What automated systemic incentives shape the behavior of the productive system?",
-					'primary',
-					short=false
-				) }}
-				{{ pagebullet.bullet(
-					"&#xe800;",
-					"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Aeconomics",
-					"Economics &raquo;",
-					"What mechanisms organize distributed production without money and profit?",
-					'violet-600',
-					short=false
-				) }}
-				{{ pagebullet.bullet(
-					"&#xF277;",
-					"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Agovernance",
-					"Governance &raquo;",
-					"How do network participants shape the systems within Basis?",
-					'lime-600',
-					short=false
-				) }}
-				{{ pagebullet.bullet(
-					"&#xF2B5;",
-					"https://github.com/basisproject/tracker/labels/layer%3Ainterface",
-					"Interfacing &raquo;",
-					"How do producers interact with the outside world in ways benefitial to the network?",
-					'blue-600',
-					short=false
-				) }}
-				{{ pagebullet.bullet(
-					"&#xE80A;",
-					"https://github.com/basisproject/tracker/labels/tag%3Aproperty",
-					"Property &raquo;",
-					"How do particpants manage shared properties and resources?",
-					'teal-600',
-					short=false
-				) }}
-				{{ pagebullet.bullet(
-					"&#xE80D;",
-					"https://github.com/basisproject/tracker/labels/tag%3Asecurity",
-					"Security &raquo;",
-					"How does the protocol ensure the safety, security, and privacy of participants?",
-					'yellow-600',
-					short=false
-				) }}
-			</div>
-			<p class="pt-0 pb-0 text-sm text-center">
-				<a href="https://github.com/basisproject/tracker/issues">Check out the rest of the discussions &raquo</a>
-			</p>
-		</div>
+<page class="pt-4">
+	<div class="bs-container py-8">
+		<h1 class="text-center mb-4">Contribute to Basis: We'd love your help!</h1>
+		<h3 class="text-center mb-0 text-gray-600">
+			Join in on one of the ongoing discussions and help move the project forward.
+		</h3>
+	</div>
+
+	<div class="bs-container py-4">
+		<ul class="list-none ml-0 pl-0 mb-0 sm:flex sm:flex-wrap sm:items-start">
+			{{ pagebullet.bullet(
+				"&#xF0AE;",
+				"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics",
+				"Cybernetics &raquo;",
+				"What automated systemic incentives shape the behavior of the productive system?",
+				'primary',
+				short=false
+			) }}
+			{{ pagebullet.bullet(
+				"&#xe800;",
+				"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Aeconomics",
+				"Economics &raquo;",
+				"What mechanisms organize distributed production without money and profit?",
+				'violet-600',
+				short=false
+			) }}
+			{{ pagebullet.bullet(
+				"&#xF277;",
+				"https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Agovernance",
+				"Governance &raquo;",
+				"How do network participants shape the systems within Basis?",
+				'lime-600',
+				short=false
+			) }}
+			{{ pagebullet.bullet(
+				"&#xF2B5;",
+				"https://github.com/basisproject/tracker/labels/layer%3Ainterface",
+				"Interfacing &raquo;",
+				"How do producers interact with the outside world in ways benefitial to the network?",
+				'blue-600',
+				short=false
+			) }}
+			{{ pagebullet.bullet(
+				"&#xE80A;",
+				"https://github.com/basisproject/tracker/labels/tag%3Aproperty",
+				"Property &raquo;",
+				"How do particpants manage shared properties and resources?",
+				'teal-600',
+				short=false
+			) }}
+			{{ pagebullet.bullet(
+				"&#xE80D;",
+				"https://github.com/basisproject/tracker/labels/tag%3Asecurity",
+				"Security &raquo;",
+				"How does the protocol ensure the safety, security, and privacy of participants?",
+				'yellow-600',
+				short=false
+			) }}
+		</ul>
+		<p class="py-8 text-sm text-center">
+			<a href="https://github.com/basisproject/tracker/issues">Check out the rest of the discussions &raquo</a>
+		</p>
 	</div>
 </page>
 
