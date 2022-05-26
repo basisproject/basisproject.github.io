@@ -113,7 +113,7 @@
 
 		<header id="title-block-header">
 <h1 class="title">Basis: a protocol for a post-capitalist economy (v3.0)</h1>
-<p class="subtitle">Or: How I learned to stop worrying and produce without profits and private property<br><br><strong>(Last update: April 28, 2022)</strong></p>
+<p class="subtitle">Or: How I learned to stop worrying and produce without profits and private property<br><br><strong>(Last update: May 25, 2022)</strong></p>
 <p class="author">Andrew M. Lyon</p>
 </header>
 <nav id="TOC" role="doc-toc">
@@ -145,7 +145,7 @@
 <li><a href="#chapter-4-blocs">Chapter 4: Blocs</a>
 <ul>
 <li><a href="#bloc-voting">Bloc voting</a></li>
-<li><a href="#bloc-cost-allowance">Bloc cost allowance</a></li>
+<li><a href="#bloc-allocation">Bloc allocation</a></li>
 <li><a href="#cost-staging">Cost staging</a></li>
 </ul></li>
 <li><a href="#chapter-5-costs">Chapter 5: Costs</a>
@@ -220,7 +220,7 @@
 <p>As most of this protocol revolves around economics, it’s important to outline some of the ultimate goals of the economic relations in Basis.</p>
 <p>Production is engaged in without profit or exchange of currency. Blocs track costs directly, and assign these costs to their products and services. Costs are separate groupings of <em>labor</em>, <a href="#BROKEN-tracked-resources">tracked resources</a>, and <a href="#BROKEN-tracked-processes">tracked economic processes</a>. Blocs then assign these costs to their products, and they are only able to assign costs already assumed by the bloc: inputs and outputs must match. When another bloc orders one of these products, the product’s cost is transferred from the producing bloc to the ordering bloc. No exchange of currency happens. When an agent consumes a product, the costs of that product are removed from the system. This direct cost tracking avoids the need for currency within the productive system and eliminates the idea of profit.</p>
 <p>When a bloc marks a product as available for agent consumption, it is given a price. This price can be set <em>independently</em> of the <em>cost</em> of the product (for instance if demand drops, the bloc can set a clearing price). However, the bloc does not realize any difference between the <em>cost</em> and the <em>price</em> because the currency used by the consuming agent is destroyed on spend.</p>
-<p>In the absence of profit and a strong link between <em>price</em> and <em>cost</em>, another mechanism must act as the feedback mechanism for blocs. Basis uses a <a href="#cybernetics">cybernetics system</a> that adjusts a bloc’s “cost allowance” (how much costs it can assume in total at any given point) based on its overall, ongoing performance.</p>
+<p>In the absence of profit and a strong link between <em>price</em> and <em>cost</em>, another mechanism must act as the feedback mechanism for blocs. Basis uses a <a href="#cybernetics">cybernetics system</a> that adjusts a bloc’s <a href="#bloc-allocation">“allocation”</a> (how much costs it can assume in total at any given point) based on its overall, ongoing performance.</p>
 <p>As a final note, the economic vocabulary used in the Basis protocol are an extension of the ValueFlows <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> protocol, a Resource-Event-Agent (REA) accounting system that allows defining flows of resources through productive networks. Many of the processes or actions described in the Basis protocol will reference various portions of ValueFlows.</p>
 <h3 id="two-layer-organization">Two-layer organization</h3>
 <p>Basis defines two main layers of operation. The inner layer is the primary productive system. This is the layer that <a href="#chapter-4-blocs">blocs</a> and <a href="#chapter-3-resources">resources</a> exist inside of. This is where <a href="#chapter-5-costs">detailed cost tracking</a> occurs, and all transactions within this layer are <em>transparent</em>.</p>
@@ -270,15 +270,15 @@
 <ul>
 <li><a href="https://github.com/basisproject/tracker/issues/60">#60 - Voting</a></li>
 </ul>
-<h3 id="bloc-cost-allowance">Bloc cost allowance</h3>
-<p>Every bloc has a cost allowance. This is a variable number that determines the upper limit on costs that the bloc can assume. If the bloc’s total costs (the sum of all the bloc’s resources and processes) reaches this number, the protocol prevents the bloc from taking on any new costs, be it ordering inventory, paying wages, or any other ways that blocs can take on new costs. The cost allowance can be thought of as the total amount of societal debt that a bloc may take on.</p>
+<h3 id="bloc-allocation">Bloc allocation</h3>
+<p>Every bloc has an allocation. This is a variable number that determines the upper limit on costs that the bloc can assume. If the bloc’s total costs (the sum of all the bloc’s resources and processes) reaches this number, the protocol prevents the bloc from taking on any new costs, be it ordering inventory, paying wages, or any other ways that blocs can take on new costs. The allocation can be thought of as the total amount of societal debt that a bloc may take on.</p>
 <p>The total costs of a bloc can be determined by taking the costs of all the bloc’s resources and all the bloc’s processes and <a href="#addition">summing them together</a>. This gives a final cost object, which can be <a href="#converting-costs-to-a-single-value">converted into a final number</a>.</p>
-<p>Once a bloc’s total costs reaches its cost allowance, a bloc must find a way to unload its costs. This would happen via other blocs <a href="#orders">ordering products</a> or through direct member taxation.</p>
-<p>The actual cost allowance value is determined by the <a href="#chapter-8-investment">investment</a> and <a href="#cybernetics">cybernetics</a> systems defined by the protocol.</p>
+<p>Once a bloc’s total costs reaches its allocation, a bloc must find a way to unload its costs. This would happen via other blocs <a href="#orders">ordering products</a> or through direct member taxation.</p>
+<p>The actual allocation value is determined by the <a href="#chapter-8-investment">investment</a> and <a href="#cybernetics">cybernetics</a> systems defined by the protocol.</p>
 <h4 id="allowance-exceptions">Allowance exceptions</h4>
 <p>TODO:</p>
 <ul>
-<li><a href="https://github.com/basisproject/tracker/issues/135">#135 - Cost allowance overage</a></li>
+<li><a href="https://github.com/basisproject/tracker/issues/135">#135 - Allocation overage</a></li>
 </ul>
 <h3 id="cost-staging">Cost staging</h3>
 <p>TODO:</p>
@@ -513,7 +513,7 @@
 <p>This is an example of how costs are created and assigned to resources. Blocs are free to manage costs however they see fit with a few constraints enforced by the protocol:</p>
 <ol type="1">
 <li>Costs out must equal costs in. Blocs cannot remove, reduce, or otherwise modify the amount of costs (other than adding to them).</li>
-<li>A bloc must not exceed its <a href="#bloc-cost-allowance">cost allowance</a>.</li>
+<li>A bloc must not exceed its <a href="#bloc-allocation">allocation</a>.</li>
 </ol>
 <h4 id="bloc-processes">Bloc processes</h4>
 <p>At a lower level, a bloc can use <em>processes</em> as a way of breaking down flows of resources and labor internally. A process is an activity that transforms economic inputs to outputs. In Basis, processes extend the concept of <a href="https://www.valueflo.ws/concepts/processes/">processes in ValueFlows</a> by adding a set of <a href="#chapter-5-costs">costs</a> associated with that process. A bloc can have as many processes as it wants, each with a set of associated costs.</p>
@@ -572,11 +572,11 @@ Tracker: Translatable {
 </ul>
 <h3 id="converting-costs-to-a-single-value">Converting costs to a single value</h3>
 <p>TODO: make note in wages section that 1 labor hour = 1 credit</p>
-<p>Although costs are tracked as separate collections of distinct values, it’s important that they are able to be summed into one aggregate number: a total cost. This allows blocs to get a quick sense for their overall cost amounts, which factors into determine how much of their <a href="#bloc-cost-allowance">cost allowance</a> is used.</p>
+<p>Although costs are tracked as separate collections of distinct values, it’s important that they are able to be summed into one aggregate number: a total cost. This allows blocs to get a quick sense for their overall cost amounts, which factors into determine how much of their <a href="#bloc-allocation">allocation</a> is used.</p>
 <p>Deriving this total value is simple in the case of <code>labor</code> and <code>labor_hours</code>, we simply sum the values together. For instance, in the object above, we would have <code>12.89 + 3.38 + 41.45 + 0.2578 + 0.0965 + 1.0363</code> or <code>59.1106</code>.</p>
 <p>The tricky bit comes when we convert our resource values into a cost, and this is where <a href="#BROKEN-tracked-resources">tracked resources</a> and <a href="#BROKEN-tracked-processes">tracked processes</a> come in: they allow categorizing a <a href="#chapter-3-resources">resource</a> within the cost tracking system such that a standard unit can be assigned a cost value. Thus, if in our example above, <code>iron</code> is tracked in grams, and the cost-per-gram is <code>0.3</code> then the iron cost would be <code>8.5 * 0.3</code> or <code>2.55</code>. If done for all <code>resources</code> in the costs set, we can add this to our labor costs and find our total aggregate cost value.</p>
 <h2 id="chapter-8-investment">Chapter 8: Investment</h2>
-<p>Investment determines the <a href="#bloc-cost-allowance">cost allowance</a> of a bloc, allowing that bloc to take on greater or lesser costs.</p>
+<p>Investment determines the <a href="#bloc-allocation">allocation</a> of a bloc, allowing that bloc to take on greater or lesser costs.</p>
 <h3 id="cybernetics">Cybernetics</h3>
 <p>TODO:</p>
 <ul>
@@ -594,7 +594,7 @@ Tracker: Translatable {
 <li><a href="https://github.com/basisproject/tracker/issues/124">#124 - Investment system</a></li>
 </ul>
 <h2 id="chapter-9-bankruptcy">Chapter 9: Bankruptcy</h2>
-<p>What happens to a bloc when its cost allowance is reached and it has no incoming orders? What happens if the last member of a bloc leaves and that bloc still holds costs?</p>
+<p>What happens to a bloc when its allocation is reached and it has no incoming orders? What happens if the last member of a bloc leaves and that bloc still holds costs?</p>
 <p>Where are these costs transferred to?</p>
 <p>TODO:</p>
 <ul>
@@ -607,7 +607,7 @@ Tracker: Translatable {
 <p>While it might be somewhat clear that credits share some DNA with labor vouchers, there are some significant differences.</p>
 <p>Credits do not expire. There is no attempt made by the monetary system to limit individual accumulation of credits in any way.</p>
 <p>Secondly, credits are freely transferable, privately and anonymously, to other members. This allows for secondary markets, which Basis has no desire to control or eliminate in any way. If your toaster breaks, why buy a new toaster when you can buy your neighbor’s for half the price? It’s not ecological to force everyone in the system to buy everything new. It’s also futile to attempt to eliminate secondary markets completely. So we don’t bother.</p>
-<p>The case for non-transferable credits is that people might <em>sell their labor</em> in the secondary market and therefor the secondary market must be eliminated. If we have a situation where people feel compelled to sell their labor in the secondary market instead of the primary market, Basis is a failed system. What we need instead of control and force is strong incentives to participate in the primary economy. For instance, someone selling their labor in the secondary economy would need enough credits to buy the equipment they need <em>up-front</em> whereas if they are a producing member in the main economy, they might be given an up-front cost allowance (ie, a social investment). Secondly, member companies cannot pay people directly in credits because they don’t handle credits, so if you’re selling your labor in the secondary economy only those who are also operating in the secondary economy can hire you.</p>
+<p>The case for non-transferable credits is that people might <em>sell their labor</em> in the secondary market and therefor the secondary market must be eliminated. If we have a situation where people feel compelled to sell their labor in the secondary market instead of the primary market, Basis is a failed system. What we need instead of control and force is strong incentives to participate in the primary economy. For instance, someone selling their labor in the secondary economy would need enough credits to buy the equipment they need <em>up-front</em> whereas if they are a producing member in the main economy, they might be given an up-front allocation (ie, a social investment). Secondly, member companies cannot pay people directly in credits because they don’t handle credits, so if you’re selling your labor in the secondary economy only those who are also operating in the secondary economy can hire you.</p>
 <h3 id="ubi-credits-universal-basic-income">UBI Credits (Universal Basic Income)</h3>
 <p>UBI credits are earned simply by being an agent in the Basis protocol and accrue on a regular schedule. UBI credits act differently to labor credits in a few ways:</p>
 <ul>
