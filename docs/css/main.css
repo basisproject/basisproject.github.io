@@ -760,6 +760,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -800,13 +804,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(124 58 237 / var(--tw-text-opacity));
 }
-.text-lime-600 {
-  --tw-text-opacity: 1;
-  color: rgb(101 163 13 / var(--tw-text-opacity));
-}
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+.text-lime-600 {
+  --tw-text-opacity: 1;
+  color: rgb(101 163 13 / var(--tw-text-opacity));
 }
 .text-teal-600 {
   --tw-text-opacity: 1;
@@ -971,6 +975,11 @@ post pre code, page pre code {
 }
 post hr, page hr {
   margin-bottom: 1rem;
+}
+post em, page em {
+  --tw-bg-opacity: 1;
+  background-color: rgb(209 230 210 / var(--tw-bg-opacity));
+  font-style: normal;
 }
 .first\:pl-0:first-child {
   padding-left: 0px;
