@@ -11,7 +11,7 @@ module.exports = {
 			colors: {
 				'ink': '#111',
 				'primary': '#c22',
-				'highlight': '#d1e6d2',
+				'highlight': '#dfebe0',
 				'link': '#c22',
 				'linkvisited': '#8a1717',
 			},
