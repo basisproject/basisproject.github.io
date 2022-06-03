@@ -976,7 +976,7 @@ post pre code, page pre code {
 post hr, page hr {
   margin-bottom: 1rem;
 }
-post em, page em {
+post .highlighter em, page .highlighter em {
   --tw-bg-opacity: 1;
   background-color: rgb(209 230 210 / var(--tw-bg-opacity));
   font-style: normal;
