@@ -116,7 +116,7 @@
 
 	<post class="block mb-12 pb-12 border-b">
 		<h1>
-	<a href="/posts/2022/05/new-paper-v3/">New paper: v3.0</a>
+	<a href="/posts/2022/05/new-paper-v3/">New protocol and paper: v3.0</a>
 </h1>
 
 <p class="date -mt-4 mb-6 font-semibold">Andrew Lyon - May 6, 2022</p>
@@ -131,13 +131,22 @@
 
 
 
-<p>I mentioned in my <a href="/posts/2021/10/protocol-updates/">last update</a> that I&#39;m working on a new paper for Basis. <strong>Well, it&#39;s here!</strong></p>
-<div class="text-center py-8">
+<p>It&#39;s finally here! I&#39;ve been working on the next version of the Basis protocol and paper for a little under a year now, and now it&#39;s ready!</p>
+<p>The new version of the protocol distills down what Basis is, what components exist it in, and how they
+interact in a much more coherent way. A lot of the mechanisms around cost tracking and profitless
+exchange are the same, but many other things have changed or grown.</p>
+<div class="text-center py-4">
     <a class="custom button mb-4 uppercase" href="/paper/">Read the new paper &raquo;</a>
 </div>
 
-<p>This version breaks things down into three types and describes the interactions between them: <a href="/paper/#chapter-2-agents">agents</a> (you and me), <a href="/paper/#chapter-3-resources">resources</a> (basically the same), and <a href="/paper/#chapter-4-blocs">blocs</a> (what were &quot;companies&quot; before). It describes the protocol (in plain english, still) in its pure form, separating the interactions with the outside market systems <a href="/paper/#part-3-the-real-world">into its own section</a> (largely unfinished).</p>
-<p>A new addition to the protocol is the <a href="/paper/#processes">concept of processes</a> (which extends the <a href="https://www.valueflo.ws/concepts/processes/">ValueFlows process model</a>) allowing for the transformation of resources and the cost tracking of those transformations. For instance, <code>refine oil(100L crude oil)</code> might be a process with an input of crude oil and an output of gasoline, jet fuel, etc that could be priced (like a resource) based on its input amounts of oil. This allows incorporating costs of externalities of various economic processes into production.</p>
+<p>One thing worth mentioning is that in the previous version of the paper/protocol, the interactions
+between the Basis network and existing market systems were intertwined, which was a bit confusing:
+are we talking about the protocol itself, or its interactions with the outside world? This has been
+fixed by moving the market interactions into its own separate section, leaving the protocol itself
+to be described in its pure form.</p>
+<p>The previous version detailed cost tracking in labor and resources, and this version adds one more
+cost tracking target: <a href="/paper/#processes">processes</a> (which extend the <a href="https://www.valueflo.ws/concepts/processes/">ValueFlows process model</a>).
+Processes describe the transformation of resources and allow the cost tracking of those transformations. For instance, <code>refine oil(100L crude oil)</code> might be a process with an input of crude oil and an output of gasoline, jet fuel, etc that could be priced (like a resource) based on its input amounts of oil. This allows incorporating costs of externalities of various economic processes into production.</p>
 <p>Although not currently in the paper, the <a href="https://github.com/basisproject/tracker/issues/140">tracker model</a> is really starting to take shape in a material way. Trackers have gone from &quot;yeah, we should definitely figure that out&quot; to &quot;here&#39;s an actual proposal&quot; which is a great step. Beyond that, an incentive model for trackers is also now somewhat solidified: when a person wants to get paid, they track their labor, so it follows that if we want to systemically incentivize tracking resources and processes, the system pays members of blocs when they do this tracking. There are some other mechanisms at play here (such as <a href="https://github.com/basisproject/tracker/issues/139">cost staging</a>) to limit runaway effects of this, but the idea is that interacting with trackers is incentivized by the currency system.</p>
 <p>The paper still has many blank spots as things in the <a href="https://github.com/basisproject/tracker/issues/">project tracker</a> are in flux, but it&#39;s a significant improvement to what it was before.</p>
 <p>I&#39;m looking forward to finalizing much of the <a href="/contribute/">ongoing discussions</a> so new work can be started on the protocol implementation.</p>

@@ -500,6 +500,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .visible {
   visibility: visible;
 }
+.fixed {
+  position: fixed;
+}
 .absolute {
   position: absolute;
 }
