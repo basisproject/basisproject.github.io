@@ -1,20 +1,30 @@
 ---
 layout: post.njk
-title: "New paper: v3.0"
+title: "New protocol and paper: v3.0"
 author: "Andrew Lyon"
 leader:
   image: '/assets/images/typewriter.jpg'
 ---
 
-I mentioned in my [last update][post-protocol-updates] that I'm working on a new paper for Basis. **Well, it's here!**
+It's finally here! I've been working on the next version of the Basis protocol and paper for a little under a year now, and now it's ready!
 
-<div class="text-center py-8">
+The new version of the protocol distills down what Basis is, what components exist it in, and how they
+interact in a much more coherent way. A lot of the mechanisms around cost tracking and profitless
+exchange are the same, but many other things have changed or grown.
+
+<div class="text-center py-4">
     <a class="custom button mb-4 uppercase" href="{{ site.base }}/paper/">Read the new paper &raquo;</a>
 </div>
 
-This version breaks things down into three types and describes the interactions between them: [agents][paper-agents] (you and me), [resources][paper-resources] (basically the same), and [blocs][paper-blocs] (what were "companies" before). It describes the protocol (in plain english, still) in its pure form, separating the interactions with the outside market systems [into its own section][paper-part3] (largely unfinished).
+One thing worth mentioning is that in the previous version of the paper/protocol, the interactions
+between the Basis network and existing market systems were intertwined, which was a bit confusing:
+are we talking about the protocol itself, or its interactions with the outside world? This has been
+fixed by moving the market interactions into its own separate section, leaving the protocol itself
+to be described in its pure form.
 
-A new addition to the protocol is the [concept of processes][paper-processes] (which extends the [ValueFlows process model][vf-process]) allowing for the transformation of resources and the cost tracking of those transformations. For instance, `refine oil(100L crude oil)` might be a process with an input of crude oil and an output of gasoline, jet fuel, etc that could be priced (like a resource) based on its input amounts of oil. This allows incorporating costs of externalities of various economic processes into production.
+The previous version detailed cost tracking in labor and resources, and this version adds one more
+cost tracking target: [processes][paper-processes] (which extend the [ValueFlows process model][vf-process]).
+Processes describe the transformation of resources and allow the cost tracking of those transformations. For instance, `refine oil(100L crude oil)` might be a process with an input of crude oil and an output of gasoline, jet fuel, etc that could be priced (like a resource) based on its input amounts of oil. This allows incorporating costs of externalities of various economic processes into production.
 
 Although not currently in the paper, the [tracker model][trackers] is really starting to take shape in a material way. Trackers have gone from "yeah, we should definitely figure that out" to "here's an actual proposal" which is a great step. Beyond that, an incentive model for trackers is also now somewhat solidified: when a person wants to get paid, they track their labor, so it follows that if we want to systemically incentivize tracking resources and processes, the system pays members of blocs when they do this tracking. There are some other mechanisms at play here (such as [cost staging][cost-staging]) to limit runaway effects of this, but the idea is that interacting with trackers is incentivized by the currency system.
 
