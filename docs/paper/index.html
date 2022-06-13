@@ -113,7 +113,7 @@
 
 		<header id="title-block-header">
 <h1 class="title">Basis: a protocol for a post-capitalist economy (v3.0)</h1>
-<p class="subtitle">Or: How I learned to stop worrying and produce without profits and private property<br><br><strong>(Last update: May 25, 2022)</strong></p>
+<p class="subtitle">Or: How I learned to stop worrying and produce without profits and private property<br><br><strong>(Last update: June  3, 2022)</strong></p>
 <p class="author">Andrew M. Lyon</p>
 </header>
 <nav id="TOC" role="doc-toc">
@@ -153,6 +153,7 @@
 <li><a href="#cost-representation">Cost representation</a></li>
 <li><a href="#cost-extensions">Cost extensions</a></li>
 <li><a href="#mathematical-operations-on-costs">Mathematical operations on costs</a></li>
+<li><a href="#incentives">Incentives</a></li>
 </ul></li>
 <li><a href="#chapter-6-cost-and-resource-flows">Chapter 6: Cost and resource flows</a>
 <ul>
@@ -170,8 +171,8 @@
 </ul></li>
 <li><a href="#chapter-8-investment">Chapter 8: Investment</a>
 <ul>
-<li><a href="#cybernetics">Cybernetics</a></li>
 <li><a href="#agent-investment">Agent investment</a></li>
+<li><a href="#cybernetics">Cybernetics</a></li>
 </ul></li>
 <li><a href="#chapter-9-bankruptcy">Chapter 9: Bankruptcy</a></li>
 <li><a href="#chapter-10-currency-credits-and-ubi">Chapter 10: Currency, credits, and UBI</a>
@@ -450,6 +451,10 @@
 / 4
 -------------------------------------------------------------
   { labor_hours: { carpenter: 4 }, resources: { wood: 3 } }</code></pre>
+<h3 id="incentives">Incentives</h3>
+<p>We’ve talked about what types of costs can be tracked, but we haven’t covered <em>why a bloc would bother tracking costs</em>. What do they get out of it?</p>
+<p>In essence, the system pays them to track the costs. For instance, how does Basis know to pay a worker their wage? Well, they would track that cost in the system, and as a result they would get payment. The same principle works for all cost tracking: when a bloc tracks the cost, the workers of that bloc get paid.</p>
+<p>The exact mechanisms at play here are covered in the <a href="#cost-staging">cost staging section</a>, which balances the incentive to create new costs with the base goal of meeting a social need.</p>
 <h2 id="chapter-6-cost-and-resource-flows">Chapter 6: Cost and resource flows</h2>
 <p>Now that we know what costs are and the information they track, let’s look at how costs (and resources) are tracked and how they move through the system.</p>
 <h3 id="bloc-cost-tracking">Bloc cost tracking</h3>
@@ -577,6 +582,11 @@ Tracker: Translatable {
 <p>The tricky bit comes when we convert our resource values into a cost, and this is where <a href="#BROKEN-tracked-resources">tracked resources</a> and <a href="#BROKEN-tracked-processes">tracked processes</a> come in: they allow categorizing a <a href="#chapter-3-resources">resource</a> within the cost tracking system such that a standard unit can be assigned a cost value. Thus, if in our example above, <code>iron</code> is tracked in grams, and the cost-per-gram is <code>0.3</code> then the iron cost would be <code>8.5 * 0.3</code> or <code>2.55</code>. If done for all <code>resources</code> in the costs set, we can add this to our labor costs and find our total aggregate cost value.</p>
 <h2 id="chapter-8-investment">Chapter 8: Investment</h2>
 <p>Investment determines the <a href="#bloc-allocation">allocation</a> of a bloc, allowing that bloc to take on greater or lesser costs.</p>
+<h3 id="agent-investment">Agent investment</h3>
+<p>TODO:</p>
+<ul>
+<li><a href="https://github.com/basisproject/tracker/issues/124">#124 - Investment system</a></li>
+</ul>
 <h3 id="cybernetics">Cybernetics</h3>
 <p>TODO:</p>
 <ul>
@@ -584,15 +594,9 @@ Tracker: Translatable {
 </ul>
 <h4 id="product-pricing">Product pricing</h4>
 <p>So far we’ve talked a lot about costs. Does this mean that every product purchased by a consumer will be provided at-cost? No, and there two facets to this.</p>
-<p>First, for agents, the system will <em>optimize for</em> providing products at-cost. In other words, companies that do sell products for exactly their cost will be rewarded (more on this in the <a href="#cybernetics">cybernetics section</a>). That said, companies can set whatever prices above or below cost they want. The difference from a capitalist market however is that when a company sells a widget for 10₡ that only cost 8₡ to produce, it doesn’t realize the extra 2₡: the credits are still burned on purchase.</p>
-<p>Secondly, for non-members, companies are incentivized to sell at the highest price they can. So each product that is available for public consumption will have at least two prices: the in-network price and the market price.</p>
+<p>First, for agents, the system will <em>optimize for</em> providing products at-cost. In other words, companies that do sell products for exactly their cost will be rewarded. That said, companies can set whatever prices above or below cost they want. The difference from a capitalist market however is that when a bloc sells a widget for 10₡ that only cost 8₡ to produce, it doesn’t realize the extra 2₡: the credits are still burned on purchase.</p>
 <p>So why let companies set arbitrary prices at all? It enables things like clearing inventory for products that didn’t sell well, and also it enables inventory control for higher-value items. Member companies don’t realize the delta between cost and price as a gain or loss, but rather it is used as a signal to determine if the production of that particular product should be expanded or contracted. In other words, we retain the <em>signal mechanism</em> from pricing <em>without using it as a distribution mechanism</em>.</p>
 <p>This system of pricing is described in “Towards a New Socialism” <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<h3 id="agent-investment">Agent investment</h3>
-<p>TODO:</p>
-<ul>
-<li><a href="https://github.com/basisproject/tracker/issues/124">#124 - Investment system</a></li>
-</ul>
 <h2 id="chapter-9-bankruptcy">Chapter 9: Bankruptcy</h2>
 <p>What happens to a bloc when its allocation is reached and it has no incoming orders? What happens if the last member of a bloc leaves and that bloc still holds costs?</p>
 <p>Where are these costs transferred to?</p>
