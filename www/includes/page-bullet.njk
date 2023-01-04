@@ -1,6 +1,6 @@
 {% macro bullet(icon, link, title, text, accent = 'slate-400', short = true) %}
 <li class="block p-4 sm:w-1/2">
-	<a class="custom group hover:no-underline" href="{{ link }}">
+	{% if link %}<a class="custom group hover:no-underline" href="{{ link }}">{% else %}<div>{% endif %}
 		<div class="flex items-center bg-slate-50 rounded-lg drop-shadow-md">
 			<div class="w-1/6 text-center">
 				<icon class="text-2xl text-center text-{{ accent }} sm:opacity-70 sm:group-hover:opacity-100 sm:transition-opacity">{{ icon }}</icon>
@@ -8,13 +8,11 @@
 			<div class="w-5/6 {% if short %}overflow-hidden{% endif %}" title="{{ text }}">
 				<div class="p-4 border-l">
 					<h4 class="mb-0 text-ink sm:text-ink/[0.80] sm:group-hover:text-ink sm:transition-colors">{{ title }}</h3>
-					<p class="mb-0 text-sm text-slate-500 {% if short %}truncate{% endif %}">
-						{{ text }}
-					</p>
+					{% if text %}<p class="mb-0 text-sm text-slate-500 {% if short %}truncate{% endif %}">{{ text }}</p>{% else %}<div></div>{% endif %}
 				</div>
 			</div>
 		</div>
-	</a>
+	{% if link %}</a>{% else %}</div>{% endif %}
 </li>
 {% endmacro %}
 
