@@ -1,0 +1,115 @@
+---
+layout: post.njk
+title: "Investment in a post-capitalist world"
+author: "Andrew Lyon"
+leader:
+  image: '/assets/images/planting.jpg'
+---
+
+{% import "www/includes/page-bullet.njk" as pagebullet %}
+
+Investment is an interesting and complicated topic. For a while now, this project has been [toying with a number of ideas regarding investment][invest]. While it has been fruitful and progress is being made, there are still a lot of unanswered questions and the discussion continues.
+
+Investment in a moneyed, profit-based system can be modeled fairly simply: you borrow money, you use it to profit, and you use the profit to pay back your creditors. Or, you can sell a portion of the productive entity you're creating in exchange for investment.
+
+However, when companies have no profit, ownership is based on participation, and production is not centrally-organized, what forms does investment take? Defining a system that's too rigid will likely cause friction later down the road, but too general and the protocol might lose its differentiation from the status quo. How do we construct a system that supports emergence of different methods of investment while also protecting the core values of the network?
+
+## A bit of context
+
+In Basis, [companies (called "blocs")][blocs] have what's known as an [allocation][allocation]: the maximum amount of costs that company can assume. The higher the allocation, the more labor and resources that can be used to produce whatever that company makes.
+
+The investment system is how a company's allocation is determined. Investment can be either direct in the case of a person making an investment or it can be passive in the case of the allocation being adjusted based on the company's performance.
+
+We will explore both of these paths.
+
+## Attributes of direct investment
+
+There are a number of dynamics that drive a system of investment that are worth talking about and can inform possible answers to the question "how does investment work post-capitalism?"
+
+### Incentive to invest
+
+Investment can be personal: investing in things you believe in, investing in your own community, or investing in a company you are starting yourself. This may be a large enough driver to invest for many people. However, having some kind of systemic incentive for investment will encourage more people to do it, which means a healthier economy as a whole.
+
+On the other hand, an investment system that allows for rampant speculation can create harmful feedback loops.
+
+In our current system, investment is mostly done via banking or the stock market. You are incentivized via returns from interest or from stock prices moving favorably. However if companies cannot sell shares of ownership on a market and they have no profits to sell dividends for, it becomes clear that a stock market is an incompatible concept with Basis. However traditional banking is still an option here, so whatever investment system is devised would likely benefit from being general enough to support the age-old model of banking/debt/interest.
+
+### Accountability
+
+People need to have skin in the game. If a company goes bankrupt, the members and investors need to be on the hook, otherwise we'll have a factory with a bunch of machines and inventory sitting there collecting dust, which is an enormous waste. On top of this, if it's easy to start a company and gather investment even if it's doomed to fail, it might divert resources from more essential companies.
+
+Accountability makes it so that investment into a productive entity cannot be done casually, and careful decisions are made regarding the resources being used and the overall operating plan.
+
+### Delegation
+
+If you had to make every decision about every investment or productive process involved in the building of the things you need, it might get tiring. The ability to make direct personal decisions is an absolute necessity directly in-line with the principles of Basis, however the ability to delegate decision making in some cases can make life much easier.
+
+The investment system in the Basis protocol needs to be able to support delegation: the ability to let someone else invest on your behalf, and for them to be paid for this service while also being able to give back to you the return on investment.
+
+### Technical feasibility
+
+It's entirely possible for Basis to define the perfect investment system but given the constraints of [peer-to-peer (p2p) systems][p2p] it might be technically unfeasible. Blockchains are an excellent way to form global consensus and automate transactions, however they do not scale well horizontally. Traditional p2p systems can scale to incredibly large, resilient, and complex networks but cannot act on global shared state and must move within the limits of direct observability which makes modeling some more intricate investment paradigms infeasible.
+
+Because a major goal of Basis is to be able to replace *money currency* it would effectively need to scale far beyond what blockchain systems can offer, making a generalized p2p system more attractive. Given this, the project currently leans heavily toward devising investment systems that do not need shared global state/consensus.
+
+## Cybernetics: automated passive investment
+
+<img class="max-w-full" src="{{ site.url }}/assets/images/c3p0.jpg" alt="C3P0" title="Adjusting allocations for productive entities in a post-capitalist network? Why, it's my primary function, sir!">
+<div class="text-sm text-right mt-2 mb-4">Adjusting allocations for productive entities in a post-capitalist network? Why, it's my primary function, sir! (<a href="https://unsplash.com/photos/cTqxDBsEv3g">photo credit</a>)</div>
+
+So far we've been dealing mainly with investment as a method for directly setting the allocation for a productive entity. However, we also have the need to make ongoing adjustments to this allocation based on how this entity performs within the context of our post-capitalist network.
+
+This is what the [cybernetics system][cybernetics] does: it acts as a mechanism for making adjustments to a company's allocation based on how well it meets social needs, with the goal of replacing profit. The idea here is to reward people for making things others need, as opposed to rewarding them for selling things.
+
+The cybernetics system is another essential factor of our investment system: adjustments made up or down to a company's allocation would effectively determine the return on direct investment.
+
+It is also currently probably even more ill-defined in the Basis project than direct investment, however [discussions on cybernetics are ongoing.](https://github.com/basisproject/tracker/issues?q=is%3Aissue+is%3Aopen+label%3Atag%3Acybernetics)
+
+## Putting it all together
+
+Here are the constraints and parameters we know we want:
+
+<ul class="list-none ml-0 pl-0 mb-4 sm:flex sm:flex-wrap sm:items-start">
+{{ pagebullet.bullet('&#x20A1;', "", "Returns without speculation", "Investors should get something back from their investment without runaway effects", 'lime-600', false) }}
+{{ pagebullet.bullet('&#xF2B5;', "", "Financial accountability", "Producers and investors must have something to lose to encourage meaningful allocations", 'violet-600', false) }}
+{{ pagebullet.bullet('&#xF19C;', "", "Delegation", "Allowing investment on behalf of others can relieve the need for expert knowledge", 'yellow-600', false) }}
+{{ pagebullet.bullet('&#xE800;', "", "Technical limitations", "The investment system needs to work within the confines of a non-blockchain p2p system", 'teal-600', false) }}
+</ul>
+
+Probably the most difficult and nuanced constraint is our technical limitations: how do we fulfill the other requirements while keeping in mind the full abilities and limitations of p2p systems? How do we also prevent abuse from bad actors? This presents difficulties not just for direct investments but our cybernetics system as well.
+
+Hopefully by now it's clear that this isn't a simple undertaking. There are a lot of different requirements and facets to this problem that all need careful consideration.
+
+<div class="mb-4 p-4 bg-slate-100">
+<details>
+<summary class="cursor-pointer text-center">
+<span class="underline text-lg">This could be a lot more complex...</span>
+</summary>
+<div class="block text-center">
+<img class="inline" src="{{ site.url }}/assets/images/complex-lebowski.gif" alt="Lebowski explaining a uh uh uh complex uh uh situation">
+</div>
+</details>
+</div>
+
+### Current working theory
+
+
+
+<div class="text-center py-8">
+    <a class="custom button mb-4 uppercase" href="{{ site.base }}/contribute/">We need your help figuring it out! </a>
+</div>
+
+---
+
+<small>(Main image source: [Noah Buscher][imgcred], C3P0 source: [Nice M Nshuti][c3p0cred], Lebowski gif: [BarryBatspak][lebowski])</small>
+
+[allocation]: {{ site.url }}/paper/#bloc-allocation
+[blocs]: {{ site.url }}/paper/#chapter-4-blocs
+[c3p0cred]: https://unsplash.com/photos/cTqxDBsEv3g
+[credits]: {{ site.url }}/paper/#labor-credits
+[cybernetics]: {{ site.url }}/paper/#cybernetics
+[imgcred]: https://unsplash.com/photos/x8ZStukS2PM
+[invest]: https://github.com/basisproject/tracker/issues/124
+[lebowski]: https://tenor.com/view/complex-lebowski-gif-25143523
+[p2p]: https://en.wikipedia.org/wiki/Peer-to-peer
+[ubi]: {{ site.url }}/paper/#ubi-credits-universal-basic-income
