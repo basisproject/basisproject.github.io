@@ -15,6 +15,7 @@ const toc = require('./plugins/toc');
 const SRC = process.env['SRC'] || 'www';
 const DEST = process.env['DEST'] || 'dist';
 const URL = process.env['URL'] || 'https://basisproject.net';
+const DRAFTS = process.env['DRAFTS'] === '1';
 
 const NUNJUCK_OPTS = {
 	autoescape: false,
@@ -39,6 +40,26 @@ Metalsmith(__dirname)
 		'includes/**/*',
 		'css/includes/**/*',
 	]))
+	// deal with drafts
+	.use((files, metalsmith, done) => {
+		if(!DRAFTS) {
+			const fn = remove([
+				'drafts/**/*',
+			]);
+			return fn(files, metalsmith, done);
+		} else {
+			return done();
+		}
+	})
+	.use((files) => {
+		Object.keys(files).forEach((path) => {
+			if(path.indexOf('drafts/') === 0) {
+				const newpath = path.replace(/drafts\//, 'posts/');
+				files[newpath] = files[path];
+				delete files[path];
+			}
+		});
+	})
 
 	// -------------------------------------------------------------------------
 	// setup and metadata
