@@ -41,7 +41,9 @@ jobs:
       - name: Fool build system into ignoring the paper
         run: mkdir -p ../paper/src
       - name: Build
-        run: URL=https://basisproject.net make
+        env:
+          URL: https://basisproject.net
+        run: make all
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
