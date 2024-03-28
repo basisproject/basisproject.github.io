@@ -39,7 +39,7 @@ jobs:
       - name: Setup deps
         run: pnpm i
       - name: Build
-        run: make
+        run: make dist
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3

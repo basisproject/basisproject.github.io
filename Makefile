@@ -1,4 +1,4 @@
-.PHONY: all paper clean watch
+.PHONY: all dist paper clean watch
 
 SRC := www
 BUILD := dist
@@ -7,9 +7,11 @@ allwww := $(shell find $(SRC) -type f)
 allsrc := main.js $(shell find plugins/)
 papersrc := $(shell find ../paper/src/ -type f)
 
-all: $(BUILD)/index.html
+all: dist $(SRC)/paper.html
 
-$(BUILD)/index.html: $(allsrc) $(allwww) tailwind.config.js postcss.config.js $(SRC)/paper.html
+dist: $(BUILD)/index.html
+
+$(BUILD)/index.html: $(allsrc) $(allwww) tailwind.config.js postcss.config.js
 	SRC=$(SRC) DEST=$(BUILD) URL='http://www.basis.loc' node main
 	npx postcss $(BUILD)/css/**/*.css --base $(BUILD)/ --dir $(BUILD)/
 
