@@ -4,7 +4,7 @@ SRC := src
 BUILD := dist
 URL ?= http://www.basis.loc
 
-allwww := $(shell find $(SRC) -type f)
+allwww := $(shell find $(SRC) -type f | grep -v paper.html)
 allsrc := main.js $(shell find plugins/)
 papersrc := $(shell find ../paper/src/ -type f)
 

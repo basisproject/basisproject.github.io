@@ -39,10 +39,7 @@ jobs:
       - name: Setup deps
         run: pnpm i
       - name: Fool build system into ignoring the paper
-        run: |
-          mkdir -p ../paper/src ../paper/converted/ && \
-          touch ../paper/converted/basis.html && \
-          touch src/paper.html
+        run: mkdir -p ../paper/src
       - name: Build
         env:
           URL: https://basisproject.net
