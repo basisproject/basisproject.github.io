@@ -2,15 +2,16 @@
 
 SRC := src
 BUILD := dist
+URL ?= http://www.basis.loc
 
 allwww := $(shell find $(SRC) -type f)
 allsrc := main.js $(shell find plugins/)
-papersrc = $(shell find ../paper/src/ -type f)
+papersrc := $(shell find ../paper/src/ -type f)
 
 all: $(BUILD)/index.html
 
 $(BUILD)/index.html: $(allsrc) $(allwww) tailwind.config.js postcss.config.js
-	SRC=$(SRC) DEST=$(BUILD) URL='http://www.basis.loc' node main
+	SRC=$(SRC) DEST=$(BUILD) URL=$(URL) node main
 	npx postcss $(BUILD)/css/**/*.css --base $(BUILD)/ --dir $(BUILD)/
 
 ../paper/converted/basis.html: $(papersrc)

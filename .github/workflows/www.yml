@@ -39,7 +39,7 @@ jobs:
       - name: Setup deps
         run: pnpm i
       - name: Build
-        run: make
+        run: mkdir -p ../paper/src && make URL=https://basisproject.net/
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
