@@ -5,7 +5,10 @@
 
 @layer components {
 	.bs-container {@apply block max-w-4xl mx-auto px-4;}
-	.button {@apply inline-block bg-primary text-center text-white font-accent py-4 px-8 sm:bg-primary/[0.80] sm:hover:bg-primary sm:transition-colors;}
+	.container-wide {@apply max-w-5xl;}
+	.button-plain {@apply inline-block text-center font-accent py-4 px-8;}
+	//.button {@apply inline-block bg-primary text-center text-white font-accent py-4 px-8 sm:bg-primary/[0.80] sm:hover:bg-primary sm:transition-colors;}
+	.button {@apply button-plain bg-primary text-white font-accent sm:bg-primary/[0.80] sm:hover:bg-primary sm:transition-colors;}
 }
 
 .main-content {
@@ -15,14 +18,15 @@
 }
 
 post, page {
+	& {@apply block;}
 	h1, h2, h3, h4 {
 		& {@apply text-primary;}
 		&, .date {@apply font-accent;}
 	}
-	h1 {@apply text-4xl mb-6;}
-	h2 {@apply text-3xl mb-5;}
-	h3 {@apply text-2xl mb-4;}
-	h4 {@apply text-xl mb-3;}
+	h1 {@apply text-5xl mb-8;}
+	h2 {@apply text-4xl mb-7;}
+	h3 {@apply text-2xl mb-6;}
+	h4 {@apply text-xl mb-5;}
 	p, ul, ol {
 		& {@apply mb-4;}
 		& + h1 {@apply mt-12;}
@@ -40,7 +44,7 @@ post, page {
 	code {@apply p-1 whitespace-nowrap text-primary bg-neutral-100 text-sm p-1;}
 	pre {
 		& {@apply mb-4 border p-2 whitespace-pre;}
-		code {@apply p-0 whitespace-pre text-slate-500 bg-inherit;}
+		code {@apply p-0 whitespace-pre text-slate-700 bg-inherit;}
 	}
 	hr {@apply mb-4;}
 	.highlighter em {@apply not-italic bg-highlight px-1;}

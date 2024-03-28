@@ -1,0 +1,55 @@
+{% macro animation(container, container_classes, drawing_classes) %}
+<script>
+	const el = (() => {
+		const el = document.body.querySelector('{{ container }}');
+		if(!el) return;
+		const extra_classes = '{{ container_classes }}';
+		if(extra_classes) {
+			const list = extra_classes.split(' ');
+			list.forEach((cls) => el.classList.add(cls));
+		}
+		return el;
+	})();
+	window.addEventListener('load', () => {
+		const net = new Network();
+		net.init(el, {
+			canvas: {
+				render: true,
+				node_color_active: '#cc00ff',
+				node_color_inactive: '#555555',
+				link_opacity: 0.3,
+			},
+			draw_fps: 30,
+			//node_density: 0.0004,
+			node_density: 0.0008,
+			max_links: 7,
+			link_force: 1 / 200,
+			padding: 48,
+			extra_classes: '{{ drawing_classes }}',
+			queue_speed: {
+				min: 5,
+				div: 50,
+				pow: 2,
+				base: 1000,
+				jitter: 200,
+			},
+		});
+		const inframe = (entries, observer) => {
+			if(!entries[0].isIntersecting) {
+				return;
+			}
+			net.run();
+			observer.disconnect();
+		};
+		const observer = new IntersectionObserver(inframe, {
+			rootMargin: '-5% 50% -5% 50%',
+			threshold: 1.0,
+		});
+		observer.observe(el);
+	}, false);
+</script>
+<script src="{{ site.url }}/assets/js/vnd/d3.js?v=5.12.0"></script>
+<script src="{{ site.url }}/assets/js/bus.js?v={{ site.asset_version}}"></script>
+<script src="{{ site.url }}/assets/js/network.js?v={{ site.asset_version}}"></script>
+{% endmacro %}
+

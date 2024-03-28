@@ -6,15 +6,19 @@ permalink: contribute/
 
 {% import "www/includes/page-bullet.njk" as pagebullet %}
 
-<page class="pt-4">
-	<div class="bs-container py-8">
-		<h1 class="text-center mb-4">Contribute to Basis: We'd love your help!</h1>
+<page>
+	<div class="bs-container py-16">
+		<h1 class="text-center mb-8">Contribute to Basis</h1>
 		<h3 class="text-center mb-0 text-gray-600">
-			Join in on one of the ongoing discussions and help move the project forward.
+			We'd love your help moving the project forward! by joining in on one of the <a href="#discussion">ongoing discussions</a>
+			or work on <a href="#implementation">building the implementation</a>.
 		</h3>
 	</div>
 
-	<div class="bs-container py-4">
+	<div class="bs-container"><hr class="m-0"></div>
+
+	<div class="bs-container py-16">
+		<h2 id="discussion" class="text-center">Discussions - Help figure out the missing details of the Basis protocol</h2>
 		<ul class="list-none ml-0 pl-0 mb-0 sm:flex sm:flex-wrap sm:items-start">
 			{{ pagebullet.bullet(
 				"&#xF0AE;",
@@ -65,9 +69,37 @@ permalink: contribute/
 				short=false
 			) }}
 		</ul>
-		<p class="py-8 text-sm text-center">
-			<a href="https://github.com/basisproject/tracker/issues">Check out the rest of the discussions &raquo</a>
-		</p>
+		<div class="mt-12 sm:flex sm:justify-center">
+			<p class="px-4"><a href="https://www.reddit.com/r/basisproject/"><icon>&#xF281;</icon> Ask on Reddit</a></p>
+			<p class="px-4"><a href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org"><icon>&#xE80C;</icon> Talk on Matrix</a></p>
+			<p class="px-4"><a href="https://github.com/basisproject/tracker/issues"><icon>&#xF113;</icon> Discuss on Github</a></p>
+		</div>
+	</div>
+
+	<div class="bs-container"><hr class="m-0"></div>
+
+	<div class="bs-container py-16">
+		<h2 id="implementation" class="text-center">Implementation - Help turn Basis into a living system!</h2>
+		<ul class="list-none ml-0 pl-0 mb-0 sm:flex sm:flex-wrap sm:items-start">
+			{% set basis_icon = [ '<img class="p-2" src="', site.base, "/assets/images/logo.outline.png", '">' ] | join %}
+			{% set stamp_icon = [ '<img class="p-4" src="', "https://stamp-protocol.github.io/assets/images/logo-v3-sq.svg", '">' ] | join %}
+			{{ pagebullet.bullet(
+				basis_icon,
+				"https://github.com/basisproject/core",
+				"Basis core &raquo;",
+				"The Basis core exposes a functional interface to the protocol, allowing it to be embedded into a larger P2P framework.",
+				'violet-600',
+				short=false
+			) }}
+			{{ pagebullet.bullet(
+				stamp_icon,
+				"https://stamp-protocol.github.io/",
+				"Stamp identity system &raquo;",
+				"Basis will be implemented as a P2P protocol, and this necessitates a robust identity system as a foundational layer.",
+				'primary',
+				short=false
+			) }}
+		</ul>
 	</div>
 </page>
 
@@ -75,7 +107,9 @@ permalink: contribute/
 	<div class="bg-slate-50">
 		<div class="bs-container py-16">
 			<p class="text-xl text-center">
-				Don't forget, you can <a href="https://www.reddit.com/r/basisproject/">join us on Reddit <icon>&#xF281;</icon></a> to open new discussions, ask questions, or just say hi.
+				Don't forget, you can <a href="https://www.reddit.com/r/basisproject/">join us on Reddit <icon>&#xF281;</icon></a> or
+				<a href="https://matrix.to/#/!gNgFxsBfuTUXItEYdX:matrix.org?via=matrix.org">on our Matrix channel <icon>&#xE80C;</icon></a> to open new
+				discussions, ask questions, or just say hi.
 			</p>
 		</div>
 	</div>

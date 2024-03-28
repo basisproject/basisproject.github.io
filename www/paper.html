@@ -6,7 +6,7 @@ hide_title: true
 ---
 <header id="title-block-header">
 <h1 class="title">Basis: a protocol for a post-capitalist economy (v3.0)</h1>
-<p class="subtitle">Or: How I learned to stop worrying and produce without profits and private property<br><br><strong>(Last update: June  3, 2022)</strong></p>
+<p class="subtitle">Or: How I learned to stop worrying and produce without profits and private property<br><br><strong>(Last update: March 26, 2024)</strong></p>
 <p class="author">Andrew M. Lyon</p>
 </header>
 <nav id="TOC" role="doc-toc">
@@ -37,6 +37,7 @@ hide_title: true
 </ul></li>
 <li><a href="#chapter-4-blocs">Chapter 4: Blocs</a>
 <ul>
+<li><a href="#bloc-structure">Bloc structure</a></li>
 <li><a href="#bloc-voting">Bloc voting</a></li>
 <li><a href="#bloc-allocation">Bloc allocation</a></li>
 <li><a href="#cost-staging">Cost staging</a></li>
@@ -99,9 +100,9 @@ hide_title: true
 <p>Thus, capitalism actively incentivizes externalities both individually and systemically. And so, although praised for its simplicity and effectiveness, more complex systems must grow out of capitalism as control mechanisms. In a sense, <em>capitalism itself is only simple because it externalizes its complexity onto those who are subject to it</em>. Now we have governments and states that work tirelessly to not just counteract the negative externalities of capitalism, but to resist (with limited effectiveness) the onslaught of the holders of capital who wish to see restrictions lifted and more wealth diverted toward them. On top of this, these states also need to enforce another quite expensive aspect of capitalism: absentee ownership of property. In effect, this is the ability to exercise control over something you’ve never once used in a productive or even personal capacity. Simple in theory, complex and expensive to enforce in reality.</p>
 <p>What’s needed is a more balanced approach to economics. There are very important aspects of capitalism (or, rather, markets in general) that are worth preserving, such as the ability to act as a distributed signal processing mechanism. However, this paper will show that distributed economic signal processing can be done <em>without</em> profit and without absentee ownership of property. It will also outline more effective methods of signal processing than simple prices (which erase massive amounts of useful economic data).</p>
 <h2 id="chapter-2-the-basis-protocol">Chapter 2: The Basis protocol</h2>
-<p>There’s a somewhat unexplored space between a planned economy and a capitalist market system. The positive attributes of planning – democratic participation and production for use (as opposed to production <em>for profit</em>) – can exist alongside the best part of a market system: autonomous distributed production. Basis is an analysis of this space; a non-authoritarian journey into the intersection of building things to satisfy a known need, ecology, and free association.</p>
-<p>At its core, Basis is a protocol that defines a transactional economic fabric and provides detailed cost tracking on top of this fabric. It allows agents of an economic network to order products and services from each other in a way that automatically accounts for labor and resource content much more accurately than money and prices. As a result, all products output by this network have not just a list of all the different occupation hours/wages that went into producing them but also both the details on the resources used and by what quantities and the processes that transformed these resources. All productive transactions in this network are transparent to participants. This means for any given product, anybody can see its entire supply chain: what companies were involved, what wages were paid, where the resources were originally sourced, and more.</p>
-<p>Basis also defines a currency system, the ability to democratically price resources independently of their extraction costs (for instance, participants might democratically raise the price of fossil fuels as a mechanism for lowering their usage globally), and the means for determining use of property <em>outside of market mechanisms.</em></p>
+<p>There’s a somewhat unexplored space between a planned economy and a capitalist market system. The positive attributes of planning – democratic participation and production for use (as opposed to production <em>for profit</em>) – can exist alongside the best part of a market system: autonomous distributed production. Basis is an analysis of this space; a non-authoritarian journey into the intersection of building things to satisfy a known need, preserving ecology, and celebrating free association.</p>
+<p>At its core, Basis is a protocol that defines a transactional economic fabric and provides detailed cost tracking on top of this fabric. It allows agents of an economic network to request products and services from each other in a way that automatically accounts for labor and resource content much more accurately than money and prices. As a result, all products output by this network have not just a list of all the different occupation hours/wages that went into producing them but also both the details on the resources used (and by what quantities) and the processes that transformed these resources. All productive transactions in this network are transparent to participants. This means for any given product, anybody can see its entire supply chain: what companies were involved, what wages were paid, where the resources were originally sourced, and more.</p>
+<p>Basis also defines a currency system, the ability to democratically price resources and processes independently of their extraction costs (for instance, participants might democratically raise the price of fossil fuels as a mechanism for lowering their usage globally), and the means for determining use of property <em>outside of market mechanisms.</em></p>
 <p>Lastly, in Part 3 of this paper, we will explore not just the described system as a big fat what-if but also the path to transition from <em>here</em> to <em>there</em> and many of the mechanisms that will get us there.</p>
 <h1 id="part-2-protocol-definition">Part 2: Protocol definition</h1>
 <h2 id="chapter-1-a-high-level-view-of-basis">Chapter 1: A high level view of Basis</h2>
@@ -126,21 +127,19 @@ hide_title: true
 <p>Every action within the protocol, whether direct or indirect, is driven by an agent acting as an agent of the protocol. While this is probably true of most protocols, it’s worth stating.</p>
 <h3 id="agents-and-identity">Agents and identity</h3>
 <p>Basis requires the use of an identity protocol for agentship. This ensures various aspects of the protocol are the same for everyone. For instance, without <em>identity</em> the protocol would not be able to determine if someone cast multiple votes in a decision.</p>
-<p>TODO:</p>
-<ul>
-<li><a href="https://github.com/basisproject/tracker/issues/132">#132 - Identity system</a></li>
-</ul>
+<p>For this, Basis relies on its sister protocol, <a href="https://stamp-protocol.github.io/">the Stamp project</a>. Not only does Stamp provide an identity system for agentship within Basis, but it provides the necessary mechanisms for <a href="#bloc-structure">democratic structures of blocs</a>.</p>
 <h3 id="accounts">Accounts</h3>
 <p>An account is a protocol-defined electronic storage for <a href="#chapter-10-currency-credits-and-ubi">the protocol’s currency, credits.</a> These would be analogous to bank accounts that can be accessed via the web or a mobile app. Agents can have any number of accounts and can transfer their credits freely between them.</p>
 <h2 id="chapter-3-resources">Chapter 3: Resources</h2>
 <p>A resource in Basis, which <a href="https://www.valueflo.ws/concepts/resources/">extends the concept of a resource as modeled by ValueFlows</a>, can be anything that’s useful in a productive sense, either as an input to production or an output of production. A resource could be a house, a river, a chair, a factory, a farm, a tractor, etc. It’s important to note that in Basis, resources must be explicitly entered. There must be intention behind a resource existing in the system.</p>
-<p>Ownership of all resources described in the protocol is shared by all agents <em>equally</em>. An agent in India is an equal owner of the factory in Canada, and an agent in Hawaii is an equal owner of widget batch #506771 produced by Widgets”R”Us in Africa.</p>
-<p>Everyone owning everything might be a fact of the protocol, but it’s not a particularly useful distinction. Resources in Basis have two more relationships (beyond ownership) that apply: stewardship and use.</p>
+<p>By default, Basis assumes that ownership of all resources described in the protocol is shared by all agents <em>equally</em>. An agent in India is an equal owner of the factory in Canada, and an agent in Hawaii is an equal owner of widget batch #506771 produced by Widgets”R”Us in Africa.</p>
+<p>Instead of ownership, Basis defines two other relations to resources: stewardship and use.</p>
 <h3 id="stewardship">Stewardship</h3>
 <p>Stewardship is a relationship between a <a href="#chapter-4-blocs">bloc</a> and a resource. Stewardship allows determining how a resource can be used or consumed. This can include setting time limits on use, determining costs of use, and any other facet that might arise. For instance, a farming guild bloc might have tractors available for local farmers to use. A chair production bloc might make their chairs available to order for other blocs or for consumption by agents. Blocs don’t have to be productive either: a housing bloc, which stewards houses or apartments, can determine the rules for use of their units. A municipal bloc might set hours of acceptable use on a public park.</p>
+<p>The distinction between stewardship and ownership can be thought of as the distinction between ad-hoc and bureaucratic. Stewardship can shift and change over time, where ownership much more rigid.</p>
 <h3 id="use">Use</h3>
 <p>Use is a relationship in which a resource is in active consumption by either an agent or another bloc. Usage of a resource might often happen by members of the bloc in stewardship, but this isn’t a given, and anyone can use a resource within the bounds set by the steward.</p>
-<p>Usage could be something like living in a house, taking a bus, operating a lathe, etc.</p>
+<p>Usage could be something like living in a house, renting a car, taking a bus, operating a lathe, etc.</p>
 <h3 id="determining-stewardship">Determining stewardship</h3>
 <p>The system we use for distributing “property” and resource stewardship is somewhat simple: agents and blocs negotiate this amongst themselves. There is no protocol-defined criteria for who stewards what and why. Trying to devise a framework which can determine optimal placement of resources for any set of people or circumstances is futile, and any attempt would be brittle. So we don’t.</p>
 <p>As a general guideline, resources are best stewarded by the groups of people in use of them. However, while Basis strives to quantify some forms of use, it’s impossible to do so for <em>all</em> types of use, so participants must determine this for themselves. And to a large extent, people already do this in the current system.</p>
@@ -157,19 +156,24 @@ hide_title: true
 <p>A bloc is a grouping of <a href="#chapter-2-agents">agents</a> and <a href="#chapter-3-resources">resources</a>. The agents that are part of a bloc are known as “members” and the relationship between a bloc and a resource is known as <a href="#stewardship">stewardship</a>.</p>
 <p>All blocs are cooperative entities controlled by their members. Leadership (if any) must ultimately be selected by individual agents, and all policies regarding membership of blocs must be ratified by the members. As such, Basis defines a bloc as a bottom-up power structure that puts individual agents in ultimate control of the groups they are members of.</p>
 <p>Blocs and agents are freely-associating entities: any agent can join any bloc as long as the entities involved consent to the association.</p>
-<p>Blocs are free to use whatever organization structure they see fit. There is not any predetermined pattern or framework blocs must follow, with the caveat that the members in a bloc have ultimate power regrading the bloc. Blocs can use a traditional top-down structure where members select a board/council that determines overall direction and leadership, or blocs can be run as a collective where everyone is involved in making every decision. Blocs can have vesting schedules for new members. They can be set up as multi-stakeholder entities (for instance, shared control between workers, customers, vendors, and/or the public).</p>
+<p>Blocs are free to use whatever organization structure they see fit. There is not any predetermined pattern or framework blocs must follow, with the caveat that the members in a bloc have ultimate power regarding the bloc. Blocs can use a traditional top-down structure where members select a board/council that determines overall direction and leadership, or blocs can be run as a collective where everyone is involved in making every decision. Blocs can have vesting schedules for new members. They can be set up as multi-stakeholder entities (for instance, shared control between workers, customers, vendors, and/or the public).</p>
 <p>Membership in a bloc is completely decided by the bloc itself. Membership might be determined by geographical location, interest or skill in a particular sector of production, and can even depend on things like compulsory ordering of a service every month (which could be structured as a membership fee or even a tax in the case of a municipal bloc). Some blocs might require membership in sister blocs: perhaps you cannot be a member of the Duluth Housing bloc if you are not also a member of the Duluth Municipal bloc.</p>
+<h3 id="bloc-structure">Bloc structure</h3>
+<p>Blocs are necessarily controlled by their members. How this control is shaped is determined by the bloc itself, however this structure must be formally defined via Basis’ sister protocol, <a href="https://stamp-protocol.github.io/">Stamp</a>. Stamp provides a cryptographic system for defining group control of an entity.</p>
+<p>In essence, each bloc maintains a group identity defined by Stamp, and that identity is used to formalize membership and also control of the bloc. In other words, agents become members of a bloc by the bloc blessing them with some form of cryptographic control of the bloc.</p>
+<p>Stamp also allows group members to <em>act on behalf of the bloc</em> in ways predetermined by the bloc itself, making it so responsibilities and powers can be delegated to an individual agent.</p>
+<p>The relationships and powers Stamp can express in the context of group control of an entity are effectively endless.</p>
 <h3 id="bloc-voting">Bloc voting</h3>
 <p>TODO:</p>
 <ul>
 <li><a href="https://github.com/basisproject/tracker/issues/60">#60 - Voting</a></li>
 </ul>
 <h3 id="bloc-allocation">Bloc allocation</h3>
-<p>Every bloc has an allocation. This is a variable number that determines the upper limit on costs that the bloc can assume. If the bloc’s total costs (the sum of all the bloc’s resources and processes) reaches this number, the protocol prevents the bloc from taking on any new costs, be it ordering inventory, paying wages, or any other ways that blocs can take on new costs. The allocation can be thought of as the total amount of societal debt that a bloc may take on.</p>
-<p>The total costs of a bloc can be determined by taking the costs of all the bloc’s resources and all the bloc’s processes and <a href="#addition">summing them together</a>. This gives a final cost object, which can be <a href="#converting-costs-to-a-single-value">converted into a final number</a>.</p>
-<p>Once a bloc’s total costs reaches its allocation, a bloc must find a way to unload its costs. This would happen via other blocs <a href="#orders">ordering products</a> or through direct member taxation.</p>
+<p>Every bloc has an allocation. This is a variable number that determines the upper limit on costs that the bloc can assume. If the bloc’s total costs (the sum of all the bloc’s pending wage costs, resources, and processes) reaches this number, the protocol prevents the bloc from taking on any new costs, be it ordering inventory, paying wages, or any other ways that blocs can take on new costs. The allocation can be thought of as the total amount of societal debt that a bloc may take on.</p>
+<p>The total costs of a bloc can be determined by taking the costs of all the bloc’s labor costs, resources, and all the bloc’s processes and <a href="#addition">summing them together</a>. This gives a final cost object, which can be <a href="#converting-costs-to-a-single-value">converted into a final number</a>.</p>
+<p>Once a bloc’s total costs reaches its allocation, a bloc must find a way to unload its costs. This would happen via other blocs or consumers <a href="#orders">ordering products</a> or through direct member taxation.</p>
 <p>The actual allocation value is determined by the <a href="#chapter-8-investment">investment</a> and <a href="#cybernetics">cybernetics</a> systems defined by the protocol.</p>
-<h4 id="allowance-exceptions">Allowance exceptions</h4>
+<h4 id="allocation-overage">Allocation overage</h4>
 <p>TODO:</p>
 <ul>
 <li><a href="https://github.com/basisproject/tracker/issues/135">#135 - Allocation overage</a></li>
@@ -195,7 +199,7 @@ hide_title: true
 <p>But how do we get gasoline? This is where processes come in. Not only can processes in Basis be assigned an externality cost, but they can also transform resources: crude oil is <em>consumed</em> by the process of “refining” and becomes gasoline, jet fuel, etc.</p>
 <h4 id="distinction-between-tracked-processes-and-bloc-processes">Distinction between tracked processes and bloc processes</h4>
 <p>It’s worth noting that the <a href="#bloc-processes">processes blocs use when producing</a> are determined by the bloc and are independent of the concept of <em>tracked processes</em> described above.</p>
-<p>For instance, a bloc might have the process <code>build chair</code> it uses when producing chairs, but <code>build chair</code> does not need to be a network-wide tracked process in order for that bloc to use it. In other words, blocs are free to track internal processes in any way they deem fit, <em>however</em> cost resource transformations (crude oil -&gt; gasoline, jet fuel, etc) can <em>only</em> happen through network-tracked processes.</p>
+<p>For instance, a bloc might have the process <code>build chair</code> it uses when producing chairs, but <code>build chair</code> does not need to be a network-wide tracked process in order for that bloc to use it. In other words, blocs are free to track internal processes in any way they deem fit, <em>however</em> cost resource transformations (crude oil -&gt; gasoline, jet fuel, etc) can <em>only</em> happen through network-tracked processes which are created and maintained via democratic process.</p>
 <h3 id="cost-representation">Cost representation</h3>
 <p>Here’s an example of what a cost object might look like:</p>
 <pre><code>{
@@ -417,6 +421,7 @@ hide_title: true
 <p>At a lower level, a bloc can use <em>processes</em> as a way of breaking down flows of resources and labor internally. A process is an activity that transforms economic inputs to outputs. In Basis, processes extend the concept of <a href="https://www.valueflo.ws/concepts/processes/">processes in ValueFlows</a> by adding a set of <a href="#chapter-5-costs">costs</a> associated with that process. A bloc can have as many processes as it wants, each with a set of associated costs.</p>
 <p>In the above example, our chair maker might have a process for <code>unload lumber shipment</code>, which yields usable lumber which can be used in the <code>make chairs</code> process.</p>
 <p>It’s important to note that as resources have costs, so do processes. For instance, <code>make chairs</code> might first have the cost of the lumber added to it, and then the labor of the chair maker. Once the chairs are created, the total cost of the <code>make chairs</code> process might be assigned equally to the chairs.</p>
+<p>It’s important to note the <a href="#distinction-between-tracked-processes-and-bloc-processes">distinction between tracked processes and bloc processes</a>.</p>
 <h4 id="labor-and-wages">Labor and Wages</h4>
 <p>When an agent performs labor for a bloc they are a member of and if they track this labor within the protocol then they will receive wages in the form of <a href="#labor-credits">credits</a>. The exact arrangement of how the wage is arranged is between the member and the bloc: it could be hourly, it could be salary, it could be project or commission based, some combination of all three, or something entirely different. The protocol does not enforce any form of arrangement, but it does allow the bloc or the member to register the labor and provides methods for compensating it with credits.</p>
 <p>This is how <code>labor_hours</code> and <code>labor_wages</code> are created and tracked in the protocol: agents get paid for their work by creating labor transactions.</p>
@@ -487,7 +492,7 @@ Tracker: Translatable {
 </ul>
 <h4 id="product-pricing">Product pricing</h4>
 <p>So far we’ve talked a lot about costs. Does this mean that every product purchased by a consumer will be provided at-cost? No, and there two facets to this.</p>
-<p>First, for agents, the system will <em>optimize for</em> providing products at-cost. In other words, companies that do sell products for exactly their cost will be rewarded. That said, companies can set whatever prices above or below cost they want. The difference from a capitalist market however is that when a bloc sells a widget for 10₡ that only cost 8₡ to produce, it doesn’t realize the extra 2₡: the credits are still burned on purchase.</p>
+<p>First, for agents, the system will <em>optimize for</em> providing products at-cost. In other words, companies that do sell products for exactly their cost will be rewarded. That said, companies can set whatever prices above or below cost they want. The difference from a moneyed market however is that when a bloc sells a widget for 10₡ that only cost 8₡ to produce, it doesn’t realize the extra 2₡: the credits are still burned on purchase.</p>
 <p>So why let companies set arbitrary prices at all? It enables things like clearing inventory for products that didn’t sell well, and also it enables inventory control for higher-value items. Member companies don’t realize the delta between cost and price as a gain or loss, but rather it is used as a signal to determine if the production of that particular product should be expanded or contracted. In other words, we retain the <em>signal mechanism</em> from pricing <em>without using it as a distribution mechanism</em>.</p>
 <p>This system of pricing is described in “Towards a New Socialism” <a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
 <h2 id="chapter-9-bankruptcy">Chapter 9: Bankruptcy</h2>
@@ -495,7 +500,7 @@ Tracker: Translatable {
 <p>Where are these costs transferred to?</p>
 <p>TODO:</p>
 <ul>
-<li><a href="https://github.com/basisproject/tracker/issues/96">#96 - Bankruptcy / company with no members</a></li>
+<li><a href="https://github.com/basisproject/tracker/issues/96">#96 - Bankruptcy / bloc with no members</a></li>
 </ul>
 <h2 id="chapter-10-currency-credits-and-ubi">Chapter 10: Currency, credits, and UBI</h2>
 <p>Every agent has the ability to accrue the network currency (credits, ₡) in any number of accounts they wish to manage. Credits can be spent on goods and services provided by companies in the Basis system. Credits differ from money in that they are <em>destroyed when spent</em>. Credits do not circulate the primary economy, and only exist within the accounts of agents.</p>

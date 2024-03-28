@@ -16,7 +16,7 @@ module.exports = {
 				'linkvisited': '#8a1717',
 			},
 			fontFamily: {
-				accent: ['Titillium Web', 'sans-serif'],
+				accent: ['Lato', 'sans-serif'],
 				logo: ['Bolshevik'],
 			},
 		},
