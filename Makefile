@@ -1,4 +1,4 @@
-.PHONY: all publish paper clean watch
+.PHONY: all paper clean watch
 
 SRC := www
 BUILD := dist
@@ -32,15 +32,4 @@ clean:
 
 watch: paper
 	while true; do inotifywait -qr -e close_write *.js www/ plugins/ ../paper/src; make paper; done
-
-publish:
-	@echo "Remember to commit your changes to master for publishing to work!"
-	@sleep 5
-	git checkout publish
-	git merge master
-	make clean all
-	git add .
-	git commit -m "build"
-	git push
-	git checkout -
 
