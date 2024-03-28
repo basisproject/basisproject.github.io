@@ -12,7 +12,7 @@ const sass = require('./plugins/sass');
 const page_ref = require('./plugins/page_ref');
 const toc = require('./plugins/toc');
 
-const SRC = process.env['SRC'] || 'www';
+const SRC = process.env['SRC'] || 'src';
 const DEST = process.env['DEST'] || 'dist';
 const URL = process.env['URL'] || 'https://basisproject.net';
 const DRAFTS = process.env['DRAFTS'] === '1';

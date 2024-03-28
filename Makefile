@@ -1,11 +1,11 @@
 .PHONY: all paper clean watch
 
-SRC := www
+SRC := src
 BUILD := dist
 
 allwww := $(shell find $(SRC) -type f)
 allsrc := main.js $(shell find plugins/)
-papersrc := $(shell find ../paper/src/ -type f)
+papersrc = $(shell find ../paper/src/ -type f)
 
 all: $(BUILD)/index.html
 

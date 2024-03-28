@@ -5,9 +5,9 @@ hide_title: true
 og_image: '/assets/images/logo.outline.png'
 ---
 
-{% import "www/includes/page-bullet.njk" as pagebullet %}
-{% import "www/includes/network-animation.njk" as network %}
-{% import "www/includes/external-link.njk" as link %}
+{% import "src/includes/page-bullet.njk" as pagebullet %}
+{% import "src/includes/network-animation.njk" as network %}
+{% import "src/includes/external-link.njk" as link %}
 
 <page>
 	<div class="bs-container container-wide pt-16 pb-8">
@@ -180,7 +180,7 @@ og_image: '/assets/images/logo.outline.png'
 						{% set postimage = post.leader %}
 						{% set postimage_medium = true %}
 						<a href="{{ post.url }}">
-							{% include "www/includes/post-image.njk" %}
+							{% include "src/includes/post-image.njk" %}
 						</a>
 					</div>
 					<h4 class="text-xl">
