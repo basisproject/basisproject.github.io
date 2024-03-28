@@ -1,5 +1,5 @@
-{% macro bullet(icon, link, title, text, accent = 'slate-400', short = true) %}
-<li class="block p-4 sm:w-1/2">
+{% macro bullet(icon, link, title, text, accent = 'slate-400', short = true, class = 'block p-4 sm:w-1/2') %}
+<li class="{{ class }}">
 	{% if link %}<a class="custom group hover:no-underline" href="{{ link }}">{% else %}<div>{% endif %}
 		<div class="flex items-center bg-slate-50 rounded-lg drop-shadow-md">
 			<div class="w-1/6 text-center">
