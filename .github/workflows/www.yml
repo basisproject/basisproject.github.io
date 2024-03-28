@@ -38,8 +38,10 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Setup deps
         run: pnpm i
+      - name: Fool build system into ignoring the paper
+        run: mkdir -p ../paper/src ../paper/converted/ && touch ../paper/converted/basis.html
       - name: Build
-        run: mkdir -p ../paper/src && make all URL=https://basisproject.net/
+        run: make all URL=https://basisproject.net/
       - name: Upload artifact
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
