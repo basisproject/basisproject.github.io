@@ -28,7 +28,7 @@ Metalsmith(__dirname)
 			base: '',
 			title: 'Basis',
 			description: 'Documentation and information about the Basis project',
-			asset_version: 10,
+			asset_version: 11,
 		},
 	})
 	.source(`${SRC}/`)
