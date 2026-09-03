@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "ValueFlows, Holochain, and blockchain"
-author: "Andrew Lyon"
+author: "Kay Lyon"
 leader:
   image: '/assets/images/holochain.jpg'
   class: 'bg-center'

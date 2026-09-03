@@ -1,7 +1,7 @@
 ---
 layout: post.njk
 title: "Cost derivation: In-kind cost tracking in moneyless production"
-author: "Andrew Lyon"
+author: "Kay Lyon"
 leader:
   image: '/assets/images/stocks.jpg'
 ---
